@@ -37,8 +37,7 @@ export const Hero = () => {
         </h1>
 
         <p className="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
-          Gagnez 20h par semaine. Automatisez vos processus métier.
-          Augmentez votre productivité de 300% avec l'intelligence artificielle.
+          Vous n'utilisez pas l'Intelligence Artificielle ? Les process de votre entreprise sont certainement obsolètes.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
