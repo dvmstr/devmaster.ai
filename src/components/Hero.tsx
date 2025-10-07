@@ -22,10 +22,10 @@ export const Hero = () => {
   ];
 
   return (
-    <section className="relative h-screen flex flex-col justify-between pt-20">
+    <section className="relative h-screen flex flex-col justify-between pt-20" aria-label="Hero section">
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center flex-1 flex flex-col justify-center">
         <div className="flex justify-center mb-6">
-          <div className="relative inline-flex items-center gap-2 px-3 py-1.5 rounded-full overflow-hidden">
+          <div className="relative inline-flex items-center gap-2 px-3 py-1.5 rounded-full overflow-hidden" role="banner">
             <div className="absolute inset-0 rounded-full border animate-border-color-flow"></div>
             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent animate-shimmer-slow"></div>
             <span className="relative z-10 text-xs text-gray-300 font-light">Automatisation IA de nouvelle génération</span>
@@ -45,13 +45,15 @@ export const Hero = () => {
           <button
             onClick={scrollToCTA}
             className="btn-glass-filled group flex items-center gap-2"
+            aria-label="Réserver mon audit gratuit d'automatisation IA"
           >
             Réserver mon audit gratuit
-            <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform duration-300" />
+            <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform duration-300" aria-hidden="true" />
           </button>
           <button
             onClick={() => document.getElementById("process")?.scrollIntoView({ behavior: "smooth" })}
             className="btn-glass-outline"
+            aria-label="Découvrir comment fonctionne notre processus d'automatisation"
           >
             Comment ça marche
           </button>

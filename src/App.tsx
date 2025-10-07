@@ -12,7 +12,7 @@ import { Footer } from "./components/Footer";
 
 function App() {
   return (
-    <div className="bg-black min-h-screen">
+    <main className="bg-black min-h-screen">
       <Navigation />
       <Hero />
       <Benefits />
@@ -23,7 +23,7 @@ function App() {
       <FAQ />
       <CTAFinal />
       <Footer />
-    </div>
+    </main>
   );
 }
 
