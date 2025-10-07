@@ -1,5 +1,5 @@
 import { LightSource } from "./LightSource";
-import { ArrowRight } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 
 export const CTAFinal = () => {
   return (
@@ -17,10 +17,16 @@ export const CTAFinal = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-6">
-            <button className="btn-glass-filled group flex items-center gap-2">
-              Réserver mon audit gratuit
-              <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform duration-300" />
-            </button>
+            <a
+              href="https://wa.me/33695541134"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-glass-filled group flex items-center gap-2"
+              aria-label="Contacter sur WhatsApp"
+            >
+              <MessageCircle size={16} aria-hidden="true" />
+              WhatsApp : +33 6 95 54 11 34
+            </a>
           </div>
 
           <p className="text-gray-400 text-xs">
