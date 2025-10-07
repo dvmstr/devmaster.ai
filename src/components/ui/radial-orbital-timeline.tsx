@@ -215,7 +215,10 @@ export default function RadialOrbitalTimeline({
                 key={item.id}
                 ref={(el) => (nodeRefs.current[item.id] = el)}
                 className="absolute transition-all duration-700 cursor-pointer"
-                style={nodeStyle}
+                style={{
+                  ...nodeStyle,
+                  willChange: 'transform',
+                }}
                 onClick={(e) => {
                   e.stopPropagation();
                   toggleItem(item.id);
@@ -271,7 +274,13 @@ export default function RadialOrbitalTimeline({
                 </div>
 
                 {isExpanded && (
-                  <div className="absolute top-20 left-1/2 -translate-x-1/2 w-72 bg-black/40 backdrop-blur-xl border border-white/20 rounded-lg overflow-visible shadow-2xl shadow-cyan-500/20">
+                  <div className="absolute top-20 left-1/2 -translate-x-1/2 w-72 bg-black/40 backdrop-blur-xl border border-white/20 rounded-lg overflow-visible shadow-2xl shadow-cyan-500/20"
+                    style={{
+                      willChange: 'transform, backdrop-filter',
+                      backfaceVisibility: 'hidden',
+                      transform: 'translateZ(0)',
+                    }}
+                  >
                     <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-px h-3 bg-gradient-to-b from-cyan-400/50 to-transparent"></div>
 
                     <div className="p-5">
