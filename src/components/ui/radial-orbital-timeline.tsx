@@ -271,85 +271,82 @@ export default function RadialOrbitalTimeline({
                 </div>
 
                 {isExpanded && (
-                  <Card className="absolute top-20 left-1/2 -translate-x-1/2 w-64 bg-black/90 backdrop-blur-lg border-white/30 shadow-xl shadow-white/10 overflow-visible">
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-px h-3 bg-white/50"></div>
-                    <CardHeader className="pb-2">
-                      <div className="flex justify-between items-center">
-                        <Badge
-                          className={`px-2 text-xs ${getStatusStyles(
-                            item.status
-                          )}`}
-                        >
-                          {item.status === "completed"
-                            ? "COMPLETE"
-                            : item.status === "in-progress"
-                            ? "IN PROGRESS"
-                            : "PENDING"}
-                        </Badge>
-                        <span className="text-xs font-mono text-white/50">
+                  <div className="absolute top-20 left-1/2 -translate-x-1/2 w-72 bg-black/40 backdrop-blur-xl border border-white/20 rounded-lg overflow-visible shadow-2xl shadow-cyan-500/20">
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-px h-3 bg-gradient-to-b from-cyan-400/50 to-transparent"></div>
+
+                    <div className="p-5">
+                      <div className="flex justify-between items-center mb-4">
+                        <span className="text-[10px] uppercase tracking-[0.2em] text-cyan-400/80 font-light">
                           {item.date}
                         </span>
-                      </div>
-                      <CardTitle className="text-sm mt-2">
-                        {item.title}
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent className="text-xs text-white/80">
-                      <p>{item.content}</p>
-
-                      <div className="mt-4 pt-3 border-t border-white/10">
-                        <div className="flex justify-between items-center text-xs mb-1">
-                          <span className="flex items-center">
-                            <Zap size={10} className="mr-1" />
-                            Energy Level
-                          </span>
-                          <span className="font-mono">{item.energy}%</span>
+                        <div className={`px-2.5 py-0.5 text-[10px] uppercase tracking-wider font-light rounded-full ${
+                          item.status === "completed"
+                            ? "bg-cyan-400/20 text-cyan-300 border border-cyan-400/30"
+                            : item.status === "in-progress"
+                            ? "bg-white/10 text-white border border-white/20"
+                            : "bg-white/5 text-white/50 border border-white/10"
+                        }`}>
+                          {item.status === "completed"
+                            ? "Actif"
+                            : item.status === "in-progress"
+                            ? "En cours"
+                            : "Bientôt"}
                         </div>
-                        <div className="w-full h-1 bg-white/10 rounded-full overflow-hidden">
+                      </div>
+
+                      <h3 className="text-lg font-normal text-white mb-3 tracking-wide">
+                        {item.title}
+                      </h3>
+
+                      <p className="text-sm text-white/70 leading-relaxed font-light">
+                        {item.content}
+                      </p>
+
+                      <div className="mt-5 pt-4 border-t border-white/10">
+                        <div className="flex justify-between items-center text-xs mb-2">
+                          <span className="flex items-center gap-1.5 text-white/60 font-light">
+                            <Zap size={12} className="text-cyan-400/70" />
+                            Performance
+                          </span>
+                          <span className="font-light text-white/80">{item.energy}%</span>
+                        </div>
+                        <div className="w-full h-1.5 bg-white/5 rounded-full overflow-hidden">
                           <div
-                            className="h-full bg-gradient-to-r from-blue-500 to-cyan-500"
+                            className="h-full bg-gradient-to-r from-cyan-500 via-cyan-400 to-teal-400 rounded-full transition-all duration-500"
                             style={{ width: `${item.energy}%` }}
                           ></div>
                         </div>
                       </div>
 
                       {item.relatedIds.length > 0 && (
-                        <div className="mt-4 pt-3 border-t border-white/10">
-                          <div className="flex items-center mb-2">
-                            <Link size={10} className="text-white/70 mr-1" />
-                            <h4 className="text-xs uppercase tracking-wider font-light text-white/70">
-                              Connected Nodes
-                            </h4>
-                          </div>
-                          <div className="flex flex-wrap gap-1">
+                        <div className="mt-5 pt-4 border-t border-white/10">
+                          <h4 className="text-[11px] uppercase tracking-[0.15em] font-light text-white/50 mb-3 flex items-center gap-1.5">
+                            <Link size={11} className="text-cyan-400/60" />
+                            Aller plus loin
+                          </h4>
+                          <div className="flex flex-wrap gap-x-4 gap-y-2">
                             {item.relatedIds.map((relatedId) => {
                               const relatedItem = timelineData.find(
                                 (i) => i.id === relatedId
                               );
                               return (
-                                <Button
+                                <button
                                   key={relatedId}
-                                  variant="outline"
-                                  size="sm"
-                                  className="flex items-center h-6 px-2 py-0 text-xs rounded-none border-white/20 bg-transparent hover:bg-white/10 text-white/80 hover:text-white transition-all"
+                                  className="text-xs text-cyan-400/80 hover:text-cyan-300 transition-colors duration-200 font-light underline decoration-cyan-400/30 hover:decoration-cyan-300/50 underline-offset-2"
                                   onClick={(e) => {
                                     e.stopPropagation();
                                     toggleItem(relatedId);
                                   }}
                                 >
                                   {relatedItem?.title}
-                                  <ArrowRight
-                                    size={8}
-                                    className="ml-1 text-white/60"
-                                  />
-                                </Button>
+                                </button>
                               );
                             })}
                           </div>
                         </div>
                       )}
-                    </CardContent>
-                  </Card>
+                    </div>
+                  </div>
                 )}
               </div>
             );
