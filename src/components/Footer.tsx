@@ -113,7 +113,9 @@ export const Footer = () => {
               © 2025 DevMaster. Tous droits réservés.
             </p>
             <div className="flex gap-6 text-sm">
-              <span className="text-gray-500">Fait avec ❤️ en France</span>
+              <a href="#" className="text-gray-500 hover:text-white transition-colors">Mentions légales</a>
+              <a href="#" className="text-gray-500 hover:text-white transition-colors">Confidentialité</a>
+              <a href="#" className="text-gray-500 hover:text-white transition-colors">CGV</a>
             </div>
           </div>
         </div>
