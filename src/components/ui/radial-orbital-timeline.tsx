@@ -189,7 +189,13 @@ export default function RadialOrbitalTimeline({
             <div className="w-8 h-8 rounded-full bg-cyan-100/90 backdrop-blur-md"></div>
           </div>
 
-          <div className="absolute w-96 h-96 md:w-[480px] md:h-[480px] lg:w-[600px] lg:h-[600px] rounded-full border border-white/10"></div>
+          <div
+            className="absolute rounded-full border border-white/10 transition-all duration-500"
+            style={{
+              width: `${(windowWidth >= 1024 ? 280 : windowWidth >= 768 ? 220 : 180) * 2}px`,
+              height: `${(windowWidth >= 1024 ? 280 : windowWidth >= 768 ? 220 : 180) * 2}px`
+            }}
+          ></div>
 
           {timelineData.map((item, index) => {
             const position = calculateNodePosition(index, timelineData.length);
