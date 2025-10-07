@@ -73,21 +73,9 @@ export const Testimonials = () => {
   };
 
   return (
-    <section id="testimonials" className="relative py-24 overflow-hidden">
+    <section id="testimonials" className="relative py-16 overflow-hidden">
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          viewport={{ once: true }}
-          className="flex flex-col items-center justify-center mx-auto mb-16"
-        >
-          <h2 className="text-3xl md:text-5xl font-medium text-white text-center">
-            What our users say
-          </h2>
-        </motion.div>
-
         <div className="flex justify-center gap-6 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)] max-h-[740px] overflow-hidden">
           <TestimonialsColumn testimonials={firstColumn} duration={15} />
           <TestimonialsColumn testimonials={secondColumn} className="hidden md:block" duration={19} />
