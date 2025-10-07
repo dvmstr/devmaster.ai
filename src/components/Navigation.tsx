@@ -25,9 +25,10 @@ export const Navigation = () => {
   };
 
   const navItems = [
-    { name: "Solutions", id: "benefits" },
+    { name: "Bénéfices", id: "benefits" },
+    { name: "Solutions", id: "solutions" },
     { name: "Résultats", id: "results" },
-    { name: "Témoignages", id: "testimonials" },
+    { name: "Process", id: "process" },
     { name: "FAQ", id: "faq" },
   ];
 
@@ -67,7 +68,7 @@ export const Navigation = () => {
           onClick={() => scrollToSection("hero")}
           className="text-base font-medium text-white px-4 py-1.5 hover:text-white/60 transition-colors"
         >
-          DevMaster
+          Devmaster
         </button>
 
         <div className="hidden md:flex items-center gap-1">

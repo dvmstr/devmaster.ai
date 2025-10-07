@@ -9,7 +9,7 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="space-y-4">
             <div className="text-3xl font-medium text-white">
-              DevMaster
+              Devmaster
             </div>
             <p className="text-gray-400 leading-relaxed text-sm">
               L'agence d'automatisation IA qui transforme votre business avec des solutions intelligentes et personnalisées.
@@ -42,19 +42,25 @@ export const Footer = () => {
               <li>
                 <a href="#benefits" className="text-gray-400 hover:text-white transition-colors text-sm flex items-center gap-2 group">
                   <span className="w-0 group-hover:w-2 h-[1px] bg-white transition-all duration-300" />
-                  Avantages
+                  Bénéfices
                 </a>
               </li>
               <li>
-                <a href="#process" className="text-gray-400 hover:text-white transition-colors text-sm flex items-center gap-2 group">
+                <a href="#solutions" className="text-gray-400 hover:text-white transition-colors text-sm flex items-center gap-2 group">
                   <span className="w-0 group-hover:w-2 h-[1px] bg-white transition-all duration-300" />
-                  Notre processus
+                  Solutions
                 </a>
               </li>
               <li>
                 <a href="#results" className="text-gray-400 hover:text-white transition-colors text-sm flex items-center gap-2 group">
                   <span className="w-0 group-hover:w-2 h-[1px] bg-white transition-all duration-300" />
                   Résultats
+                </a>
+              </li>
+              <li>
+                <a href="#process" className="text-gray-400 hover:text-white transition-colors text-sm flex items-center gap-2 group">
+                  <span className="w-0 group-hover:w-2 h-[1px] bg-white transition-all duration-300" />
+                  Process
                 </a>
               </li>
               <li>
@@ -110,7 +116,7 @@ export const Footer = () => {
 
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 pt-8">
             <p className="text-gray-500 text-sm">
-              © 2025 DevMaster. Tous droits réservés.
+              © 2025 Devmaster. Tous droits réservés.
             </p>
             <div className="flex gap-6 text-sm">
               <a href="#" className="text-gray-500 hover:text-white transition-colors">Mentions légales</a>
