@@ -16,14 +16,18 @@ export const Footer = () => {
             </p>
             <div className="flex gap-3 pt-2">
               <a
-                href="#"
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group relative p-2 rounded-lg bg-white/5 border border-white/10 hover:border-white/50 transition-all duration-300"
               >
                 <Linkedin size={20} className="text-gray-400 group-hover:text-white transition-colors" />
                 <div className="absolute inset-0 rounded-lg bg-white/20 opacity-0 group-hover:opacity-100 blur transition-opacity" />
               </a>
               <a
-                href="#"
+                href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group relative p-2 rounded-lg bg-white/5 border border-white/10 hover:border-white/50 transition-all duration-300"
               >
                 <Twitter size={20} className="text-gray-400 group-hover:text-white transition-colors" />
@@ -33,61 +37,53 @@ export const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-white font-normal mb-6 text-sm tracking-wider uppercase">Solutions</h3>
+            <h3 className="text-white font-normal mb-6 text-sm tracking-wider uppercase">Navigation</h3>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm flex items-center gap-2 group">
+                <a href="#benefits" className="text-gray-400 hover:text-white transition-colors text-sm flex items-center gap-2 group">
                   <span className="w-0 group-hover:w-2 h-[1px] bg-white transition-all duration-300" />
-                  Emails intelligents
+                  Avantages
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm flex items-center gap-2 group">
+                <a href="#process" className="text-gray-400 hover:text-white transition-colors text-sm flex items-center gap-2 group">
                   <span className="w-0 group-hover:w-2 h-[1px] bg-white transition-all duration-300" />
-                  Leads & Prospection
+                  Notre processus
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm flex items-center gap-2 group">
+                <a href="#results" className="text-gray-400 hover:text-white transition-colors text-sm flex items-center gap-2 group">
                   <span className="w-0 group-hover:w-2 h-[1px] bg-white transition-all duration-300" />
-                  Chatbots IA
+                  Résultats
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm flex items-center gap-2 group">
+                <a href="#faq" className="text-gray-400 hover:text-white transition-colors text-sm flex items-center gap-2 group">
                   <span className="w-0 group-hover:w-2 h-[1px] bg-white transition-all duration-300" />
-                  Orchestration
+                  FAQ
                 </a>
               </li>
             </ul>
           </div>
 
           <div>
-            <h3 className="text-white font-normal mb-6 text-sm tracking-wider uppercase">Entreprise</h3>
+            <h3 className="text-white font-normal mb-6 text-sm tracking-wider uppercase">Solutions</h3>
             <ul className="space-y-3">
-              <li>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm flex items-center gap-2 group">
-                  <span className="w-0 group-hover:w-2 h-[1px] bg-white transition-all duration-300" />
-                  À propos
-                </a>
+              <li className="text-gray-400 text-sm flex items-center gap-2">
+                <span className="w-2 h-[1px] bg-cyan-500" />
+                Emails intelligents
               </li>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm flex items-center gap-2 group">
-                  <span className="w-0 group-hover:w-2 h-[1px] bg-white transition-all duration-300" />
-                  Blog
-                </a>
+              <li className="text-gray-400 text-sm flex items-center gap-2">
+                <span className="w-2 h-[1px] bg-cyan-500" />
+                Leads & Prospection
               </li>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm flex items-center gap-2 group">
-                  <span className="w-0 group-hover:w-2 h-[1px] bg-white transition-all duration-300" />
-                  Carrières
-                </a>
+              <li className="text-gray-400 text-sm flex items-center gap-2">
+                <span className="w-2 h-[1px] bg-cyan-500" />
+                Chatbots IA
               </li>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm flex items-center gap-2 group">
-                  <span className="w-0 group-hover:w-2 h-[1px] bg-white transition-all duration-300" />
-                  Contact
-                </a>
+              <li className="text-gray-400 text-sm flex items-center gap-2">
+                <span className="w-2 h-[1px] bg-cyan-500" />
+                Orchestration n8n/Make
               </li>
             </ul>
           </div>
@@ -95,10 +91,16 @@ export const Footer = () => {
           <div>
             <h3 className="text-white font-normal mb-6 text-sm tracking-wider uppercase">Contact</h3>
             <ul className="space-y-3">
-              <li className="text-gray-400 text-sm">
-                contact@devmaster.com
+              <li>
+                <a href="mailto:contact@devmaster.com" className="text-gray-400 hover:text-cyan-400 transition-colors text-sm">
+                  contact@devmaster.com
+                </a>
               </li>
-              <li className="text-gray-400 text-sm">+33 1 23 45 67 89</li>
+              <li>
+                <a href="#cta-final" className="text-gray-400 hover:text-cyan-400 transition-colors text-sm">
+                  Demander un audit gratuit
+                </a>
+              </li>
             </ul>
           </div>
         </div>
@@ -111,9 +113,7 @@ export const Footer = () => {
               © 2025 DevMaster. Tous droits réservés.
             </p>
             <div className="flex gap-6 text-sm">
-              <a href="#" className="text-gray-500 hover:text-white transition-colors">Mentions légales</a>
-              <a href="#" className="text-gray-500 hover:text-white transition-colors">Confidentialité</a>
-              <a href="#" className="text-gray-500 hover:text-white transition-colors">CGV</a>
+              <span className="text-gray-500">Fait avec ❤️ en France</span>
             </div>
           </div>
         </div>
