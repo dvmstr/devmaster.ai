@@ -1,6 +1,5 @@
 import { LightSource } from "./LightSource";
 import { useEffect, useRef, useState } from "react";
-import { ArrowRight } from "lucide-react";
 
 const CountUp = ({ end, duration = 2000 }: { end: number; duration?: number }) => {
   const [count, setCount] = useState(0);
@@ -50,15 +49,8 @@ const CountUp = ({ end, duration = 2000 }: { end: number; duration?: number }) =
 };
 
 export const Results = () => {
-  const scrollToCTA = () => {
-    const element = document.getElementById("cta-final");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
-    <section id="results" className="relative py-24 pb-48">
+    <section id="results" className="relative py-16 pb-32">
       <div className="relative z-10 max-w-6xl mx-auto px-6">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-5xl font-medium text-white mb-4">
@@ -94,16 +86,6 @@ export const Results = () => {
             </div>
             <div className="text-xs text-gray-400">Délai de mise en place</div>
           </div>
-        </div>
-
-        <div className="flex justify-center mt-12">
-          <button
-            onClick={scrollToCTA}
-            className="btn-glass-filled group flex items-center gap-2"
-          >
-            Découvrir comment
-            <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform duration-300" />
-          </button>
         </div>
       </div>
 
