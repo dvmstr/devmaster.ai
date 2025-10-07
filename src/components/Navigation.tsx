@@ -30,6 +30,7 @@ export const Navigation = () => {
     { name: "Résultats", id: "results" },
     { name: "Process", id: "process" },
     { name: "FAQ", id: "faq" },
+    { name: "CTA", id: "cta-final" },
   ];
 
   useEffect(() => {
