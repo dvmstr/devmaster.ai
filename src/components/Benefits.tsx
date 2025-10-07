@@ -12,7 +12,7 @@ export const Benefits = () => {
   };
 
   return (
-    <section id="benefits" className="relative py-24">
+    <section id="benefits" className="relative py-24 overflow-x-hidden">
       <LightSource direction={180} color="cyan" intensity="high" className="!-top-96" />
 
       <div className="relative z-10 max-w-6xl mx-auto px-6">
