@@ -107,7 +107,7 @@ export const Results = () => {
         </div>
       </div>
 
-      <LightSource direction={180} color="cyan" intensity="high" className="-bottom-48" />
+      <LightSource direction={180} color="cyan" intensity="high" className="-bottom-32" />
     </section>
   );
 };
