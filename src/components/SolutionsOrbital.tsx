@@ -1,8 +1,14 @@
-import { Mail, Users, MessageCircle, Database, Share2, FileText, BarChart3, Workflow } from "lucide-react";
+import { Mail, Users, MessageCircle, Database, Share2, FileText, BarChart3, Workflow, ArrowRight } from "lucide-react";
 import RadialOrbitalTimeline from "@/components/ui/radial-orbital-timeline";
 import { LightSource } from "./LightSource";
 
 export const SolutionsOrbital = () => {
+  const scrollToCTA = () => {
+    const element = document.getElementById("cta-final");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   const solutionsData = [
     {
       id: 1,
@@ -110,6 +116,16 @@ export const SolutionsOrbital = () => {
         </div>
 
         <RadialOrbitalTimeline timelineData={solutionsData} />
+
+        <div className="flex justify-center mt-16 px-6">
+          <button
+            onClick={scrollToCTA}
+            className="btn-glass-filled group flex items-center gap-2"
+          >
+            Obtenir mon audit personnalisé
+            <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform duration-300" />
+          </button>
+        </div>
       </div>
     </section>
   );

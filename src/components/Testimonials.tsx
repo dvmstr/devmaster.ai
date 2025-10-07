@@ -1,6 +1,7 @@
 import { TestimonialsColumn } from "./ui/testimonials-columns-1";
 import { motion } from "framer-motion";
 import { LightSource } from "./LightSource";
+import { ArrowRight } from "lucide-react";
 
 const testimonials = [
   {
@@ -64,6 +65,13 @@ const secondColumn = testimonials.slice(3, 6);
 const thirdColumn = testimonials.slice(6, 9);
 
 export const Testimonials = () => {
+  const scrollToCTA = () => {
+    const element = document.getElementById("cta-final");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section id="testimonials" className="relative py-24 overflow-hidden">
 
@@ -84,6 +92,16 @@ export const Testimonials = () => {
           <TestimonialsColumn testimonials={firstColumn} duration={15} />
           <TestimonialsColumn testimonials={secondColumn} className="hidden md:block" duration={19} />
           <TestimonialsColumn testimonials={thirdColumn} className="hidden lg:block" duration={17} />
+        </div>
+
+        <div className="flex justify-center mt-16">
+          <button
+            onClick={scrollToCTA}
+            className="btn-glass-filled group flex items-center gap-2"
+          >
+            Rejoignez-les maintenant
+            <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform duration-300" />
+          </button>
         </div>
       </div>
     </section>

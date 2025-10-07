@@ -1,9 +1,16 @@
 import { LightSource } from "./LightSource";
 import { GlowingEffect } from "./ui/glowing-effect";
-import { Box, Lock, Search, Settings, Sparkles } from "lucide-react";
+import { Box, Lock, Search, Settings, Sparkles, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export const Benefits = () => {
+  const scrollToCTA = () => {
+    const element = document.getElementById("cta-final");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section id="benefits" className="relative py-24">
       <LightSource direction={180} color="cyan" intensity="high" className="!-top-96" />
@@ -50,6 +57,16 @@ export const Benefits = () => {
             description="Éliminez les erreurs humaines et garantissez une qualité irréprochable."
           />
         </ul>
+
+        <div className="flex justify-center mt-12">
+          <button
+            onClick={scrollToCTA}
+            className="btn-glass-filled group flex items-center gap-2"
+          >
+            Commencer maintenant
+            <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform duration-300" />
+          </button>
+        </div>
       </div>
     </section>
   );
