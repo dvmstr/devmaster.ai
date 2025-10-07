@@ -226,7 +226,13 @@ export default function RadialOrbitalTimeline({
                     isPulsing ? "animate-pulse duration-1000" : ""
                   }`}
                   style={{
-                    background: `radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%)`,
+                    background: `radial-gradient(circle, ${
+                      isExpanded
+                        ? "rgba(6, 182, 212, 0.4) 0%, rgba(6, 182, 212, 0) 70%"
+                        : isRelated
+                        ? "rgba(6, 182, 212, 0.3) 0%, rgba(6, 182, 212, 0) 70%"
+                        : "rgba(6, 182, 212, 0.15) 0%, rgba(6, 182, 212, 0) 70%"
+                    })`,
                     width: `${item.energy * 0.5 + 40}px`,
                     height: `${item.energy * 0.5 + 40}px`,
                     left: `-${(item.energy * 0.5 + 40 - 40) / 2}px`,
@@ -236,42 +242,56 @@ export default function RadialOrbitalTimeline({
 
                 <div
                   className={`
-                  w-10 h-10 rounded-full flex items-center justify-center
+                  w-12 h-12 rounded-full flex items-center justify-center relative
                   ${
                     isExpanded
-                      ? "bg-white text-black"
+                      ? "bg-gradient-to-br from-cyan-400 via-cyan-500 to-teal-400"
                       : isRelated
-                      ? "bg-white/50 text-black"
-                      : "bg-black text-white"
+                      ? "bg-gradient-to-br from-cyan-500/80 via-cyan-600/80 to-teal-500/80"
+                      : "bg-black"
                   }
-                  border-2
+                  border
                   ${
                     isExpanded
-                      ? "border-white shadow-lg shadow-white/30"
+                      ? "border-cyan-300 shadow-lg shadow-cyan-500/50"
                       : isRelated
-                      ? "border-white animate-pulse"
-                      : "border-white/40"
+                      ? "border-cyan-400 shadow-md shadow-cyan-500/30"
+                      : "border-cyan-500/40"
                   }
                   transition-all duration-300 transform
-                  ${isExpanded ? "scale-150" : ""}
+                  ${isExpanded ? "scale-125" : "hover:scale-110"}
                 `}
                 >
-                  <Icon size={16} />
+                  {!isExpanded && !isRelated && (
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-br from-cyan-500/10 to-transparent"></div>
+                  )}
+                  <Icon
+                    size={isExpanded ? 20 : 18}
+                    className={`relative z-10 ${
+                      isExpanded || isRelated ? "text-white" : "text-cyan-400"
+                    }`}
+                  />
                 </div>
 
                 <div
                   className={`
-                  absolute top-12  whitespace-nowrap
-                  text-xs font-light tracking-wider
+                  absolute top-14 left-1/2 -translate-x-1/2 whitespace-nowrap
+                  text-xs font-light tracking-wide
                   transition-all duration-300
-                  ${isExpanded ? "text-white scale-125" : "text-white/70"}
+                  ${
+                    isExpanded
+                      ? "text-cyan-300 scale-110 font-normal"
+                      : isRelated
+                      ? "text-cyan-400/90"
+                      : "text-gray-400"
+                  }
                 `}
                 >
                   {item.title}
                 </div>
 
                 {isExpanded && (
-                  <div className="absolute top-20 left-1/2 -translate-x-1/2 w-72 bg-black border border-white/20 rounded-lg overflow-visible shadow-2xl shadow-cyan-500/20">
+                  <div className="absolute top-24 left-1/2 -translate-x-1/2 w-72 bg-black border border-cyan-500/30 rounded-lg overflow-visible shadow-2xl shadow-cyan-500/20">
                     <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-px h-3 bg-gradient-to-b from-cyan-400/50 to-transparent"></div>
 
                     <div className="p-5">
