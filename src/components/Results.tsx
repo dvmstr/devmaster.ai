@@ -50,7 +50,7 @@ const CountUp = ({ end, duration = 2000 }: { end: number; duration?: number }) =
 
 export const Results = () => {
   return (
-    <section id="results" className="relative py-16 pb-32 overflow-x-hidden">
+    <section id="results" className="relative py-16 pb-32">
       <div className="relative z-10 max-w-6xl mx-auto px-6">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-5xl font-medium text-white mb-4">

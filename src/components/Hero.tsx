@@ -22,7 +22,7 @@ export const Hero = () => {
   ];
 
   return (
-    <section className="relative h-screen flex flex-col justify-between pt-20 overflow-x-hidden">
+    <section className="relative h-screen flex flex-col justify-between pt-20">
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center flex-1 flex flex-col justify-center">
         <div className="flex justify-center mb-6">
           <div className="relative inline-flex items-center gap-2 px-3 py-1.5 rounded-full overflow-hidden">

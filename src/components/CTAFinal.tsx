@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 
 export const CTAFinal = () => {
   return (
-    <section id="cta-final" className="relative py-32 overflow-x-hidden">
+    <section id="cta-final" className="relative py-32">
       <LightSource direction={180} color="cyan" intensity="high" />
 
       <div className="relative z-10 max-w-4xl mx-auto px-6">
