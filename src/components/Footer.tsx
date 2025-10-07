@@ -98,8 +98,8 @@ export const Footer = () => {
             <h3 className="text-white font-normal mb-6 text-sm tracking-wider uppercase">Contact</h3>
             <ul className="space-y-3">
               <li>
-                <a href="mailto:contact@devmaster.com" className="text-gray-400 hover:text-cyan-400 transition-colors text-sm">
-                  contact@devmaster.com
+                <a href="mailto:dvmstr.ai@gmail.com" className="text-gray-400 hover:text-cyan-400 transition-colors text-sm">
+                  dvmstr.ai@gmail.com
                 </a>
               </li>
               <li>
