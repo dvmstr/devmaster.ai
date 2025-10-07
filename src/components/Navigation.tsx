@@ -30,8 +30,9 @@ export const Navigation = () => {
     { name: "Résultats", id: "results" },
     { name: "Process", id: "process" },
     { name: "FAQ", id: "faq" },
-    { name: "CTA", id: "cta-final" },
   ];
+
+  const allSections = [...navItems, { name: "CTA", id: "cta-final" }];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,7 +45,7 @@ export const Navigation = () => {
         return;
       }
 
-      for (const item of navItems) {
+      for (const item of allSections) {
         const element = document.getElementById(item.id);
         if (element) {
           const { offsetTop, offsetHeight } = element;
