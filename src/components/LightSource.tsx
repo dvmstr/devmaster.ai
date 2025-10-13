@@ -143,8 +143,8 @@ export const LightSource: React.FC<LightSourceProps> = ({
 
   const lineAnimationProps = animated
     ? {
-        initial: { opacity: 0, width: isMobile ? "5.6rem" : "15rem" },
-        animate: isInView ? { opacity: 1, width: isMobile ? "21rem" : "30rem" } : { opacity: 0, width: isMobile ? "5.6rem" : "15rem" },
+        initial: { opacity: 0, width: isMobile ? "10.5rem" : "15rem" },
+        animate: isInView ? { opacity: 1, width: isMobile ? "21rem" : "30rem" } : { opacity: 0, width: isMobile ? "10.5rem" : "15rem" },
         transition: {
           duration: 1.2,
           ease: "easeInOut",
