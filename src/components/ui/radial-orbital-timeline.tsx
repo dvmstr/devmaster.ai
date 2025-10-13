@@ -94,20 +94,30 @@ export default function RadialOrbitalTimeline({
   }, []);
 
   useEffect(() => {
-    let rotationTimer: NodeJS.Timeout;
+    let animationFrameId: number;
+    let lastTime = performance.now();
+
+    const animate = (currentTime: number) => {
+      if (!autoRotate || viewMode !== "orbital") return;
+
+      const deltaTime = currentTime - lastTime;
+      lastTime = currentTime;
+
+      setRotationAngle((prev) => {
+        const increment = (deltaTime / 1000) * 6;
+        return (prev + increment) % 360;
+      });
+
+      animationFrameId = requestAnimationFrame(animate);
+    };
 
     if (autoRotate && viewMode === "orbital") {
-      rotationTimer = setInterval(() => {
-        setRotationAngle((prev) => {
-          const newAngle = (prev + 0.3) % 360;
-          return Number(newAngle.toFixed(3));
-        });
-      }, 50);
+      animationFrameId = requestAnimationFrame(animate);
     }
 
     return () => {
-      if (rotationTimer) {
-        clearInterval(rotationTimer);
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
       }
     };
   }, [autoRotate, viewMode]);
@@ -214,8 +224,11 @@ export default function RadialOrbitalTimeline({
               <div
                 key={item.id}
                 ref={(el) => (nodeRefs.current[item.id] = el)}
-                className="absolute transition-all duration-700 cursor-pointer"
-                style={nodeStyle}
+                className="absolute cursor-pointer"
+                style={{
+                  ...nodeStyle,
+                  willChange: 'transform',
+                }}
                 onClick={(e) => {
                   e.stopPropagation();
                   toggleItem(item.id);
