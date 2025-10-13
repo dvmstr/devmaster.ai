@@ -112,12 +112,12 @@ export const LightSource: React.FC<LightSourceProps> = ({
   const positionClasses = getPositionClasses();
 
   const containerRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(containerRef, { once: false, amount: 0.3 });
+  const isInView = useInView(containerRef, { once: false, amount: 0.1 });
 
   const conicAnimationProps = animated
     ? {
-        initial: { opacity: 0.5, width: "15rem" },
-        animate: isInView ? { opacity: 1, width: "30rem" } : { opacity: 0.5, width: "15rem" },
+        initial: { opacity: 0.5, width: "10rem" },
+        animate: isInView ? { opacity: 1, width: "min(30rem, 80vw)" } : { opacity: 0.5, width: "10rem" },
         transition: {
           duration: 1.2,
           ease: "easeInOut",
@@ -127,8 +127,8 @@ export const LightSource: React.FC<LightSourceProps> = ({
 
   const beamAnimationProps = animated
     ? {
-        initial: { opacity: 0, width: "8rem" },
-        animate: isInView ? { opacity: intensityValues.opacity, width: "16rem" } : { opacity: 0, width: "8rem" },
+        initial: { opacity: 0, width: "6rem" },
+        animate: isInView ? { opacity: intensityValues.opacity, width: "min(16rem, 60vw)" } : { opacity: 0, width: "6rem" },
         transition: {
           duration: 1.2,
           ease: "easeInOut",
@@ -138,8 +138,8 @@ export const LightSource: React.FC<LightSourceProps> = ({
 
   const lineAnimationProps = animated
     ? {
-        initial: { opacity: 0, width: "15rem" },
-        animate: isInView ? { opacity: 1, width: "30rem" } : { opacity: 0, width: "15rem" },
+        initial: { opacity: 0, width: "10rem" },
+        animate: isInView ? { opacity: 1, width: "min(30rem, 80vw)" } : { opacity: 0, width: "10rem" },
         transition: {
           duration: 1.2,
           ease: "easeInOut",
@@ -149,8 +149,8 @@ export const LightSource: React.FC<LightSourceProps> = ({
 
   const glowAnimationProps = animated
     ? {
-        initial: { opacity: 0, width: "10rem" },
-        animate: isInView ? { opacity: intensityValues.glowOpacity, width: "28rem" } : { opacity: 0, width: "10rem" },
+        initial: { opacity: 0, width: "8rem" },
+        animate: isInView ? { opacity: intensityValues.glowOpacity, width: "min(28rem, 75vw)" } : { opacity: 0, width: "8rem" },
         transition: {
           duration: 1.2,
           ease: "easeInOut",
@@ -164,7 +164,7 @@ export const LightSource: React.FC<LightSourceProps> = ({
       className={`absolute ${positionClasses} pointer-events-none ${className}`}
       style={{ zIndex: 0 }}
     >
-      <div className={`relative w-[800px] h-[600px] flex items-center justify-center ${getRotationStyle()}`}>
+      <div className={`relative w-[min(800px,100vw)] h-[min(600px,80vh)] flex items-center justify-center ${getRotationStyle()}`}>
         <motion.div
           {...conicAnimationProps}
           style={{
@@ -187,8 +187,8 @@ export const LightSource: React.FC<LightSourceProps> = ({
           <div className="absolute w-[100%] right-0 bg-black h-40 bottom-0 z-20 [mask-image:linear-gradient(to_top,white,transparent)]" />
         </motion.div>
 
-        <div className="absolute top-1/2 h-48 w-[800px] translate-y-12 scale-x-150 bg-black blur-2xl"></div>
-        <div className="absolute top-1/2 z-50 h-48 w-[800px] bg-transparent opacity-10 backdrop-blur-md"></div>
+        <div className="absolute top-1/2 h-48 w-full max-w-[800px] translate-y-12 scale-x-150 bg-black blur-2xl"></div>
+        <div className="absolute top-1/2 z-50 h-48 w-full max-w-[800px] bg-transparent opacity-10 backdrop-blur-md"></div>
 
         <motion.div
           {...glowAnimationProps}
@@ -205,7 +205,7 @@ export const LightSource: React.FC<LightSourceProps> = ({
           className={`absolute inset-auto z-50 h-0.5 -translate-y-[7rem] ${colors.beam}`}
         ></motion.div>
 
-        <div className="absolute inset-auto z-40 h-44 w-[800px] -translate-y-[12.5rem] bg-black"></div>
+        <div className="absolute inset-auto z-40 h-44 w-full max-w-[800px] -translate-y-[12.5rem] bg-black"></div>
       </div>
     </div>
   );
