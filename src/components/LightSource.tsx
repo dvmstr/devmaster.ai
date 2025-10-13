@@ -112,9 +112,12 @@ export const LightSource: React.FC<LightSourceProps> = ({
   const positionClasses = getPositionClasses();
 
   const containerRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(containerRef, { once: false, amount: 0.3 });
-
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+  const isInView = useInView(containerRef, {
+    once: false,
+    amount: isMobile ? 0.1 : 0.3,
+    margin: isMobile ? "0px 0px -100px 0px" : "0px"
+  });
 
   const conicAnimationProps = animated
     ? {
