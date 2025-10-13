@@ -210,6 +210,15 @@ export const LightSource: React.FC<LightSourceProps> = ({
           className={`absolute inset-auto z-50 h-0.5 -translate-y-[7rem] ${colors.beam}`}
         ></motion.div>
 
+        <motion.div
+          {...conicAnimationProps}
+          className={`absolute left-1/2 -translate-x-1/2 z-50 h-56 w-[0.5px] ${colors.beam}`}
+          style={{
+            background: `linear-gradient(to bottom, ${color === 'cyan' ? 'rgba(34, 211, 238, 0.6)' : color === 'blue' ? 'rgba(34, 211, 238, 0.6)' : color === 'purple' ? 'rgba(168, 85, 247, 0.6)' : color === 'green' ? 'rgba(34, 197, 94, 0.6)' : 'rgba(239, 68, 68, 0.6)'}, transparent)`,
+            opacity: isInView ? 0 : 1,
+          }}
+        ></motion.div>
+
         <div className="absolute inset-auto z-40 h-44 w-[800px] -translate-y-[12.5rem] bg-black"></div>
       </div>
     </div>
