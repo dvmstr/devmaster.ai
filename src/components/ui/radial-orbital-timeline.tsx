@@ -218,6 +218,7 @@ export default function RadialOrbitalTimeline({
               transform: `translate(${position.x}px, ${position.y}px)`,
               zIndex: isExpanded ? 200 : position.zIndex,
               opacity: isExpanded ? 1 : position.opacity,
+              transition: autoRotate ? 'opacity 0.7s, z-index 0.7s' : 'all 0.7s',
             };
 
             return (
