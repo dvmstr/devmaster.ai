@@ -290,8 +290,9 @@ export default function RadialOrbitalTimeline({
                 <div
                   className={`
                   absolute top-14 left-1/2 -translate-x-1/2 whitespace-nowrap
-                  text-xs font-light tracking-wide
+                  text-[10px] sm:text-xs font-light tracking-wide
                   transition-all duration-300
+                  max-w-[100px] sm:max-w-none overflow-hidden text-ellipsis
                   ${
                     isExpanded
                       ? "text-cyan-300 scale-110 font-normal"
@@ -305,7 +306,7 @@ export default function RadialOrbitalTimeline({
                 </div>
 
                 {isExpanded && (
-                  <div className="absolute top-24 left-1/2 -translate-x-1/2 w-72 bg-black border border-cyan-500/30 rounded-lg overflow-visible shadow-2xl shadow-cyan-500/20">
+                  <div className="absolute top-24 left-1/2 -translate-x-1/2 w-[90vw] max-w-[20rem] sm:w-72 bg-black border border-cyan-500/30 rounded-lg overflow-visible shadow-2xl shadow-cyan-500/20 z-[250]">
                     <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-px h-3 bg-gradient-to-b from-cyan-400/50 to-transparent"></div>
 
                     <div className="p-5">

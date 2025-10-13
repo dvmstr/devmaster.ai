@@ -64,11 +64,11 @@ export const Navigation = () => {
   }, []);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 pt-4">
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+    <nav className="fixed top-0 left-0 right-0 z-50 pt-3 sm:pt-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
         <button
           onClick={() => scrollToSection("hero")}
-          className="text-base font-medium text-white px-4 py-1.5 hover:text-white/60 transition-colors"
+          className="text-sm sm:text-base font-medium text-white px-2 sm:px-4 py-1.5 hover:text-white/60 transition-colors"
         >
           Devmaster
         </button>
@@ -109,10 +109,11 @@ export const Navigation = () => {
 
         <button
           onClick={() => scrollToSection("cta-final")}
-          className="btn-glass-filled group flex items-center gap-2"
+          className="btn-glass-filled group flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm"
         >
-          Audit gratuit
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-0.5 transition-transform duration-300">
+          <span className="hidden sm:inline">Audit gratuit</span>
+          <span className="sm:hidden">Audit</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-0.5 transition-transform duration-300">
             <path d="M5 12h14M12 5l7 7-7 7"/>
           </svg>
         </button>

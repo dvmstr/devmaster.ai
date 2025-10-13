@@ -37,20 +37,20 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       className="w-full bg-black font-sans md:px-10 relative"
       ref={containerRef}
     >
-      <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10 text-center">
-        <h2 className="text-3xl md:text-5xl mb-4 text-white font-medium mx-auto">
+      <div className="max-w-7xl mx-auto py-12 sm:py-16 md:py-20 px-4 md:px-8 lg:px-10 text-center">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl mb-3 sm:mb-4 text-white font-medium mx-auto">
           Notre méthode en 3 étapes
         </h2>
-        <p className="text-gray-400 text-base md:text-lg mx-auto">
+        <p className="text-gray-400 text-sm sm:text-base md:text-lg mx-auto px-2">
           Un processus simple et efficace pour transformer votre business
         </p>
       </div>
 
-      <div ref={ref} className="relative max-w-7xl mx-auto pb-20">
+      <div ref={ref} className="relative max-w-7xl mx-auto pb-12 sm:pb-20">
         {data.map((item, index) => (
           <div
             key={index}
-            className="flex justify-start pt-10 md:pt-40 md:gap-10"
+            className="flex justify-start pt-6 sm:pt-10 md:pt-40 md:gap-10"
           >
             <div className="sticky flex flex-col md:flex-row z-40 items-center top-40 self-start max-w-xs lg:max-w-sm md:w-full">
               <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-black flex items-center justify-center">
@@ -61,8 +61,8 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
               </h3>
             </div>
 
-            <div className="relative pl-20 pr-4 md:pl-4 w-full">
-              <h3 className="md:hidden block text-2xl mb-4 text-left font-light text-gray-500">
+            <div className="relative pl-16 sm:pl-20 pr-4 md:pl-4 w-full">
+              <h3 className="md:hidden block text-xl sm:text-2xl mb-3 sm:mb-4 text-left font-light text-gray-500">
                 {item.title}
               </h3>
               {item.content}{" "}
