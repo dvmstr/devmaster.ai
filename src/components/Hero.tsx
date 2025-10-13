@@ -23,7 +23,6 @@ export const Hero = () => {
 
   return (
     <section className="relative min-h-screen h-screen flex flex-col justify-between pt-16 sm:pt-20" aria-label="Hero section">
-      <LightSource direction={0} color="cyan" intensity="high" />
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center flex-1 flex flex-col justify-center">
         <div className="flex justify-center mb-6">
           <div className="relative inline-flex items-center gap-2 px-3 py-1.5 rounded-full overflow-hidden" role="banner">
