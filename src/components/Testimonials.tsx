@@ -74,7 +74,7 @@ export const Testimonials = () => {
 
   return (
     <section id="testimonials" className="relative py-12 sm:py-16 overflow-hidden">
-
+      <LightSource direction={0} color="cyan" intensity="medium" />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex justify-center gap-4 sm:gap-6 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)] max-h-[600px] sm:max-h-[740px] overflow-hidden">
           <TestimonialsColumn testimonials={firstColumn} duration={15} />
