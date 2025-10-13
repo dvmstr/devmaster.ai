@@ -19,6 +19,23 @@ export const LightSource: React.FC<LightSourceProps> = ({
   className = "",
 }) => {
   const getRotationStyle = () => {
+    // On mobile, adjust rotation for vertical positioning
+    if (isMobile) {
+      switch (direction) {
+        case 0:
+          return "rotate-0";
+        case 90:
+          return "rotate-180"; // Right becomes Bottom on mobile, so rotate 180
+        case 180:
+          return "rotate-180";
+        case 270:
+          return "rotate-0"; // Left becomes Top on mobile, so no rotation
+        default:
+          return "rotate-0";
+      }
+    }
+
+    // Desktop rotation remains the same
     switch (direction) {
       case 0:
         return "rotate-0";
@@ -34,6 +51,23 @@ export const LightSource: React.FC<LightSourceProps> = ({
   };
 
   const getPositionClasses = () => {
+    // On mobile, convert lateral directions (90, 270) to vertical (0, 180)
+    if (isMobile) {
+      switch (direction) {
+        case 0:
+          return "-top-40 left-1/2 -translate-x-1/2";
+        case 90:
+          return "-bottom-40 left-1/2 -translate-x-1/2"; // Right becomes Bottom on mobile
+        case 180:
+          return "-bottom-40 left-1/2 -translate-x-1/2";
+        case 270:
+          return "-top-40 left-1/2 -translate-x-1/2"; // Left becomes Top on mobile
+        default:
+          return "-top-40 left-1/2 -translate-x-1/2";
+      }
+    }
+
+    // Desktop positioning remains the same
     switch (direction) {
       case 0:
         return "-top-40 left-1/2 -translate-x-1/2";
