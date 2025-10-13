@@ -102,8 +102,8 @@ export const SolutionsOrbital = () => {
 
   return (
     <section id="solutions" className="relative min-h-screen flex items-center justify-center py-12 sm:py-16">
-      <LightSource direction={270} color="cyan" intensity="medium" className="-left-32 sm:-left-64" />
-      <LightSource direction={90} color="blue" intensity="medium" className="-right-32 sm:-right-64" />
+      <LightSource direction={270} color="cyan" intensity="medium" className="-left-32 -top-32 sm:-left-64 sm:top-auto" />
+      <LightSource direction={90} color="blue" intensity="medium" className="-right-32 -bottom-32 sm:-right-64 sm:bottom-auto" />
 
       <div className="relative z-10 w-full">
         <div className="text-center mb-6 sm:mb-8">
