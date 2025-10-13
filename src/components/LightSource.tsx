@@ -121,8 +121,8 @@ export const LightSource: React.FC<LightSourceProps> = ({
 
   const conicAnimationProps = animated
     ? {
-        initial: { opacity: 0.5, width: isMobile ? "10rem" : "15rem" },
-        animate: isInView ? { opacity: 1, width: isMobile ? "18rem" : "30rem" } : { opacity: 0.5, width: isMobile ? "10rem" : "15rem" },
+        initial: { opacity: 0.5, width: isMobile ? "13rem" : "15rem" },
+        animate: isInView ? { opacity: 1, width: isMobile ? "26rem" : "30rem" } : { opacity: 0.5, width: isMobile ? "13rem" : "15rem" },
         transition: {
           duration: 1.2,
           ease: "easeInOut",
@@ -132,8 +132,8 @@ export const LightSource: React.FC<LightSourceProps> = ({
 
   const beamAnimationProps = animated
     ? {
-        initial: { opacity: 0, width: isMobile ? "5rem" : "8rem" },
-        animate: isInView ? { opacity: intensityValues.opacity, width: isMobile ? "10rem" : "16rem" } : { opacity: 0, width: isMobile ? "5rem" : "8rem" },
+        initial: { opacity: 0, width: isMobile ? "7rem" : "8rem" },
+        animate: isInView ? { opacity: intensityValues.opacity, width: isMobile ? "14rem" : "16rem" } : { opacity: 0, width: isMobile ? "7rem" : "8rem" },
         transition: {
           duration: 1.2,
           ease: "easeInOut",
@@ -143,8 +143,8 @@ export const LightSource: React.FC<LightSourceProps> = ({
 
   const lineAnimationProps = animated
     ? {
-        initial: { opacity: 0, width: isMobile ? "10rem" : "15rem" },
-        animate: isInView ? { opacity: 1, width: isMobile ? "18rem" : "30rem" } : { opacity: 0, width: isMobile ? "10rem" : "15rem" },
+        initial: { opacity: 0, width: isMobile ? "13rem" : "15rem" },
+        animate: isInView ? { opacity: 1, width: isMobile ? "26rem" : "30rem" } : { opacity: 0, width: isMobile ? "13rem" : "15rem" },
         transition: {
           duration: 1.2,
           ease: "easeInOut",
@@ -154,8 +154,8 @@ export const LightSource: React.FC<LightSourceProps> = ({
 
   const glowAnimationProps = animated
     ? {
-        initial: { opacity: 0, width: isMobile ? "8rem" : "10rem" },
-        animate: isInView ? { opacity: intensityValues.glowOpacity, width: isMobile ? "16rem" : "28rem" } : { opacity: 0, width: isMobile ? "8rem" : "10rem" },
+        initial: { opacity: 0, width: isMobile ? "9rem" : "10rem" },
+        animate: isInView ? { opacity: intensityValues.glowOpacity, width: isMobile ? "24rem" : "28rem" } : { opacity: 0, width: isMobile ? "9rem" : "10rem" },
         transition: {
           duration: 1.2,
           ease: "easeInOut",
