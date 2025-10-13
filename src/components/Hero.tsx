@@ -22,8 +22,8 @@ export const Hero = () => {
   ];
 
   return (
-    <section className="relative h-screen flex flex-col justify-between pt-20" aria-label="Hero section">
-      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center flex-1 flex flex-col justify-center">
+    <section className="relative min-h-screen h-screen flex flex-col justify-between pt-16 sm:pt-20" aria-label="Hero section">
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center flex-1 flex flex-col justify-center">
         <div className="flex justify-center mb-6">
           <div className="relative inline-flex items-center gap-2 px-3 py-1.5 rounded-full overflow-hidden" role="banner">
             <div className="absolute inset-0 rounded-full border animate-border-color-flow"></div>
@@ -32,18 +32,18 @@ export const Hero = () => {
           </div>
         </div>
 
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-medium text-white mb-5 leading-tight">
+        <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-medium text-white mb-4 sm:mb-5 leading-tight px-2">
           Transformez votre business avec l'IA
         </h1>
 
-        <p className="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-base sm:text-lg md:text-xl text-gray-400 mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed px-2">
           Vous n'utilisez pas l'Intelligence Artificielle ? Les process de votre entreprise sont certainement obsolètes.
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 px-4">
           <button
             onClick={scrollToCTA}
-            className="btn-glass-filled group flex items-center gap-2"
+            className="btn-glass-filled group flex items-center gap-2 w-full sm:w-auto justify-center"
             aria-label="Réserver mon audit gratuit d'automatisation IA"
           >
             Réserver mon audit gratuit
@@ -51,7 +51,7 @@ export const Hero = () => {
           </button>
           <button
             onClick={() => document.getElementById("process")?.scrollIntoView({ behavior: "smooth" })}
-            className="btn-glass-outline"
+            className="btn-glass-outline w-full sm:w-auto justify-center"
             aria-label="Découvrir comment fonctionne notre processus d'automatisation"
           >
             Comment ça marche
@@ -59,8 +59,8 @@ export const Hero = () => {
         </div>
       </div>
 
-      <div className="relative z-10 pb-8">
-        <div className="max-w-4xl mx-auto px-6">
+      <div className="relative z-10 pb-6 sm:pb-8">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <LogoCarousel logos={logos} columnCount={4} />
         </div>
       </div>

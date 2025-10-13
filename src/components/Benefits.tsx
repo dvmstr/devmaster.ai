@@ -12,15 +12,15 @@ export const Benefits = () => {
   };
 
   return (
-    <section id="benefits" className="relative py-24">
+    <section id="benefits" className="relative py-16 sm:py-24">
       <LightSource direction={180} color="cyan" intensity="high" className="!-top-96" />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-medium text-white mb-4">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="text-center mb-10 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-3 sm:mb-4 px-2">
             Pourquoi DevMaster ?
           </h2>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto px-2">
             Des résultats concrets qui transforment votre façon de travailler
           </p>
         </div>
@@ -58,10 +58,10 @@ export const Benefits = () => {
           />
         </ul>
 
-        <div className="flex justify-center mt-12">
+        <div className="flex justify-center mt-8 sm:mt-12">
           <button
             onClick={scrollToCTA}
-            className="btn-glass-filled group flex items-center gap-2"
+            className="btn-glass-filled group flex items-center gap-2 w-full sm:w-auto justify-center max-w-xs"
           >
             Commencer maintenant
             <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform duration-300" />
@@ -81,7 +81,7 @@ interface GridItemProps {
 
 const GridItem = ({ area, icon, title, description }: GridItemProps) => {
   return (
-    <li className={cn("min-h-[14rem] list-none", area)}>
+    <li className={cn("min-h-[12rem] sm:min-h-[14rem] list-none", area)}>
       <div className="relative h-full rounded-[1.25rem] border-[0.75px] border-cyan-500/30 p-2 md:rounded-[1.5rem] md:p-3 bg-black/40 backdrop-blur-sm">
         <GlowingEffect
           spread={40}
@@ -92,18 +92,18 @@ const GridItem = ({ area, icon, title, description }: GridItemProps) => {
           borderWidth={2}
           variant="default"
         />
-        <div className="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl bg-black/60 backdrop-blur-md p-6 md:p-6">
+        <div className="relative flex h-full flex-col justify-between gap-4 sm:gap-6 overflow-hidden rounded-xl bg-black/60 backdrop-blur-md p-4 sm:p-6 md:p-6">
           <div className="relative flex flex-1 flex-col justify-between gap-3">
             <div className="w-fit rounded-lg bg-cyan-500/10 border border-cyan-500/30 p-2.5">
               <div className="text-cyan-400">
                 {icon}
               </div>
             </div>
-            <div className="space-y-3">
-              <h3 className="pt-0.5 text-xl leading-[1.375rem] font-normal font-sans tracking-[-0.04em] md:text-2xl md:leading-[1.875rem] text-balance text-white">
+            <div className="space-y-2 sm:space-y-3">
+              <h3 className="pt-0.5 text-lg sm:text-xl leading-tight font-normal font-sans tracking-[-0.04em] md:text-2xl md:leading-[1.875rem] text-balance text-white">
                 {title}
               </h3>
-              <h2 className="font-sans text-sm leading-[1.125rem] md:text-base md:leading-[1.375rem] text-gray-400">
+              <h2 className="font-sans text-xs sm:text-sm leading-[1.125rem] md:text-base md:leading-[1.375rem] text-gray-400">
                 {description}
               </h2>
             </div>

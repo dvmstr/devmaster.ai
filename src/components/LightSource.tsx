@@ -112,12 +112,17 @@ export const LightSource: React.FC<LightSourceProps> = ({
   const positionClasses = getPositionClasses();
 
   const containerRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(containerRef, { once: false, amount: 0.3 });
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+  const isInView = useInView(containerRef, {
+    once: false,
+    amount: isMobile ? 0.1 : 0.3,
+    margin: isMobile ? "0px 0px -100px 0px" : "0px"
+  });
 
   const conicAnimationProps = animated
     ? {
-        initial: { opacity: 0.5, width: "15rem" },
-        animate: isInView ? { opacity: 1, width: "30rem" } : { opacity: 0.5, width: "15rem" },
+        initial: { opacity: 0.5, width: isMobile ? "10rem" : "15rem" },
+        animate: isInView ? { opacity: 1, width: isMobile ? "18rem" : "30rem" } : { opacity: 0.5, width: isMobile ? "10rem" : "15rem" },
         transition: {
           duration: 1.2,
           ease: "easeInOut",
@@ -127,8 +132,8 @@ export const LightSource: React.FC<LightSourceProps> = ({
 
   const beamAnimationProps = animated
     ? {
-        initial: { opacity: 0, width: "8rem" },
-        animate: isInView ? { opacity: intensityValues.opacity, width: "16rem" } : { opacity: 0, width: "8rem" },
+        initial: { opacity: 0, width: isMobile ? "5rem" : "8rem" },
+        animate: isInView ? { opacity: intensityValues.opacity, width: isMobile ? "10rem" : "16rem" } : { opacity: 0, width: isMobile ? "5rem" : "8rem" },
         transition: {
           duration: 1.2,
           ease: "easeInOut",
@@ -138,8 +143,8 @@ export const LightSource: React.FC<LightSourceProps> = ({
 
   const lineAnimationProps = animated
     ? {
-        initial: { opacity: 0, width: "15rem" },
-        animate: isInView ? { opacity: 1, width: "30rem" } : { opacity: 0, width: "15rem" },
+        initial: { opacity: 0, width: isMobile ? "10rem" : "15rem" },
+        animate: isInView ? { opacity: 1, width: isMobile ? "18rem" : "30rem" } : { opacity: 0, width: isMobile ? "10rem" : "15rem" },
         transition: {
           duration: 1.2,
           ease: "easeInOut",
@@ -149,8 +154,8 @@ export const LightSource: React.FC<LightSourceProps> = ({
 
   const glowAnimationProps = animated
     ? {
-        initial: { opacity: 0, width: "10rem" },
-        animate: isInView ? { opacity: intensityValues.glowOpacity, width: "28rem" } : { opacity: 0, width: "10rem" },
+        initial: { opacity: 0, width: isMobile ? "8rem" : "10rem" },
+        animate: isInView ? { opacity: intensityValues.glowOpacity, width: isMobile ? "16rem" : "28rem" } : { opacity: 0, width: isMobile ? "8rem" : "10rem" },
         transition: {
           duration: 1.2,
           ease: "easeInOut",

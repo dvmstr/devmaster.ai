@@ -50,41 +50,41 @@ const CountUp = ({ end, duration = 2000 }: { end: number; duration?: number }) =
 
 export const Results = () => {
   return (
-    <section id="results" className="relative py-16 pb-32">
-      <div className="relative z-10 max-w-6xl mx-auto px-6">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-5xl font-medium text-white mb-4">
+    <section id="results" className="relative py-12 sm:py-16 pb-24 sm:pb-32">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-3 sm:mb-4 px-2">
             Des résultats mesurables
           </h2>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto px-2">
             Nos clients constatent un impact immédiat sur leur performance
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-5 text-center shadow-xl">
-            <div className="text-3xl md:text-4xl font-medium text-white mb-2">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+          <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-4 sm:p-5 text-center shadow-xl">
+            <div className="text-2xl sm:text-3xl md:text-4xl font-medium text-white mb-1 sm:mb-2">
               <CountUp end={300} />%
             </div>
-            <div className="text-xs text-gray-400">Augmentation de productivité</div>
+            <div className="text-[10px] sm:text-xs text-gray-400 leading-tight">Augmentation de productivité</div>
           </div>
-          <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-5 text-center shadow-xl">
-            <div className="text-3xl md:text-4xl font-medium text-white mb-2">
+          <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-4 sm:p-5 text-center shadow-xl">
+            <div className="text-2xl sm:text-3xl md:text-4xl font-medium text-white mb-1 sm:mb-2">
               <CountUp end={20} />h
             </div>
-            <div className="text-xs text-gray-400">Économisées par semaine</div>
+            <div className="text-[10px] sm:text-xs text-gray-400 leading-tight">Économisées par semaine</div>
           </div>
-          <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-5 text-center shadow-xl">
-            <div className="text-3xl md:text-4xl font-medium text-white mb-2">
+          <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-4 sm:p-5 text-center shadow-xl">
+            <div className="text-2xl sm:text-3xl md:text-4xl font-medium text-white mb-1 sm:mb-2">
               <CountUp end={95} />%
             </div>
-            <div className="text-xs text-gray-400">Satisfaction client</div>
+            <div className="text-[10px] sm:text-xs text-gray-400 leading-tight">Satisfaction client</div>
           </div>
-          <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-5 text-center shadow-xl">
-            <div className="text-3xl md:text-4xl font-medium text-white mb-2">
+          <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-4 sm:p-5 text-center shadow-xl">
+            <div className="text-2xl sm:text-3xl md:text-4xl font-medium text-white mb-1 sm:mb-2">
               <CountUp end={48} />h
             </div>
-            <div className="text-xs text-gray-400">Délai de mise en place</div>
+            <div className="text-[10px] sm:text-xs text-gray-400 leading-tight">Délai de mise en place</div>
           </div>
         </div>
       </div>
