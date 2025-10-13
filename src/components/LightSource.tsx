@@ -1,5 +1,5 @@
-import React, { useRef, useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import React, { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 
 type Direction = 0 | 90 | 180 | 270;
 
@@ -112,25 +112,7 @@ export const LightSource: React.FC<LightSourceProps> = ({
   const positionClasses = getPositionClasses();
 
   const containerRef = useRef<HTMLDivElement>(null);
-  const [isInView, setIsInView] = useState(false);
-
-  useEffect(() => {
-    const element = containerRef.current?.parentElement;
-    if (!element) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          setIsInView(entry.isIntersecting);
-        });
-      },
-      { threshold: 0.2, rootMargin: "100px" }
-    );
-
-    observer.observe(element);
-
-    return () => observer.disconnect();
-  }, []);
+  const isInView = useInView(containerRef, { once: false, amount: 0.3 });
 
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
 
