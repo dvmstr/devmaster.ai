@@ -311,7 +311,7 @@ export default function RadialOrbitalTimeline({
 
                     <div className="p-5">
                       <div className="mb-4">
-                        <span className="text-xs uppercase tracking-wide text-blue-400 font-medium block w-full">
+                        <span className="text-xs uppercase tracking-wide text-cyan-400 font-medium block w-full">
                           {item.date}
                         </span>
                       </div>
