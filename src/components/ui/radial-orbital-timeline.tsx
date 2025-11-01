@@ -14,6 +14,7 @@ interface TimelineItem {
   relatedIds: number[];
   status: "completed" | "in-progress" | "pending";
   energy: number;
+  tagline: string;
 }
 
 interface RadialOrbitalTimelineProps {
@@ -310,22 +311,15 @@ export default function RadialOrbitalTimeline({
                     <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-px h-3 bg-gradient-to-b from-cyan-400/50 to-transparent"></div>
 
                     <div className="p-5">
-                      <div className="flex justify-between items-center mb-4">
-                        <span className="text-[10px] uppercase tracking-[0.2em] text-cyan-400/80 font-light">
-                          {item.date}
-                        </span>
-                        <div className={`px-2.5 py-0.5 text-[10px] uppercase tracking-wider font-light rounded-full ${
+                      <div className="flex items-center mb-4">
+                        <div className={`flex-1 px-3 py-1.5 text-xs font-medium rounded-full ${
                           item.status === "completed"
                             ? "bg-cyan-400/20 text-cyan-300 border border-cyan-400/30"
                             : item.status === "in-progress"
                             ? "bg-white/10 text-white border border-white/20"
                             : "bg-white/5 text-white/50 border border-white/10"
                         }`}>
-                          {item.status === "completed"
-                            ? "Actif"
-                            : item.status === "in-progress"
-                            ? "En cours"
-                            : "Bientôt"}
+                          {item.tagline}
                         </div>
                       </div>
 
