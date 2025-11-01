@@ -89,7 +89,23 @@ export const Footer = () => {
               </li>
               <li className="text-gray-400 text-sm flex items-center gap-2">
                 <span className="w-2 h-[1px] bg-cyan-500" />
-                Orchestration n8n/Make
+                CRM & Relances
+              </li>
+              <li className="text-gray-400 text-sm flex items-center gap-2">
+                <span className="w-2 h-[1px] bg-cyan-500" />
+                Réseaux sociaux
+              </li>
+              <li className="text-gray-400 text-sm flex items-center gap-2">
+                <span className="w-2 h-[1px] bg-cyan-500" />
+                Documents & Factures
+              </li>
+              <li className="text-gray-400 text-sm flex items-center gap-2">
+                <span className="w-2 h-[1px] bg-cyan-500" />
+                Reporting
+              </li>
+              <li className="text-gray-400 text-sm flex items-center gap-2">
+                <span className="w-2 h-[1px] bg-cyan-500" />
+                Recrutement
               </li>
             </ul>
           </div>
