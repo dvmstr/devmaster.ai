@@ -20,7 +20,6 @@ export const SolutionsOrbital = () => {
       relatedIds: [2, 4],
       status: "completed" as const,
       energy: 95,
-      tagline: "Multipliez vos conversions par 3",
     },
     {
       id: 2,
@@ -32,7 +31,6 @@ export const SolutionsOrbital = () => {
       relatedIds: [1, 3, 4],
       status: "completed" as const,
       energy: 90,
-      tagline: "Générez des leads qualifiés 24/7",
     },
     {
       id: 3,
@@ -44,7 +42,6 @@ export const SolutionsOrbital = () => {
       relatedIds: [2, 4],
       status: "completed" as const,
       energy: 85,
-      tagline: "Support client intelligent 24/7",
     },
     {
       id: 4,
@@ -56,7 +53,6 @@ export const SolutionsOrbital = () => {
       relatedIds: [1, 2, 3, 7],
       status: "in-progress" as const,
       energy: 80,
-      tagline: "Zéro lead oublié, suivi parfait",
     },
     {
       id: 5,
@@ -68,7 +64,6 @@ export const SolutionsOrbital = () => {
       relatedIds: [7, 8],
       status: "completed" as const,
       energy: 75,
-      tagline: "Boostez votre présence en ligne",
     },
     {
       id: 6,
@@ -80,7 +75,6 @@ export const SolutionsOrbital = () => {
       relatedIds: [4, 7],
       status: "completed" as const,
       energy: 70,
-      tagline: "Automatisez votre comptabilité",
     },
     {
       id: 7,
@@ -92,19 +86,17 @@ export const SolutionsOrbital = () => {
       relatedIds: [4, 5, 6, 8],
       status: "in-progress" as const,
       energy: 85,
-      tagline: "Pilotez avec des données en temps réel",
     },
     {
       id: 8,
-      title: "Recrutement IA",
+      title: "Orchestration n8n/Make",
       date: "Advanced",
-      content: "Automatisez le tri des CV, la présélection des candidats et la planification des entretiens grâce à l'IA.",
-      category: "HR",
+      content: "Workflows complexes sur mesure, agents IA personnalisés et intégrations avancées entre tous vos outils.",
+      category: "Integration",
       icon: Workflow,
       relatedIds: [1, 2, 3, 4, 5, 6, 7],
       status: "in-progress" as const,
       energy: 100,
-      tagline: "Recrutez 10x plus rapidement",
     },
   ];
 
