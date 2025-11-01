@@ -47,8 +47,8 @@ export const Benefits = () => {
           <GridItem
             area="md:[grid-area:2/7/3/13] xl:[grid-area:1/8/2/13]"
             icon={<Sparkles className="h-4 w-4" />}
-            title="Pilotage data"
-            description="Prenez des décisions éclairées grâce à des tableaux de bord en temps réel."
+            title="Épanouissement des équipes"
+            description="Mettez à profit vos qualités créatives et relationnelles, l'IA se charge des tâches répétitives."
           />
           <GridItem
             area="md:[grid-area:3/1/4/13] xl:[grid-area:2/8/3/13]"
