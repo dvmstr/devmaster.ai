@@ -76,15 +76,15 @@ export const Results = () => {
           </div>
           <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-4 sm:p-5 text-center shadow-xl">
             <div className="text-2xl sm:text-3xl md:text-4xl font-medium text-white mb-1 sm:mb-2">
-              <CountUp end={95} />%
+              100%
             </div>
-            <div className="text-[10px] sm:text-xs text-gray-400 leading-tight">Satisfaction client</div>
+            <div className="text-[10px] sm:text-xs text-gray-400 leading-tight">Satisfait ou remboursé</div>
           </div>
           <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-4 sm:p-5 text-center shadow-xl">
             <div className="text-2xl sm:text-3xl md:text-4xl font-medium text-white mb-1 sm:mb-2">
               <CountUp end={48} />h
             </div>
-            <div className="text-[10px] sm:text-xs text-gray-400 leading-tight">Délai de mise en place</div>
+            <div className="text-[10px] sm:text-xs text-gray-400 leading-tight">Audit en 48h</div>
           </div>
         </div>
       </div>
