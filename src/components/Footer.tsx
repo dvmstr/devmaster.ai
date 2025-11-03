@@ -136,8 +136,6 @@ export const Footer = () => {
             </p>
             <div className="flex gap-6 text-sm">
               <a href="/mentions-legales" className="text-gray-500 hover:text-white transition-colors">Mentions légales</a>
-              <a href="/mentions-legales#rgpd" className="text-gray-500 hover:text-white transition-colors">Confidentialité</a>
-              <a href="/mentions-legales#conditions" className="text-gray-500 hover:text-white transition-colors">CGV</a>
             </div>
           </div>
         </div>
