@@ -7,6 +7,9 @@ Allow: /
 # Disallow: /admin/
 # Disallow: /private/
 
+# Do not index legal pages
+Disallow: /mentions-legales
+
 # Sitemap location
 Sitemap: https://yourdomain.com/sitemap.xml
 
