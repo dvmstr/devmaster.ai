@@ -1,6 +1,6 @@
 import { LightSource } from "./LightSource";
 import { GlowingEffect } from "./ui/glowing-effect";
-import { Box, Lock, Search, Settings, Sparkles, ArrowRight } from "lucide-react";
+import { Trash2, Zap, TrendingUp, Users, Shield, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export const Benefits = () => {
@@ -28,33 +28,33 @@ export const Benefits = () => {
         <ul className="grid grid-cols-1 grid-rows-none gap-4 md:grid-cols-12 md:grid-rows-3 lg:gap-4 xl:max-h-[34rem] xl:grid-rows-2">
           <GridItem
             area="md:[grid-area:1/1/2/7] xl:[grid-area:1/1/2/5]"
-            icon={<Box className="h-4 w-4" />}
-            title="Gain de temps massif"
-            description="Automatisez les tâches répétitives et concentrez-vous sur ce qui compte vraiment."
+            icon={<Trash2 className="h-4 w-4" />}
+            title="Éliminez les tâches inutiles"
+            description="Automatisez les processus à faible valeur ajoutée et concentrez vos équipes sur ce qui compte vraiment."
           />
           <GridItem
             area="md:[grid-area:1/7/2/13] xl:[grid-area:2/1/3/5]"
-            icon={<Settings className="h-4 w-4" />}
-            title="ROI immédiat"
-            description="Rentabilisez votre investissement dès le premier mois avec des résultats mesurables."
+            icon={<Zap className="h-4 w-4" />}
+            title="Prenez une longueur d'avance"
+            description="Anticipez la révolution IA et équipez-vous dès aujourd'hui d'automatisations qui feront la différence demain."
           />
           <GridItem
             area="md:[grid-area:2/1/3/7] xl:[grid-area:1/5/3/8]"
-            icon={<Lock className="h-4 w-4" />}
-            title="Intégration rapide"
-            description="Déployez vos automatisations en quelques jours, pas en plusieurs mois."
+            icon={<Shield className="h-4 w-4" />}
+            title="Sécurité sans compromis"
+            description="Vos données sont chiffrées, hébergées sur des serveurs sécurisés et jamais partagées. Chaque automatisation est conçue pour garantir confidentialité et conformité."
           />
           <GridItem
             area="md:[grid-area:2/7/3/13] xl:[grid-area:1/8/2/13]"
-            icon={<Sparkles className="h-4 w-4" />}
-            title="Épanouissement des équipes"
-            description="Mettez à profit vos qualités créatives et relationnelles, l'IA se charge des tâches répétitives."
+            icon={<TrendingUp className="h-4 w-4" />}
+            title="Boostez votre chiffre d'affaires"
+            description="Libérez vos talents des tâches répétitives : plus de temps pour créer de la valeur, moins de charges inutiles."
           />
           <GridItem
             area="md:[grid-area:3/1/4/13] xl:[grid-area:2/8/3/13]"
-            icon={<Search className="h-4 w-4" />}
-            title="Qualité constante"
-            description="Éliminez les erreurs humaines et garantissez une qualité irréprochable."
+            icon={<Users className="h-4 w-4" />}
+            title="Valorisez vos collaborateurs"
+            description="Offrez-leur un travail plus gratifiant : l'IA gère la routine, ils se consacrent à leur vrai potentiel humain."
           />
         </ul>
 
