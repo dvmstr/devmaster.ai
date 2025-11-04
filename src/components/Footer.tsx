@@ -135,7 +135,7 @@ export const Footer = () => {
               © 2025 Devmaster. Tous droits réservés.
             </p>
             <div className="flex gap-6 text-sm">
-              <a href="/mentions-legales" className="text-gray-500 hover:text-white transition-colors">Mentions légales</a>
+              <a href="/legal" className="text-gray-500 hover:text-white transition-colors">Mentions légales</a>
             </div>
           </div>
         </div>
