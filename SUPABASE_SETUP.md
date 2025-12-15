@@ -26,9 +26,9 @@ npm run seed
 ### 📁 Structure des fichiers
 
 - `src/lib/supabase.ts` - Client Supabase configuré
-- `src/lib/database.types.ts` - Types TypeScript générés
+- `src/types/database.ts` - Types TypeScript générés
 - `src/lib/cache.ts` - Système de cache optimisé
-- `src/hooks/useSupabaseData.ts` - Hooks React pour fetch les données
+- `src/hooks/` - Hooks React pour fetch les données
 - `scripts/seed-database.ts` - Script pour peupler la base de données
 
 ### 🚀 Optimisations implémentées
@@ -52,7 +52,7 @@ npm run seed
 ### Récupérer des données
 
 ```typescript
-import { useTestimonials, useFAQs, useSection } from '@/hooks/useSupabaseData';
+import { useTestimonials, useFAQs, useSection } from '@/hooks';
 
 function MyComponent() {
   const { data: testimonials, loading } = useTestimonials();

@@ -1,29 +1,30 @@
-import { NavigationSupabase } from "./components/NavigationSupabase";
-import { Hero } from "./components/Hero";
-import { Benefits } from "./components/Benefits";
-import { SolutionsOrbital } from "./components/SolutionsOrbital";
-import { Results } from "./components/Results";
-import { TestimonialsSupabase } from "./components/TestimonialsSupabase";
-import { ProcessTimeline } from "./components/ProcessTimeline";
-import { FAQSupabase } from "./components/FAQSupabase";
-import { CTAFinal } from "./components/CTAFinal";
-import { Footer } from "./components/Footer";
-import { SEOHead } from "./components/SEOHead";
+import { Navigation, Footer } from "@/components/layout";
+import { 
+  Hero, 
+  Benefits, 
+  Solutions, 
+  Results, 
+  Testimonials, 
+  Process, 
+  FAQ, 
+  CTA 
+} from "@/components/sections";
+import { SEOHead } from "@/components/common";
 
 function App() {
   return (
     <>
       <SEOHead pageSlug="home" />
       <main className="bg-black min-h-screen">
-        <NavigationSupabase />
+        <Navigation />
         <Hero />
         <Benefits />
-        <SolutionsOrbital />
+        <Solutions />
         <Results />
-        <TestimonialsSupabase />
-        <ProcessTimeline />
-        <FAQSupabase />
-        <CTAFinal />
+        <Testimonials />
+        <Process />
+        <FAQ />
+        <CTA />
         <Footer />
       </main>
     </>
