@@ -2,11 +2,12 @@ import { useState, useEffect } from 'react';
 import { supabase } from '@/lib/supabase';
 import { cache, CacheTTL } from '@/lib/cache';
 import type { Database } from '@/types/database';
+import type { Locale } from '@/contexts';
 
 type Tables = Database['public']['Tables'];
 
 /**
- * Hook générique pour récupérer les données Supabase avec cache
+ * Hook générique pour récupérer les données Supabase avec cache et support i18n
  */
 export function useSupabaseData<T extends keyof Tables>(
   table: T,
@@ -18,6 +19,7 @@ export function useSupabaseData<T extends keyof Tables>(
     cacheKey?: string;
     cacheTTL?: number;
     enabled?: boolean;
+    locale?: Locale;
   }
 ) {
   type RowType = Tables[T]['Row'];
@@ -26,7 +28,8 @@ export function useSupabaseData<T extends keyof Tables>(
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
 
-  const cacheKey = options?.cacheKey || `${table}_${JSON.stringify(options)}`;
+  const locale = options?.locale || 'en';
+  const cacheKey = options?.cacheKey || `${table}_${locale}_${JSON.stringify(options)}`;
   const cacheTTL = options?.cacheTTL ?? CacheTTL.STATIC_CONTENT;
   const enabled = options?.enabled ?? true;
 
@@ -40,7 +43,7 @@ export function useSupabaseData<T extends keyof Tables>(
       try {
         setLoading(true);
 
-        // Vérifier le cache d'abord
+        // Check cache first
         const cachedData = cache.get<RowType[]>(cacheKey);
         if (cachedData) {
           setData(cachedData);
@@ -48,26 +51,29 @@ export function useSupabaseData<T extends keyof Tables>(
           return;
         }
 
-        // Construire la requête
+        // Build query
         let query = supabase
           .from(table)
           .select(options?.select || '*');
 
-        // Appliquer les filtres
+        // Apply locale filter (all content tables have locale column)
+        query = query.eq('locale', locale);
+
+        // Apply additional filters
         if (options?.filter) {
           Object.entries(options.filter).forEach(([key, value]) => {
             query = query.eq(key, value);
           });
         }
 
-        // Appliquer le tri
+        // Apply ordering
         if (options?.orderBy) {
           query = query.order(options.orderBy.column, {
             ascending: options.orderBy.ascending ?? true,
           });
         }
 
-        // Appliquer la limite
+        // Apply limit
         if (options?.limit) {
           query = query.limit(options.limit);
         }
@@ -76,7 +82,7 @@ export function useSupabaseData<T extends keyof Tables>(
 
         if (fetchError) throw fetchError;
 
-        // Stocker dans le cache
+        // Store in cache
         cache.set(cacheKey, fetchedData, cacheTTL);
         
         setData(fetchedData as RowType[]);
@@ -90,7 +96,7 @@ export function useSupabaseData<T extends keyof Tables>(
     }
 
     fetchData();
-  }, [table, cacheKey, cacheTTL, enabled]);
+  }, [table, cacheKey, cacheTTL, enabled, locale]);
 
   const refetch = async () => {
     cache.invalidate(cacheKey);

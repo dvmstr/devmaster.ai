@@ -3,8 +3,40 @@ import RadialOrbitalTimeline from "@/components/ui/radial-orbital-timeline";
 import { LightSource } from "@/components/common";
 import { solutionsData } from "@/data";
 import { scrollToCTA } from "@/lib/scroll";
+import { useCurrentLocale } from "@/contexts";
+import { useMemo } from "react";
+
+// Localized content
+const solutionsContent = {
+  en: {
+    title: "Our Solutions",
+    subtitle: "Discover our ecosystem of intelligent automations",
+    cta: "Get my personalized audit",
+  },
+  fr: {
+    title: "Nos Solutions",
+    subtitle: "Découvrez notre écosystème d'automatisations intelligentes",
+    cta: "Obtenir mon audit personnalisé",
+  },
+  zh: {
+    title: "我们的解决方案",
+    subtitle: "探索我们的智能自动化生态系统",
+    cta: "获取我的个性化审计",
+  },
+};
 
 export const Solutions = () => {
+  const locale = useCurrentLocale();
+  
+  const content = useMemo(() => {
+    return solutionsContent[locale] || solutionsContent.en;
+  }, [locale]);
+
+  // Get localized solutions data
+  const localizedSolutions = useMemo(() => {
+    return solutionsData[locale] || solutionsData.en;
+  }, [locale]);
+
   return (
     <section id="solutions" className="relative min-h-screen flex items-center justify-center py-12 sm:py-16">
       <LightSource direction={0} color="cyan" intensity="medium" className="top-0 sm:hidden" />
@@ -15,21 +47,21 @@ export const Solutions = () => {
       <div className="relative z-10 w-full">
         <div className="text-center mb-6 sm:mb-8">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-3 sm:mb-4 px-4">
-            Nos Solutions
+            {content.title}
           </h2>
           <p className="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto px-6">
-            Découvrez notre écosystème d'automatisations intelligentes
+            {content.subtitle}
           </p>
         </div>
 
-        <RadialOrbitalTimeline timelineData={solutionsData} />
+        <RadialOrbitalTimeline timelineData={localizedSolutions} />
 
         <div className="flex justify-center mt-8 sm:mt-16 px-4 sm:px-6">
           <button
             onClick={scrollToCTA}
             className="btn-glass-filled group flex items-center gap-2 w-full sm:w-auto justify-center max-w-sm"
           >
-            Obtenir mon audit personnalisé
+            {content.cta}
             <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform duration-300" />
           </button>
         </div>

@@ -2,25 +2,26 @@ import { useState, useEffect } from 'react';
 import { supabase } from '@/lib/supabase';
 import { cache, CacheTTL } from '@/lib/cache';
 import type { Database } from '@/types/database';
+import type { Locale } from '@/contexts';
 
 type Tables = Database['public']['Tables'];
 
 /**
- * Hook pour récupérer les métadonnées de page (SEO)
+ * Hook pour récupérer les métadonnées de page (SEO) avec support i18n
  */
-export function usePageMeta(slug: string = 'home') {
+export function usePageMeta(slug: string = 'home', locale: Locale = 'en') {
   const [meta, setMeta] = useState<Tables['pages']['Row'] | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
 
-  const cacheKey = `page_meta_${slug}`;
+  const cacheKey = `page_meta_${slug}_${locale}`;
 
   useEffect(() => {
     async function fetchMeta() {
       try {
         setLoading(true);
 
-        // Vérifier le cache
+        // Check cache
         const cachedMeta = cache.get<Tables['pages']['Row']>(cacheKey);
         if (cachedMeta) {
           setMeta(cachedMeta);
@@ -32,6 +33,7 @@ export function usePageMeta(slug: string = 'home') {
           .from('pages')
           .select('*')
           .eq('slug', slug)
+          .eq('locale', locale)
           .eq('is_published', true)
           .single();
 
@@ -42,14 +44,14 @@ export function usePageMeta(slug: string = 'home') {
         setError(null);
       } catch (err) {
         setError(err instanceof Error ? err : new Error('Unknown error'));
-        console.error(`Error fetching page meta for ${slug}:`, err);
+        console.error(`Error fetching page meta for ${slug} (${locale}):`, err);
       } finally {
         setLoading(false);
       }
     }
 
     fetchMeta();
-  }, [slug, cacheKey]);
+  }, [slug, locale, cacheKey]);
 
   return { meta, loading, error };
 }

@@ -1,4 +1,4 @@
-# robots.txt for Automation IA
+# robots.txt for DevMaster - AI Automation Agency
 
 User-agent: *
 Allow: /
@@ -7,11 +7,14 @@ Allow: /
 # Disallow: /admin/
 # Disallow: /private/
 
-# Do not index legal pages
-Disallow: /mentions-legales
+# Do not index legal pages (all locales)
+Disallow: /legal
+Disallow: /en/legal
+Disallow: /fr/legal
+Disallow: /zh/legal
 
 # Sitemap location
-Sitemap: https://yourdomain.com/sitemap.xml
+Sitemap: https://devmaster.ai/sitemap.xml
 
 # Crawl delay (optional, remove if not needed)
 # Crawl-delay: 10

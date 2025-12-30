@@ -4,13 +4,22 @@ import { useTestimonials } from "@/hooks";
 import { useMemo } from "react";
 import { fallbackTestimonials, avatarMapping } from "@/data";
 import { scrollToCTA } from "@/lib/scroll";
+import { useCurrentLocale } from "@/contexts";
+
+// Localized CTA button text
+const ctaTexts = {
+  en: "Join them now",
+  fr: "Rejoignez-les maintenant",
+  zh: "立即加入他们",
+};
 
 export const Testimonials = () => {
+  const locale = useCurrentLocale();
   const { data: supabaseTestimonials, loading, error } = useTestimonials();
 
   const testimonials = useMemo(() => {
     if (loading || error || !supabaseTestimonials || supabaseTestimonials.length === 0) {
-      return fallbackTestimonials;
+      return fallbackTestimonials[locale] || fallbackTestimonials.en;
     }
 
     return supabaseTestimonials.map(testimonial => ({
@@ -19,11 +28,13 @@ export const Testimonials = () => {
       name: testimonial.name,
       role: testimonial.role,
     }));
-  }, [supabaseTestimonials, loading, error]);
+  }, [supabaseTestimonials, loading, error, locale]);
 
   const firstColumn = testimonials.slice(0, 3);
   const secondColumn = testimonials.slice(3, 6);
   const thirdColumn = testimonials.slice(6, 9);
+
+  const ctaText = ctaTexts[locale] || ctaTexts.en;
 
   return (
     <section id="testimonials" className="relative py-12 sm:py-16 overflow-hidden">
@@ -39,7 +50,7 @@ export const Testimonials = () => {
             onClick={scrollToCTA}
             className="btn-glass-filled group flex items-center gap-2 w-full sm:w-auto justify-center max-w-xs"
           >
-            Rejoignez-les maintenant
+            {ctaText}
             <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform duration-300" />
           </button>
         </div>

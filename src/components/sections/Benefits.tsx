@@ -3,6 +3,8 @@ import { GlowingEffect } from "@/components/ui/glowing-effect";
 import { Trash2, TrendingUp, Rocket, Users, Shield, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { scrollToCTA } from "@/lib/scroll";
+import { useCurrentLocale } from "@/contexts";
+import { useMemo } from "react";
 
 interface GridItemProps {
   area: string;
@@ -46,7 +48,121 @@ const GridItem = ({ area, icon, title, description }: GridItemProps) => {
   );
 };
 
+// Localized content
+const benefitsContent = {
+  en: {
+    sectionTitle: "Why DevMaster?",
+    sectionSubtitle: "Concrete results that transform the way you work",
+    cta: "Get started now",
+    benefits: [
+      {
+        icon: <Trash2 className="h-4 w-4" />,
+        title: "Eliminate unnecessary tasks",
+        description: "Automate low-value processes and focus your teams on what really matters.",
+      },
+      {
+        icon: <Rocket className="h-4 w-4" />,
+        title: "Stay ahead of the curve",
+        description: "Anticipate the AI revolution and equip yourself today with automations that will make a difference tomorrow.",
+      },
+      {
+        icon: <TrendingUp className="h-4 w-4" />,
+        title: "Boost your revenue",
+        description: "Free your talent from repetitive tasks: more time to create value, less unnecessary overhead.",
+      },
+      {
+        icon: <Users className="h-4 w-4" />,
+        title: "Empower your employees",
+        description: "Offer them more rewarding work: AI handles the routine, they focus on their true human potential.",
+      },
+      {
+        icon: <Shield className="h-4 w-4" />,
+        title: "Uncompromising security",
+        description: "Your data is encrypted, hosted on secure servers and never shared. Each automation is designed to guarantee confidentiality and compliance.",
+      },
+    ],
+  },
+  fr: {
+    sectionTitle: "Pourquoi DevMaster ?",
+    sectionSubtitle: "Des résultats concrets qui transforment votre façon de travailler",
+    cta: "Commencer maintenant",
+    benefits: [
+      {
+        icon: <Trash2 className="h-4 w-4" />,
+        title: "Éliminez les tâches inutiles",
+        description: "Automatisez les processus à faible valeur ajoutée et concentrez vos équipes sur ce qui compte vraiment.",
+      },
+      {
+        icon: <Rocket className="h-4 w-4" />,
+        title: "Prenez une longueur d'avance",
+        description: "Anticipez la révolution IA et équipez-vous dès aujourd'hui d'automatisations qui feront la différence demain.",
+      },
+      {
+        icon: <TrendingUp className="h-4 w-4" />,
+        title: "Boostez votre chiffre d'affaires",
+        description: "Libérez vos talents des tâches répétitives : plus de temps pour créer de la valeur, moins de charges inutiles.",
+      },
+      {
+        icon: <Users className="h-4 w-4" />,
+        title: "Valorisez vos collaborateurs",
+        description: "Offrez-leur un travail plus gratifiant : l'IA gère la routine, ils se consacrent à leur vrai potentiel humain.",
+      },
+      {
+        icon: <Shield className="h-4 w-4" />,
+        title: "Sécurité sans compromis",
+        description: "Vos données sont chiffrées, hébergées sur des serveurs sécurisés et jamais partagées. Chaque automatisation est conçue pour garantir confidentialité et conformité.",
+      },
+    ],
+  },
+  zh: {
+    sectionTitle: "为什么选择DevMaster？",
+    sectionSubtitle: "具体成果，改变您的工作方式",
+    cta: "立即开始",
+    benefits: [
+      {
+        icon: <Trash2 className="h-4 w-4" />,
+        title: "消除不必要的任务",
+        description: "自动化低价值流程，让您的团队专注于真正重要的事情。",
+      },
+      {
+        icon: <Rocket className="h-4 w-4" />,
+        title: "保持领先",
+        description: "预见AI革命，今天就配备能在明天产生差异的自动化工具。",
+      },
+      {
+        icon: <TrendingUp className="h-4 w-4" />,
+        title: "提升您的收入",
+        description: "将您的人才从重复性任务中解放出来：更多时间创造价值，减少不必要的开销。",
+      },
+      {
+        icon: <Users className="h-4 w-4" />,
+        title: "赋能您的员工",
+        description: "为他们提供更有价值的工作：AI处理日常事务，他们专注于发挥真正的人类潜力。",
+      },
+      {
+        icon: <Shield className="h-4 w-4" />,
+        title: "安全无妥协",
+        description: "您的数据经过加密，托管在安全服务器上，从不共享。每个自动化都旨在确保机密性和合规性。",
+      },
+    ],
+  },
+};
+
 export const Benefits = () => {
+  const locale = useCurrentLocale();
+  
+  const content = useMemo(() => {
+    return benefitsContent[locale] || benefitsContent.en;
+  }, [locale]);
+
+  const gridAreas = [
+    "md:[grid-area:1/1/2/7] xl:[grid-area:1/1/2/5]",
+    "md:[grid-area:1/7/2/13] xl:[grid-area:2/1/3/5]",
+    "md:[grid-area:2/1/3/7] xl:[grid-area:1/5/3/8]",
+    "md:[grid-area:2/7/3/13] xl:[grid-area:1/8/2/13]",
+    "md:[grid-area:3/1/4/13] xl:[grid-area:2/8/3/13]",
+  ];
+
   return (
     <section id="benefits" className="relative py-16 sm:py-24">
       <LightSource direction={180} color="cyan" intensity="high" className="!-top-96" />
@@ -54,44 +170,23 @@ export const Benefits = () => {
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-10 sm:mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-3 sm:mb-4 px-2">
-            Pourquoi DevMaster ?
+            {content.sectionTitle}
           </h2>
           <p className="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto px-2">
-            Des résultats concrets qui transforment votre façon de travailler
+            {content.sectionSubtitle}
           </p>
         </div>
 
         <ul className="grid grid-cols-1 grid-rows-none gap-4 md:grid-cols-12 md:grid-rows-3 lg:gap-4 xl:max-h-[34rem] xl:grid-rows-2">
-          <GridItem
-            area="md:[grid-area:1/1/2/7] xl:[grid-area:1/1/2/5]"
-            icon={<Trash2 className="h-4 w-4" />}
-            title="Éliminez les tâches inutiles"
-            description="Automatisez les processus à faible valeur ajoutée et concentrez vos équipes sur ce qui compte vraiment."
-          />
-          <GridItem
-            area="md:[grid-area:1/7/2/13] xl:[grid-area:2/1/3/5]"
-            icon={<Rocket className="h-4 w-4" />}
-            title="Prenez une longueur d'avance"
-            description="Anticipez la révolution IA et équipez-vous dès aujourd'hui d'automatisations qui feront la différence demain."
-          />
-          <GridItem
-            area="md:[grid-area:2/1/3/7] xl:[grid-area:1/5/3/8]"
-            icon={<TrendingUp className="h-4 w-4" />}
-            title="Boostez votre chiffre d'affaires"
-            description="Libérez vos talents des tâches répétitives : plus de temps pour créer de la valeur, moins de charges inutiles."
-          />
-          <GridItem
-            area="md:[grid-area:2/7/3/13] xl:[grid-area:1/8/2/13]"
-            icon={<Users className="h-4 w-4" />}
-            title="Valorisez vos collaborateurs"
-            description="Offrez-leur un travail plus gratifiant : l'IA gère la routine, ils se consacrent à leur vrai potentiel humain."
-          />
-          <GridItem
-            area="md:[grid-area:3/1/4/13] xl:[grid-area:2/8/3/13]"
-            icon={<Shield className="h-4 w-4" />}
-            title="Sécurité sans compromis"
-            description="Vos données sont chiffrées, hébergées sur des serveurs sécurisés et jamais partagées. Chaque automatisation est conçue pour garantir confidentialité et conformité."
-          />
+          {content.benefits.map((benefit, index) => (
+            <GridItem
+              key={index}
+              area={gridAreas[index]}
+              icon={benefit.icon}
+              title={benefit.title}
+              description={benefit.description}
+            />
+          ))}
         </ul>
 
         <div className="flex justify-center mt-8 sm:mt-12">
@@ -99,7 +194,7 @@ export const Benefits = () => {
             onClick={scrollToCTA}
             className="btn-glass-filled group flex items-center gap-2 w-full sm:w-auto justify-center max-w-xs"
           >
-            Commencer maintenant
+            {content.cta}
             <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform duration-300" />
           </button>
         </div>

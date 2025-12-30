@@ -3,22 +3,36 @@ import { useState, useEffect, useRef, useMemo } from "react";
 import { useNavigation } from "@/hooks";
 import { fallbackNavItems } from "@/data";
 import { scrollToSection } from "@/lib/scroll";
+import { LanguageSwitcher } from "@/components/common";
+import { useCurrentLocale } from "@/contexts";
 
 export const Navigation = () => {
   const [activeTab, setActiveTab] = useState("");
   const isScrollingRef = useRef(false);
+  const locale = useCurrentLocale();
   const { data: supabaseNavItems, loading, error } = useNavigation();
+
+  // Get localized CTA button text
+  const ctaText = useMemo(() => {
+    const texts = {
+      en: { full: 'Free Audit', short: 'Audit' },
+      fr: { full: 'Audit gratuit', short: 'Audit' },
+      zh: { full: '免费审计', short: '审计' },
+    };
+    return texts[locale] || texts.en;
+  }, [locale]);
 
   const navItems = useMemo(() => {
     if (loading || error || !supabaseNavItems || supabaseNavItems.length === 0) {
-      return fallbackNavItems;
+      // Return localized fallback
+      return fallbackNavItems[locale] || fallbackNavItems.en;
     }
 
     return supabaseNavItems.map(item => ({
       name: item.label,
       id: item.target_section,
     }));
-  }, [supabaseNavItems, loading, error]);
+  }, [supabaseNavItems, loading, error, locale]);
 
   const handleScrollToSection = (id: string) => {
     isScrollingRef.current = true;
@@ -111,16 +125,20 @@ export const Navigation = () => {
           })}
         </div>
 
-        <button
-          onClick={() => handleScrollToSection("cta-final")}
-          className="btn-glass-filled group flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm"
-        >
-          <span className="hidden sm:inline">Audit gratuit</span>
-          <span className="sm:hidden">Audit</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-0.5 transition-transform duration-300">
-            <path d="M5 12h14M12 5l7 7-7 7"/>
-          </svg>
-        </button>
+        <div className="flex items-center gap-2 sm:gap-3">
+          <LanguageSwitcher variant="minimal" showFlags={false} />
+          
+          <button
+            onClick={() => handleScrollToSection("cta-final")}
+            className="btn-glass-filled group flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm"
+          >
+            <span className="hidden sm:inline">{ctaText.full}</span>
+            <span className="sm:hidden">{ctaText.short}</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-0.5 transition-transform duration-300">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </button>
+        </div>
       </div>
     </nav>
   );

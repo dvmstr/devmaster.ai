@@ -6,6 +6,8 @@ export type Json =
   | { [key: string]: Json | undefined }
   | Json[]
 
+export type Locale = 'en' | 'fr' | 'zh';
+
 export interface Database {
   public: {
     Tables: {
@@ -13,6 +15,7 @@ export interface Database {
         Row: {
           id: string
           slug: string
+          locale: Locale
           title: string
           meta_description: string | null
           meta_keywords: string[] | null
@@ -29,6 +32,7 @@ export interface Database {
         Insert: {
           id?: string
           slug: string
+          locale?: Locale
           title: string
           meta_description?: string | null
           meta_keywords?: string[] | null
@@ -45,6 +49,7 @@ export interface Database {
         Update: {
           id?: string
           slug?: string
+          locale?: Locale
           title?: string
           meta_description?: string | null
           meta_keywords?: string[] | null
@@ -64,6 +69,7 @@ export interface Database {
           id: string
           page_id: string | null
           section_key: string
+          locale: Locale
           section_title: string | null
           section_subtitle: string | null
           content: Json
@@ -77,6 +83,7 @@ export interface Database {
           id?: string
           page_id?: string | null
           section_key: string
+          locale?: Locale
           section_title?: string | null
           section_subtitle?: string | null
           content?: Json
@@ -90,6 +97,7 @@ export interface Database {
           id?: string
           page_id?: string | null
           section_key?: string
+          locale?: Locale
           section_title?: string | null
           section_subtitle?: string | null
           content?: Json
@@ -103,6 +111,7 @@ export interface Database {
       testimonials: {
         Row: {
           id: string
+          locale: Locale
           name: string
           role: string
           company: string | null
@@ -117,6 +126,7 @@ export interface Database {
         }
         Insert: {
           id?: string
+          locale?: Locale
           name: string
           role: string
           company?: string | null
@@ -131,6 +141,7 @@ export interface Database {
         }
         Update: {
           id?: string
+          locale?: Locale
           name?: string
           role?: string
           company?: string | null
@@ -147,6 +158,7 @@ export interface Database {
       faqs: {
         Row: {
           id: string
+          locale: Locale
           question: string
           answer: string
           category: string | null
@@ -158,6 +170,7 @@ export interface Database {
         }
         Insert: {
           id?: string
+          locale?: Locale
           question: string
           answer: string
           category?: string | null
@@ -169,6 +182,7 @@ export interface Database {
         }
         Update: {
           id?: string
+          locale?: Locale
           question?: string
           answer?: string
           category?: string | null
@@ -182,6 +196,7 @@ export interface Database {
       navigation_items: {
         Row: {
           id: string
+          locale: Locale
           label: string
           target_section: string
           display_order: number | null
@@ -190,6 +205,7 @@ export interface Database {
         }
         Insert: {
           id?: string
+          locale?: Locale
           label: string
           target_section: string
           display_order?: number | null
@@ -198,6 +214,7 @@ export interface Database {
         }
         Update: {
           id?: string
+          locale?: Locale
           label?: string
           target_section?: string
           display_order?: number | null

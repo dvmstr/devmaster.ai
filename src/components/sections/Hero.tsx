@@ -1,8 +1,41 @@
 import { ArrowRight } from "lucide-react";
 import { LogoCarousel } from "@/components/common";
 import { scrollToCTA, scrollToSection } from "@/lib/scroll";
+import { useCurrentLocale } from "@/contexts";
+import { useMemo } from "react";
+
+// Localized content for Hero section
+const heroContent = {
+  en: {
+    badge: "Next-generation AI Automation",
+    title: "Transform your business with AI",
+    subtitle: "Not using Artificial Intelligence? Your company's processes are probably obsolete.",
+    cta: "Book my free audit",
+    secondary: "How it works",
+  },
+  fr: {
+    badge: "Automatisation IA de nouvelle génération",
+    title: "Transformez votre business avec l'IA",
+    subtitle: "Vous n'utilisez pas l'Intelligence Artificielle ? Les process de votre entreprise sont certainement obsolètes.",
+    cta: "Réserver mon audit gratuit",
+    secondary: "Comment ça marche",
+  },
+  zh: {
+    badge: "新一代AI自动化",
+    title: "用AI转型您的业务",
+    subtitle: "还没使用人工智能？您公司的流程可能已经过时。",
+    cta: "预约免费审计",
+    secondary: "了解更多",
+  },
+};
 
 export const Hero = () => {
+  const locale = useCurrentLocale();
+  
+  const content = useMemo(() => {
+    return heroContent[locale] || heroContent.en;
+  }, [locale]);
+
   const logos = [
     { name: "Google", id: 1 },
     { name: "Salesforce", id: 2 },
@@ -21,33 +54,33 @@ export const Hero = () => {
           <div className="relative inline-flex items-center gap-2 px-3 py-1.5 rounded-full overflow-hidden" role="banner">
             <div className="absolute inset-0 rounded-full border animate-border-color-flow"></div>
             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent animate-shimmer-slow"></div>
-            <span className="relative z-10 text-xs text-gray-300 font-light">Automatisation IA de nouvelle génération</span>
+            <span className="relative z-10 text-xs text-gray-300 font-light">{content.badge}</span>
           </div>
         </div>
 
         <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-medium text-white mb-4 sm:mb-5 leading-tight px-2">
-          Transformez votre business avec l'IA
+          {content.title}
         </h1>
 
         <p className="text-base sm:text-lg md:text-xl text-gray-400 mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed px-2">
-          Vous n'utilisez pas l'Intelligence Artificielle ? Les process de votre entreprise sont certainement obsolètes.
+          {content.subtitle}
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 px-4">
           <button
             onClick={scrollToCTA}
             className="btn-glass-filled group flex items-center gap-2 w-full sm:w-auto justify-center"
-            aria-label="Réserver mon audit gratuit d'automatisation IA"
+            aria-label={content.cta}
           >
-            Réserver mon audit gratuit
+            {content.cta}
             <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform duration-300" aria-hidden="true" />
           </button>
           <button
             onClick={() => scrollToSection("process")}
             className="btn-glass-outline w-full sm:w-auto justify-center"
-            aria-label="Découvrir comment fonctionne notre processus d'automatisation"
+            aria-label={content.secondary}
           >
-            Comment ça marche
+            {content.secondary}
           </button>
         </div>
       </div>

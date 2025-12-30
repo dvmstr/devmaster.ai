@@ -3,28 +3,39 @@ import { ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useFAQs } from "@/hooks";
 import { fallbackFAQs } from "@/data";
+import { useCurrentLocale } from "@/contexts";
+
+// Localized section titles
+const sectionTitles = {
+  en: "Frequently Asked Questions",
+  fr: "Questions fréquentes",
+  zh: "常见问题",
+};
 
 export const FAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const locale = useCurrentLocale();
   const { data: supabaseFAQs, loading, error } = useFAQs();
 
   const faqs = useMemo(() => {
     if (loading || error || !supabaseFAQs || supabaseFAQs.length === 0) {
-      return fallbackFAQs;
+      return fallbackFAQs[locale] || fallbackFAQs.en;
     }
 
     return supabaseFAQs.map(faq => ({
       question: faq.question,
       answer: faq.answer,
     }));
-  }, [supabaseFAQs, loading, error]);
+  }, [supabaseFAQs, loading, error, locale]);
+
+  const title = sectionTitles[locale] || sectionTitles.en;
 
   return (
     <section id="faq" className="relative py-16 sm:py-24">
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-8 sm:mb-12">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-3 sm:mb-4 px-2">
-            Questions fréquentes
+            {title}
           </h2>
         </div>
 

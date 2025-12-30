@@ -10,11 +10,14 @@ import {
   CTA 
 } from "@/components/sections";
 import { SEOHead } from "@/components/common";
+import { useCurrentLocale } from "@/contexts";
 
 function App() {
+  const locale = useCurrentLocale();
+
   return (
     <>
-      <SEOHead pageSlug="home" />
+      <SEOHead pageSlug="home" locale={locale} />
       <main className="bg-black min-h-screen">
         <Navigation />
         <Hero />

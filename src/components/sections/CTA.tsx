@@ -1,7 +1,37 @@
 import { LightSource } from "@/components/common";
 import { MessageCircle } from "lucide-react";
+import { useCurrentLocale } from "@/contexts";
+import { useMemo } from "react";
+
+// Localized content
+const ctaContent = {
+  en: {
+    title: "Ready to transform your business?",
+    subtitle: "Book your free 48h audit and discover how to save 20 hours per week",
+    whatsapp: "WhatsApp: +33 6 95 54 11 34",
+    disclaimer: "No credit card required • 100% free audit • Results in 48h",
+  },
+  fr: {
+    title: "Prêt à transformer votre business ?",
+    subtitle: "Réservez votre audit gratuit de 48h et découvrez comment gagner 20h par semaine",
+    whatsapp: "WhatsApp : +33 6 95 54 11 34",
+    disclaimer: "Aucune carte bancaire requise • Audit 100% gratuit • Résultats en 48h",
+  },
+  zh: {
+    title: "准备好转型您的业务了吗？",
+    subtitle: "预约您的48小时免费审计，了解如何每周节省20小时",
+    whatsapp: "WhatsApp: +33 6 95 54 11 34",
+    disclaimer: "无需信用卡 • 100%免费审计 • 48小时内出结果",
+  },
+};
 
 export const CTA = () => {
+  const locale = useCurrentLocale();
+  
+  const content = useMemo(() => {
+    return ctaContent[locale] || ctaContent.en;
+  }, [locale]);
+
   return (
     <section id="cta-final" className="relative py-20 sm:py-32">
       <LightSource direction={180} color="cyan" intensity="high" />
@@ -9,11 +39,11 @@ export const CTA = () => {
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6">
         <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/20 rounded-2xl p-6 sm:p-10 md:p-12 text-center">
           <h2 className="text-2xl sm:text-3xl md:text-5xl font-medium text-white mb-3 sm:mb-4 px-2">
-            Prêt à transformer votre business ?
+            {content.title}
           </h2>
 
           <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-8 sm:mb-10 max-w-2xl mx-auto px-2">
-            Réservez votre audit gratuit de 48h et découvrez comment gagner 20h par semaine
+            {content.subtitle}
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-5 sm:mb-6">
@@ -22,15 +52,15 @@ export const CTA = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="btn-glass-filled group flex items-center gap-2 w-full sm:w-auto justify-center"
-              aria-label="Contacter sur WhatsApp"
+              aria-label="Contact on WhatsApp"
             >
               <MessageCircle size={16} aria-hidden="true" />
-              <span className="text-sm sm:text-base">WhatsApp : +33 6 95 54 11 34</span>
+              <span className="text-sm sm:text-base">{content.whatsapp}</span>
             </a>
           </div>
 
           <p className="text-gray-400 text-[11px] sm:text-xs px-2">
-            Aucune carte bancaire requise • Audit 100% gratuit • Résultats en 48h
+            {content.disclaimer}
           </p>
         </div>
       </div>
