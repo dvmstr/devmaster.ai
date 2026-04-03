@@ -1,4 +1,4 @@
-# robots.txt for DevMaster - AI Automation Agency
+# robots.txt for Devmaster - AI Automation Agency
 
 User-agent: *
 Allow: /

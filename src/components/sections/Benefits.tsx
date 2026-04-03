@@ -56,7 +56,7 @@ const defaultIcons = [Trash2, Rocket, TrendingUp, Users, Shield];
 // Fallback content (text only, icons resolved at render)
 const benefitsFallback = {
   en: {
-    sectionTitle: "Why DevMaster?",
+    sectionTitle: "Why Devmaster?",
     sectionSubtitle: "Concrete results that transform the way you work",
     cta: "Get started now",
     items: [
@@ -68,7 +68,7 @@ const benefitsFallback = {
     ],
   },
   fr: {
-    sectionTitle: "Pourquoi DevMaster ?",
+    sectionTitle: "Pourquoi Devmaster ?",
     sectionSubtitle: "Des résultats concrets qui transforment votre façon de travailler",
     cta: "Commencer maintenant",
     items: [
@@ -80,7 +80,7 @@ const benefitsFallback = {
     ],
   },
   zh: {
-    sectionTitle: "为什么选择DevMaster？",
+    sectionTitle: "为什么选择Devmaster？",
     sectionSubtitle: "具体成果，改变您的工作方式",
     cta: "立即开始",
     items: [

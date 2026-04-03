@@ -21,10 +21,10 @@ async function seedDatabase() {
       .from('pages')
       .upsert({
         slug: 'home',
-        title: 'DevMaster - Automatisation IA pour votre Business',
+        title: 'Devmaster - Automatisation IA pour votre Business',
         meta_description: 'Transformez votre business avec l\'IA. Automatisez vos processus, gagnez 20h par semaine et boostez votre productivité de 300%. Audit gratuit en 48h.',
         meta_keywords: ['automatisation IA', 'intelligence artificielle', 'n8n', 'workflow automation', 'chatbot IA', 'productivité', 'business automation'],
-        og_title: 'DevMaster - Automatisation IA pour votre Business',
+        og_title: 'Devmaster - Automatisation IA pour votre Business',
         og_description: 'Transformez votre business avec l\'IA. Automatisez vos processus, gagnez 20h par semaine et boostez votre productivité de 300%.',
         og_image: 'https://tfjhswxfjkdkigkdtmqj.supabase.co/storage/v1/object/public/images/og-image.jpg',
         twitter_card: 'summary_large_image',
@@ -32,7 +32,7 @@ async function seedDatabase() {
         structured_data: {
           '@context': 'https://schema.org',
           '@type': 'Organization',
-          name: 'DevMaster',
+          name: 'Devmaster',
           description: 'Automatisation IA pour transformer votre business',
           url: 'https://devmaster.ai',
           logo: 'https://devmaster.ai/Logo.png',
@@ -73,7 +73,7 @@ async function seedDatabase() {
       {
         page_id: homePage.id,
         section_key: 'benefits',
-        section_title: 'Pourquoi DevMaster ?',
+        section_title: 'Pourquoi Devmaster ?',
         section_subtitle: 'Des résultats concrets qui transforment votre façon de travailler',
         content: {
           items: [

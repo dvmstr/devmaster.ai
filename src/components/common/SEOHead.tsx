@@ -104,7 +104,7 @@ export const SEOHead = ({ pageSlug = 'home', locale = 'en', noIndex = false }: S
     setMetaTag('og:image', meta.og_image, true);
     setMetaTag('og:url', canonicalUrl, true);
     setMetaTag('og:type', 'website', true);
-    setMetaTag('og:site_name', 'DevMaster', true);
+    setMetaTag('og:site_name', 'Devmaster', true);
     setMetaTag('og:locale', localeConfig.htmlLang.replace('-', '_'), true);
 
     // Add alternate og:locale for other languages
