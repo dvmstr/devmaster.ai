@@ -10,15 +10,15 @@ interface TimelineItem {
   icon: React.ElementType;
   relatedIds: number[];
   status: "completed" | "in-progress" | "pending";
-  energy: number;
+  impactStat: string;
 }
 
 type SupportedLocale = 'en' | 'fr' | 'zh';
 
-const timelineLabels: Record<SupportedLocale, { performance: string; learnMore: string }> = {
-  en: { performance: "Performance", learnMore: "Learn more" },
-  fr: { performance: "Performance", learnMore: "Aller plus loin" },
-  zh: { performance: "性能", learnMore: "了解更多" },
+const timelineLabels: Record<SupportedLocale, { combineWith: string; learnMore: string }> = {
+  en: { combineWith: "Works great with", learnMore: "Learn more" },
+  fr: { combineWith: "Se combine avec", learnMore: "Aller plus loin" },
+  zh: { combineWith: "最佳搭配", learnMore: "了解更多" },
 };
 
 interface RadialOrbitalTimelineProps {
@@ -184,6 +184,13 @@ export default function RadialOrbitalTimeline({
   };
 
   return (
+    <>
+    <style>{`
+      @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(8px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+    `}</style>
     <div
       className="w-full h-screen flex flex-col items-center justify-center bg-transparent overflow-hidden"
       ref={containerRef}
@@ -255,10 +262,10 @@ export default function RadialOrbitalTimeline({
                         ? "rgba(6, 182, 212, 0.3) 0%, rgba(6, 182, 212, 0) 70%"
                         : "rgba(6, 182, 212, 0.15) 0%, rgba(6, 182, 212, 0) 70%"
                     })`,
-                    width: `${item.energy * 0.5 + 40}px`,
-                    height: `${item.energy * 0.5 + 40}px`,
-                    left: `-${(item.energy * 0.5 + 40 - 40) / 2}px`,
-                    top: `-${(item.energy * 0.5 + 40 - 40) / 2}px`,
+                    width: '80px',
+                    height: '80px',
+                    left: '-20px',
+                    top: '-20px',
                   }}
                 ></div>
 
@@ -333,18 +340,14 @@ export default function RadialOrbitalTimeline({
                       </p>
 
                       <div className="mt-5 pt-4 border-t border-white/10">
-                        <div className="flex justify-between items-center text-xs mb-2">
-                          <span className="flex items-center gap-1.5 text-white/60 font-light">
-                            <Zap size={12} className="text-cyan-400/70" />
-                            {labels.performance}
+                        <div className="flex items-center gap-2.5">
+                          <Zap size={16} className="text-cyan-400 flex-shrink-0" />
+                          <span
+                            className="text-base sm:text-lg font-semibold bg-gradient-to-r from-cyan-300 to-teal-300 bg-clip-text text-transparent"
+                            style={{ animation: 'fadeInUp 0.5s ease-out 0.2s both' }}
+                          >
+                            {item.impactStat}
                           </span>
-                          <span className="font-light text-white/80">{item.energy}%</span>
-                        </div>
-                        <div className="w-full h-1.5 bg-white/5 rounded-full overflow-hidden">
-                          <div
-                            className="h-full bg-gradient-to-r from-cyan-500 via-cyan-400 to-teal-400 rounded-full transition-all duration-500"
-                            style={{ width: `${item.energy}%` }}
-                          ></div>
                         </div>
                       </div>
 
@@ -352,7 +355,7 @@ export default function RadialOrbitalTimeline({
                         <div className="mt-5 pt-4 border-t border-white/10">
                           <h4 className="text-[11px] uppercase tracking-[0.15em] font-light text-white/50 mb-3 flex items-center gap-1.5">
                             <Link size={11} className="text-cyan-400/60" />
-                            {labels.learnMore}
+                            {labels.combineWith}
                           </h4>
                           <div className="flex flex-wrap gap-x-4 gap-y-2">
                             {item.relatedIds.map((relatedId) => {
@@ -384,5 +387,6 @@ export default function RadialOrbitalTimeline({
         </div>
       </div>
     </div>
+    </>
   );
 }

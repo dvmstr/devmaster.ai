@@ -11,7 +11,7 @@ export interface SolutionItem {
   icon: LucideIcon;
   relatedIds: number[];
   status: "completed" | "in-progress" | "pending";
-  energy: number;
+  impactStat: string;
 }
 
 // Localized solutions data
@@ -26,7 +26,7 @@ export const solutionsData: Record<Locale, SolutionItem[]> = {
       icon: Mail,
       relatedIds: [2, 4],
       status: "completed",
-      energy: 95,
+      impactStat: "x3 conversions",
     },
     {
       id: 2,
@@ -35,9 +35,9 @@ export const solutionsData: Record<Locale, SolutionItem[]> = {
       content: "Automated generation, intelligent enrichment and precise scoring of your prospects.",
       category: "Sales",
       icon: Users,
-      relatedIds: [1, 3, 4],
+      relatedIds: [1, 4],
       status: "completed",
-      energy: 90,
+      impactStat: "+250% leads",
     },
     {
       id: 3,
@@ -48,7 +48,7 @@ export const solutionsData: Record<Locale, SolutionItem[]> = {
       icon: MessageCircle,
       relatedIds: [2, 4],
       status: "completed",
-      energy: 85,
+      impactStat: "Response in <2min",
     },
     {
       id: 4,
@@ -57,9 +57,9 @@ export const solutionsData: Record<Locale, SolutionItem[]> = {
       content: "Multi-platform synchronization, automatic updates and intelligent reminders.",
       category: "Management",
       icon: Database,
-      relatedIds: [1, 2, 3, 7],
+      relatedIds: [1, 2],
       status: "completed",
-      energy: 80,
+      impactStat: "0 missed follow-ups",
     },
     {
       id: 5,
@@ -68,9 +68,9 @@ export const solutionsData: Record<Locale, SolutionItem[]> = {
       content: "Automated posting, performance analysis and optimized engagement across all your channels.",
       category: "Marketing",
       icon: Share2,
-      relatedIds: [7, 8],
+      relatedIds: [7, 2],
       status: "completed",
-      energy: 75,
+      impactStat: "+200% engagement",
     },
     {
       id: 6,
@@ -81,7 +81,7 @@ export const solutionsData: Record<Locale, SolutionItem[]> = {
       icon: FileText,
       relatedIds: [4, 7],
       status: "completed",
-      energy: 70,
+      impactStat: "12h saved/week",
     },
     {
       id: 7,
@@ -90,9 +90,9 @@ export const solutionsData: Record<Locale, SolutionItem[]> = {
       content: "Real-time dashboards, personalized alerts and actionable insights to drive your business.",
       category: "Analytics",
       icon: BarChart3,
-      relatedIds: [4, 5, 6, 8],
+      relatedIds: [4, 6],
       status: "completed",
-      energy: 85,
+      impactStat: "Real-time",
     },
     {
       id: 8,
@@ -101,9 +101,9 @@ export const solutionsData: Record<Locale, SolutionItem[]> = {
       content: "Automated sourcing, intelligent candidate qualification and optimized recruitment management.",
       category: "HR",
       icon: Users,
-      relatedIds: [1, 2, 3, 4, 5, 6, 7],
+      relatedIds: [1, 2],
       status: "completed",
-      energy: 100,
+      impactStat: "-60% hiring time",
     },
   ],
   fr: [
@@ -116,7 +116,7 @@ export const solutionsData: Record<Locale, SolutionItem[]> = {
       icon: Mail,
       relatedIds: [2, 4],
       status: "completed",
-      energy: 95,
+      impactStat: "x3 conversions",
     },
     {
       id: 2,
@@ -125,9 +125,9 @@ export const solutionsData: Record<Locale, SolutionItem[]> = {
       content: "Génération automatisée, enrichissement intelligent et scoring précis de vos prospects.",
       category: "Sales",
       icon: Users,
-      relatedIds: [1, 3, 4],
+      relatedIds: [1, 4],
       status: "completed",
-      energy: 90,
+      impactStat: "+250% de leads",
     },
     {
       id: 3,
@@ -138,7 +138,7 @@ export const solutionsData: Record<Locale, SolutionItem[]> = {
       icon: MessageCircle,
       relatedIds: [2, 4],
       status: "completed",
-      energy: 85,
+      impactStat: "Réponse en <2min",
     },
     {
       id: 4,
@@ -147,9 +147,9 @@ export const solutionsData: Record<Locale, SolutionItem[]> = {
       content: "Synchronisation multi-plateforme, mise à jour automatique et relances intelligentes.",
       category: "Management",
       icon: Database,
-      relatedIds: [1, 2, 3, 7],
+      relatedIds: [1, 2],
       status: "completed",
-      energy: 80,
+      impactStat: "0 relance oubliée",
     },
     {
       id: 5,
@@ -158,9 +158,9 @@ export const solutionsData: Record<Locale, SolutionItem[]> = {
       content: "Publication automatisée, analyse des performances et engagement optimisé sur tous vos canaux.",
       category: "Marketing",
       icon: Share2,
-      relatedIds: [7, 8],
+      relatedIds: [7, 2],
       status: "completed",
-      energy: 75,
+      impactStat: "+200% engagement",
     },
     {
       id: 6,
@@ -171,7 +171,7 @@ export const solutionsData: Record<Locale, SolutionItem[]> = {
       icon: FileText,
       relatedIds: [4, 7],
       status: "completed",
-      energy: 70,
+      impactStat: "12h gagnées/sem",
     },
     {
       id: 7,
@@ -180,9 +180,9 @@ export const solutionsData: Record<Locale, SolutionItem[]> = {
       content: "Tableaux de bord en temps réel, alertes personnalisées et insights actionnables pour piloter votre activité.",
       category: "Analytics",
       icon: BarChart3,
-      relatedIds: [4, 5, 6, 8],
+      relatedIds: [4, 6],
       status: "completed",
-      energy: 85,
+      impactStat: "Temps réel",
     },
     {
       id: 8,
@@ -191,9 +191,9 @@ export const solutionsData: Record<Locale, SolutionItem[]> = {
       content: "Sourcing automatisé, qualification intelligente des candidats et gestion optimisée de vos recrutements.",
       category: "HR",
       icon: Users,
-      relatedIds: [1, 2, 3, 4, 5, 6, 7],
+      relatedIds: [1, 2],
       status: "completed",
-      energy: 100,
+      impactStat: "-60% temps de recrutement",
     },
   ],
   zh: [
@@ -206,7 +206,7 @@ export const solutionsData: Record<Locale, SolutionItem[]> = {
       icon: Mail,
       relatedIds: [2, 4],
       status: "completed",
-      energy: 95,
+      impactStat: "转化率x3",
     },
     {
       id: 2,
@@ -215,9 +215,9 @@ export const solutionsData: Record<Locale, SolutionItem[]> = {
       content: "自动化生成、智能丰富和精确评分您的潜在客户。",
       category: "Sales",
       icon: Users,
-      relatedIds: [1, 3, 4],
+      relatedIds: [1, 4],
       status: "completed",
-      energy: 90,
+      impactStat: "+250%潜在客户",
     },
     {
       id: 3,
@@ -228,7 +228,7 @@ export const solutionsData: Record<Locale, SolutionItem[]> = {
       icon: MessageCircle,
       relatedIds: [2, 4],
       status: "completed",
-      energy: 85,
+      impactStat: "响应<2分钟",
     },
     {
       id: 4,
@@ -237,9 +237,9 @@ export const solutionsData: Record<Locale, SolutionItem[]> = {
       content: "多平台同步、自动更新和智能提醒。",
       category: "Management",
       icon: Database,
-      relatedIds: [1, 2, 3, 7],
+      relatedIds: [1, 2],
       status: "completed",
-      energy: 80,
+      impactStat: "0遗漏跟进",
     },
     {
       id: 5,
@@ -248,9 +248,9 @@ export const solutionsData: Record<Locale, SolutionItem[]> = {
       content: "自动发布、绩效分析和在所有渠道优化的互动。",
       category: "Marketing",
       icon: Share2,
-      relatedIds: [7, 8],
+      relatedIds: [7, 2],
       status: "completed",
-      energy: 75,
+      impactStat: "+200%互动",
     },
     {
       id: 6,
@@ -261,7 +261,7 @@ export const solutionsData: Record<Locale, SolutionItem[]> = {
       icon: FileText,
       relatedIds: [4, 7],
       status: "completed",
-      energy: 70,
+      impactStat: "每周节省12小时",
     },
     {
       id: 7,
@@ -270,9 +270,9 @@ export const solutionsData: Record<Locale, SolutionItem[]> = {
       content: "实时仪表板、个性化警报和可操作的洞察，驱动您的业务。",
       category: "Analytics",
       icon: BarChart3,
-      relatedIds: [4, 5, 6, 8],
+      relatedIds: [4, 6],
       status: "completed",
-      energy: 85,
+      impactStat: "实时",
     },
     {
       id: 8,
@@ -281,9 +281,9 @@ export const solutionsData: Record<Locale, SolutionItem[]> = {
       content: "自动化招聘、智能候选人资格认定和优化的招聘管理。",
       category: "HR",
       icon: Users,
-      relatedIds: [1, 2, 3, 4, 5, 6, 7],
+      relatedIds: [1, 2],
       status: "completed",
-      energy: 100,
+      impactStat: "招聘时间-60%",
     },
   ],
 };
