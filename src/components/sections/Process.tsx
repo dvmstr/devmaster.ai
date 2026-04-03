@@ -2,148 +2,52 @@ import { Timeline } from "@/components/ui/timeline";
 import { Search, Lightbulb, Rocket } from "lucide-react";
 import { useCurrentLocale } from "@/contexts";
 import { useMemo } from "react";
+import { useSectionContent } from "@/hooks";
 
-// Localized content for process steps
-const processContent = {
+// Fallback content
+const processFallback = {
   en: {
     steps: [
-      {
-        title: "01",
-        badge: "48h",
-        heading: "Free Analysis",
-        description: "Complete audit of your processes and identification of automation opportunities.",
-        boxTitle: "What's included:",
-        items: [
-          "Detailed analysis of your current processes",
-          "Identification of repetitive tasks",
-          "Estimation of time saved through automation",
-          "Personalized opportunities report",
-        ],
-      },
-      {
-        title: "02",
-        badge: "7 days",
-        heading: "Custom Plan",
-        description: "Design of an automation strategy tailored to your needs and objectives.",
-        boxTitle: "Our approach:",
-        items: [
-          "Custom technical architecture",
-          "Priority-based deployment roadmap",
-          "Detailed budget and projected ROI",
-          "Validation with your team",
-        ],
-      },
-      {
-        title: "03",
-        badge: "Continuous",
-        heading: "Deployment & Optimization",
-        description: "Rapid implementation and continuous improvement of your automations.",
-        boxTitle: "Production launch:",
-        items: [
-          "Development and integration of automations",
-          "Training for your teams",
-          "Dedicated technical support",
-          "Permanent monitoring and optimization",
-        ],
-      },
+      { title: "01", badge: "48h", heading: "Free Analysis", description: "Complete audit of your processes and identification of automation opportunities.", boxTitle: "What's included:", items: ["Detailed analysis of your current processes", "Identification of repetitive tasks", "Estimation of time saved through automation", "Personalized opportunities report"] },
+      { title: "02", badge: "7 days", heading: "Custom Plan", description: "Design of an automation strategy tailored to your needs and objectives.", boxTitle: "Our approach:", items: ["Custom technical architecture", "Priority-based deployment roadmap", "Detailed budget and projected ROI", "Validation with your team"] },
+      { title: "03", badge: "Continuous", heading: "Deployment & Optimization", description: "Rapid implementation and continuous improvement of your automations.", boxTitle: "Production launch:", items: ["Development and integration of automations", "Training for your teams", "Dedicated technical support", "Permanent monitoring and optimization"] },
     ],
   },
   fr: {
     steps: [
-      {
-        title: "01",
-        badge: "48h",
-        heading: "Analyse gratuite",
-        description: "Audit complet de vos processus et identification des opportunités d'automatisation.",
-        boxTitle: "Ce qui est inclus :",
-        items: [
-          "Analyse détaillée de vos processus actuels",
-          "Identification des tâches répétitives",
-          "Estimation du temps gagné par automatisation",
-          "Rapport d'opportunités personnalisé",
-        ],
-      },
-      {
-        title: "02",
-        badge: "7 jours",
-        heading: "Plan sur mesure",
-        description: "Conception d'une stratégie d'automatisation adaptée à vos besoins et objectifs.",
-        boxTitle: "Notre approche :",
-        items: [
-          "Architecture technique personnalisée",
-          "Roadmap de déploiement par priorités",
-          "Budget et ROI prévisionnel détaillé",
-          "Validation avec votre équipe",
-        ],
-      },
-      {
-        title: "03",
-        badge: "Continue",
-        heading: "Déploiement & optimisation",
-        description: "Mise en place rapide et amélioration continue de vos automatisations.",
-        boxTitle: "Mise en production :",
-        items: [
-          "Développement et intégration des automatisations",
-          "Formation de vos équipes",
-          "Support technique dédié",
-          "Monitoring et optimisation permanente",
-        ],
-      },
+      { title: "01", badge: "48h", heading: "Analyse gratuite", description: "Audit complet de vos processus et identification des opportunités d'automatisation.", boxTitle: "Ce qui est inclus :", items: ["Analyse détaillée de vos processus actuels", "Identification des tâches répétitives", "Estimation du temps gagné par automatisation", "Rapport d'opportunités personnalisé"] },
+      { title: "02", badge: "7 jours", heading: "Plan sur mesure", description: "Conception d'une stratégie d'automatisation adaptée à vos besoins et objectifs.", boxTitle: "Notre approche :", items: ["Architecture technique personnalisée", "Roadmap de déploiement par priorités", "Budget et ROI prévisionnel détaillé", "Validation avec votre équipe"] },
+      { title: "03", badge: "Continue", heading: "Déploiement & optimisation", description: "Mise en place rapide et amélioration continue de vos automatisations.", boxTitle: "Mise en production :", items: ["Développement et intégration des automatisations", "Formation de vos équipes", "Support technique dédié", "Monitoring et optimisation permanente"] },
     ],
   },
   zh: {
     steps: [
-      {
-        title: "01",
-        badge: "48小时",
-        heading: "免费分析",
-        description: "对您的流程进行全面审计，识别自动化机会。",
-        boxTitle: "包含内容：",
-        items: [
-          "详细分析您当前的流程",
-          "识别重复性任务",
-          "估算通过自动化节省的时间",
-          "个性化机会报告",
-        ],
-      },
-      {
-        title: "02",
-        badge: "7天",
-        heading: "定制方案",
-        description: "设计适合您需求和目标的自动化策略。",
-        boxTitle: "我们的方法：",
-        items: [
-          "定制技术架构",
-          "基于优先级的部署路线图",
-          "详细的预算和预计投资回报率",
-          "与您的团队验证",
-        ],
-      },
-      {
-        title: "03",
-        badge: "持续",
-        heading: "部署与优化",
-        description: "快速实施和持续改进您的自动化。",
-        boxTitle: "生产上线：",
-        items: [
-          "自动化的开发和集成",
-          "为您的团队培训",
-          "专属技术支持",
-          "永久监控和优化",
-        ],
-      },
+      { title: "01", badge: "48小时", heading: "免费分析", description: "对您的流程进行全面审计，识别自动化机会。", boxTitle: "包含内容：", items: ["详细分析您当前的流程", "识别重复性任务", "估算通过自动化节省的时间", "个性化机会报告"] },
+      { title: "02", badge: "7天", heading: "定制方案", description: "设计适合您需求和目标的自动化策略。", boxTitle: "我们的方法：", items: ["定制技术架构", "基于优先级的部署路线图", "详细的预算和预计投资回报率", "与您的团队验证"] },
+      { title: "03", badge: "持续", heading: "部署与优化", description: "快速实施和持续改进您的自动化。", boxTitle: "生产上线：", items: ["自动化的开发和集成", "为您的团队培训", "专属技术支持", "永久监控和优化"] },
     ],
   },
 };
+
+interface ProcessStep {
+  title: string;
+  badge: string;
+  heading: string;
+  description: string;
+  boxTitle: string;
+  items: string[];
+}
+
+interface ProcessContent {
+  steps: ProcessStep[];
+}
 
 const icons = [Search, Lightbulb, Rocket];
 
 export const Process = () => {
   const locale = useCurrentLocale();
-  
-  const content = useMemo(() => {
-    return processContent[locale] || processContent.en;
-  }, [locale]);
+  const fallback = useMemo(() => processFallback[locale] || processFallback.en, [locale]);
+  const { content } = useSectionContent<ProcessContent>('process', fallback);
 
   const data = content.steps.map((step, index) => {
     const Icon = icons[index];
@@ -186,7 +90,7 @@ export const Process = () => {
 
   return (
     <section id="process" className="relative">
-      <Timeline data={data} />
+      <Timeline data={data} locale={locale} />
     </section>
   );
 };

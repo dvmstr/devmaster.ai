@@ -1,10 +1,25 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo, useCallback } from 'react';
 import { supabase } from '@/lib/supabase';
 import { cache, CacheTTL } from '@/lib/cache';
 import type { Database } from '@/types/database';
 import type { Locale } from '@/contexts';
 
 type Tables = Database['public']['Tables'];
+
+/**
+ * Build a stable, deterministic cache key from options
+ */
+function buildCacheKey(table: string, locale: string, options?: { select?: string; filter?: Record<string, any>; orderBy?: { column: string; ascending?: boolean }; limit?: number }) {
+  const parts = [table, locale];
+  if (options?.select) parts.push(`s:${options.select}`);
+  if (options?.filter) {
+    const sortedFilter = Object.keys(options.filter).sort().map(k => `${k}=${options.filter![k]}`).join(',');
+    parts.push(`f:${sortedFilter}`);
+  }
+  if (options?.orderBy) parts.push(`o:${options.orderBy.column}:${options.orderBy.ascending ?? true}`);
+  if (options?.limit) parts.push(`l:${options.limit}`);
+  return parts.join('_');
+}
 
 /**
  * Hook générique pour récupérer les données Supabase avec cache et support i18n
@@ -23,21 +38,29 @@ export function useSupabaseData<T extends keyof Tables>(
   }
 ) {
   type RowType = Tables[T]['Row'];
-  
+
   const [data, setData] = useState<RowType[] | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
 
   const locale = options?.locale || 'en';
-  const cacheKey = options?.cacheKey || `${table}_${locale}_${JSON.stringify(options)}`;
   const cacheTTL = options?.cacheTTL ?? CacheTTL.STATIC_CONTENT;
   const enabled = options?.enabled ?? true;
+
+  const cacheKey = useMemo(
+    () => options?.cacheKey || buildCacheKey(table as string, locale, options),
+    [table, locale, options?.cacheKey, options?.select, options?.limit,
+     // Stable serialization for filter and orderBy
+     JSON.stringify(options?.filter), JSON.stringify(options?.orderBy)]
+  );
 
   useEffect(() => {
     if (!enabled) {
       setLoading(false);
       return;
     }
+
+    let cancelled = false;
 
     async function fetchData() {
       try {
@@ -46,8 +69,10 @@ export function useSupabaseData<T extends keyof Tables>(
         // Check cache first
         const cachedData = cache.get<RowType[]>(cacheKey);
         if (cachedData) {
-          setData(cachedData);
-          setLoading(false);
+          if (!cancelled) {
+            setData(cachedData);
+            setLoading(false);
+          }
           return;
         }
 
@@ -81,28 +106,32 @@ export function useSupabaseData<T extends keyof Tables>(
         const { data: fetchedData, error: fetchError } = await query;
 
         if (fetchError) throw fetchError;
+        if (cancelled) return;
 
         // Store in cache
         cache.set(cacheKey, fetchedData, cacheTTL);
-        
+
         setData(fetchedData as RowType[]);
         setError(null);
       } catch (err) {
+        if (cancelled) return;
         setError(err instanceof Error ? err : new Error('Unknown error'));
         console.error(`Error fetching ${table}:`, err);
       } finally {
-        setLoading(false);
+        if (!cancelled) setLoading(false);
       }
     }
 
     fetchData();
+    return () => { cancelled = true; };
   }, [table, cacheKey, cacheTTL, enabled, locale]);
 
-  const refetch = async () => {
+  const refetch = useCallback(() => {
     cache.invalidate(cacheKey);
-    setLoading(true);
     setData(null);
-  };
+    setError(null);
+    setLoading(true);
+  }, [cacheKey]);
 
   return { data, loading, error, refetch };
 }

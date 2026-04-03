@@ -15,9 +15,10 @@ export function useSection(sectionKey: string, pageSlug: string = 'home') {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
 
-  const cacheKey = `section_${pageSlug}_${sectionKey}_${locale}`;
-
   useEffect(() => {
+    let cancelled = false;
+    const cacheKey = `section_${pageSlug}_${sectionKey}_${locale}`;
+
     async function fetchSection() {
       try {
         setLoading(true);
@@ -25,8 +26,10 @@ export function useSection(sectionKey: string, pageSlug: string = 'home') {
         // Check cache
         const cachedSection = cache.get<Tables['sections']['Row']>(cacheKey);
         if (cachedSection) {
-          setSection(cachedSection);
-          setLoading(false);
+          if (!cancelled) {
+            setSection(cachedSection);
+            setLoading(false);
+          }
           return;
         }
 
@@ -54,20 +57,23 @@ export function useSection(sectionKey: string, pageSlug: string = 'home') {
           .single();
 
         if (sectionError) throw sectionError;
+        if (cancelled) return;
 
         cache.set(cacheKey, sectionData, CacheTTL.SECTIONS);
         setSection(sectionData);
         setError(null);
       } catch (err) {
+        if (cancelled) return;
         setError(err instanceof Error ? err : new Error('Unknown error'));
         console.error(`Error fetching section ${sectionKey}:`, err);
       } finally {
-        setLoading(false);
+        if (!cancelled) setLoading(false);
       }
     }
 
     fetchSection();
-  }, [sectionKey, pageSlug, cacheKey, locale]);
+    return () => { cancelled = true; };
+  }, [sectionKey, pageSlug, locale]);
 
   return { section, loading, error };
 }
@@ -80,17 +86,20 @@ export function useSectionWithLocale(sectionKey: string, locale: Locale, pageSlu
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
 
-  const cacheKey = `section_${pageSlug}_${sectionKey}_${locale}`;
-
   useEffect(() => {
+    let cancelled = false;
+    const cacheKey = `section_${pageSlug}_${sectionKey}_${locale}`;
+
     async function fetchSection() {
       try {
         setLoading(true);
 
         const cachedSection = cache.get<Tables['sections']['Row']>(cacheKey);
         if (cachedSection) {
-          setSection(cachedSection);
-          setLoading(false);
+          if (!cancelled) {
+            setSection(cachedSection);
+            setLoading(false);
+          }
           return;
         }
 
@@ -116,19 +125,22 @@ export function useSectionWithLocale(sectionKey: string, locale: Locale, pageSlu
           .single();
 
         if (sectionError) throw sectionError;
+        if (cancelled) return;
 
         cache.set(cacheKey, sectionData, CacheTTL.SECTIONS);
         setSection(sectionData);
         setError(null);
       } catch (err) {
+        if (cancelled) return;
         setError(err instanceof Error ? err : new Error('Unknown error'));
       } finally {
-        setLoading(false);
+        if (!cancelled) setLoading(false);
       }
     }
 
     fetchSection();
-  }, [sectionKey, pageSlug, cacheKey, locale]);
+    return () => { cancelled = true; };
+  }, [sectionKey, pageSlug, locale]);
 
   return { section, loading, error };
 }

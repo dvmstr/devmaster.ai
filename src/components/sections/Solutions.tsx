@@ -5,34 +5,24 @@ import { solutionsData } from "@/data";
 import { scrollToCTA } from "@/lib/scroll";
 import { useCurrentLocale } from "@/contexts";
 import { useMemo } from "react";
+import { useSectionContent } from "@/hooks";
 
-// Localized content
-const solutionsContent = {
-  en: {
-    title: "Our Solutions",
-    subtitle: "Discover our ecosystem of intelligent automations",
-    cta: "Get my personalized audit",
-  },
-  fr: {
-    title: "Nos Solutions",
-    subtitle: "Découvrez notre écosystème d'automatisations intelligentes",
-    cta: "Obtenir mon audit personnalisé",
-  },
-  zh: {
-    title: "我们的解决方案",
-    subtitle: "探索我们的智能自动化生态系统",
-    cta: "获取我的个性化审计",
-  },
+// Fallback content
+const solutionsFallback = {
+  en: { cta: "Get my personalized audit" },
+  fr: { cta: "Obtenir mon audit personnalisé" },
+  zh: { cta: "获取我的个性化审计" },
 };
+
+interface SolutionsContent {
+  cta: string;
+}
 
 export const Solutions = () => {
   const locale = useCurrentLocale();
-  
-  const content = useMemo(() => {
-    return solutionsContent[locale] || solutionsContent.en;
-  }, [locale]);
+  const fallback = useMemo(() => solutionsFallback[locale] || solutionsFallback.en, [locale]);
+  const { content, sectionTitle, sectionSubtitle } = useSectionContent<SolutionsContent>('solutions', fallback);
 
-  // Get localized solutions data
   const localizedSolutions = useMemo(() => {
     return solutionsData[locale] || solutionsData.en;
   }, [locale]);
@@ -47,14 +37,14 @@ export const Solutions = () => {
       <div className="relative z-10 w-full">
         <div className="text-center mb-6 sm:mb-8">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-3 sm:mb-4 px-4">
-            {content.title}
+            {sectionTitle || (locale === 'fr' ? 'Nos Solutions' : locale === 'zh' ? '我们的解决方案' : 'Our Solutions')}
           </h2>
           <p className="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto px-6">
-            {content.subtitle}
+            {sectionSubtitle || (locale === 'fr' ? "Découvrez notre écosystème d'automatisations intelligentes" : locale === 'zh' ? '探索我们的智能自动化生态系统' : 'Discover our ecosystem of intelligent automations')}
           </p>
         </div>
 
-        <RadialOrbitalTimeline timelineData={localizedSolutions} />
+        <RadialOrbitalTimeline timelineData={localizedSolutions} locale={locale} />
 
         <div className="flex justify-center mt-8 sm:mt-16 px-4 sm:px-6">
           <button

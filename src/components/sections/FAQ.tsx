@@ -1,21 +1,27 @@
 import { useState, useMemo } from "react";
 import { ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useFAQs } from "@/hooks";
+import { useFAQs, useSectionContent } from "@/hooks";
 import { fallbackFAQs } from "@/data";
 import { useCurrentLocale } from "@/contexts";
 
-// Localized section titles
-const sectionTitles = {
-  en: "Frequently Asked Questions",
-  fr: "Questions fréquentes",
-  zh: "常见问题",
+// Fallback section titles
+const faqFallback = {
+  en: { title: "Frequently Asked Questions" },
+  fr: { title: "Questions fréquentes" },
+  zh: { title: "常见问题" },
 };
+
+interface FAQSectionContent {
+  title: string;
+}
 
 export const FAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
   const locale = useCurrentLocale();
   const { data: supabaseFAQs, loading, error } = useFAQs();
+  const fallback = useMemo(() => faqFallback[locale] || faqFallback.en, [locale]);
+  const { content: sectionContent, sectionTitle } = useSectionContent<FAQSectionContent>('faq', fallback);
 
   const faqs = useMemo(() => {
     if (loading || error || !supabaseFAQs || supabaseFAQs.length === 0) {
@@ -28,7 +34,7 @@ export const FAQ = () => {
     }));
   }, [supabaseFAQs, loading, error, locale]);
 
-  const title = sectionTitles[locale] || sectionTitles.en;
+  const title = sectionTitle || sectionContent.title;
 
   return (
     <section id="faq" className="relative py-16 sm:py-24">
@@ -51,8 +57,11 @@ export const FAQ = () => {
               }`}
             >
               <button
+                id={`faq-button-${index}`}
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
                 className="w-full px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between text-left"
+                aria-expanded={openIndex === index}
+                aria-controls={`faq-panel-${index}`}
               >
                 <span className={`text-sm sm:text-base font-light pr-6 sm:pr-8 transition-colors duration-200 ${
                   openIndex === index ? 'text-white' : 'text-gray-300'
@@ -76,6 +85,9 @@ export const FAQ = () => {
               <AnimatePresence initial={false}>
                 {openIndex === index && (
                   <motion.div
+                    id={`faq-panel-${index}`}
+                    role="region"
+                    aria-labelledby={`faq-button-${index}`}
                     initial={{ height: 0, opacity: 0 }}
                     animate={{
                       height: "auto",

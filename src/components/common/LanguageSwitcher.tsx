@@ -78,7 +78,7 @@ export const LanguageSwitcher = ({
                   : 'text-gray-400 hover:text-white hover:bg-white/10'
                 }
               `}
-              aria-label={`Switch to ${config.name}`}
+              aria-label={locale === 'fr' ? `Passer en ${config.name}` : locale === 'zh' ? `切换到${config.name}` : `Switch to ${config.name}`}
               aria-current={isActive ? 'true' : undefined}
             >
               {showFlags && <span className="mr-1">{config.flag}</span>}
@@ -152,7 +152,7 @@ export const LanguageSwitcher = ({
         className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-200"
         aria-expanded={isOpen}
         aria-haspopup="listbox"
-        aria-label="Select language"
+        aria-label={locale === 'fr' ? 'Sélectionner la langue' : locale === 'zh' ? '选择语言' : 'Select language'}
       >
         {showFlags && <span className="text-lg">{currentConfig.flag}</span>}
         <span className="text-sm text-gray-300">
@@ -200,7 +200,7 @@ export const LanguageSwitcher = ({
                       {showNativeNames ? config.nativeName : config.name}
                     </span>
                     {showNativeNames && (
-                      <span className="text-xs text-gray-500">{config.name}</span>
+                      <span className="text-xs text-gray-400">{config.name}</span>
                     )}
                   </div>
                   {isActive && (

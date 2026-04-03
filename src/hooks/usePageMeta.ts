@@ -14,9 +14,10 @@ export function usePageMeta(slug: string = 'home', locale: Locale = 'en') {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
 
-  const cacheKey = `page_meta_${slug}_${locale}`;
-
   useEffect(() => {
+    let cancelled = false;
+    const cacheKey = `page_meta_${slug}_${locale}`;
+
     async function fetchMeta() {
       try {
         setLoading(true);
@@ -24,8 +25,10 @@ export function usePageMeta(slug: string = 'home', locale: Locale = 'en') {
         // Check cache
         const cachedMeta = cache.get<Tables['pages']['Row']>(cacheKey);
         if (cachedMeta) {
-          setMeta(cachedMeta);
-          setLoading(false);
+          if (!cancelled) {
+            setMeta(cachedMeta);
+            setLoading(false);
+          }
           return;
         }
 
@@ -38,20 +41,23 @@ export function usePageMeta(slug: string = 'home', locale: Locale = 'en') {
           .single();
 
         if (fetchError) throw fetchError;
+        if (cancelled) return;
 
         cache.set(cacheKey, data, CacheTTL.PAGE_META);
         setMeta(data);
         setError(null);
       } catch (err) {
+        if (cancelled) return;
         setError(err instanceof Error ? err : new Error('Unknown error'));
         console.error(`Error fetching page meta for ${slug} (${locale}):`, err);
       } finally {
-        setLoading(false);
+        if (!cancelled) setLoading(false);
       }
     }
 
     fetchMeta();
-  }, [slug, locale, cacheKey]);
+    return () => { cancelled = true; };
+  }, [slug, locale]);
 
   return { meta, loading, error };
 }

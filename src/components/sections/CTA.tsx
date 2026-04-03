@@ -2,9 +2,10 @@ import { LightSource } from "@/components/common";
 import { MessageCircle } from "lucide-react";
 import { useCurrentLocale } from "@/contexts";
 import { useMemo } from "react";
+import { useSectionContent } from "@/hooks";
 
-// Localized content
-const ctaContent = {
+// Fallback content
+const ctaFallback = {
   en: {
     title: "Ready to transform your business?",
     subtitle: "Book your free 48h audit and discover how to save 20 hours per week",
@@ -25,12 +26,17 @@ const ctaContent = {
   },
 };
 
+interface CTAContent {
+  title: string;
+  subtitle: string;
+  whatsapp: string;
+  disclaimer: string;
+}
+
 export const CTA = () => {
   const locale = useCurrentLocale();
-  
-  const content = useMemo(() => {
-    return ctaContent[locale] || ctaContent.en;
-  }, [locale]);
+  const fallback = useMemo(() => ctaFallback[locale] || ctaFallback.en, [locale]);
+  const { content } = useSectionContent<CTAContent>('cta', fallback);
 
   return (
     <section id="cta-final" className="relative py-20 sm:py-32">
@@ -52,7 +58,7 @@ export const CTA = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="btn-glass-filled group flex items-center gap-2 w-full sm:w-auto justify-center"
-              aria-label="Contact on WhatsApp"
+              aria-label={locale === 'fr' ? 'Contacter sur WhatsApp' : locale === 'zh' ? '通过WhatsApp联系' : 'Contact on WhatsApp'}
             >
               <MessageCircle size={16} aria-hidden="true" />
               <span className="text-sm sm:text-base">{content.whatsapp}</span>

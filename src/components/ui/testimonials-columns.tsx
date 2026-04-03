@@ -36,7 +36,9 @@ export const TestimonialsColumn = (props: {
                       width={48}
                       height={48}
                       src={image}
-                      alt={name}
+                      alt={`${name}, ${role}`}
+                      loading="lazy"
+                      decoding="async"
                       className="h-12 w-12 rounded-full border-2 border-cyan-500/20"
                     />
                     <div className="flex flex-col">

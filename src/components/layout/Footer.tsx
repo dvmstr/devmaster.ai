@@ -2,9 +2,10 @@ import { Linkedin, Twitter } from "lucide-react";
 import { useMemo } from "react";
 import { LanguageSwitcher } from "@/components/common";
 import { useCurrentLocale, useLocale } from "@/contexts";
+import { useSectionContent } from "@/hooks";
 
-// Localized content for the footer
-const footerContent = {
+// Fallback content for the footer
+const footerFallback = {
   en: {
     tagline: "The AI automation agency that transforms your business with intelligent, personalized solutions.",
     navigation: "Navigation",
@@ -16,16 +17,7 @@ const footerContent = {
       { label: "FAQ", href: "#faq" },
     ],
     solutions: "Solutions",
-    solutionsList: [
-      "Smart Emails",
-      "Leads & Prospecting",
-      "AI Chatbots",
-      "CRM & Follow-ups",
-      "Social Media",
-      "Documents & Invoices",
-      "Reporting",
-      "Recruitment",
-    ],
+    solutionsList: ["Smart Emails", "Leads & Prospecting", "AI Chatbots", "CRM & Follow-ups", "Social Media", "Documents & Invoices", "Reporting", "Recruitment"],
     contact: "Contact",
     requestAudit: "Request a free audit",
     copyright: "© 2025 Devmaster. All rights reserved.",
@@ -42,16 +34,7 @@ const footerContent = {
       { label: "FAQ", href: "#faq" },
     ],
     solutions: "Solutions",
-    solutionsList: [
-      "Emails intelligents",
-      "Leads & Prospection",
-      "Chatbots IA",
-      "CRM & Relances",
-      "Réseaux sociaux",
-      "Documents & Factures",
-      "Reporting",
-      "Recrutement",
-    ],
+    solutionsList: ["Emails intelligents", "Leads & Prospection", "Chatbots IA", "CRM & Relances", "Réseaux sociaux", "Documents & Factures", "Reporting", "Recrutement"],
     contact: "Contact",
     requestAudit: "Demander un audit gratuit",
     copyright: "© 2025 Devmaster. Tous droits réservés.",
@@ -68,16 +51,7 @@ const footerContent = {
       { label: "常见问题", href: "#faq" },
     ],
     solutions: "解决方案",
-    solutionsList: [
-      "智能邮件",
-      "潜在客户与勘探",
-      "AI聊天机器人",
-      "CRM与跟进",
-      "社交媒体",
-      "文档与发票",
-      "报告",
-      "招聘",
-    ],
+    solutionsList: ["智能邮件", "潜在客户与勘探", "AI聊天机器人", "CRM与跟进", "社交媒体", "文档与发票", "报告", "招聘"],
     contact: "联系我们",
     requestAudit: "申请免费审计",
     copyright: "© 2025 Devmaster. 版权所有。",
@@ -85,13 +59,23 @@ const footerContent = {
   },
 };
 
+interface FooterContent {
+  tagline: string;
+  navigation: string;
+  navLinks: { label: string; href: string }[];
+  solutions: string;
+  solutionsList: string[];
+  contact: string;
+  requestAudit: string;
+  copyright: string;
+  legal: string;
+}
+
 export const Footer = () => {
   const locale = useCurrentLocale();
   const { getLocalizedPath } = useLocale();
-  
-  const content = useMemo(() => {
-    return footerContent[locale] || footerContent.en;
-  }, [locale]);
+  const fallback = useMemo(() => footerFallback[locale] || footerFallback.en, [locale]);
+  const { content } = useSectionContent<FooterContent>('footer', fallback);
 
   return (
     <footer className="relative mt-32">
@@ -180,11 +164,11 @@ export const Footer = () => {
           <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent" />
 
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 pt-8">
-            <p className="text-gray-500 text-sm">
+            <p className="text-gray-400 text-sm">
               {content.copyright}
             </p>
             <div className="flex gap-6 text-sm">
-              <a href={getLocalizedPath('/legal')} className="text-gray-500 hover:text-white transition-colors">
+              <a href={getLocalizedPath('/legal')} className="text-gray-400 hover:text-white transition-colors">
                 {content.legal}
               </a>
             </div>

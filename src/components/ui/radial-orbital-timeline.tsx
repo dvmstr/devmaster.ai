@@ -1,8 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { ArrowRight, Link, Zap } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Link, Zap } from "lucide-react";
 
 interface TimelineItem {
   id: number;
@@ -16,13 +13,24 @@ interface TimelineItem {
   energy: number;
 }
 
+type SupportedLocale = 'en' | 'fr' | 'zh';
+
+const timelineLabels: Record<SupportedLocale, { performance: string; learnMore: string }> = {
+  en: { performance: "Performance", learnMore: "Learn more" },
+  fr: { performance: "Performance", learnMore: "Aller plus loin" },
+  zh: { performance: "性能", learnMore: "了解更多" },
+};
+
 interface RadialOrbitalTimelineProps {
   timelineData: TimelineItem[];
+  locale?: SupportedLocale;
 }
 
 export default function RadialOrbitalTimeline({
   timelineData,
+  locale = 'en',
 }: RadialOrbitalTimelineProps) {
+  const labels = timelineLabels[locale] || timelineLabels.en;
   const [expandedItems, setExpandedItems] = useState<Record<number, boolean>>(
     {}
   );
@@ -328,7 +336,7 @@ export default function RadialOrbitalTimeline({
                         <div className="flex justify-between items-center text-xs mb-2">
                           <span className="flex items-center gap-1.5 text-white/60 font-light">
                             <Zap size={12} className="text-cyan-400/70" />
-                            Performance
+                            {labels.performance}
                           </span>
                           <span className="font-light text-white/80">{item.energy}%</span>
                         </div>
@@ -344,7 +352,7 @@ export default function RadialOrbitalTimeline({
                         <div className="mt-5 pt-4 border-t border-white/10">
                           <h4 className="text-[11px] uppercase tracking-[0.15em] font-light text-white/50 mb-3 flex items-center gap-1.5">
                             <Link size={11} className="text-cyan-400/60" />
-                            Aller plus loin
+                            {labels.learnMore}
                           </h4>
                           <div className="flex flex-wrap gap-x-4 gap-y-2">
                             {item.relatedIds.map((relatedId) => {

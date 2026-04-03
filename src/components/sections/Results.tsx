@@ -1,6 +1,7 @@
 import { LightSource } from "@/components/common";
 import { useEffect, useRef, useState, useMemo } from "react";
 import { useCurrentLocale } from "@/contexts";
+import { useSectionContent } from "@/hooks";
 
 const CountUp = ({ end, duration = 2000 }: { end: number; duration?: number }) => {
   const [count, setCount] = useState(0);
@@ -49,11 +50,9 @@ const CountUp = ({ end, duration = 2000 }: { end: number; duration?: number }) =
   return <div ref={ref}>{count}</div>;
 };
 
-// Localized content
-const resultsContent = {
+// Fallback content
+const resultsFallback = {
   en: {
-    title: "Measurable results",
-    subtitle: "Our clients see immediate impact on their performance",
     stats: [
       { value: 300, suffix: "%", label: "Productivity increase" },
       { value: 20, suffix: "h", label: "Saved per week" },
@@ -62,8 +61,6 @@ const resultsContent = {
     ],
   },
   fr: {
-    title: "Des résultats mesurables",
-    subtitle: "Nos clients constatent un impact immédiat sur leur performance",
     stats: [
       { value: 300, suffix: "%", label: "Augmentation de productivité" },
       { value: 20, suffix: "h", label: "Économisées par semaine" },
@@ -72,8 +69,6 @@ const resultsContent = {
     ],
   },
   zh: {
-    title: "可衡量的成果",
-    subtitle: "我们的客户立即看到对其业绩的影响",
     stats: [
       { value: 300, suffix: "%", label: "生产力提升" },
       { value: 20, suffix: "h", label: "每周节省" },
@@ -83,22 +78,24 @@ const resultsContent = {
   },
 };
 
+interface ResultsContent {
+  stats: { value: number; suffix: string; label: string }[];
+}
+
 export const Results = () => {
   const locale = useCurrentLocale();
-  
-  const content = useMemo(() => {
-    return resultsContent[locale] || resultsContent.en;
-  }, [locale]);
+  const fallback = useMemo(() => resultsFallback[locale] || resultsFallback.en, [locale]);
+  const { content, sectionTitle, sectionSubtitle } = useSectionContent<ResultsContent>('results', fallback);
 
   return (
     <section id="results" className="relative py-12 sm:py-16 pb-24 sm:pb-32">
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-8 sm:mb-12">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-3 sm:mb-4 px-2">
-            {content.title}
+            {sectionTitle || (locale === 'fr' ? 'Des résultats mesurables' : locale === 'zh' ? '可衡量的成果' : 'Measurable results')}
           </h2>
           <p className="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto px-2">
-            {content.subtitle}
+            {sectionSubtitle || (locale === 'fr' ? 'Nos clients constatent un impact immédiat sur leur performance' : locale === 'zh' ? '我们的客户立即看到对其业绩的影响' : 'Our clients see immediate impact on their performance')}
           </p>
         </div>
 

@@ -86,10 +86,10 @@ export const cache = new CacheManager();
  * TTL par défaut pour chaque type de contenu
  */
 export const CacheTTL = {
-  PAGE_META: 10 * 60 * 1000,      // 10 minutes
-  SECTIONS: 5 * 60 * 1000,        // 5 minutes
-  TESTIMONIALS: 15 * 60 * 1000,   // 15 minutes
-  FAQS: 15 * 60 * 1000,           // 15 minutes
-  NAVIGATION: 30 * 60 * 1000,     // 30 minutes
-  STATIC_CONTENT: 60 * 60 * 1000, // 1 heure
+  PAGE_META: 30 * 60 * 1000,       // 30 minutes
+  SECTIONS: 30 * 60 * 1000,        // 30 minutes
+  TESTIMONIALS: 60 * 60 * 1000,    // 1 heure
+  FAQS: 60 * 60 * 1000,            // 1 heure
+  NAVIGATION: 60 * 60 * 1000,      // 1 heure
+  STATIC_CONTENT: 120 * 60 * 1000, // 2 heures
 } as const;

@@ -11,6 +11,7 @@ import {
 interface SEOHeadProps {
   pageSlug?: string;
   locale?: Locale;
+  noIndex?: boolean;
 }
 
 const BASE_URL = 'https://devmaster.ai';
@@ -33,7 +34,7 @@ function getCanonicalUrl(pathname: string, locale: Locale): string {
  * SEO component with full i18n support including hreflang tags
  * Optimized for search engine indexing across multiple languages
  */
-export const SEOHead = ({ pageSlug = 'home', locale = 'en' }: SEOHeadProps) => {
+export const SEOHead = ({ pageSlug = 'home', locale = 'en', noIndex = false }: SEOHeadProps) => {
   const location = useLocation();
   const { meta, loading, error } = usePageMeta(pageSlug, locale);
   const localeConfig = LOCALE_CONFIG[locale];
@@ -107,9 +108,14 @@ export const SEOHead = ({ pageSlug = 'home', locale = 'en' }: SEOHeadProps) => {
     setMetaTag('og:locale', localeConfig.htmlLang.replace('-', '_'), true);
 
     // Add alternate og:locale for other languages
+    // Remove existing og:locale:alternate tags first (multiple values need multiple elements)
+    document.querySelectorAll('meta[property="og:locale:alternate"]').forEach(el => el.remove());
     SUPPORTED_LOCALES.filter(l => l !== locale).forEach(altLocale => {
       const altConfig = LOCALE_CONFIG[altLocale];
-      setMetaTag(`og:locale:alternate`, altConfig.htmlLang.replace('-', '_'), true);
+      const el = document.createElement('meta');
+      el.setAttribute('property', 'og:locale:alternate');
+      el.setAttribute('content', altConfig.htmlLang.replace('-', '_'));
+      document.head.appendChild(el);
     });
 
     // Twitter Card tags
@@ -143,8 +149,13 @@ export const SEOHead = ({ pageSlug = 'home', locale = 'en' }: SEOHeadProps) => {
     }
 
     // Robots meta tag
-    setMetaTag('robots', 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1');
-    setMetaTag('googlebot', 'index, follow');
+    if (noIndex) {
+      setMetaTag('robots', 'noindex, nofollow');
+      setMetaTag('googlebot', 'noindex, nofollow');
+    } else {
+      setMetaTag('robots', 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1');
+      setMetaTag('googlebot', 'index, follow');
+    }
 
     // Additional SEO tags
     setMetaTag('viewport', 'width=device-width, initial-scale=1.0, maximum-scale=5.0');
@@ -154,10 +165,10 @@ export const SEOHead = ({ pageSlug = 'home', locale = 'en' }: SEOHeadProps) => {
     // Content language header equivalent
     setMetaTag('content-language', localeConfig.htmlLang);
 
-    // Cleanup function to remove hreflang tags when component unmounts
+    // Cleanup function to remove dynamic tags when component unmounts
     return () => {
-      const hreflangLinks = document.querySelectorAll('link[rel="alternate"][hreflang]');
-      hreflangLinks.forEach(link => link.remove());
+      document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(el => el.remove());
+      document.querySelectorAll('meta[property="og:locale:alternate"]').forEach(el => el.remove());
     };
   }, [meta, loading, error, locale, localeConfig, location.pathname]);
 

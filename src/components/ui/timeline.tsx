@@ -12,7 +12,16 @@ interface TimelineEntry {
   content: React.ReactNode;
 }
 
-export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
+type SupportedLocale = 'en' | 'fr' | 'zh';
+
+const timelineLabels: Record<SupportedLocale, { title: string; subtitle: string }> = {
+  en: { title: "Our method in 3 steps", subtitle: "A simple and effective process to transform your business" },
+  fr: { title: "Notre méthode en 3 étapes", subtitle: "Un processus simple et efficace pour transformer votre business" },
+  zh: { title: "我们的三步方法", subtitle: "一个简单有效的流程来转型您的业务" },
+};
+
+export const Timeline = ({ data, locale = 'en' }: { data: TimelineEntry[]; locale?: SupportedLocale }) => {
+  const labels = timelineLabels[locale] || timelineLabels.en;
   const ref = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState(0);
@@ -39,10 +48,10 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
     >
       <div className="max-w-7xl mx-auto py-12 sm:py-16 md:py-20 px-4 md:px-8 lg:px-10 text-center">
         <h2 className="text-3xl sm:text-4xl md:text-5xl mb-3 sm:mb-4 text-white font-medium mx-auto">
-          Notre méthode en 3 étapes
+          {labels.title}
         </h2>
         <p className="text-gray-400 text-sm sm:text-base md:text-lg mx-auto px-2">
-          Un processus simple et efficace pour transformer votre business
+          {labels.subtitle}
         </p>
       </div>
 
@@ -56,13 +65,13 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
               <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-black flex items-center justify-center">
                 <div className="h-4 w-4 rounded-full bg-cyan-500/30 border border-cyan-500/50 p-2 shadow-[0_0_15px_rgba(6,182,212,0.3)]" />
               </div>
-              <h3 className="hidden md:block text-xl md:pl-20 md:text-5xl font-light text-gray-500">
+              <h3 className="hidden md:block text-xl md:pl-20 md:text-5xl font-light text-gray-400">
                 {item.title}
               </h3>
             </div>
 
             <div className="relative pl-16 sm:pl-20 pr-4 md:pl-4 w-full">
-              <h3 className="md:hidden block text-xl sm:text-2xl mb-3 sm:mb-4 text-left font-light text-gray-500">
+              <h3 className="md:hidden block text-xl sm:text-2xl mb-3 sm:mb-4 text-left font-light text-gray-400">
                 {item.title}
               </h3>
               {item.content}{" "}

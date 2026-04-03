@@ -1,21 +1,27 @@
 import { TestimonialsColumn } from "@/components/ui/testimonials-columns";
 import { ArrowRight } from "lucide-react";
-import { useTestimonials } from "@/hooks";
+import { useTestimonials, useSectionContent } from "@/hooks";
 import { useMemo } from "react";
 import { fallbackTestimonials, avatarMapping } from "@/data";
 import { scrollToCTA } from "@/lib/scroll";
 import { useCurrentLocale } from "@/contexts";
 
-// Localized CTA button text
-const ctaTexts = {
-  en: "Join them now",
-  fr: "Rejoignez-les maintenant",
-  zh: "立即加入他们",
+// Fallback CTA text
+const ctaFallback = {
+  en: { ctaText: "Join them now" },
+  fr: { ctaText: "Rejoignez-les maintenant" },
+  zh: { ctaText: "立即加入他们" },
 };
+
+interface TestimonialsContent {
+  ctaText: string;
+}
 
 export const Testimonials = () => {
   const locale = useCurrentLocale();
   const { data: supabaseTestimonials, loading, error } = useTestimonials();
+  const fallback = useMemo(() => ctaFallback[locale] || ctaFallback.en, [locale]);
+  const { content: sectionContent } = useSectionContent<TestimonialsContent>('testimonials', fallback);
 
   const testimonials = useMemo(() => {
     if (loading || error || !supabaseTestimonials || supabaseTestimonials.length === 0) {
@@ -34,7 +40,7 @@ export const Testimonials = () => {
   const secondColumn = testimonials.slice(3, 6);
   const thirdColumn = testimonials.slice(6, 9);
 
-  const ctaText = ctaTexts[locale] || ctaTexts.en;
+  const ctaText = sectionContent.ctaText;
 
   return (
     <section id="testimonials" className="relative py-12 sm:py-16 overflow-hidden">

@@ -1,10 +1,11 @@
-import { StrictMode } from 'react';
+import { StrictMode, lazy, Suspense } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import { LocaleProvider, SUPPORTED_LOCALES, isValidLocale } from '@/contexts';
+import { LocaleProvider, SUPPORTED_LOCALES } from '@/contexts';
 import App from './App';
-import { LegalNotice } from '@/components/pages';
 import './index.css';
+
+const LegalNotice = lazy(() => import('@/components/pages/LegalNotice').then(m => ({ default: m.LegalNotice })));
 
 /**
  * Wrapper component that provides locale context
@@ -20,7 +21,9 @@ function LocalizedApp() {
 function LocalizedLegalNotice() {
   return (
     <LocaleProvider>
-      <LegalNotice />
+      <Suspense fallback={<div className="min-h-screen bg-black" />}>
+        <LegalNotice />
+      </Suspense>
     </LocaleProvider>
   );
 }
