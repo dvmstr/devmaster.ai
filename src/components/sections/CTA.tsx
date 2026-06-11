@@ -8,21 +8,21 @@ import { useSectionContent } from "@/hooks";
 const ctaFallback = {
   en: {
     title: "Ready to transform your business?",
-    subtitle: "Book your free 48h audit and discover how to save 20 hours per week",
+    subtitle: "Book your 48h audit and discover how to save 20 hours per week",
     whatsapp: "WhatsApp: +33 6 95 54 11 34",
-    disclaimer: "No credit card required • 100% free audit • Results in 48h",
+    disclaimer: "No commitment • Personalized audit • Results in 48h",
   },
   fr: {
     title: "Prêt à transformer votre business ?",
-    subtitle: "Réservez votre audit gratuit de 48h et découvrez comment gagner 20h par semaine",
+    subtitle: "Réservez votre audit de 48h et découvrez comment gagner 20h par semaine",
     whatsapp: "WhatsApp : +33 6 95 54 11 34",
-    disclaimer: "Aucune carte bancaire requise • Audit 100% gratuit • Résultats en 48h",
+    disclaimer: "Sans engagement • Audit personnalisé • Résultats en 48h",
   },
   zh: {
     title: "准备好转型您的业务了吗？",
-    subtitle: "预约您的48小时免费审计，了解如何每周节省20小时",
+    subtitle: "预约您的48小时审计，了解如何每周节省20小时",
     whatsapp: "WhatsApp: +33 6 95 54 11 34",
-    disclaimer: "无需信用卡 • 100%免费审计 • 48小时内出结果",
+    disclaimer: "无需承诺 • 个性化审计 • 48小时内出结果",
   },
 };
 

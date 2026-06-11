@@ -30,9 +30,9 @@ export const Testimonials = () => {
 
     return supabaseTestimonials.map(testimonial => ({
       text: testimonial.testimonial_text,
-      image: avatarMapping[testimonial.name] || "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=faces",
+      image: avatarMapping[testimonial.name] || "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=400&h=400&fit=crop&crop=faces",
       name: testimonial.name,
-      role: testimonial.role,
+      role: testimonial.company ? `${testimonial.role}, ${testimonial.company}` : testimonial.role,
     }));
   }, [supabaseTestimonials, loading, error, locale]);
 

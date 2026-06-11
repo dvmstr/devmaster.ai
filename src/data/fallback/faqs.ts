@@ -25,11 +25,11 @@ export const fallbackFAQs: Record<Locale, FAQ[]> = {
     },
     {
       question: "Do you work with our industry?",
-      answer: "Our solutions adapt to all sectors: e-commerce, B2B services, marketing agencies, SaaS, consulting firms, industry, healthcare, etc. Each automation is customized according to your business and specific processes. We analyze your unique needs during the free audit."
+      answer: "Our solutions adapt to all sectors: e-commerce, B2B services, marketing agencies, SaaS, consulting firms, industry, healthcare, etc. Each automation is customized according to your business and specific processes. We analyze your unique needs during the audit."
     },
     {
       question: "What is your pricing model?",
-      answer: "The 48-hour audit is completely free with no commitment. Then, we offer a monthly package adapted to your automation volume, with no hidden fees. You can cancel at any time. 100% satisfaction guaranteed or money back for the first month."
+      answer: "The 48-hour audit comes with no commitment. Then, we offer a monthly package adapted to your automation volume, with no hidden fees. You can cancel at any time. 100% satisfaction guaranteed or money back for the first month."
     },
     {
       question: "What support do you provide after implementation?",
@@ -59,11 +59,11 @@ export const fallbackFAQs: Record<Locale, FAQ[]> = {
     },
     {
       question: "Travaillez-vous avec notre secteur d'activité ?",
-      answer: "Nos solutions s'adaptent à tous les secteurs : e-commerce, services B2B, agences marketing, SaaS, cabinets de conseil, industrie, santé, etc. Chaque automatisation est personnalisée selon votre métier et vos processus spécifiques. Nous analysons vos besoins uniques lors de l'audit gratuit."
+      answer: "Nos solutions s'adaptent à tous les secteurs : e-commerce, services B2B, agences marketing, SaaS, cabinets de conseil, industrie, santé, etc. Chaque automatisation est personnalisée selon votre métier et vos processus spécifiques. Nous analysons vos besoins uniques lors de l'audit."
     },
     {
       question: "Quel est votre modèle de tarification ?",
-      answer: "L'audit de 48h est entièrement gratuit et sans engagement. Ensuite, nous proposons un forfait mensuel adapté à votre volume d'automatisations, sans frais cachés. Vous pouvez annuler à tout moment. Garantie satisfait ou remboursé à 100% le premier mois."
+      answer: "L'audit de 48h est sans engagement. Ensuite, nous proposons un forfait mensuel adapté à votre volume d'automatisations, sans frais cachés. Vous pouvez annuler à tout moment. Garantie satisfait ou remboursé à 100% le premier mois."
     },
     {
       question: "Quel support nous apportez-vous après la mise en place ?",
@@ -93,11 +93,11 @@ export const fallbackFAQs: Record<Locale, FAQ[]> = {
     },
     {
       question: "你们服务我们的行业吗？",
-      answer: "我们的解决方案适用于所有行业：电子商务、B2B服务、营销机构、SaaS、咨询公司、工业、医疗保健等。每个自动化都根据您的业务和特定流程进行定制。我们在免费审计期间分析您的独特需求。"
+      answer: "我们的解决方案适用于所有行业：电子商务、B2B服务、营销机构、SaaS、咨询公司、工业、医疗保健等。每个自动化都根据您的业务和特定流程进行定制。我们在审计期间分析您的独特需求。"
     },
     {
       question: "你们的定价模式是什么？",
-      answer: "48小时审计完全免费，无需承诺。然后，我们提供适应您自动化量的月度套餐，无隐藏费用。您可以随时取消。第一个月100%满意保证或退款。"
+      answer: "48小时审计无需承诺。然后，我们提供适应您自动化量的月度套餐，无隐藏费用。您可以随时取消。第一个月100%满意保证或退款。"
     },
     {
       question: "实施后你们提供什么支持？",

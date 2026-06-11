@@ -15,9 +15,9 @@ export const Navigation = () => {
   // Get localized CTA button text
   const ctaText = useMemo(() => {
     const texts = {
-      en: { full: 'Free Audit', short: 'Audit' },
-      fr: { full: 'Audit gratuit', short: 'Audit' },
-      zh: { full: '免费审计', short: '审计' },
+      en: { full: 'Audit', short: 'Audit' },
+      fr: { full: 'Audit', short: 'Audit' },
+      zh: { full: '审计', short: '审计' },
     };
     return texts[locale] || texts.en;
   }, [locale]);
