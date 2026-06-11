@@ -2,7 +2,7 @@ import { TestimonialsColumn } from "@/components/ui/testimonials-columns";
 import { ArrowRight } from "lucide-react";
 import { useTestimonials, useSectionContent } from "@/hooks";
 import { useMemo } from "react";
-import { fallbackTestimonials, avatarMapping } from "@/data";
+import { fallbackTestimonials } from "@/data";
 import { scrollToCTA } from "@/lib/scroll";
 import { useCurrentLocale } from "@/contexts";
 
@@ -30,9 +30,9 @@ export const Testimonials = () => {
 
     return supabaseTestimonials.map(testimonial => ({
       text: testimonial.testimonial_text,
-      image: avatarMapping[testimonial.name] || "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=400&h=400&fit=crop&crop=faces",
       name: testimonial.name,
-      role: testimonial.company ? `${testimonial.role}, ${testimonial.company}` : testimonial.role,
+      role: testimonial.role,
+      company: testimonial.company || "",
     }));
   }, [supabaseTestimonials, loading, error, locale]);
 

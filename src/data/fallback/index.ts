@@ -1,3 +1,3 @@
 export { fallbackFAQs } from './faqs';
-export { fallbackTestimonials, avatarMapping } from './testimonials';
+export { fallbackTestimonials } from './testimonials';
 export { fallbackNavItems } from './navigation';
