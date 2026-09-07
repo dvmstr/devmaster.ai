@@ -9,19 +9,19 @@ const ctaFallback = {
   en: {
     title: "Ready to transform your business?",
     subtitle: "Book your 48h audit and discover how to save 20 hours per week",
-    whatsapp: "WhatsApp: +33 6 95 54 11 34",
+    whatsapp: "WhatsApp: 07 45 49 65 52",
     disclaimer: "No commitment • Personalized audit • Results in 48h",
   },
   fr: {
     title: "Prêt à transformer votre business ?",
     subtitle: "Réservez votre audit de 48h et découvrez comment gagner 20h par semaine",
-    whatsapp: "WhatsApp : +33 6 95 54 11 34",
+    whatsapp: "WhatsApp : 07 45 49 65 52",
     disclaimer: "Sans engagement • Audit personnalisé • Résultats en 48h",
   },
   zh: {
     title: "准备好转型您的业务了吗？",
     subtitle: "预约您的48小时审计，了解如何每周节省20小时",
-    whatsapp: "WhatsApp: +33 6 95 54 11 34",
+    whatsapp: "WhatsApp: 07 45 49 65 52",
     disclaimer: "无需承诺 • 个性化审计 • 48小时内出结果",
   },
 };
@@ -54,7 +54,7 @@ export const CTA = () => {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-5 sm:mb-6">
             <a
-              href="https://wa.me/33695541134"
+              href="https://wa.me/33745496552"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-glass-filled group flex items-center gap-2 w-full sm:w-auto justify-center"
