@@ -11,8 +11,9 @@
   # Content Security Policy (adjust domains as needed)
   Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https://www.google-analytics.com https://tfjhswxfjkdkigkdtmqj.supabase.co; frame-ancestors 'none';
 
-  # Performance Headers
-  Cache-Control: public, max-age=31536000, immutable
+  # Pas de Cache-Control ici : cette règle couvre aussi les pages HTML, qui doivent être revalidées
+  # à chaque visite (défaut Netlify : max-age=0, must-revalidate). Seuls les fichiers au nom versionné
+  # (/assets, /fonts) sont mis en cache pour un an, ci-dessous.
 
 # Cache Headers for Static Assets
 /assets/*
@@ -20,10 +21,6 @@
 
 /fonts/*
   Cache-Control: public, max-age=31536000, immutable
-
-# HTML Files - No Cache
-/*.html
-  Cache-Control: public, max-age=0, must-revalidate
 
 # Service Worker - No Cache
 /sw.js
