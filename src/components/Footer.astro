@@ -1,0 +1,83 @@
+---
+import LanguageSwitcher from "./LanguageSwitcher.astro";
+import { localePath, type Locale } from "../lib/i18n";
+import { SITE } from "../lib/site";
+
+interface Props {
+  locale: Locale;
+  footer: { tagline: string; navigation: string; solutions: string; contact: string; requestAudit: string; copyright: string; legal: string };
+  navItems: { label: string; target: string }[];
+  solutions: string[];
+  languageLabel: string;
+}
+const { locale, footer, navItems, solutions, languageLabel } = Astro.props;
+const home = localePath(locale, "/");
+---
+
+<footer class="relative mt-32">
+  <div class="pointer-events-none absolute inset-0 bg-linear-to-t from-black via-transparent to-transparent"></div>
+
+  <div class="relative mx-auto max-w-7xl px-6 py-16">
+    <div class="mb-16 grid grid-cols-1 gap-12 md:grid-cols-4">
+      <div class="space-y-4">
+        <div class="text-3xl font-medium text-white">Devmaster</div>
+        <p class="text-sm leading-relaxed text-gray-400">{footer.tagline}</p>
+      </div>
+
+      <nav aria-label={footer.navigation}>
+        <h2 class="mb-6 text-sm font-normal tracking-wider text-white uppercase">{footer.navigation}</h2>
+        <ul class="space-y-3">
+          {
+            navItems.map((item) => (
+              <li>
+                <a href={`${home}#${item.target}`} class="group flex items-center gap-2 text-sm text-gray-400 transition-colors hover:text-white">
+                  <span class="h-[1px] w-0 bg-white transition-all duration-300 group-hover:w-2" />
+                  {item.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+
+      <div>
+        <h2 class="mb-6 text-sm font-normal tracking-wider text-white uppercase">{footer.solutions}</h2>
+        <ul class="space-y-3">
+          {
+            solutions.map((name) => (
+              <li class="flex items-center gap-2 text-sm text-gray-400">
+                <span class="h-[1px] w-2 bg-cyan-500" />
+                {name}
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="mb-6 text-sm font-normal tracking-wider text-white uppercase">{footer.contact}</h2>
+        <ul class="space-y-3">
+          <li>
+            <a href={`mailto:${SITE.email}`} class="text-sm text-gray-400 transition-colors hover:text-cyan-400">{SITE.email}</a>
+          </li>
+          <li>
+            <a href={`${home}#cta-final`} class="text-sm text-gray-400 transition-colors hover:text-cyan-400">{footer.requestAudit}</a>
+          </li>
+        </ul>
+        <div class="mt-6">
+          <LanguageSwitcher locale={locale} path="/" label={languageLabel} variant="inline" />
+        </div>
+      </div>
+    </div>
+
+    <div class="relative">
+      <div class="absolute inset-x-0 top-0 h-[1px] bg-linear-to-r from-transparent via-white/20 to-transparent"></div>
+      <div class="flex flex-col items-center justify-between gap-4 pt-8 md:flex-row">
+        <p class="text-sm text-gray-400">{footer.copyright.replace("{year}", String(new Date().getFullYear()))}</p>
+        <div class="flex gap-6 text-sm">
+          <a href={localePath(locale, "/legal/")} class="text-gray-400 transition-colors hover:text-white">{footer.legal}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

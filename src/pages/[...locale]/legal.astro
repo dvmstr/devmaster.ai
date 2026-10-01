@@ -1,0 +1,67 @@
+---
+import { getEntry } from "astro:content";
+import Base from "../../layouts/Base.astro";
+import { localePath, localeStaticPaths, type Locale } from "../../lib/i18n";
+import { SITE } from "../../lib/site";
+
+export const getStaticPaths = localeStaticPaths;
+const { locale } = Astro.props as { locale: Locale };
+const entry = await getEntry("legal", locale);
+if (!entry) throw new Error(`Contenu manquant : src/content/legal/${locale}.json`);
+const t = entry.data;
+// L'hébergeur vient de la configuration du site (une seule valeur à changer en cas de déménagement).
+const fill = (text: string) =>
+  text.replaceAll("{hostFull}", `${SITE.host.name} – ${SITE.host.address[locale]}`).replaceAll("{host}", SITE.host.name);
+---
+
+<Base locale={locale} path="/legal/" title={t.meta.title} description={t.meta.description} noindex>
+  <main class="min-h-screen bg-black px-4 py-24 text-gray-300 sm:px-6">
+    <div class="mx-auto max-w-4xl">
+      <div class="mb-8">
+        <a href={localePath(locale, "/")} class="inline-flex items-center gap-2 text-sm text-cyan-400 transition-colors hover:text-cyan-300">
+          <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+          </svg>
+          {t.backLink}
+        </a>
+      </div>
+
+      <h1 class="mb-12 text-center text-4xl font-medium text-white sm:text-5xl">{t.pageTitle}</h1>
+
+      <div class="space-y-8 text-sm leading-relaxed">
+        {
+          t.sections.map((section) => (
+            <section>
+              <h2 class="mb-4 text-2xl font-medium text-white">{section.title}</h2>
+              {section.content.map((item, i) => (
+                <p class={i > 0 ? "mt-2" : ""}>
+                  {item.label && <strong>{item.label} </strong>}
+                  {fill(item.text)}
+                </p>
+              ))}
+              {section.details && (
+                <div class="mt-4 space-y-2">
+                  {section.details.map((d) => (
+                    <p>
+                      {d.label && <strong>{d.label}</strong>}
+                      {d.label ? ` : ${fill(d.text)}` : fill(d.text)}
+                    </p>
+                  ))}
+                </div>
+              )}
+              {section.attribution && <p class="mt-4 text-xs text-gray-400">{section.attribution}</p>}
+              {section.subsections?.map((sub) => (
+                <div class="mt-6">
+                  <h3 class="mb-3 text-xl font-medium text-white">{sub.title}</h3>
+                  {sub.content.map((item, i) => (
+                    <p class={i > 0 ? "mt-4" : ""}>{fill(item.text)}</p>
+                  ))}
+                </div>
+              ))}
+            </section>
+          ))
+        }
+      </div>
+    </div>
+  </main>
+</Base>

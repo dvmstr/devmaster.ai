@@ -1,0 +1,389 @@
+{
+  "meta": {
+    "title": "Devmaster - Automatisation IA pour votre Business",
+    "description": "Transformez votre business avec l'IA. Automatisez vos processus, gagnez 20h par semaine et boostez votre productivité de 300%. Audit en 48h.",
+    "ogTitle": "Devmaster - Automatisation IA pour votre Business",
+    "ogDescription": "Transformez votre business avec l'IA. Automatisez vos processus, gagnez 20h par semaine et boostez votre productivité de 300%.",
+    "keywords": [
+      "automatisation IA",
+      "intelligence artificielle",
+      "n8n",
+      "workflow automation",
+      "chatbot IA",
+      "productivité",
+      "business automation"
+    ]
+  },
+  "a11y": {
+    "skipToContent": "Aller au contenu",
+    "heroLabel": "Section d'accueil",
+    "languageMenu": "Sélectionner la langue",
+    "whatsapp": "Contacter sur WhatsApp",
+    "home": "Devmaster, retour en haut"
+  },
+  "nav": {
+    "items": [
+      {
+        "label": "Bénéfices",
+        "target": "benefits"
+      },
+      {
+        "label": "Solutions",
+        "target": "solutions"
+      },
+      {
+        "label": "Résultats",
+        "target": "results"
+      },
+      {
+        "label": "Process",
+        "target": "process"
+      },
+      {
+        "label": "FAQ",
+        "target": "faq"
+      }
+    ],
+    "cta": "Audit"
+  },
+  "hero": {
+    "badge": "Automatisation IA de nouvelle génération",
+    "title": "Transformez votre business avec l'IA",
+    "description": "Vous n'utilisez pas l'Intelligence Artificielle ? Les process de votre entreprise sont certainement obsolètes.",
+    "ctaPrimary": "Réserver mon audit",
+    "ctaSecondary": "Comment ça marche",
+    "logos": [
+      "Google",
+      "Salesforce",
+      "HubSpot",
+      "Slack",
+      "Microsoft",
+      "Notion",
+      "Airtable",
+      "OpenAI"
+    ]
+  },
+  "benefits": {
+    "title": "Pourquoi Devmaster ?",
+    "subtitle": "Des résultats concrets qui transforment votre façon de travailler",
+    "cta": "Commencer maintenant",
+    "items": [
+      {
+        "icon": "Trash2",
+        "title": "Éliminez les tâches inutiles",
+        "description": "Automatisez les processus à faible valeur ajoutée et concentrez vos équipes sur ce qui compte vraiment."
+      },
+      {
+        "icon": "Rocket",
+        "title": "Prenez une longueur d'avance",
+        "description": "Anticipez la révolution IA et équipez-vous dès aujourd'hui d'automatisations qui feront la différence demain."
+      },
+      {
+        "icon": "TrendingUp",
+        "title": "Boostez votre chiffre d'affaires",
+        "description": "Libérez vos talents des tâches répétitives : plus de temps pour créer de la valeur, moins de charges inutiles."
+      },
+      {
+        "icon": "Users",
+        "title": "Valorisez vos collaborateurs",
+        "description": "Offrez-leur un travail plus gratifiant : l'IA gère la routine, ils se consacrent à leur vrai potentiel humain."
+      },
+      {
+        "icon": "Shield",
+        "title": "Sécurité sans compromis",
+        "description": "Vos données sont chiffrées, hébergées sur des serveurs sécurisés et jamais partagées. Chaque automatisation est conçue pour garantir confidentialité et conformité."
+      }
+    ]
+  },
+  "solutions": {
+    "title": "Nos Solutions",
+    "subtitle": "Découvrez notre écosystème d'automatisations intelligentes",
+    "cta": "Obtenir mon audit personnalisé",
+    "combineWith": "Se combine avec",
+    "items": [
+      {
+        "id": 1,
+        "title": "Emails intelligents",
+        "tagline": "AUGMENTEZ VOS CONVERSIONS",
+        "description": "Réponses automatiques, qualification des leads et suivi personnalisé pour maximiser vos conversions.",
+        "icon": "Mail",
+        "relatedIds": [
+          2,
+          4
+        ],
+        "impactStat": "x3 conversions"
+      },
+      {
+        "id": 2,
+        "title": "Leads & Prospection",
+        "tagline": "GÉNÉREZ PLUS DE LEADS",
+        "description": "Génération automatisée, enrichissement intelligent et scoring précis de vos prospects.",
+        "icon": "Users",
+        "relatedIds": [
+          1,
+          4
+        ],
+        "impactStat": "+250% de leads"
+      },
+      {
+        "id": 3,
+        "title": "Chatbots IA",
+        "tagline": "DISPONIBLE 24/7",
+        "description": "Support client 24/7, qualification automatique et réponses instantanées grâce à l'IA.",
+        "icon": "MessageCircle",
+        "relatedIds": [
+          2,
+          4
+        ],
+        "impactStat": "Réponse en <2min"
+      },
+      {
+        "id": 4,
+        "title": "CRM & Relances",
+        "tagline": "AUTOMATISEZ VOS RELANCES",
+        "description": "Synchronisation multi-plateforme, mise à jour automatique et relances intelligentes.",
+        "icon": "Database",
+        "relatedIds": [
+          1,
+          2
+        ],
+        "impactStat": "0 relance oubliée"
+      },
+      {
+        "id": 5,
+        "title": "Réseaux sociaux",
+        "tagline": "BOOSTEZ VOTRE VISIBILITÉ",
+        "description": "Publication automatisée, analyse des performances et engagement optimisé sur tous vos canaux.",
+        "icon": "Share2",
+        "relatedIds": [
+          7,
+          2
+        ],
+        "impactStat": "+200% engagement"
+      },
+      {
+        "id": 6,
+        "title": "Documents & Factures",
+        "tagline": "GAGNEZ DU TEMPS",
+        "description": "Extraction automatique des données, traitement intelligent et classement sans intervention manuelle.",
+        "icon": "FileText",
+        "relatedIds": [
+          4,
+          7
+        ],
+        "impactStat": "12h gagnées/sem"
+      },
+      {
+        "id": 7,
+        "title": "Reporting",
+        "tagline": "PILOTEZ EN TEMPS RÉEL",
+        "description": "Tableaux de bord en temps réel, alertes personnalisées et insights actionnables pour piloter votre activité.",
+        "icon": "BarChart3",
+        "relatedIds": [
+          4,
+          6
+        ],
+        "impactStat": "Temps réel"
+      },
+      {
+        "id": 8,
+        "title": "Recrutement",
+        "tagline": "TROUVEZ VOS TALENTS",
+        "description": "Sourcing automatisé, qualification intelligente des candidats et gestion optimisée de vos recrutements.",
+        "icon": "Users",
+        "relatedIds": [
+          1,
+          2
+        ],
+        "impactStat": "-60% temps de recrutement"
+      }
+    ]
+  },
+  "results": {
+    "title": "Des résultats mesurables",
+    "subtitle": "Nos clients constatent un impact immédiat sur leur performance",
+    "stats": [
+      {
+        "value": 300,
+        "unit": "%",
+        "label": "Augmentation de productivité"
+      },
+      {
+        "value": 20,
+        "unit": "h",
+        "label": "Économisées par semaine"
+      },
+      {
+        "value": 100,
+        "unit": "%",
+        "label": "Satisfait ou remboursé"
+      },
+      {
+        "value": 48,
+        "unit": "h",
+        "label": "Pour votre Audit & Devis"
+      }
+    ]
+  },
+  "testimonials": {
+    "cta": "Rejoignez-les maintenant",
+    "items": [
+      {
+        "text": "On passait nos soirées à relancer les paniers abandonnés à la main. Ils ont tout connecté à notre Shopify et à Klaviyo en deux semaines, et les relances partent désormais toutes seules — on a récupéré près de 18 % de chiffre sur ce canal.",
+        "name": "Camille Fontaine",
+        "role": "Responsable e-commerce",
+        "company": "Maison Lhéris"
+      },
+      {
+        "text": "Mon vrai problème, c'était de rater des demandes le week-end. Leur chatbot gère la plupart des questions courantes et ne me transfère que les sujets sérieux. Mon temps de réponse moyen est passé de plusieurs heures à quelques minutes.",
+        "name": "Karim Benali",
+        "role": "Fondateur",
+        "company": "Velobi"
+      },
+      {
+        "text": "La saisie des factures fournisseurs me prenait deux jours pleins par mois. Aujourd'hui elles sont lues, classées et rapprochées automatiquement dans notre logiciel de compta. J'étais sceptique au départ, mais ça tient vraiment la route.",
+        "name": "Élodie Mercier",
+        "role": "Office manager",
+        "company": "Cabinet Perrin & Associés"
+      },
+      {
+        "text": "Ce que j'ai apprécié, c'est qu'ils ne sont pas arrivés avec une usine à gaz. Ils ont ciblé trois tâches précises qui nous mangeaient du temps, et c'est tout. Mon équipe a enfin de la marge pour le reste.",
+        "name": "Thomas Rieu",
+        "role": "Cofondateur",
+        "company": "Atelier Norré"
+      },
+      {
+        "text": "Avant, un lead sur trois passait à la trappe parce qu'on relançait au feeling. Maintenant chaque prospect a sa propre séquence dans HubSpot et plus rien ne se perd. On a signé deux comptes qu'on aurait honnêtement oubliés.",
+        "name": "Sarah Lévy",
+        "role": "Directrice commerciale",
+        "company": "Klariss"
+      },
+      {
+        "text": "On nous avait promis monts et merveilles ailleurs, et on avait été déçus. Eux ont commencé par un audit clair et chiffré, puis livré par étapes. Trois mois après, le ROI est là — et les chiffres ne sont pas gonflés.",
+        "name": "Antoine Mercadier",
+        "role": "Directeur des opérations",
+        "company": "Groupe Tessandier"
+      },
+      {
+        "text": "Nos commerciaux perdaient un temps fou à qualifier des leads hors cible. Un agent IA fait désormais le premier tri et ne leur envoie que les prospects chauds, avec le contexte. Ils traitent presque trois fois plus de rendez-vous utiles.",
+        "name": "Inès Khelifi",
+        "role": "Responsable growth",
+        "company": "Brevio"
+      },
+      {
+        "text": "Côté technique, j'avais peur d'hériter d'une boîte noire. C'est l'inverse — tout est documenté, les workflows n8n sont propres, et mes développeurs ont pu reprendre la main sans difficulté.",
+        "name": "Julien Roux",
+        "role": "Directeur technique",
+        "company": "Finovo"
+      },
+      {
+        "text": "On envoyait la même newsletter à toute notre base. Ils l'ont segmentée et ont automatisé les scénarios selon le comportement réel des abonnés. Le taux d'ouverture a bondi, et surtout on vend même la nuit.",
+        "name": "Margaux Lefèvre",
+        "role": "Responsable marketing",
+        "company": "Côté Jardin"
+      }
+    ]
+  },
+  "process": {
+    "title": "Notre méthode en 3 étapes",
+    "subtitle": "Un processus simple et efficace pour transformer votre business",
+    "steps": [
+      {
+        "number": "01",
+        "badge": "48h",
+        "heading": "Analyse",
+        "description": "Audit complet de vos processus et identification des opportunités d'automatisation.",
+        "boxTitle": "Ce qui est inclus :",
+        "items": [
+          "Analyse détaillée de vos processus actuels",
+          "Identification des tâches répétitives",
+          "Estimation du temps gagné par automatisation",
+          "Rapport d'opportunités personnalisé"
+        ]
+      },
+      {
+        "number": "02",
+        "badge": "7 jours",
+        "heading": "Plan sur mesure",
+        "description": "Conception d'une stratégie d'automatisation adaptée à vos besoins et objectifs.",
+        "boxTitle": "Notre approche :",
+        "items": [
+          "Architecture technique personnalisée",
+          "Roadmap de déploiement par priorités",
+          "Budget et ROI prévisionnel détaillé",
+          "Validation avec votre équipe"
+        ]
+      },
+      {
+        "number": "03",
+        "badge": "Continue",
+        "heading": "Déploiement & optimisation",
+        "description": "Mise en place rapide et amélioration continue de vos automatisations.",
+        "boxTitle": "Mise en production :",
+        "items": [
+          "Développement et intégration des automatisations",
+          "Formation de vos équipes",
+          "Support technique dédié",
+          "Monitoring et optimisation permanente"
+        ]
+      }
+    ]
+  },
+  "faq": {
+    "title": "Questions fréquentes",
+    "items": [
+      {
+        "question": "Combien de temps avant de voir les premiers résultats ?",
+        "answer": "Votre audit personnalisé est livré sous 48h. Les premières automatisations sont déployées immédiatement après validation du plan. Vous constatez un impact mesurable dès la première semaine avec un gain de temps de 20h minimum sur vos tâches répétitives."
+      },
+      {
+        "question": "Quelles automatisations proposez-vous concrètement ?",
+        "answer": "Nous automatisons vos emails et réponses clients, la génération et qualification de leads, vos chatbots de support 24/7, la synchronisation CRM, la publication sur réseaux sociaux, le traitement de documents et factures, vos reportings en temps réel, et même votre processus de recrutement. Toutes nos solutions s'adaptent à vos outils actuels."
+      },
+      {
+        "question": "Comment garantissez-vous la sécurité de nos données ?",
+        "answer": "Nous utilisons uniquement des connexions OAuth sécurisées, sans jamais stocker vos mots de passe. Toutes les clés API sont chiffrées dans des coffres-forts certifiés. Vos données restent sur vos systèmes, nous n'en conservons aucune copie. Conformité RGPD garantie."
+      },
+      {
+        "question": "Travaillez-vous avec notre secteur d'activité ?",
+        "answer": "Nos solutions s'adaptent à tous les secteurs : e-commerce, services B2B, agences marketing, SaaS, cabinets de conseil, industrie, santé, etc. Chaque automatisation est personnalisée selon votre métier et vos processus spécifiques. Nous analysons vos besoins uniques lors de l'audit."
+      },
+      {
+        "question": "Quel est votre modèle de tarification ?",
+        "answer": "L'audit de 48h est sans engagement. Ensuite, nous proposons un forfait mensuel adapté à votre volume d'automatisations, sans frais cachés. Vous pouvez annuler à tout moment. Garantie satisfait ou remboursé à 100% le premier mois."
+      },
+      {
+        "question": "Quel support nous apportez-vous après la mise en place ?",
+        "answer": "Support dédié en français par email, chat et visio. Temps de réponse garanti sous 4h en jours ouvrés. Formation complète de vos équipes incluse. Optimisation continue et ajustements réguliers pour faire évoluer vos automatisations avec votre croissance."
+      },
+      {
+        "question": "Que se passe-t-il si nous souhaitons arrêter la collaboration ?",
+        "answer": "Réversibilité totale garantie. Vous récupérez l'intégralité de vos workflows, configurations, documentations et accès. Aucune période d'engagement minimum. Vos automatisations continuent de fonctionner, vous gardez le contrôle absolu de votre infrastructure."
+      },
+      {
+        "question": "Devez-vous accéder à nos systèmes internes ?",
+        "answer": "Nous demandons uniquement les permissions minimales nécessaires via OAuth (comme Google ou Microsoft). Vous gardez le contrôle total et pouvez révoquer tous les accès instantanément depuis vos outils. Nous n'installons aucun logiciel sur vos serveurs."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Prêt à transformer votre business ?",
+    "subtitle": "Réservez votre audit de 48h et découvrez comment gagner 20h par semaine",
+    "whatsapp": "WhatsApp : 07 45 49 65 52",
+    "disclaimer": "Sans engagement • Audit personnalisé • Résultats en 48h"
+  },
+  "footer": {
+    "tagline": "L'agence d'automatisation IA qui transforme votre business avec des solutions intelligentes et personnalisées.",
+    "navigation": "Navigation",
+    "solutions": "Solutions",
+    "contact": "Contact",
+    "requestAudit": "Demander un audit",
+    "legal": "Mentions légales",
+    "copyright": "© {year} Devmaster. Tous droits réservés."
+  },
+  "notFound": {
+    "title": "Page introuvable",
+    "description": "La page que vous cherchez n'existe pas ou a été déplacée.",
+    "back": "Retour à l'accueil"
+  }
+}

@@ -1,0 +1,97 @@
+---
+import Icon from "../Icon.astro";
+
+interface Props {
+  faq: { title: string; items: { question: string; answer: string }[] };
+}
+const { faq } = Astro.props;
+---
+
+<section id="faq" class="relative py-16 sm:py-24">
+  <div class="relative z-10 mx-auto max-w-4xl px-4 sm:px-6">
+    <div class="mb-8 text-center sm:mb-12">
+      <h2 class="mb-3 px-2 text-3xl font-medium text-white sm:mb-4 sm:text-4xl md:text-5xl">{faq.title}</h2>
+    </div>
+
+    <!-- Accordéon natif : une seule réponse ouverte à la fois (attribut name), la première par défaut, sans script. -->
+    <div class="space-y-3">
+      {
+        faq.items.map((item, index) => (
+          <details
+            name="faq"
+            open={index === 0}
+            class="faq-item overflow-hidden rounded-xl border border-white/10 bg-white/5 backdrop-blur-md transition-all duration-200"
+          >
+            <summary class="flex w-full cursor-pointer list-none items-center justify-between px-4 py-3 text-left sm:px-6 sm:py-4">
+              <span class="question pr-6 text-sm font-light transition-colors duration-200 sm:pr-8 sm:text-base">{item.question}</span>
+              <span class="chevron shrink-0">
+                <Icon name="ChevronDown" size={20} class="text-white" />
+              </span>
+            </summary>
+            <div class="px-4 pt-2 pb-3 sm:px-6 sm:pb-4">
+              <p class="answer text-xs leading-relaxed text-gray-400 sm:text-sm sm:leading-5">{item.answer}</p>
+            </div>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq-item:not([open]):hover {
+    background-color: rgb(255 255 255 / 0.1);
+  }
+  .faq-item[open] {
+    box-shadow:
+      0 20px 25px -5px rgb(0 0 0 / 0.1),
+      0 8px 10px -6px rgb(0 0 0 / 0.1);
+  }
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+  .question {
+    color: var(--color-gray-300);
+  }
+  .faq-item[open] .question {
+    color: #fff;
+  }
+  .chevron {
+    transition:
+      rotate 0.2s,
+      scale 0.2s;
+  }
+  .faq-item[open] .chevron {
+    rotate: 180deg;
+    scale: 1.1;
+  }
+  /* Ouverture/fermeture animées (0,2 s) dans les navigateurs qui le permettent ; instantanées ailleurs. */
+  @supports (interpolate-size: allow-keywords) {
+    .faq-item {
+      interpolate-size: allow-keywords;
+    }
+    .faq-item::details-content {
+      block-size: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition:
+        block-size 0.2s ease-in,
+        opacity 0.2s ease-in,
+        content-visibility 0.2s allow-discrete;
+    }
+    .faq-item[open]::details-content {
+      block-size: auto;
+      opacity: 1;
+      transition-timing-function: ease-out;
+    }
+  }
+  .faq-item[open] .answer {
+    animation: answer-in 0.2s ease-out;
+  }
+  @keyframes answer-in {
+    from {
+      opacity: 0;
+      translate: 0 -10px;
+    }
+  }
+</style>

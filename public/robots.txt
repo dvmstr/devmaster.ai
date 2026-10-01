@@ -1,35 +1,5 @@
-# robots.txt for Devmaster - AI Automation Agency
-
+# Devmaster — tous les robots sont les bienvenus, moteurs de recherche et assistants IA compris.
 User-agent: *
 Allow: /
 
-# Disallow admin or sensitive areas (if any)
-# Disallow: /admin/
-# Disallow: /private/
-
-# Do not index legal pages (all locales)
-Disallow: /legal
-Disallow: /en/legal
-Disallow: /fr/legal
-Disallow: /zh/legal
-
-# Sitemap location
-Sitemap: https://devmaster.ai/sitemap.xml
-
-# Crawl delay (optional, remove if not needed)
-# Crawl-delay: 10
-
-# Google specific
-User-agent: Googlebot
-Allow: /
-
-# Bing specific
-User-agent: Bingbot
-Allow: /
-
-# Block specific bad bots (optional)
-User-agent: SemrushBot
-Crawl-delay: 10
-
-User-agent: AhrefsBot
-Crawl-delay: 10
+Sitemap: https://devmaster.ai/sitemap-index.xml

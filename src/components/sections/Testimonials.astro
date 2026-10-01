@@ -1,0 +1,83 @@
+---
+import Icon from "../Icon.astro";
+
+interface Testimonial {
+  text: string;
+  name: string;
+  role: string;
+  company: string;
+}
+interface Props {
+  testimonials: { cta: string; items: Testimonial[] };
+}
+const { testimonials } = Astro.props;
+// Trois colonnes qui défilent en continu à des vitesses différentes (2 colonnes en tablette, 1 sur mobile).
+const columns = [
+  { items: testimonials.items.slice(0, 3), duration: 15, class: "" },
+  { items: testimonials.items.slice(3, 6), duration: 19, class: "hidden md:block" },
+  { items: testimonials.items.slice(6, 9), duration: 17, class: "hidden lg:block" },
+];
+---
+
+<section id="testimonials" class="relative overflow-hidden py-12 sm:py-16">
+  <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6">
+    <div class="flex max-h-[600px] justify-center gap-4 overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)] sm:max-h-[740px] sm:gap-6">
+      {
+        columns.map((column) => (
+          <div class={column.class}>
+            <div class:list={["scroll-column flex flex-col gap-6 pb-6", `speed-${column.duration}`]}>
+              {[0, 1].map((copy) =>
+                column.items.map((t) => (
+                  <figure
+                    class="w-full max-w-xs rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-md transition-all duration-300 hover:border-white/20 hover:bg-white/10 sm:p-7"
+                    aria-hidden={copy === 1 ? "true" : undefined}
+                  >
+                    <blockquote class="text-sm leading-relaxed text-gray-300">"{t.text}"</blockquote>
+                    <figcaption class="mt-6 flex items-center gap-3 border-t border-white/10 pt-5">
+                      <span aria-hidden="true" class="h-9 w-[3px] shrink-0 rounded-full bg-linear-to-b from-cyan-400 to-cyan-500/20" />
+                      <span class="flex min-w-0 flex-col">
+                        <span class="truncate text-sm leading-tight font-medium tracking-tight text-white">{t.name}</span>
+                        <span class="mt-1 truncate text-xs leading-tight">
+                          {t.role && <span class="text-gray-400">{t.role}</span>}
+                          {t.role && t.company && <span class="text-gray-600"> · </span>}
+                          {t.company && <span class="text-cyan-400/90">{t.company}</span>}
+                        </span>
+                      </span>
+                    </figcaption>
+                  </figure>
+                )),
+              )}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="mt-10 flex justify-center sm:mt-16">
+      <a href="#cta-final" class="btn-glass-filled group flex w-full max-w-xs items-center justify-center gap-2 sm:w-auto">
+        {testimonials.cta}
+        <Icon name="ArrowRight" size={16} class="transition-transform duration-300 group-hover:translate-x-0.5" />
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .scroll-column {
+    animation: scroll-up linear infinite;
+  }
+  .speed-15 {
+    animation-duration: 15s;
+  }
+  .speed-17 {
+    animation-duration: 17s;
+  }
+  .speed-19 {
+    animation-duration: 19s;
+  }
+  @keyframes scroll-up {
+    to {
+      translate: 0 -50%;
+    }
+  }
+</style>
