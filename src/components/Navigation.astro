@@ -2,15 +2,17 @@
 import Icon from "./Icon.astro";
 import LanguageSwitcher from "./LanguageSwitcher.astro";
 import type { Locale } from "../lib/i18n";
+import { SITE } from "../lib/site";
 
 interface Props {
   locale: Locale;
   items: { label: string; target: string }[];
   cta: string;
+  clientArea: string;
   homeLabel: string;
   languageLabel: string;
 }
-const { locale, items, cta, homeLabel, languageLabel } = Astro.props;
+const { locale, items, cta, clientArea, homeLabel, languageLabel } = Astro.props;
 // Sections suivies pour la surbrillance (l'appel à l'action final compte aussi, sans entrée de menu).
 const tracked = [...items.map((i) => i.target), "cta-final"].join(",");
 ---
@@ -45,6 +47,15 @@ const tracked = [...items.map((i) => i.target), "cta-final"].join(",");
     </ul>
 
     <div class="flex items-center gap-2 sm:gap-3">
+      <a
+        href={SITE.portalUrl}
+        class="flex items-center gap-1.5 rounded-full px-2 py-1.5 text-sm font-light text-gray-300 transition-colors hover:text-white/60"
+        aria-label={clientArea}
+        data-client-area
+      >
+        <Icon name="LogIn" size={16} />
+        <span class="hidden lg:inline">{clientArea}</span>
+      </a>
       <LanguageSwitcher locale={locale} path="/" label={languageLabel} />
       <a href="#cta-final" class="btn-glass-filled group flex items-center gap-1.5 text-xs sm:gap-2 sm:text-sm">
         <span>{cta}</span>

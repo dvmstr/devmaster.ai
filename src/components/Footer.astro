@@ -5,7 +5,7 @@ import { SITE } from "../lib/site";
 
 interface Props {
   locale: Locale;
-  footer: { tagline: string; navigation: string; solutions: string; contact: string; requestAudit: string; copyright: string; legal: string };
+  footer: { tagline: string; navigation: string; solutions: string; contact: string; requestAudit: string; clientArea: string; copyright: string; legal: string };
   navItems: { label: string; target: string }[];
   solutions: string[];
   languageLabel: string;
@@ -62,6 +62,9 @@ const home = localePath(locale, "/");
           </li>
           <li>
             <a href={`${home}#cta-final`} class="text-sm text-gray-400 transition-colors hover:text-cyan-400">{footer.requestAudit}</a>
+          </li>
+          <li>
+            <a href={SITE.portalUrl} class="text-sm text-gray-400 transition-colors hover:text-cyan-400">{footer.clientArea}</a>
           </li>
         </ul>
         <div class="mt-6">

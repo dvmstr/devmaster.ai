@@ -17,7 +17,7 @@ const site = defineCollection({
   schema: z.object({
     meta: z.object({ title: text, description: text, ogTitle: text, ogDescription: text, keywords: z.array(text) }),
     a11y: z.object({ skipToContent: text, heroLabel: text, languageMenu: text, whatsapp: text, home: text }),
-    nav: z.object({ items: z.array(z.object({ label: text, target: text })), cta: text }),
+    nav: z.object({ items: z.array(z.object({ label: text, target: text })), cta: text, clientArea: text }),
     hero: z.object({ badge: text, title: text, description: text, ctaPrimary: text, ctaSecondary: text, logos: z.array(text).min(4) }),
     benefits: z.object({
       title: text, subtitle: text, cta: text,
@@ -47,7 +47,7 @@ const site = defineCollection({
     faq: z.object({ title: text, items: z.array(z.object({ question: text, answer: text })).min(1) }),
     cta: z.object({ title: text, subtitle: text, whatsapp: text, disclaimer: text }),
     footer: z.object({
-      tagline: text, navigation: text, solutions: text, contact: text, requestAudit: text,
+      tagline: text, navigation: text, solutions: text, contact: text, requestAudit: text, clientArea: text,
       copyright: text.refine((s) => s.includes("{year}"), "doit contenir {year}"), legal: text,
     }),
     notFound: z.object({ title: text, description: text, back: text }),

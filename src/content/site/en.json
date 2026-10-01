@@ -44,7 +44,8 @@
         "target": "faq"
       }
     ],
-    "cta": "Audit"
+    "cta": "Audit",
+    "clientArea": "Client area"
   },
   "hero": {
     "badge": "Next-generation AI Automation",
@@ -379,7 +380,8 @@
     "contact": "Contact",
     "requestAudit": "Request an audit",
     "legal": "Legal Notice",
-    "copyright": "© {year} Devmaster. All rights reserved."
+    "copyright": "© {year} Devmaster. All rights reserved.",
+    "clientArea": "Client area"
   },
   "notFound": {
     "title": "Page not found",

@@ -6,6 +6,8 @@ export const SITE = {
   name: "Devmaster",
   email: "dvmstr.ai@gmail.com",
   whatsappUrl: "https://wa.me/33745496552",
+  /** Espace client (portail des démos et des accès). */
+  portalUrl: "https://portal.devmaster.ai/",
   /** Hébergeur à citer dans les mentions légales (à changer avec l'hébergement). */
   host: {
     name: "Netlify, Inc.",

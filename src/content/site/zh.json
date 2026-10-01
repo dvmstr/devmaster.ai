@@ -44,7 +44,8 @@
         "target": "faq"
       }
     ],
-    "cta": "审计"
+    "cta": "审计",
+    "clientArea": "客户专区"
   },
   "hero": {
     "badge": "新一代AI自动化",
@@ -379,7 +380,8 @@
     "contact": "联系我们",
     "requestAudit": "申请审计",
     "legal": "法律声明",
-    "copyright": "© {year} Devmaster. 版权所有。"
+    "copyright": "© {year} Devmaster. 版权所有。",
+    "clientArea": "客户专区"
   },
   "notFound": {
     "title": "页面未找到",
