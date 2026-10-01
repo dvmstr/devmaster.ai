@@ -1,0 +1,111 @@
+---
+/**
+ * Noms d'outils qui défilent sur 4 colonnes : chaque colonne change de nom toutes les 2 s, décalée de 0,2 s sur
+ * la précédente (sortie vers le haut avec flou, entrée en ressort). Les noms sont répartis au hasard à chaque visite.
+ */
+interface Props {
+  logos: string[];
+  columns?: number;
+}
+const { logos, columns = 4 } = Astro.props;
+const perColumn = Math.ceil(logos.length / columns);
+const grid = Array.from({ length: columns }, (_, c) => Array.from({ length: perColumn }, (_, i) => logos[(c + i * columns) % logos.length]!));
+---
+
+<div class="flex items-center justify-center gap-3 md:gap-6" data-logos={JSON.stringify(logos)} data-columns={columns}>
+  {
+    grid.map((column, index) => (
+      <div class="logo-column relative h-8 w-20 overflow-hidden md:h-10 md:w-28" data-index={index}>
+        {column.map((name, i) => (
+          <div class:list={["logo absolute inset-0 flex items-center justify-center", i === 0 && "is-current"]}>
+            <div class="text-sm font-light whitespace-nowrap text-white md:text-base">{name}</div>
+          </div>
+        ))}
+      </div>
+    ))
+  }
+</div>
+
+<style>
+  .logo {
+    opacity: 0;
+  }
+  .logo.is-current {
+    opacity: 1;
+  }
+  .logo-column {
+    animation: column-in 0.5s ease-out both;
+  }
+  .logo-column[data-index="1"] {
+    animation-delay: 0.1s;
+  }
+  .logo-column[data-index="2"] {
+    animation-delay: 0.2s;
+  }
+  .logo-column[data-index="3"] {
+    animation-delay: 0.3s;
+  }
+  @keyframes column-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+  }
+</style>
+
+<script>
+  import { spring } from "../lib/spring";
+
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const enter = spring({ stiffness: 300, damping: 20 });
+
+  for (const root of document.querySelectorAll<HTMLElement>("[data-logos]")) {
+    const logos: string[] = JSON.parse(root.dataset.logos ?? "[]");
+    const columns = [...root.querySelectorAll<HTMLElement>(".logo-column")];
+    // Répartition aléatoire (comme l'ancien site), complétée au hasard pour des colonnes de même longueur.
+    const shuffled = [...logos];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j]!, shuffled[i]!];
+    }
+    columns.forEach((col, c) => {
+      col.querySelectorAll<HTMLElement>(".logo > div").forEach((slot, i) => {
+        slot.textContent = shuffled[c + i * columns.length] ?? shuffled[Math.floor(Math.random() * shuffled.length)]!;
+      });
+    });
+    if (reduce) continue;
+
+    const CYCLE = 2000;
+    const start = performance.now();
+    const current = columns.map(() => 0);
+    const tick = () => {
+      const t = performance.now() - start;
+      columns.forEach((col, c) => {
+        const items = [...col.querySelectorAll<HTMLElement>(".logo")];
+        const index = Math.floor(((t + c * 200) % (CYCLE * items.length)) / CYCLE);
+        if (index === current[c]) return;
+        const prev = items[current[c]!]!;
+        const next = items[index]!;
+        current[c] = index;
+        prev.classList.remove("is-current");
+        prev.animate(
+          [
+            { transform: "translateY(0)", opacity: 1, filter: "blur(0px)" },
+            { transform: "translateY(-20%)", opacity: 0, filter: "blur(4px)" },
+          ],
+          { duration: 300, easing: "ease-in", fill: "forwards" },
+        );
+        // Mode « attendre » : le nom suivant entre quand le précédent est sorti.
+        next.animate(
+          [
+            { transform: "translateY(10%)", opacity: 0, filter: "blur(4px)" },
+            { transform: "translateY(0)", opacity: 1, filter: "blur(0px)" },
+          ],
+          { duration: enter.duration, easing: enter.easing, delay: 300, fill: "both" },
+        ).onfinish = () => next.classList.add("is-current");
+      });
+    };
+    // Pause quand l'onglet est caché : pas de rattrapage en rafale au retour.
+    setInterval(() => document.visibilityState === "visible" && tick(), 100);
+  }
+</script>

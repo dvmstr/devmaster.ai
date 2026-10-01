@@ -1,0 +1,389 @@
+{
+  "meta": {
+    "title": "Devmaster - AI Automation for your Business",
+    "description": "Transform your business with AI. Automate your processes, save 20 hours per week and boost your productivity by 300%. Audit in 48h.",
+    "ogTitle": "Devmaster - AI Automation for your Business",
+    "ogDescription": "Transform your business with AI. Automate your processes, save 20 hours per week and boost your productivity by 300%.",
+    "keywords": [
+      "AI automation",
+      "artificial intelligence",
+      "n8n",
+      "workflow automation",
+      "AI chatbot",
+      "productivity",
+      "business automation"
+    ]
+  },
+  "a11y": {
+    "skipToContent": "Skip to content",
+    "heroLabel": "Hero section",
+    "languageMenu": "Select language",
+    "whatsapp": "Contact on WhatsApp",
+    "home": "Devmaster, back to top"
+  },
+  "nav": {
+    "items": [
+      {
+        "label": "Benefits",
+        "target": "benefits"
+      },
+      {
+        "label": "Solutions",
+        "target": "solutions"
+      },
+      {
+        "label": "Results",
+        "target": "results"
+      },
+      {
+        "label": "Process",
+        "target": "process"
+      },
+      {
+        "label": "FAQ",
+        "target": "faq"
+      }
+    ],
+    "cta": "Audit"
+  },
+  "hero": {
+    "badge": "Next-generation AI Automation",
+    "title": "Transform your business with AI",
+    "description": "Not using Artificial Intelligence? Your company's processes are probably obsolete.",
+    "ctaPrimary": "Book my audit",
+    "ctaSecondary": "How it works",
+    "logos": [
+      "Google",
+      "Salesforce",
+      "HubSpot",
+      "Slack",
+      "Microsoft",
+      "Notion",
+      "Airtable",
+      "OpenAI"
+    ]
+  },
+  "benefits": {
+    "title": "Why Devmaster?",
+    "subtitle": "Concrete results that transform the way you work",
+    "cta": "Get started now",
+    "items": [
+      {
+        "icon": "Trash2",
+        "title": "Eliminate unnecessary tasks",
+        "description": "Automate low-value processes and focus your teams on what really matters."
+      },
+      {
+        "icon": "Rocket",
+        "title": "Stay ahead of the curve",
+        "description": "Anticipate the AI revolution and equip yourself today with automations that will make a difference tomorrow."
+      },
+      {
+        "icon": "TrendingUp",
+        "title": "Boost your revenue",
+        "description": "Free your talent from repetitive tasks: more time to create value, less unnecessary overhead."
+      },
+      {
+        "icon": "Users",
+        "title": "Empower your employees",
+        "description": "Offer them more rewarding work: AI handles the routine, they focus on their true human potential."
+      },
+      {
+        "icon": "Shield",
+        "title": "Uncompromising security",
+        "description": "Your data is encrypted, hosted on secure servers and never shared. Each automation is designed to guarantee confidentiality and compliance."
+      }
+    ]
+  },
+  "solutions": {
+    "title": "Our Solutions",
+    "subtitle": "Discover our ecosystem of intelligent automations",
+    "cta": "Get my personalized audit",
+    "combineWith": "Works great with",
+    "items": [
+      {
+        "id": 1,
+        "title": "Smart Emails",
+        "tagline": "BOOST YOUR CONVERSIONS",
+        "description": "Automatic responses, lead qualification and personalized follow-up to maximize your conversions.",
+        "icon": "Mail",
+        "relatedIds": [
+          2,
+          4
+        ],
+        "impactStat": "x3 conversions"
+      },
+      {
+        "id": 2,
+        "title": "Leads & Prospecting",
+        "tagline": "GENERATE MORE LEADS",
+        "description": "Automated generation, intelligent enrichment and precise scoring of your prospects.",
+        "icon": "Users",
+        "relatedIds": [
+          1,
+          4
+        ],
+        "impactStat": "+250% leads"
+      },
+      {
+        "id": 3,
+        "title": "AI Chatbots",
+        "tagline": "AVAILABLE 24/7",
+        "description": "24/7 customer support, automatic qualification and instant responses powered by AI.",
+        "icon": "MessageCircle",
+        "relatedIds": [
+          2,
+          4
+        ],
+        "impactStat": "Response in <2min"
+      },
+      {
+        "id": 4,
+        "title": "CRM & Follow-ups",
+        "tagline": "AUTOMATE YOUR FOLLOW-UPS",
+        "description": "Multi-platform synchronization, automatic updates and intelligent reminders.",
+        "icon": "Database",
+        "relatedIds": [
+          1,
+          2
+        ],
+        "impactStat": "0 missed follow-ups"
+      },
+      {
+        "id": 5,
+        "title": "Social Media",
+        "tagline": "BOOST YOUR VISIBILITY",
+        "description": "Automated posting, performance analysis and optimized engagement across all your channels.",
+        "icon": "Share2",
+        "relatedIds": [
+          7,
+          2
+        ],
+        "impactStat": "+200% engagement"
+      },
+      {
+        "id": 6,
+        "title": "Documents & Invoices",
+        "tagline": "SAVE TIME",
+        "description": "Automatic data extraction, intelligent processing and filing without manual intervention.",
+        "icon": "FileText",
+        "relatedIds": [
+          4,
+          7
+        ],
+        "impactStat": "12h saved/week"
+      },
+      {
+        "id": 7,
+        "title": "Reporting",
+        "tagline": "MONITOR IN REAL-TIME",
+        "description": "Real-time dashboards, personalized alerts and actionable insights to drive your business.",
+        "icon": "BarChart3",
+        "relatedIds": [
+          4,
+          6
+        ],
+        "impactStat": "Real-time"
+      },
+      {
+        "id": 8,
+        "title": "Recruitment",
+        "tagline": "FIND YOUR TALENTS",
+        "description": "Automated sourcing, intelligent candidate qualification and optimized recruitment management.",
+        "icon": "Users",
+        "relatedIds": [
+          1,
+          2
+        ],
+        "impactStat": "-60% hiring time"
+      }
+    ]
+  },
+  "results": {
+    "title": "Measurable results",
+    "subtitle": "Our clients see immediate impact on their performance",
+    "stats": [
+      {
+        "value": 300,
+        "unit": "%",
+        "label": "Productivity increase"
+      },
+      {
+        "value": 20,
+        "unit": "h",
+        "label": "Saved per week"
+      },
+      {
+        "value": 100,
+        "unit": "%",
+        "label": "Satisfaction guaranteed"
+      },
+      {
+        "value": 48,
+        "unit": "h",
+        "label": "For your Audit & Quote"
+      }
+    ]
+  },
+  "testimonials": {
+    "cta": "Join them now",
+    "items": [
+      {
+        "text": "We used to spend our evenings chasing abandoned carts by hand. They connected everything to our Shopify and Klaviyo in two weeks, and the follow-ups now run on their own — we've recovered nearly 18% of revenue on that channel.",
+        "name": "Camille Fontaine",
+        "role": "E-commerce Manager",
+        "company": "Maison Lhéris"
+      },
+      {
+        "text": "My real problem was missing requests over the weekend. Their chatbot handles most of the routine questions and only escalates the serious ones to me. My average response time went from a few hours to a few minutes.",
+        "name": "Karim Benali",
+        "role": "Founder",
+        "company": "Velobi"
+      },
+      {
+        "text": "Entering supplier invoices used to take me two full days a month. Now they're read, filed and reconciled automatically in our accounting tool. I was skeptical at first, but it genuinely holds up.",
+        "name": "Élodie Mercier",
+        "role": "Office Manager",
+        "company": "Perrin & Associés"
+      },
+      {
+        "text": "What I appreciated is that they didn't show up with some over-engineered machine. They targeted three specific tasks that were eating our time, and that was it. My team finally has room for the rest.",
+        "name": "Thomas Rieu",
+        "role": "Co-founder",
+        "company": "Atelier Norré"
+      },
+      {
+        "text": "Before, one lead in three slipped through because we followed up on instinct. Now every prospect has its own sequence in HubSpot and nothing gets lost. We closed two accounts we'd honestly have forgotten about.",
+        "name": "Sarah Lévy",
+        "role": "Head of Sales",
+        "company": "Klariss"
+      },
+      {
+        "text": "We'd been promised the moon elsewhere and ended up disappointed. They started with a clear, costed audit, then delivered in stages. Three months in, the ROI is real — and the numbers aren't inflated.",
+        "name": "Antoine Mercadier",
+        "role": "Operations Director",
+        "company": "Groupe Tessandier"
+      },
+      {
+        "text": "Our reps were spending way too long qualifying leads that weren't a fit. An AI agent now does the first pass and only sends them warm prospects, with the context attached. They handle nearly three times more meetings that actually matter.",
+        "name": "Inès Khelifi",
+        "role": "Growth Lead",
+        "company": "Brevio"
+      },
+      {
+        "text": "On the technical side, I was worried we'd inherit a black box. It's the opposite — everything is documented, the n8n workflows are clean, and my developers were able to take over without any trouble.",
+        "name": "Julien Roux",
+        "role": "CTO",
+        "company": "Finovo"
+      },
+      {
+        "text": "We were sending the same newsletter to our entire list. They segmented it and automated the journeys based on how subscribers actually behave. Open rates jumped, and best of all we're selling while we sleep.",
+        "name": "Margaux Lefèvre",
+        "role": "Marketing Manager",
+        "company": "Côté Jardin"
+      }
+    ]
+  },
+  "process": {
+    "title": "Our method in 3 steps",
+    "subtitle": "A simple and effective process to transform your business",
+    "steps": [
+      {
+        "number": "01",
+        "badge": "48h",
+        "heading": "Analysis",
+        "description": "Complete audit of your processes and identification of automation opportunities.",
+        "boxTitle": "What's included:",
+        "items": [
+          "Detailed analysis of your current processes",
+          "Identification of repetitive tasks",
+          "Estimation of time saved through automation",
+          "Personalized opportunities report"
+        ]
+      },
+      {
+        "number": "02",
+        "badge": "7 days",
+        "heading": "Custom Plan",
+        "description": "Design of an automation strategy tailored to your needs and objectives.",
+        "boxTitle": "Our approach:",
+        "items": [
+          "Custom technical architecture",
+          "Priority-based deployment roadmap",
+          "Detailed budget and projected ROI",
+          "Validation with your team"
+        ]
+      },
+      {
+        "number": "03",
+        "badge": "Continuous",
+        "heading": "Deployment & Optimization",
+        "description": "Rapid implementation and continuous improvement of your automations.",
+        "boxTitle": "Production launch:",
+        "items": [
+          "Development and integration of automations",
+          "Training for your teams",
+          "Dedicated technical support",
+          "Permanent monitoring and optimization"
+        ]
+      }
+    ]
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "items": [
+      {
+        "question": "How long before seeing the first results?",
+        "answer": "Your personalized audit is delivered within 48 hours. The first automations are deployed immediately after plan validation. You'll see measurable impact within the first week with a minimum time savings of 20 hours on repetitive tasks."
+      },
+      {
+        "question": "What automations do you offer specifically?",
+        "answer": "We automate your emails and customer responses, lead generation and qualification, 24/7 support chatbots, CRM synchronization, social media posting, document and invoice processing, real-time reporting, and even your recruitment process. All our solutions adapt to your current tools."
+      },
+      {
+        "question": "How do you guarantee the security of our data?",
+        "answer": "We only use secure OAuth connections, never storing your passwords. All API keys are encrypted in certified vaults. Your data stays on your systems, we don't keep any copies. GDPR compliance guaranteed."
+      },
+      {
+        "question": "Do you work with our industry?",
+        "answer": "Our solutions adapt to all sectors: e-commerce, B2B services, marketing agencies, SaaS, consulting firms, industry, healthcare, etc. Each automation is customized according to your business and specific processes. We analyze your unique needs during the audit."
+      },
+      {
+        "question": "What is your pricing model?",
+        "answer": "The 48-hour audit comes with no commitment. Then, we offer a monthly package adapted to your automation volume, with no hidden fees. You can cancel at any time. 100% satisfaction guaranteed or money back for the first month."
+      },
+      {
+        "question": "What support do you provide after implementation?",
+        "answer": "Dedicated support via email, chat and video. Guaranteed response time within 4 hours on business days. Complete training for your teams included. Continuous optimization and regular adjustments to evolve your automations with your growth."
+      },
+      {
+        "question": "What happens if we want to end the collaboration?",
+        "answer": "Total reversibility guaranteed. You recover all your workflows, configurations, documentation and access. No minimum commitment period. Your automations continue to work, you keep absolute control of your infrastructure."
+      },
+      {
+        "question": "Do you need to access our internal systems?",
+        "answer": "We only request the minimum permissions necessary via OAuth (like Google or Microsoft). You keep total control and can revoke all access instantly from your tools. We don't install any software on your servers."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Ready to transform your business?",
+    "subtitle": "Book your 48h audit and discover how to save 20 hours per week",
+    "whatsapp": "WhatsApp: +33 7 45 49 65 52",
+    "disclaimer": "No commitment • Personalized audit • Results in 48h"
+  },
+  "footer": {
+    "tagline": "The AI automation agency that transforms your business with intelligent, personalized solutions.",
+    "navigation": "Navigation",
+    "solutions": "Solutions",
+    "contact": "Contact",
+    "requestAudit": "Request an audit",
+    "legal": "Legal Notice",
+    "copyright": "© {year} Devmaster. All rights reserved."
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "The page you are looking for does not exist or has moved.",
+    "back": "Back to home"
+  }
+}

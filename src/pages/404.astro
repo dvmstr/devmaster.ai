@@ -1,0 +1,28 @@
+---
+import { getEntry } from "astro:content";
+import Base from "../layouts/Base.astro";
+import { LOCALES, LOCALE_META, localePath } from "../lib/i18n";
+
+// Page unique pour toutes les langues (servie par l'hébergeur pour toute adresse inconnue).
+const entries = await Promise.all(LOCALES.map(async (l) => ({ locale: l, t: (await getEntry("site", l))!.data.notFound })));
+const en = entries[0]!.t;
+---
+
+<Base locale="en" path="/404/" title={`${en.title} · Devmaster`} description={en.description} noindex alternates={false}>
+  <main class="flex min-h-svh items-center justify-center bg-black px-6 text-center">
+    <div class="space-y-10">
+      <p class="text-7xl font-medium text-white sm:text-8xl">404</p>
+      {
+        entries.map(({ locale, t }) => (
+          <div lang={LOCALE_META[locale].htmlLang} class="space-y-2">
+            <h1 class="text-xl font-medium text-white">{t.title}</h1>
+            <p class="text-sm text-gray-400">{t.description}</p>
+            <a href={localePath(locale, "/")} class="btn-glass-filled mt-3 inline-flex">
+              {t.back}
+            </a>
+          </div>
+        ))
+      }
+    </div>
+  </main>
+</Base>

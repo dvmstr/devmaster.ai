@@ -1,0 +1,389 @@
+{
+  "meta": {
+    "title": "Devmaster - 企业AI自动化",
+    "description": "用AI转型您的业务。自动化您的流程，每周节省20小时，生产力提升300%。48小时审计。",
+    "ogTitle": "Devmaster - 企业AI自动化",
+    "ogDescription": "用AI转型您的业务。自动化您的流程，每周节省20小时，生产力提升300%。",
+    "keywords": [
+      "AI自动化",
+      "人工智能",
+      "n8n",
+      "工作流自动化",
+      "AI聊天机器人",
+      "生产力",
+      "业务自动化"
+    ]
+  },
+  "a11y": {
+    "skipToContent": "跳到内容",
+    "heroLabel": "首页部分",
+    "languageMenu": "选择语言",
+    "whatsapp": "通过WhatsApp联系",
+    "home": "Devmaster，返回顶部"
+  },
+  "nav": {
+    "items": [
+      {
+        "label": "优势",
+        "target": "benefits"
+      },
+      {
+        "label": "解决方案",
+        "target": "solutions"
+      },
+      {
+        "label": "成果",
+        "target": "results"
+      },
+      {
+        "label": "流程",
+        "target": "process"
+      },
+      {
+        "label": "常见问题",
+        "target": "faq"
+      }
+    ],
+    "cta": "审计"
+  },
+  "hero": {
+    "badge": "新一代AI自动化",
+    "title": "用AI转型您的业务",
+    "description": "还没使用人工智能？您公司的流程可能已经过时。",
+    "ctaPrimary": "预约审计",
+    "ctaSecondary": "了解更多",
+    "logos": [
+      "Google",
+      "Salesforce",
+      "HubSpot",
+      "Slack",
+      "Microsoft",
+      "Notion",
+      "Airtable",
+      "OpenAI"
+    ]
+  },
+  "benefits": {
+    "title": "为什么选择Devmaster？",
+    "subtitle": "具体成果，改变您的工作方式",
+    "cta": "立即开始",
+    "items": [
+      {
+        "icon": "Trash2",
+        "title": "消除不必要的任务",
+        "description": "自动化低价值流程，让您的团队专注于真正重要的事情。"
+      },
+      {
+        "icon": "Rocket",
+        "title": "保持领先",
+        "description": "预见AI革命，今天就配备能在明天产生差异的自动化工具。"
+      },
+      {
+        "icon": "TrendingUp",
+        "title": "提升您的收入",
+        "description": "将您的人才从重复性任务中解放出来：更多时间创造价值，减少不必要的开销。"
+      },
+      {
+        "icon": "Users",
+        "title": "赋能您的员工",
+        "description": "为他们提供更有价值的工作：AI处理日常事务，他们专注于发挥真正的人类潜力。"
+      },
+      {
+        "icon": "Shield",
+        "title": "安全无妥协",
+        "description": "您的数据经过加密，托管在安全服务器上，从不共享。每个自动化都旨在确保机密性和合规性。"
+      }
+    ]
+  },
+  "solutions": {
+    "title": "我们的解决方案",
+    "subtitle": "探索我们的智能自动化生态系统",
+    "cta": "获取我的个性化审计",
+    "combineWith": "最佳搭配",
+    "items": [
+      {
+        "id": 1,
+        "title": "智能邮件",
+        "tagline": "提升您的转化率",
+        "description": "自动回复、潜在客户资格认定和个性化跟进，最大化您的转化率。",
+        "icon": "Mail",
+        "relatedIds": [
+          2,
+          4
+        ],
+        "impactStat": "转化率x3"
+      },
+      {
+        "id": 2,
+        "title": "潜在客户与勘探",
+        "tagline": "生成更多潜在客户",
+        "description": "自动化生成、智能丰富和精确评分您的潜在客户。",
+        "icon": "Users",
+        "relatedIds": [
+          1,
+          4
+        ],
+        "impactStat": "+250%潜在客户"
+      },
+      {
+        "id": 3,
+        "title": "AI聊天机器人",
+        "tagline": "全天候可用",
+        "description": "24/7客户支持、自动资格认定和AI驱动的即时响应。",
+        "icon": "MessageCircle",
+        "relatedIds": [
+          2,
+          4
+        ],
+        "impactStat": "响应<2分钟"
+      },
+      {
+        "id": 4,
+        "title": "CRM与跟进",
+        "tagline": "自动化您的跟进",
+        "description": "多平台同步、自动更新和智能提醒。",
+        "icon": "Database",
+        "relatedIds": [
+          1,
+          2
+        ],
+        "impactStat": "0遗漏跟进"
+      },
+      {
+        "id": 5,
+        "title": "社交媒体",
+        "tagline": "提升您的可见度",
+        "description": "自动发布、绩效分析和在所有渠道优化的互动。",
+        "icon": "Share2",
+        "relatedIds": [
+          7,
+          2
+        ],
+        "impactStat": "+200%互动"
+      },
+      {
+        "id": 6,
+        "title": "文档与发票",
+        "tagline": "节省时间",
+        "description": "自动数据提取、智能处理和无需手动干预的归档。",
+        "icon": "FileText",
+        "relatedIds": [
+          4,
+          7
+        ],
+        "impactStat": "每周节省12小时"
+      },
+      {
+        "id": 7,
+        "title": "报告",
+        "tagline": "实时监控",
+        "description": "实时仪表板、个性化警报和可操作的洞察，驱动您的业务。",
+        "icon": "BarChart3",
+        "relatedIds": [
+          4,
+          6
+        ],
+        "impactStat": "实时"
+      },
+      {
+        "id": 8,
+        "title": "招聘",
+        "tagline": "找到您的人才",
+        "description": "自动化招聘、智能候选人资格认定和优化的招聘管理。",
+        "icon": "Users",
+        "relatedIds": [
+          1,
+          2
+        ],
+        "impactStat": "招聘时间-60%"
+      }
+    ]
+  },
+  "results": {
+    "title": "可衡量的成果",
+    "subtitle": "我们的客户立即看到对其业绩的影响",
+    "stats": [
+      {
+        "value": 300,
+        "unit": "%",
+        "label": "生产力提升"
+      },
+      {
+        "value": 20,
+        "unit": "h",
+        "label": "每周节省"
+      },
+      {
+        "value": 100,
+        "unit": "%",
+        "label": "满意保证"
+      },
+      {
+        "value": 48,
+        "unit": "h",
+        "label": "审计和报价"
+      }
+    ]
+  },
+  "testimonials": {
+    "cta": "立即加入他们",
+    "items": [
+      {
+        "text": "以前我们晚上还在手动跟进弃购订单。他们两周内就把一切接入了我们的 Shopify 和 Klaviyo，现在跟进邮件全自动发送——这个渠道的营收找回了将近 18%。",
+        "name": "Camille Fontaine",
+        "role": "电商负责人",
+        "company": "黎黛美妆"
+      },
+      {
+        "text": "我真正的痛点是周末错过咨询。他们的聊天机器人能处理大部分常见问题，只把真正重要的转给我。我的平均响应时间从几个小时缩短到了几分钟。",
+        "name": "Karim Benali",
+        "role": "创始人",
+        "company": "Velobi"
+      },
+      {
+        "text": "录入供应商发票以前每月要花我整整两天。现在它们会被自动识别、归档并在记账软件里对账。说实话我一开始挺怀疑，但它确实靠得住。",
+        "name": "Élodie Mercier",
+        "role": "行政经理",
+        "company": "佩兰会计事务所"
+      },
+      {
+        "text": "我欣赏的是他们没有搞一套华而不实的系统，而是精准地自动化了三项最耗时的任务，仅此而已。我的团队终于腾出了精力去做别的。",
+        "name": "Thomas Rieu",
+        "role": "联合创始人",
+        "company": "诺尔工坊"
+      },
+      {
+        "text": "以前每三个潜在客户就有一个因为我们凭感觉跟进而流失。现在每个客户在 HubSpot 里都有专属的跟进序列，什么都不会漏。我们签下了两个本来肯定会被忘掉的客户。",
+        "name": "Sarah Lévy",
+        "role": "销售总监",
+        "company": "Klariss"
+      },
+      {
+        "text": "我们在别处被许诺过天花乱坠的效果，结果很失望。他们先做了一份清晰、量化的审计，再分阶段交付。三个月后，投资回报实实在在——数字没有注水。",
+        "name": "Antoine Mercadier",
+        "role": "运营总监",
+        "company": "泰桑迪耶集团"
+      },
+      {
+        "text": "我们的销售在筛选不对口的潜在客户上花了太多时间。现在一个 AI 智能体先做初筛，只把附带背景信息的高意向客户发给他们。有效会谈量几乎翻了三倍。",
+        "name": "Inès Khelifi",
+        "role": "增长负责人",
+        "company": "Brevio"
+      },
+      {
+        "text": "在技术层面，我担心会接手一个黑盒。结果恰恰相反——一切都有文档，n8n 工作流很整洁，我的开发同事毫无障碍地就接手了。",
+        "name": "Julien Roux",
+        "role": "技术总监",
+        "company": "Finovo"
+      },
+      {
+        "text": "我们以前给所有人发同一封邮件。他们把名单做了细分，并根据订阅者的真实行为自动化了营销流程。打开率明显提升，最重要的是我们连夜里都在成交。",
+        "name": "Margaux Lefèvre",
+        "role": "市场负责人",
+        "company": "花园侧"
+      }
+    ]
+  },
+  "process": {
+    "title": "我们的三步方法",
+    "subtitle": "一个简单有效的流程来转型您的业务",
+    "steps": [
+      {
+        "number": "01",
+        "badge": "48小时",
+        "heading": "分析",
+        "description": "对您的流程进行全面审计，识别自动化机会。",
+        "boxTitle": "包含内容：",
+        "items": [
+          "详细分析您当前的流程",
+          "识别重复性任务",
+          "估算通过自动化节省的时间",
+          "个性化机会报告"
+        ]
+      },
+      {
+        "number": "02",
+        "badge": "7天",
+        "heading": "定制方案",
+        "description": "设计适合您需求和目标的自动化策略。",
+        "boxTitle": "我们的方法：",
+        "items": [
+          "定制技术架构",
+          "基于优先级的部署路线图",
+          "详细的预算和预计投资回报率",
+          "与您的团队验证"
+        ]
+      },
+      {
+        "number": "03",
+        "badge": "持续",
+        "heading": "部署与优化",
+        "description": "快速实施和持续改进您的自动化。",
+        "boxTitle": "生产上线：",
+        "items": [
+          "自动化的开发和集成",
+          "为您的团队培训",
+          "专属技术支持",
+          "永久监控和优化"
+        ]
+      }
+    ]
+  },
+  "faq": {
+    "title": "常见问题",
+    "items": [
+      {
+        "question": "多久能看到第一批成果？",
+        "answer": "您的个性化审计将在48小时内交付。首批自动化将在计划验证后立即部署。您将在第一周内看到可衡量的影响，在重复性任务上至少节省20小时。"
+      },
+      {
+        "question": "你们具体提供哪些自动化服务？",
+        "answer": "我们自动化您的邮件和客户响应、潜在客户生成和资格认定、24/7支持聊天机器人、CRM同步、社交媒体发布、文档和发票处理、实时报告，甚至您的招聘流程。我们所有的解决方案都适应您当前的工具。"
+      },
+      {
+        "question": "如何保证我们数据的安全？",
+        "answer": "我们仅使用安全的OAuth连接，从不存储您的密码。所有API密钥都在认证的保险库中加密。您的数据保留在您的系统中，我们不保留任何副本。保证符合GDPR。"
+      },
+      {
+        "question": "你们服务我们的行业吗？",
+        "answer": "我们的解决方案适用于所有行业：电子商务、B2B服务、营销机构、SaaS、咨询公司、工业、医疗保健等。每个自动化都根据您的业务和特定流程进行定制。我们在审计期间分析您的独特需求。"
+      },
+      {
+        "question": "你们的定价模式是什么？",
+        "answer": "48小时审计无需承诺。然后，我们提供适应您自动化量的月度套餐，无隐藏费用。您可以随时取消。第一个月100%满意保证或退款。"
+      },
+      {
+        "question": "实施后你们提供什么支持？",
+        "answer": "通过邮件、聊天和视频提供专属支持。工作日4小时内保证响应时间。包含对您团队的完整培训。持续优化和定期调整，使您的自动化随着您的增长而发展。"
+      },
+      {
+        "question": "如果我们想结束合作会怎样？",
+        "answer": "保证完全可逆性。您可以恢复所有工作流程、配置、文档和访问权限。没有最低承诺期。您的自动化继续工作，您保持对基础设施的绝对控制。"
+      },
+      {
+        "question": "你们需要访问我们的内部系统吗？",
+        "answer": "我们只通过OAuth（如Google或Microsoft）请求必要的最低权限。您保持完全控制，可以随时从您的工具中撤销所有访问权限。我们不在您的服务器上安装任何软件。"
+      }
+    ]
+  },
+  "cta": {
+    "title": "准备好转型您的业务了吗？",
+    "subtitle": "预约您的48小时审计，了解如何每周节省20小时",
+    "whatsapp": "WhatsApp: +33 7 45 49 65 52",
+    "disclaimer": "无需承诺 • 个性化审计 • 48小时内出结果"
+  },
+  "footer": {
+    "tagline": "人工智能自动化机构，通过智能、个性化的解决方案转型您的业务。",
+    "navigation": "导航",
+    "solutions": "解决方案",
+    "contact": "联系我们",
+    "requestAudit": "申请审计",
+    "legal": "法律声明",
+    "copyright": "© {year} Devmaster. 版权所有。"
+  },
+  "notFound": {
+    "title": "页面未找到",
+    "description": "您要查找的页面不存在或已被移动。",
+    "back": "返回首页"
+  }
+}

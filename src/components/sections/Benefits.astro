@@ -1,0 +1,143 @@
+---
+import Icon from "../Icon.astro";
+import LightSource from "../LightSource.astro";
+import type { IconName } from "../../lib/icons";
+
+interface Props {
+  benefits: { title: string; subtitle: string; cta: string; items: { icon: IconName; title: string; description: string }[] };
+}
+const { benefits } = Astro.props;
+// Grille « bento » : 1 colonne sur mobile, 2 en tablette, mise en page 5 cases sur grand écran.
+const areas = [
+  "md:[grid-area:1/1/2/7] xl:[grid-area:1/1/2/5]",
+  "md:[grid-area:1/7/2/13] xl:[grid-area:2/1/3/5]",
+  "md:[grid-area:2/1/3/7] xl:[grid-area:1/5/3/8]",
+  "md:[grid-area:2/7/3/13] xl:[grid-area:1/8/2/13]",
+  "md:[grid-area:3/1/4/13] xl:[grid-area:2/8/3/13]",
+];
+---
+
+<section id="benefits" class="relative py-16 sm:py-24">
+  <LightSource direction={180} color="cyan" intensity="high" class="-top-96! -bottom-40 left-1/2 -translate-x-1/2" />
+
+  <div class="relative z-10 mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="mb-10 text-center sm:mb-16">
+      <h2 class="mb-3 px-2 text-3xl font-medium text-white sm:mb-4 sm:text-4xl md:text-5xl">{benefits.title}</h2>
+      <p class="mx-auto max-w-2xl px-2 text-base text-gray-400 sm:text-lg">{benefits.subtitle}</p>
+    </div>
+
+    <ul class="grid grid-cols-1 grid-rows-none gap-4 md:grid-cols-12 md:grid-rows-3 lg:gap-4 xl:max-h-[34rem] xl:grid-rows-2">
+      {
+        benefits.items.map((item, i) => (
+          <li class:list={["min-h-[12rem] list-none sm:min-h-[14rem]", areas[i]]}>
+            <div class="relative h-full rounded-[1.25rem] border-[0.75px] border-cyan-500/30 bg-black/40 p-2 backdrop-blur-xs md:rounded-[1.5rem] md:p-3">
+              <div class="glowing-effect" aria-hidden="true" data-glow />
+              <div class="relative flex h-full flex-col justify-between gap-4 overflow-hidden rounded-xl bg-black/60 p-4 backdrop-blur-md sm:gap-6 sm:p-6 md:p-6">
+                <div class="relative flex flex-1 flex-col justify-between gap-3">
+                  <div class="w-fit rounded-lg border border-cyan-500/30 bg-cyan-500/10 p-2.5">
+                    <div class="text-cyan-400">
+                      <Icon name={item.icon} class="h-4 w-4" />
+                    </div>
+                  </div>
+                  <div class="space-y-2 sm:space-y-3">
+                    <h3 class="pt-0.5 font-sans text-lg leading-tight font-normal tracking-[-0.04em] text-balance text-white sm:text-xl sm:leading-7 md:text-2xl md:leading-[1.875rem]">
+                      {item.title}
+                    </h3>
+                    <p class="font-sans text-xs leading-[1.125rem] text-gray-400 sm:text-sm sm:leading-5 md:text-base md:leading-[1.375rem]">{item.description}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+
+    <div class="mt-8 flex justify-center sm:mt-12">
+      <a href="#cta-final" class="btn-glass-filled group flex w-full max-w-xs items-center justify-center gap-2 sm:w-auto">
+        {benefits.cta}
+        <Icon name="ArrowRight" size={16} class="transition-transform duration-300 group-hover:translate-x-0.5" />
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Liseré lumineux qui suit le pointeur autour de chaque carte (angle --start, visibilité --active). */
+  @property --start {
+    syntax: "<number>";
+    inherits: true;
+    initial-value: 0;
+  }
+  .glowing-effect {
+    --spread: 40;
+    --start: 0;
+    --active: 0;
+    --border: 2px;
+    --times: 5;
+    --gradient:
+      radial-gradient(circle, #06b6d4 10%, #06b6d400 20%), radial-gradient(circle at 40% 40%, #0ea5e9 5%, #0ea5e900 15%),
+      radial-gradient(circle at 60% 60%, #06b6d4 10%, #06b6d400 20%), radial-gradient(circle at 40% 60%, #0891b2 10%, #0891b200 20%),
+      repeating-conic-gradient(
+        from 236.84deg at 50% 50%,
+        #06b6d4 0%,
+        #0ea5e9 calc(25% / var(--times)),
+        #06b6d4 calc(50% / var(--times)),
+        #0891b2 calc(75% / var(--times)),
+        #06b6d4 calc(100% / var(--times))
+      );
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    transition: --start 2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .glowing-effect::after {
+    content: "";
+    position: absolute;
+    inset: calc(-1 * var(--border));
+    border-radius: inherit;
+    border: var(--border) solid transparent;
+    background: var(--gradient);
+    background-attachment: fixed;
+    opacity: var(--active);
+    transition: opacity 0.3s;
+    mask-clip: padding-box, border-box;
+    mask-composite: intersect;
+    mask-image:
+      linear-gradient(#0000, #0000),
+      conic-gradient(from calc((var(--start) - var(--spread)) * 1deg), #00000000 0deg, #fff, #00000000 calc(var(--spread) * 2deg));
+  }
+</style>
+
+<script>
+  // Allume le liseré de la carte la plus proche du pointeur (à 64 px près) et l'oriente vers lui.
+  const cards = [...document.querySelectorAll<HTMLElement>("[data-glow]")];
+  let last = { x: 0, y: 0 };
+  let frame = 0;
+  const update = (point?: { x: number; y: number }) => {
+    if (point) last = point;
+    cancelAnimationFrame(frame);
+    frame = requestAnimationFrame(() => {
+      for (const el of cards) {
+        const { left, top, width, height } = el.getBoundingClientRect();
+        const cx = left + width / 2;
+        const cy = top + height / 2;
+        if (Math.hypot(last.x - cx, last.y - cy) < 0.5 * Math.min(width, height) * 0.01) {
+          el.style.setProperty("--active", "0");
+          continue;
+        }
+        const near = last.x > left - 64 && last.x < left + width + 64 && last.y > top - 64 && last.y < top + height + 64;
+        el.style.setProperty("--active", near ? "1" : "0");
+        if (!near) continue;
+        const current = parseFloat(el.style.getPropertyValue("--start")) || 0;
+        const target = (180 * Math.atan2(last.y - cy, last.x - cx)) / Math.PI + 90;
+        el.style.setProperty("--start", String(current + (((target - current + 180) % 360) - 180)));
+      }
+    });
+  };
+  if (cards.length) {
+    window.addEventListener("scroll", () => update(), { passive: true });
+    document.body.addEventListener("pointermove", (e) => update({ x: e.clientX, y: e.clientY }), { passive: true });
+  }
+</script>

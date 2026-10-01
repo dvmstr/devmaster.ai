@@ -1,0 +1,121 @@
+---
+import Icon from "../Icon.astro";
+import type { IconName } from "../../lib/icons";
+
+interface Step {
+  number: string;
+  badge: string;
+  heading: string;
+  description: string;
+  boxTitle: string;
+  items: string[];
+}
+interface Props {
+  process: { title: string; subtitle: string; steps: Step[] };
+}
+const { process } = Astro.props;
+const icons: IconName[] = ["Search", "Lightbulb", "Rocket"];
+---
+
+<section id="process" class="relative">
+  <div class="relative w-full bg-black font-sans md:px-10" data-timeline>
+    <div class="mx-auto max-w-7xl px-4 py-12 text-center sm:py-16 md:px-8 md:py-20 lg:px-10">
+      <h2 class="mx-auto mb-3 text-3xl font-medium text-white sm:mb-4 sm:text-4xl md:text-5xl">{process.title}</h2>
+      <p class="mx-auto px-2 text-sm text-gray-400 sm:text-base md:text-lg">{process.subtitle}</p>
+    </div>
+
+    <div class="relative mx-auto max-w-7xl pb-12 sm:pb-20" data-timeline-track>
+      {
+        process.steps.map((step, index) => (
+          <div class="flex justify-start pt-6 sm:pt-10 md:gap-10 md:pt-40">
+            <div class="sticky top-40 z-40 flex max-w-xs flex-col items-center self-start md:w-full md:flex-row lg:max-w-sm">
+              <div class="absolute left-3 flex h-10 w-10 items-center justify-center rounded-full bg-black md:left-3">
+                <div class="h-4 w-4 rounded-full border border-cyan-500/50 bg-cyan-500/30 p-2 shadow-[0_0_15px_rgba(6,182,212,0.3)]" />
+              </div>
+              <h3 class="hidden text-xl font-light text-gray-400 md:block md:pl-20 md:text-5xl" aria-hidden="true">{step.number}</h3>
+            </div>
+
+            <div class="relative w-full pr-4 pl-16 sm:pl-20 md:pl-4">
+              <h3 class="mb-3 block text-left text-xl font-light text-gray-400 sm:mb-4 sm:text-2xl md:hidden" aria-hidden="true">{step.number}</h3>
+              <div>
+                <div class="mb-4 flex items-start gap-3 sm:mb-6 sm:gap-4">
+                  <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-cyan-500/20 sm:h-12 sm:w-12">
+                    <Icon name={icons[index]!} size={index === 0 ? 20 : 24} class="text-cyan-500" />
+                  </div>
+                  <div>
+                    <div class="mb-1.5 inline-block rounded-full bg-cyan-500/20 px-2 py-0.5 text-[10px] font-light text-cyan-500 sm:mb-2 sm:px-2.5 sm:text-xs">
+                      {step.badge}
+                    </div>
+                    <h3 class="mb-1.5 text-lg font-medium text-white sm:mb-2 sm:text-xl md:text-2xl">{step.heading}</h3>
+                    <p class="text-xs text-gray-300 sm:text-sm md:text-base">{step.description}</p>
+                  </div>
+                </div>
+                <div class="rounded-xl border border-white/10 bg-white/5 p-4 sm:p-6">
+                  <h4 class="mb-2 text-sm font-normal text-white sm:mb-3 sm:text-base">{step.boxTitle}</h4>
+                  <ul class="space-y-1.5 sm:space-y-2">
+                    {step.items.map((item) => (
+                      <li class="flex items-start gap-2 text-xs text-gray-300 sm:text-sm">
+                        <span class="shrink-0 text-cyan-500" aria-hidden="true">
+                          ✓
+                        </span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+      <div
+        class="track absolute top-0 left-8 w-[2px] overflow-hidden [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)] md:left-8"
+        aria-hidden="true"
+      >
+        <div
+          class="progress absolute inset-x-0 top-0 w-[2px] rounded-full shadow-[0_0_10px_rgba(6,182,212,0.5)]"
+          data-timeline-progress
+        >
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .track {
+    height: 100%;
+    background-image: linear-gradient(to bottom, transparent 0%, rgb(255 255 255 / 0.1), transparent 99%);
+  }
+  .progress {
+    background-image: linear-gradient(to top, #06b6d4 0%, #22d3ee 10%, transparent);
+    height: calc(var(--progress, 0) * 100%);
+    opacity: var(--progress-opacity, 0);
+  }
+</style>
+
+<script>
+  // Ligne verticale qui se remplit avec le défilement : 0 quand le haut du bloc atteint 10 % de l'écran,
+  // 100 % quand son bas atteint la moitié de l'écran (réglage de l'ancien site).
+  for (const timeline of document.querySelectorAll<HTMLElement>("[data-timeline]")) {
+    const progress = timeline.querySelector<HTMLElement>("[data-timeline-progress]")!;
+    let queued = false;
+    const update = () => {
+      queued = false;
+      const { top, height } = timeline.getBoundingClientRect();
+      const vh = window.innerHeight;
+      const p = Math.min(1, Math.max(0, (0.1 * vh - top) / (height - 0.4 * vh)));
+      progress.style.setProperty("--progress", String(p));
+      progress.style.setProperty("--progress-opacity", String(Math.min(1, p / 0.1)));
+    };
+    const schedule = () => {
+      if (!queued) {
+        queued = true;
+        requestAnimationFrame(update);
+      }
+    };
+    window.addEventListener("scroll", schedule, { passive: true });
+    window.addEventListener("resize", schedule);
+    update();
+  }
+</script>

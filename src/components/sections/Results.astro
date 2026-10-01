@@ -1,0 +1,63 @@
+---
+import LightSource from "../LightSource.astro";
+
+interface Props {
+  results: { title: string; subtitle: string; stats: { value: number; unit: string; label: string }[] };
+}
+const { results } = Astro.props;
+---
+
+<section id="results" class="relative py-12 pb-24 sm:py-16 sm:pb-32">
+  <div class="relative z-10 mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="mb-8 text-center sm:mb-12">
+      <h2 class="mb-3 px-2 text-3xl font-medium text-white sm:mb-4 sm:text-4xl md:text-5xl">{results.title}</h2>
+      <p class="mx-auto max-w-2xl px-2 text-base text-gray-400 sm:text-lg">{results.subtitle}</p>
+    </div>
+
+    <div class="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4">
+      {
+        results.stats.map((stat) => (
+          <div class="rounded-xl border border-white/10 bg-white/5 p-4 text-center shadow-xl backdrop-blur-md sm:p-5">
+            <div class="mb-1 text-2xl font-medium text-white sm:mb-2 sm:text-3xl md:text-4xl">
+              <span data-count={stat.value}>{stat.value}</span>{stat.unit}
+            </div>
+            <div class="text-[10px] leading-tight text-gray-400 sm:text-xs sm:leading-4">{stat.label}</div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+
+  <LightSource direction={180} color="cyan" intensity="high" class="-bottom-40 left-1/2 -translate-x-1/2" />
+</section>
+
+<script>
+  // Compteurs : de 0 à la valeur en 2 s quand la carte apparaît (30 % visible). Sans JavaScript, la valeur s'affiche.
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const counters = [...document.querySelectorAll<HTMLElement>("[data-count]")];
+  if (!reduce && counters.length) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          observer.unobserve(entry.target);
+          const el = entry.target as HTMLElement;
+          const end = Number(el.dataset.count);
+          const start = performance.now();
+          const step = (now: number) => {
+            const progress = Math.min((now - start) / 2000, 1);
+            el.textContent = String(Math.floor(progress * end));
+            if (progress < 1) requestAnimationFrame(step);
+          };
+          requestAnimationFrame(step);
+        }
+      },
+      { threshold: 0.3 },
+    );
+    for (const el of counters) {
+      // Remis à zéro seulement s'il est encore hors écran : pas de saut visible au chargement.
+      if (el.getBoundingClientRect().top > window.innerHeight) el.textContent = "0";
+      observer.observe(el);
+    }
+  }
+</script>

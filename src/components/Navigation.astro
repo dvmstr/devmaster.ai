@@ -1,0 +1,140 @@
+---
+import Icon from "./Icon.astro";
+import LanguageSwitcher from "./LanguageSwitcher.astro";
+import type { Locale } from "../lib/i18n";
+
+interface Props {
+  locale: Locale;
+  items: { label: string; target: string }[];
+  cta: string;
+  homeLabel: string;
+  languageLabel: string;
+}
+const { locale, items, cta, homeLabel, languageLabel } = Astro.props;
+// Sections suivies pour la surbrillance (l'appel à l'action final compte aussi, sans entrée de menu).
+const tracked = [...items.map((i) => i.target), "cta-final"].join(",");
+---
+
+<nav class="fixed top-0 right-0 left-0 z-50 pt-3 sm:pt-4" data-nav data-sections={tracked}>
+  <div class="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6">
+    <a href="#top" class="px-2 py-1.5 text-sm font-medium text-white transition-colors hover:text-white/60 sm:px-4 sm:text-base" aria-label={homeLabel}>
+      Devmaster
+    </a>
+
+    <ul class="relative hidden items-center gap-1 md:flex" data-nav-list>
+      <li class="nav-lamp pointer-events-none absolute top-0 left-0 -z-10 h-full rounded-full bg-cyan-500/10" aria-hidden="true" data-nav-lamp>
+        <span class="absolute -top-2 left-1/2 h-1 w-8 -translate-x-1/2 rounded-t-full bg-cyan-500">
+          <span class="absolute -top-2 -left-2 h-6 w-12 rounded-full bg-cyan-500/30 blur-md"></span>
+          <span class="absolute -top-1 h-6 w-8 rounded-full bg-cyan-500/30 blur-md"></span>
+          <span class="absolute top-0 left-2 h-4 w-4 rounded-full bg-cyan-500/30 blur-xs"></span>
+        </span>
+      </li>
+      {
+        items.map((item) => (
+          <li>
+            <a
+              href={`#${item.target}`}
+              class="relative block cursor-pointer rounded-full px-5 py-1.5 text-sm font-light text-gray-300 transition-colors hover:text-white/60"
+              data-nav-link={item.target}
+            >
+              <span>{item.label}</span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    <div class="flex items-center gap-2 sm:gap-3">
+      <LanguageSwitcher locale={locale} path="/" label={languageLabel} />
+      <a href="#cta-final" class="btn-glass-filled group flex items-center gap-1.5 text-xs sm:gap-2 sm:text-sm">
+        <span>{cta}</span>
+        <Icon name="ArrowRight" size={14} class="transition-transform duration-300 group-hover:translate-x-0.5" />
+      </a>
+    </div>
+  </div>
+</nav>
+
+<style>
+  .nav-lamp {
+    opacity: 0;
+  }
+  .nav-lamp[data-visible] {
+    opacity: 1;
+  }
+  .nav-lamp[data-animate] {
+    transition-property: transform, width;
+    transition-duration: var(--lamp-duration);
+    transition-timing-function: var(--lamp-easing);
+  }
+</style>
+
+<script>
+  import { spring } from "../lib/spring";
+
+  // Surbrillance de la section visible : une « lampe » qui glisse d'un lien à l'autre avec un ressort
+  // (raideur 500, amortissement 35 : le réglage de l'ancien site).
+  const nav = document.querySelector<HTMLElement>("[data-nav]");
+  const lamp = nav?.querySelector<HTMLElement>("[data-nav-lamp]");
+  if (nav && lamp) {
+    const { easing, duration } = spring({ stiffness: 500, damping: 35 });
+    lamp.style.setProperty("--lamp-easing", easing);
+    lamp.style.setProperty("--lamp-duration", `${duration}ms`);
+    const links = new Map([...nav.querySelectorAll<HTMLAnchorElement>("[data-nav-link]")].map((a) => [a.dataset.navLink!, a]));
+    const sections = (nav.dataset.sections ?? "").split(",").filter(Boolean);
+    let active = "";
+    let lockedUntil = 0;
+
+    const place = (link: HTMLElement) => {
+      lamp.style.width = `${link.offsetWidth}px`;
+      lamp.style.transform = `translateX(${link.offsetLeft}px)`;
+    };
+    const setActive = (id: string) => {
+      if (id === active) return;
+      const link = links.get(id);
+      const wasVisible = lamp.hasAttribute("data-visible");
+      active = id;
+      if (!link) {
+        lamp.removeAttribute("data-visible");
+        lamp.removeAttribute("data-animate");
+        return;
+      }
+      lamp.toggleAttribute("data-animate", wasVisible); // apparition sur place, déplacement animé ensuite
+      place(link);
+      lamp.setAttribute("data-visible", "");
+    };
+
+    const update = () => {
+      if (Date.now() < lockedUntil) return;
+      const pos = window.scrollY + 200;
+      if (pos < 300) return setActive("");
+      for (const id of sections) {
+        const el = document.getElementById(id);
+        if (el && pos >= el.offsetTop && pos < el.offsetTop + el.offsetHeight) return setActive(id);
+      }
+    };
+    let queued = false;
+    window.addEventListener(
+      "scroll",
+      () => {
+        if (queued) return;
+        queued = true;
+        requestAnimationFrame(() => {
+          queued = false;
+          update();
+        });
+      },
+      { passive: true },
+    );
+    window.addEventListener("resize", () => {
+      const link = links.get(active);
+      if (link) place(link);
+    });
+    for (const [id, link] of links) {
+      link.addEventListener("click", () => {
+        setActive(id);
+        lockedUntil = Date.now() + 1000; // le défilement fluide ne doit pas faire clignoter la lampe
+      });
+    }
+    update();
+  }
+</script>

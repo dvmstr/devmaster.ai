@@ -1,0 +1,120 @@
+---
+/**
+ * Faisceau lumineux décoratif (cônes + halo + ligne). Il s'allume quand il entre à l'écran et se tamise quand il
+ * en sort (transition 1,2 s) — même rendu que l'ancien composant, sans framer-motion.
+ * `class` porte le positionnement complet (top/left/…) : il remplace celui par défaut de la direction.
+ */
+interface Props {
+  direction?: 0 | 90 | 180 | 270;
+  color?: "cyan" | "blue";
+  intensity?: "low" | "medium" | "high";
+  class: string;
+}
+const { direction = 0, color = "cyan", intensity = "medium", class: position } = Astro.props;
+const rotation = { 0: "rotate-0", 90: "rotate-90", 180: "rotate-180", 270: "-rotate-90" }[direction];
+const beam = color === "blue" ? "bg-cyan-500" : "bg-cyan-400";
+const glowBlur = intensity === "low" ? "blur-2xl" : "blur-3xl";
+---
+
+<div class:list={["light-source pointer-events-none absolute z-0", position, `intensity-${intensity}`]} aria-hidden="true" data-light>
+  <div class:list={["relative flex h-[600px] w-[800px] items-center justify-center", rotation]}>
+    <div class="cone cone-left absolute inset-auto right-1/2 h-56 overflow-visible">
+      <div class="absolute bottom-0 left-0 z-20 h-40 w-full bg-black [mask-image:linear-gradient(to_top,white,transparent)]"></div>
+      <div class="absolute bottom-0 left-0 z-20 h-full w-40 bg-black [mask-image:linear-gradient(to_right,white,transparent)]"></div>
+    </div>
+    <div class="cone cone-right absolute inset-auto left-1/2 h-56 overflow-visible">
+      <div class="absolute right-0 bottom-0 z-20 h-full w-40 bg-black [mask-image:linear-gradient(to_left,white,transparent)]"></div>
+      <div class="absolute right-0 bottom-0 z-20 h-40 w-full bg-black [mask-image:linear-gradient(to_top,white,transparent)]"></div>
+    </div>
+    <div class="absolute top-1/2 h-48 w-[800px] translate-y-12 scale-x-150 bg-black blur-2xl"></div>
+    <div class="absolute top-1/2 z-50 h-48 w-[800px] bg-transparent opacity-10 backdrop-blur-md"></div>
+    <div class:list={["glow absolute inset-auto z-50 h-36 -translate-y-1/2 rounded-full bg-cyan-500", glowBlur]}></div>
+    <div class:list={["beam absolute inset-auto z-30 h-36 -translate-y-[6rem] rounded-full blur-2xl", beam]}></div>
+    <div class:list={["line absolute inset-auto z-50 h-0.5 -translate-y-[7rem]", beam]}></div>
+    <div class="absolute inset-auto z-40 h-44 w-[800px] -translate-y-[12.5rem] bg-black"></div>
+  </div>
+</div>
+
+<style>
+  .light-source {
+    --intensity: 0.5;
+    --cone-w: 15rem;
+    --beam-w: 8rem;
+    --glow-w: 10rem;
+  }
+  .light-source.intensity-low {
+    --intensity: 0.3;
+  }
+  .light-source.intensity-high {
+    --intensity: 0.7;
+  }
+  .light-source[data-in-view] {
+    --cone-w: 30rem;
+    --beam-w: 16rem;
+    --glow-w: 28rem;
+  }
+  @media (max-width: 767px) {
+    .light-source {
+      --cone-w: 10.5rem;
+      --beam-w: 5.6rem;
+      --glow-w: 7rem;
+    }
+    .light-source[data-in-view] {
+      --cone-w: 21rem;
+      --beam-w: 11.2rem;
+      --glow-w: 19.6rem;
+    }
+  }
+  .cone,
+  .beam,
+  .line,
+  .glow {
+    transition:
+      width 1.2s ease-in-out,
+      opacity 1.2s ease-in-out;
+  }
+  .cone,
+  .line {
+    width: var(--cone-w);
+  }
+  .cone {
+    opacity: 0.5;
+  }
+  .cone-left {
+    background-image: conic-gradient(from 70deg at center top, #06b6d4, transparent, transparent);
+  }
+  .cone-right {
+    background-image: conic-gradient(from 290deg at center top, transparent, transparent, #06b6d4);
+  }
+  .beam {
+    width: var(--beam-w);
+    opacity: 0;
+  }
+  .line {
+    opacity: 0;
+  }
+  .glow {
+    width: var(--glow-w);
+    opacity: 0;
+  }
+  [data-in-view] .cone,
+  [data-in-view] .line {
+    opacity: 1;
+  }
+  [data-in-view] .beam,
+  [data-in-view] .glow {
+    opacity: var(--intensity);
+  }
+</style>
+
+<script>
+  // Allumage à l'entrée dans l'écran (30 % du faisceau visible ; 10 % sur mobile, avec 100 px de marge basse).
+  const mobile = window.matchMedia("(max-width: 767px)").matches;
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const e of entries) e.target.toggleAttribute("data-in-view", e.isIntersecting);
+    },
+    { threshold: mobile ? 0.1 : 0.3, rootMargin: mobile ? "0px 0px -100px 0px" : "0px" },
+  );
+  for (const el of document.querySelectorAll("[data-light]")) observer.observe(el);
+</script>

@@ -1,0 +1,106 @@
+---
+import { getEntry } from "astro:content";
+import Base from "../layouts/Base.astro";
+import Navigation from "./Navigation.astro";
+import Footer from "./Footer.astro";
+import Hero from "./sections/Hero.astro";
+import Benefits from "./sections/Benefits.astro";
+import Solutions from "./sections/Solutions.astro";
+import Results from "./sections/Results.astro";
+import Testimonials from "./sections/Testimonials.astro";
+import Process from "./sections/Process.astro";
+import FAQ from "./sections/FAQ.astro";
+import CTA from "./sections/CTA.astro";
+import { LOCALES, LOCALE_META, localePath, type Locale } from "../lib/i18n";
+import { SITE } from "../lib/site";
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const entry = await getEntry("site", locale);
+if (!entry) throw new Error(`Contenu manquant : src/content/site/${locale}.json`);
+const t = entry.data;
+const url = new URL(localePath(locale, "/"), SITE.url).href;
+
+// Données structurées (schema.org) : l'entreprise, le site et le catalogue des services, dans la langue de la page.
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": `${SITE.url}/#organization`,
+    name: SITE.name,
+    url: SITE.url,
+    logo: `${SITE.url}/icon-512.png`,
+    email: SITE.email,
+    description: t.footer.tagline,
+    address: { "@type": "PostalAddress", addressLocality: "Nantes", addressCountry: "FR" },
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "sales",
+      email: SITE.email,
+      telephone: "+33745496552",
+      availableLanguage: ["English", "French", "Chinese"],
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: SITE.name,
+    url,
+    inLanguage: LOCALE_META[locale].htmlLang,
+    publisher: { "@id": `${SITE.url}/#organization` },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: t.meta.title,
+    provider: { "@id": `${SITE.url}/#organization` },
+    areaServed: "Worldwide",
+    availableLanguage: LOCALES.map((l) => LOCALE_META[l].htmlLang),
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: t.solutions.title,
+      itemListElement: t.solutions.items.map((s) => ({
+        "@type": "Offer",
+        itemOffered: { "@type": "Service", name: s.title, description: s.description },
+      })),
+    },
+  },
+];
+---
+
+<Base
+  locale={locale}
+  path="/"
+  title={t.meta.title}
+  description={t.meta.description}
+  ogTitle={t.meta.ogTitle}
+  ogDescription={t.meta.ogDescription}
+  jsonLd={jsonLd}
+>
+  <a
+    href="#content"
+    class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-md focus:bg-cyan-500 focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-black"
+  >
+    {t.a11y.skipToContent}
+  </a>
+  <Navigation locale={locale} items={t.nav.items} cta={t.nav.cta} homeLabel={t.a11y.home} languageLabel={t.a11y.languageMenu} />
+  <main id="content" class="min-h-screen bg-black">
+    <Hero label={t.a11y.heroLabel} hero={t.hero} />
+    <Benefits benefits={t.benefits} />
+    <Solutions solutions={t.solutions} />
+    <Results results={t.results} />
+    <Testimonials testimonials={t.testimonials} />
+    <Process process={t.process} />
+    <FAQ faq={t.faq} />
+    <CTA cta={t.cta} whatsappLabel={t.a11y.whatsapp} />
+  </main>
+  <Footer
+    locale={locale}
+    footer={t.footer}
+    navItems={t.nav.items}
+    solutions={t.solutions.items.map((s) => s.title)}
+    languageLabel={t.a11y.languageMenu}
+  />
+</Base>
