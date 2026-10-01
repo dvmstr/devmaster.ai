@@ -36,11 +36,12 @@ const glowBlur = intensity === "low" ? "blur-2xl" : "blur-3xl";
 </div>
 
 <style>
+  /*
+   * Largeurs finales (allumé) en dur, et état éteint obtenu par mise à l'échelle horizontale : le résultat final est
+   * identique à l'animation de largeur d'origine, mais animé par la carte graphique (aucun recalcul de mise en page).
+   */
   .light-source {
     --intensity: 0.5;
-    --cone-w: 15rem;
-    --beam-w: 8rem;
-    --glow-w: 10rem;
   }
   .light-source.intensity-low {
     --intensity: 0.3;
@@ -48,21 +49,26 @@ const glowBlur = intensity === "low" ? "blur-2xl" : "blur-3xl";
   .light-source.intensity-high {
     --intensity: 0.7;
   }
-  .light-source[data-in-view] {
-    --cone-w: 30rem;
-    --beam-w: 16rem;
-    --glow-w: 28rem;
+  .cone,
+  .line {
+    width: 30rem;
+  }
+  .beam {
+    width: 16rem;
+  }
+  .glow {
+    width: 28rem;
   }
   @media (max-width: 767px) {
-    .light-source {
-      --cone-w: 10.5rem;
-      --beam-w: 5.6rem;
-      --glow-w: 7rem;
+    .cone,
+    .line {
+      width: 21rem;
     }
-    .light-source[data-in-view] {
-      --cone-w: 21rem;
-      --beam-w: 11.2rem;
-      --glow-w: 19.6rem;
+    .beam {
+      width: 11.2rem;
+    }
+    .glow {
+      width: 19.6rem;
     }
   }
   .cone,
@@ -70,32 +76,37 @@ const glowBlur = intensity === "low" ? "blur-2xl" : "blur-3xl";
   .line,
   .glow {
     transition:
-      width 1.2s ease-in-out,
+      scale 1.2s ease-in-out,
       opacity 1.2s ease-in-out;
   }
   .cone,
+  .beam,
   .line {
-    width: var(--cone-w);
+    scale: 0.5 1;
   }
-  .cone {
-    opacity: 0.5;
+  .glow {
+    scale: 0.357 1;
   }
   .cone-left {
+    transform-origin: right center;
+    opacity: 0.5;
     background-image: conic-gradient(from 70deg at center top, #06b6d4, transparent, transparent);
   }
   .cone-right {
+    transform-origin: left center;
+    opacity: 0.5;
     background-image: conic-gradient(from 290deg at center top, transparent, transparent, #06b6d4);
   }
-  .beam {
-    width: var(--beam-w);
-    opacity: 0;
-  }
-  .line {
-    opacity: 0;
-  }
+  .beam,
+  .line,
   .glow {
-    width: var(--glow-w);
     opacity: 0;
+  }
+  [data-in-view] .cone,
+  [data-in-view] .beam,
+  [data-in-view] .line,
+  [data-in-view] .glow {
+    scale: 1 1;
   }
   [data-in-view] .cone,
   [data-in-view] .line {

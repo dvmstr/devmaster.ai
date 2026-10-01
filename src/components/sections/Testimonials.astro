@@ -29,7 +29,7 @@ const columns = [
               {[0, 1].map((copy) =>
                 column.items.map((t) => (
                   <figure
-                    class="w-full max-w-xs rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-md transition-all duration-300 hover:border-white/20 hover:bg-white/10 sm:p-7"
+                    class="w-full max-w-xs rounded-2xl border border-white/10 bg-white/5 p-6 transition-all duration-300 hover:border-white/20 hover:bg-white/10 sm:p-7"
                     aria-hidden={copy === 1 ? "true" : undefined}
                   >
                     <blockquote class="text-sm leading-relaxed text-gray-300">"{t.text}"</blockquote>
@@ -63,6 +63,8 @@ const columns = [
 </section>
 
 <style>
+  /* Pas de flou d'arrière-plan sur ces cartes : le fond est noir uni (rendu identique) et le flou, recalculé à chaque
+     image pendant le défilement, coûtait cher sur mobile. */
   .scroll-column {
     animation: scroll-up linear infinite;
   }
