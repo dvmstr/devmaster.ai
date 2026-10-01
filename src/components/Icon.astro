@@ -1,5 +1,5 @@
 ---
-import { ICONS, type IconName } from "../lib/icons";
+import { ICONS, type IconName, type IconNode } from "../lib/icons";
 
 interface Props {
   name: IconName;
@@ -23,5 +23,5 @@ const kebab = name.replace(/([a-z0-9])([A-Z])/g, "$1-$2").toLowerCase();
   class:list={["lucide", `lucide-${kebab}`, className]}
   aria-hidden="true"
 >
-  {ICONS[name].map(([Tag, attrs]) => <Tag {...attrs} />)}
+  {(ICONS[name] as IconNode).map(([Tag, attrs]) => <Tag {...attrs} />)}
 </svg>

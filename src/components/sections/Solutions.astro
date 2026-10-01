@@ -46,13 +46,13 @@ const byId = new Map(solutions.items.map((i) => [i.id, i]));
           {
             solutions.items.map((item) => (
               <div class="node absolute cursor-pointer" data-node={item.id} data-related={item.relatedIds.join(",")}>
-                <div class="halo absolute -inset-1 rounded-full" />
+                <div class="halo depth-fade absolute -inset-1 rounded-full" />
                 <button type="button" class="node-button block" aria-expanded="false" aria-controls={`solution-${item.id}`}>
-                  <span class="node-circle relative flex h-12 w-12 items-center justify-center rounded-full border transition-all duration-300">
+                  <span class="node-circle relative flex h-12 w-12 items-center justify-center rounded-full border">
                     <span class="node-sheen absolute inset-0 rounded-full bg-linear-to-br from-cyan-500/10 to-transparent" />
                     <Icon name={item.icon} size={18} class="node-icon relative z-10" />
                   </span>
-                  <span class="node-label absolute top-14 left-1/2 max-w-[100px] -translate-x-1/2 overflow-hidden text-[10px] font-light tracking-wide text-ellipsis whitespace-nowrap transition-all duration-300 sm:max-w-none sm:text-xs">
+                  <span class="node-label absolute top-14 left-1/2 max-w-[100px] -translate-x-1/2 overflow-hidden text-[10px] font-light tracking-wide text-ellipsis whitespace-nowrap sm:max-w-none sm:text-xs">
                     {item.title}
                   </span>
                 </button>
@@ -123,12 +123,27 @@ const byId = new Map(solutions.items.map((i) => [i.id, i]));
   }
   .node {
     will-change: transform;
-    transition:
-      opacity 0.7s,
-      z-index 0.7s;
+    transition: z-index 0.7s;
   }
   .orbital-paused .node {
-    transition: all 0.7s;
+    transition:
+      transform 0.7s,
+      z-index 0.7s;
+  }
+  /* Opacité de profondeur : 0,7 s ; couleurs, ombre et échelle : 0,3 s (réglages de l'ancien site). */
+  .depth-fade {
+    transition: opacity 0.7s;
+  }
+  .node-circle,
+  .node-label {
+    transition:
+      opacity 0.7s,
+      color 0.3s,
+      background-color 0.3s,
+      background-image 0.3s,
+      border-color 0.3s,
+      box-shadow 0.3s,
+      scale 0.3s;
   }
   .halo {
     left: -20px;
@@ -212,6 +227,7 @@ const byId = new Map(solutions.items.map((i) => [i.id, i]));
     const ring = root.querySelector<HTMLElement>("[data-ring]")!;
     const nodes = [...root.querySelectorAll<HTMLElement>("[data-node]")];
     const ids = nodes.map((n) => Number(n.dataset.node));
+    const parts = nodes.map((n) => [".halo", ".node-circle", ".node-label"].map((sel) => n.querySelector<HTMLElement>(sel)!) as [HTMLElement, HTMLElement, HTMLElement]);
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     let rotation = 0;
     let autoRotate = !reduce;
@@ -233,7 +249,11 @@ const byId = new Map(solutions.items.map((i) => [i.id, i]));
         const isOpen = expanded === ids[i];
         node.style.transform = `translate(${radius * Math.cos(rad)}px, ${radius * Math.sin(rad)}px)`;
         node.style.zIndex = String(isOpen ? 200 : Math.round(100 + 50 * Math.cos(rad)));
-        node.style.opacity = String(isOpen ? 1 : Math.max(0.4, Math.min(1, 0.4 + 0.6 * ((1 + Math.sin(rad)) / 2))));
+        // Profondeur : les solutions à l'arrière s'estompent (0,4), leur nom reste lisible (0,75 au minimum).
+        const depth = isOpen ? 1 : Math.max(0.4, Math.min(1, 0.4 + 0.6 * ((1 + Math.sin(rad)) / 2)));
+        const [halo, circle, label] = parts[i]!;
+        halo.style.opacity = circle.style.opacity = String(depth);
+        label.style.opacity = String(Math.max(0.75, depth));
       });
     };
 

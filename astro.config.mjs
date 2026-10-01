@@ -7,7 +7,10 @@ import tailwindcss from "@tailwindcss/vite";
 // complet au build. Aucun appel à un service externe au chargement.
 export default defineConfig({
   site: "https://devmaster.ai",
-  build: { format: "directory" },
+  // Pas de coloration de code (le site n'en affiche pas) : évite des styles « inline » incompatibles avec la CSP.
+  markdown: { syntaxHighlight: false },
+  // Styles intégrés à chaque page : pas d'aller-retour bloquant avant le premier affichage (pages d'atterrissage).
+  build: { format: "directory", inlineStylesheets: "always" },
   // Politique de sécurité (CSP) par empreintes : Astro calcule les hashs de ses scripts et styles et
   // les déclare dans une balise <meta>. Aucun script ni style « inline » non déclaré ne peut s'exécuter.
   security: {

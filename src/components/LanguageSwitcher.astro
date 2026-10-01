@@ -41,10 +41,10 @@ const links = LOCALES.map((l) => ({ locale: l, href: localePath(l, path), ...LOC
         aria-expanded="false"
         aria-haspopup="true"
         aria-controls="lang-menu"
-        aria-label={label}
         data-lang-toggle
       >
         <Icon name="Globe" size={14} />
+        <span class="sr-only">{label}</span>
         <span>{LOCALE_META[locale].code}</span>
       </button>
       <ul

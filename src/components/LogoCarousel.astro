@@ -12,7 +12,8 @@ const perColumn = Math.ceil(logos.length / columns);
 const grid = Array.from({ length: columns }, (_, c) => Array.from({ length: perColumn }, (_, i) => logos[(c + i * columns) % logos.length]!));
 ---
 
-<div class="flex items-center justify-center gap-3 md:gap-6" data-logos={JSON.stringify(logos)} data-columns={columns}>
+<ul class="sr-only">{logos.map((name) => <li>{name}</li>)}</ul>
+<div class="flex items-center justify-center gap-3 md:gap-6" aria-hidden="true" data-logos={JSON.stringify(logos)} data-columns={columns}>
   {
     grid.map((column, index) => (
       <div class="logo-column relative h-8 w-20 overflow-hidden md:h-10 md:w-28" data-index={index}>

@@ -1,121 +1,71 @@
-# Devmaster
+# Devmaster — site vitrine (devmaster.ai)
 
-Site vitrine de [devmaster.ai](https://devmaster.ai) - Agence d'automatisation IA.
+Site de l'agence d'automatisation IA **Devmaster**, en anglais (`/`), français (`/fr/`) et chinois (`/zh/`).
 
-## Stack Technique
+## En bref
 
-- **Frontend** : React 18 + TypeScript + Vite
-- **Styling** : Tailwind CSS + Framer Motion
-- **Backend** : Supabase (CMS headless)
-- **Fonts** : 1955 (custom)
+| | |
+|---|---|
+| Outil | [Astro 7](https://astro.build) : chaque page est générée en HTML complet au moment de la publication |
+| Styles | Tailwind CSS 4 (palette de Tailwind 3 conservée pour un rendu identique à l'ancien site) |
+| Interactions | quelques scripts légers (menu, cercle des solutions, compteurs…), moins de 3 Ko au total ; aucun framework côté navigateur |
+| Contenu | fichiers JSON par langue dans `src/content/` — plus de base de données |
+| Hébergement | Netlify (statique) : chaque push sur `main` publie le site ; chaque pull request a son aperçu |
+| Sécurité | politique de contenu (CSP) par empreintes générée par Astro + en-têtes dans `public/_headers` |
 
-## Installation
+## Modifier un texte
+
+Tout le texte est dans **`src/content/site/en.json`, `fr.json`, `zh.json`** (page d'accueil, une section par clé :
+`hero`, `benefits`, `solutions`, `results`, `testimonials`, `process`, `faq`, `cta`, `footer`) et
+**`src/content/legal/<langue>.json`** (mentions légales). La structure est vérifiée à la publication : un champ
+manquant ou mal formé dans une langue bloque le build avec un message clair, le site en ligne n'est jamais cassé.
+
+- Ajouter un témoignage ou une question de FAQ : ajouter un élément à la liste correspondante, dans les trois langues.
+- Icônes disponibles pour `benefits` et `solutions` : voir `src/lib/icons.ts`.
+- Coordonnées (e-mail, WhatsApp, hébergeur cité dans les mentions légales) : `src/lib/site.ts`.
+
+## Commandes
 
 ```bash
-# Installer les dépendances
 npm install
-
-# Lancer en développement
-npm run dev
-
-# Build production
-npm run build
+npm run dev      # http://localhost:4321, rechargement instantané
+npm run check    # vérification des types + build complet (à lancer avant de publier)
+npm run build    # site dans dist/
+npm run preview  # sert dist/ en local
 ```
 
-## Structure du Projet
+Node 22.12 ou plus récent (24 recommandé, voir `.nvmrc`).
+
+## Organisation
 
 ```
 src/
-├── components/
-│   ├── common/          # Composants réutilisables (LightSource, LogoCarousel, SEOHead)
-│   ├── layout/          # Layout (Navigation, Footer)
-│   ├── pages/           # Pages complètes (LegalNotice)
-│   ├── sections/        # Sections de la page (Hero, Benefits, Solutions, etc.)
-│   └── ui/              # Composants UI primitifs (Button, Card, Badge, etc.)
-│
-├── data/
-│   ├── fallback/        # Données de secours si Supabase indisponible
-│   └── solutions.ts     # Données des solutions
-│
-├── hooks/               # Hooks React personnalisés
-│   ├── useSupabaseData.ts
-│   ├── useTestimonials.ts
-│   ├── useFAQs.ts
-│   ├── useNavigation.ts
-│   ├── useSection.ts
-│   └── usePageMeta.ts
-│
-├── lib/                 # Utilitaires
-│   ├── cache.ts         # Système de cache
-│   ├── scroll.ts        # Navigation par scroll
-│   ├── supabase.ts      # Client Supabase
-│   └── utils.ts         # Fonctions utilitaires (cn)
-│
-├── types/               # Types TypeScript
-│   ├── database.ts      # Types Supabase
-│   └── components.ts    # Types partagés
-│
-├── App.tsx              # Composant principal
-├── main.tsx             # Point d'entrée
-└── index.css            # Styles globaux + fonts
+  content/            textes (JSON par langue) — schéma dans src/content.config.ts
+  pages/[...locale]/  page d'accueil et mentions légales, générées pour en / fr / zh
+  components/         navigation, pied de page, sections (src/components/sections/), icônes
+  layouts/Base.astro  <head> : SEO, langues alternatives, données structurées, police
+  lib/                langues (i18n.ts), coordonnées (site.ts), icônes, ressort d'animation (spring.ts)
+  styles/global.css   thème Tailwind, boutons « verre »
+public/               icônes, images de partage (og/), robots.txt, _headers, _redirects
+scripts/              génération des icônes (make-icons.mjs) et des images de partage (og/)
 ```
 
-## Configuration Supabase
+## Choix techniques à connaître
 
-Voir [SUPABASE_SETUP.md](./SUPABASE_SETUP.md) pour la configuration complète.
+- **Police** : sur Mac et iPhone, la police système (San Francisco), comme sur l'ancien site ; ailleurs, Inter
+  (incluse dans le site, chargée seulement si nécessaire). La police « 1955 » de l'ancien dépôt était corrompue et ne
+  s'est jamais affichée.
+- **Aucun appel externe** au chargement : pas de Supabase, pas de Google Fonts, pas de traceur. Le site fonctionne
+  aussi sans JavaScript (contenu complet, animations en moins).
+- **SEO** : vraies pages par langue (`lang`, titre, description, `hreflang`, plan du site `sitemap-index.xml`,
+  données structurées schema.org, image de partage par langue). Mentions légales en `noindex`.
+- **CSP** : ne pas ajouter d'attribut `style="…"` ni de script en ligne dans les gabarits : ils seraient bloqués.
+  Les styles vont dans les classes Tailwind ou les blocs `<style>` des composants (Astro les déclare).
+- **Animations** : respectent le réglage « réduire les animations » du système.
 
-### Variables d'environnement
+## Images
 
-Créer un fichier `.env.local` :
-
-```bash
-VITE_SUPABASE_URL=your_supabase_url
-VITE_SUPABASE_ANON_KEY=your_anon_key
-```
-
-## Composants Dynamiques (Supabase)
-
-Ces composants chargent leur contenu depuis Supabase :
-
-| Composant | Table Supabase | Description |
-|-----------|----------------|-------------|
-| Navigation | `navigation_items` | Menu de navigation |
-| Testimonials | `testimonials` | Témoignages clients |
-| FAQ | `faqs` | Questions fréquentes |
-| SEOHead | `pages` | Meta tags SEO |
-
-## Système de Cache
-
-Le site utilise un cache intelligent pour optimiser les performances :
-
-| Contenu | TTL | 
-|---------|-----|
-| Navigation | 30 min |
-| Témoignages | 15 min |
-| FAQs | 15 min |
-| Meta SEO | 10 min |
-| Sections | 5 min |
-
-Pour voir les modifications immédiatement : `Cmd+Shift+R` (Mac) ou `Ctrl+Shift+R` (Windows)
-
-## Scripts
-
-```bash
-npm run dev       # Serveur de développement
-npm run build     # Build production
-npm run preview   # Preview du build
-npm run lint      # Linter ESLint
-npm run typecheck # Vérification TypeScript
-npm run seed      # Peupler la base Supabase
-```
-
-## Déploiement
-
-Le dossier `dist/` généré par `npm run build` peut être déployé sur :
-- Vercel
-- Netlify  
-- Cloudflare Pages
-
-## Licence
-
-Propriétaire - © 2025 Devmaster
+- Icônes (favicon, apple-touch-icon, 192/512) : `node scripts/make-icons.mjs` à partir de
+  `src/assets/brand/logo-source.png`.
+- Images de partage `public/og/<langue>.png` (1200×630) : `scripts/og/make-og.mjs` (navigateur Playwright),
+  à relancer si le titre ou l'accroche changent.
