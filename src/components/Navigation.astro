@@ -18,12 +18,15 @@ const tracked = [...items.map((i) => i.target), "cta-final"].join(",");
 ---
 
 <nav class="fixed top-0 right-0 left-0 z-50 pt-3 sm:pt-4" data-nav data-sections={tracked}>
-  <div class="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6">
-    <a href="#top" class="px-2 py-1.5 text-sm font-medium text-white transition-colors hover:text-white/60 sm:px-4 sm:text-base" aria-label={homeLabel}>
+  <!-- Dès 1024 px, trois colonnes (1fr · auto · 1fr) : le menu reste centré au pixel près, quelle que soit la largeur
+       des côtés. En dessous (pas de menu), les côtés gardent leur largeur naturelle (auto · 1fr · auto). -->
+  <div class="mx-auto grid max-w-7xl grid-cols-[auto_1fr_auto] items-center px-4 sm:px-6 lg:grid-cols-[1fr_auto_1fr]">
+    <a href="#top" class="col-start-1 justify-self-start px-2 py-1.5 text-sm font-medium text-white transition-colors hover:text-white/60 sm:px-4 sm:text-base" aria-label={homeLabel}>
       Devmaster
     </a>
 
-    <ul class="relative hidden items-center gap-1 md:flex" data-nav-list>
+    <!-- Dès 1024 px : en dessous, le menu complet ne tient pas centré entre les deux côtés (mesuré en fr/en/zh). -->
+    <ul class="relative col-start-2 hidden items-center gap-1 lg:flex" data-nav-list>
       <li class="nav-lamp pointer-events-none absolute top-0 left-0 -z-10 h-full rounded-full bg-cyan-500/10" aria-hidden="true" data-nav-lamp>
         <span class="absolute -top-2 left-1/2 h-1 w-8 -translate-x-1/2 rounded-t-full bg-cyan-500">
           <span class="absolute -top-2 -left-2 h-6 w-12 rounded-full bg-cyan-500/30 blur-md"></span>
@@ -46,7 +49,7 @@ const tracked = [...items.map((i) => i.target), "cta-final"].join(",");
       }
     </ul>
 
-    <div class="flex items-center gap-2 sm:gap-3">
+    <div class="col-start-3 flex items-center gap-2 justify-self-end sm:gap-3">
       <a
         href={SITE.portalUrl}
         class="flex items-center gap-1.5 rounded-full px-2 py-1.5 text-sm font-light text-gray-300 transition-colors hover:text-white/60"
@@ -54,7 +57,7 @@ const tracked = [...items.map((i) => i.target), "cta-final"].join(",");
         data-client-area
       >
         <Icon name="LogIn" size={16} />
-        <span class="hidden lg:inline">{clientArea}</span>
+        <span class="hidden xl:inline">{clientArea}</span>
       </a>
       <LanguageSwitcher locale={locale} path="/" label={languageLabel} />
       <a href="#cta-final" class="btn-glass-filled group flex items-center gap-1.5 text-xs sm:gap-2 sm:text-sm">
