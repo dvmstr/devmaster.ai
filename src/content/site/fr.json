@@ -32,6 +32,10 @@
         "target": "solutions"
       },
       {
+        "label": "Démos",
+        "target": "demos"
+      },
+      {
         "label": "Résultats",
         "target": "results"
       },
@@ -199,6 +203,16 @@
         "impactStat": "-60% temps de recrutement"
       }
     ]
+  },
+  "demos": {
+    "title": "Nos démos interactives",
+    "subtitle": "Des applications complètes, construites pour des entreprises fictives de votre secteur : vraies interfaces, vraie IA, automatisations qui tournent sous vos yeux.",
+    "badge": "Démos en français, anglais et chinois",
+    "fictional": "Entreprise fictive",
+    "cta": "Demander une visite guidée",
+    "message": "Bonjour Devmaster, je souhaiterais une visite guidée de la démo {name}.",
+    "privateNote": "Les démos sont privées : nous ouvrons l'accès à votre équipe sur demande, depuis votre espace client.",
+    "clientArea": "Espace client"
   },
   "results": {
     "title": "Des résultats mesurables",

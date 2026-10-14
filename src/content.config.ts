@@ -30,6 +30,10 @@ const site = defineCollection({
         relatedIds: z.array(z.number().int()), impactStat: text,
       })).min(3),
     }),
+    demos: z.object({
+      title: text, subtitle: text, badge: text, fictional: text, cta: text,
+      message: text.refine((s) => s.includes("{name}"), "doit contenir {name}"), privateNote: text, clientArea: text,
+    }),
     results: z.object({
       title: text, subtitle: text,
       stats: z.array(z.object({ value: z.number().int().nonnegative(), unit: z.string(), label: text })).length(4),

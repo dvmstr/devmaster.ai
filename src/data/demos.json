@@ -1,0 +1,118 @@
+[
+  {
+    "slug": "platane",
+    "name": "Maison Platane",
+    "zhName": "梧桐置业",
+    "industry": {
+      "en": "Real-estate agency (sales, lettings, management)",
+      "fr": "Agence immobilière (transaction, location, gestion)",
+      "zh": "房产中介（买卖、租赁、托管）"
+    },
+    "summary": {
+      "en": "Paris agency with an Asia desk: AI-triaged unified inbox, replies in the client's language, buyer-property matching, trilingual listings.",
+      "fr": "Agence parisienne avec pôle Asie : boîte de réception unifiée triée par l'IA, réponses dans la langue du client, rapprochement acquéreurs-biens, annonces trilingues.",
+      "zh": "设有亚洲客户部的巴黎房产中介：AI分拣的统一收件箱、以客户语言回复、买家与房源智能匹配、三语房源文案。"
+    },
+    "solutions": [
+      "emails",
+      "leads",
+      "chatbots",
+      "crm",
+      "social",
+      "documents",
+      "reporting"
+    ]
+  },
+  {
+    "slug": "aplomb",
+    "name": "Aplomb",
+    "zhName": "衡正会计",
+    "industry": {
+      "en": "Chartered accounting firm",
+      "fr": "Cabinet d'expertise comptable",
+      "zh": "会计师事务所"
+    },
+    "summary": {
+      "en": "AI reads receipts, invoices and fapiao, checks VAT, reminds clients on WhatsApp/WeChat; the partner signs off VAT returns and closings.",
+      "fr": "Pièces lues par l'IA (tickets, factures, fapiao), contrôles TVA, relances WhatsApp/WeChat, campagne de TVA et clôtures validées par l'associée.",
+      "zh": "AI 识别小票、发票和中国发票，核查增值税，通过 WhatsApp/微信催办；增值税申报与结账由合伙人审核签署。"
+    },
+    "solutions": [
+      "documents",
+      "crm",
+      "emails",
+      "chatbots",
+      "reporting"
+    ]
+  },
+  {
+    "slug": "kaolin",
+    "name": "Kaolin HQ",
+    "zhName": "高岭",
+    "industry": {
+      "en": "DTC e-commerce · skincare (Europe + China)",
+      "fr": "E-commerce DTC · cosmétiques (Europe + Chine)",
+      "zh": "DTC 电商 · 护肤品（欧洲 + 中国）"
+    },
+    "summary": {
+      "en": "Limoges skincare brand selling in Europe and on Tmall: AI-triaged 8-channel support, reviews, cart recovery and compliant product copy.",
+      "fr": "Marque de soins de Limoges vendant en Europe et sur Tmall : service client 8 canaux trié par l'IA, avis, relances panier et fiches produit conformes.",
+      "zh": "利摩日护肤品牌，欧洲与天猫同步销售：AI 分拣八渠道客服、评价管理、购物车召回与合规商品文案。"
+    },
+    "solutions": [
+      "emails",
+      "chatbots",
+      "crm",
+      "social",
+      "documents",
+      "reporting"
+    ]
+  },
+  {
+    "slug": "rendoux",
+    "name": "Rendoux Care",
+    "zhName": "如约",
+    "industry": {
+      "en": "Customer support of a SaaS vendor (booking software)",
+      "fr": "Support client d'un éditeur SaaS (logiciel de réservation)",
+      "zh": "SaaS 软件商客户支持（预约软件）"
+    },
+    "summary": {
+      "en": "Help center with Lou, an AI agent that cites its sources; AI-triaged inbox; a knowledge base that writes itself from tickets.",
+      "fr": "Centre d'aide avec Lou, agent IA qui cite ses sources ; boîte de réception triée par l'IA ; base de connaissances qui s'écrit depuis les tickets.",
+      "zh": "帮助中心 AI 助手小露作答附来源；AI 分诊收件箱；根据工单自动撰写的知识库；客户流失预警。"
+    },
+    "solutions": [
+      "chatbots",
+      "emails",
+      "reporting",
+      "crm",
+      "documents"
+    ]
+  },
+  {
+    "slug": "lianor",
+    "name": "Lianor Talent Partners",
+    "zhName": "联诺人才",
+    "industry": {
+      "en": "Recruitment agency (tech, finance, bilingual profiles) — Paris and Singapore",
+      "fr": "Cabinet de recrutement (tech, finance, profils bilingues) — Paris et Singapour",
+      "zh": "招聘顾问公司（科技、金融、双语人才）——巴黎与新加坡"
+    },
+    "summary": {
+      "en": "A photographed CV becomes a sensitive-data-free profile scored criterion by criterion; trilingual ads, WeChat outreach and a client portal.",
+      "fr": "Un CV photographié devient une fiche sans données sensibles, notée critère par critère ; annonces trilingues, approche WeChat et portail client.",
+      "zh": "拍一张简历即生成去敏感化档案并逐项匹配评分；三语职位广告、微信触达与客户门户。"
+    },
+    "solutions": [
+      "recruitment",
+      "documents",
+      "emails",
+      "leads",
+      "crm",
+      "reporting",
+      "chatbots",
+      "social"
+    ]
+  }
+]
