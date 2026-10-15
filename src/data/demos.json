@@ -228,5 +228,51 @@
       "crm",
       "reporting"
     ]
+  },
+  {
+    "slug": "vermillon",
+    "name": "Vermillon Avocats",
+    "zhName": "印信",
+    "industry": {
+      "en": "Business law firm (Paris, China Desk)",
+      "fr": "Cabinet d'avocats d'affaires (Paris, China Desk)",
+      "zh": "商事律师事务所（巴黎·中国业务部）"
+    },
+    "summary": {
+      "en": "AI contract review against the playbook (bilingual EN/中文 too), multilingual clause search, cross-script conflicts, computed deadlines, time capture.",
+      "fr": "Revue de contrats IA selon le playbook (même bilingue EN/中文), clausier multilingue, conflits multi-écritures, échéances calculées, temps proposés.",
+      "zh": "按审查指引的 AI 合同审查（含中英双语）、多语种条款检索、跨文字利冲预审、自动计算期限、工时建议。"
+    },
+    "solutions": [
+      "documents",
+      "emails",
+      "crm",
+      "reporting",
+      "chatbots",
+      "social",
+      "leads"
+    ]
+  },
+  {
+    "slug": "aronde",
+    "name": "Aronde Hôtels",
+    "zhName": "燕归",
+    "industry": {
+      "en": "Hospitality · boutique 4★ hotel group",
+      "fr": "Hôtellerie · groupe d'hôtels boutique 4★",
+      "zh": "酒店业 · 精品四星酒店集团"
+    },
+    "summary": {
+      "en": "3 hotels in Paris, Annecy and Biarritz: unified inbox with a multilingual AI concierge, upsells, auto tasks, reviews and revenue.",
+      "fr": "3 hôtels à Paris, Annecy et Biarritz : messagerie unifiée avec concierge IA multilingue, upsells, tâches auto, avis et revenue.",
+      "zh": "巴黎、安纳西、比亚里茨三家酒店：统一消息中心与多语种AI礼宾，增值服务、自动工单、点评与营收管理。"
+    },
+    "solutions": [
+      "chatbots",
+      "emails",
+      "crm",
+      "social",
+      "reporting"
+    ]
   }
 ]
