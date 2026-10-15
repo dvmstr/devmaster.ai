@@ -1,0 +1,278 @@
+[
+  {
+    "slug": "platane",
+    "name": "Maison Platane",
+    "zhName": "梧桐置业",
+    "industry": {
+      "en": "Real-estate agency (sales, lettings, management)",
+      "fr": "Agence immobilière (transaction, location, gestion)",
+      "zh": "房产中介（买卖、租赁、托管）"
+    },
+    "summary": {
+      "en": "Paris agency with an Asia desk: AI-triaged unified inbox, replies in the client's language, buyer-property matching, trilingual listings.",
+      "fr": "Agence parisienne avec pôle Asie : boîte de réception unifiée triée par l'IA, réponses dans la langue du client, rapprochement acquéreurs-biens, annonces trilingues.",
+      "zh": "设有亚洲客户部的巴黎房产中介：AI分拣的统一收件箱、以客户语言回复、买家与房源智能匹配、三语房源文案。"
+    },
+    "solutions": [
+      "emails",
+      "leads",
+      "chatbots",
+      "crm",
+      "social",
+      "documents",
+      "reporting"
+    ]
+  },
+  {
+    "slug": "kaolin",
+    "name": "Kaolin HQ",
+    "zhName": "高岭",
+    "industry": {
+      "en": "DTC e-commerce · skincare (Europe + China)",
+      "fr": "E-commerce DTC · cosmétiques (Europe + Chine)",
+      "zh": "DTC 电商 · 护肤品（欧洲 + 中国）"
+    },
+    "summary": {
+      "en": "Limoges skincare brand selling in Europe and on Tmall: AI-triaged 8-channel support, reviews, cart recovery and compliant product copy.",
+      "fr": "Marque de soins de Limoges vendant en Europe et sur Tmall : service client 8 canaux trié par l'IA, avis, relances panier et fiches produit conformes.",
+      "zh": "利摩日护肤品牌，欧洲与天猫同步销售：AI 分拣八渠道客服、评价管理、购物车召回与合规商品文案。"
+    },
+    "solutions": [
+      "emails",
+      "chatbots",
+      "crm",
+      "social",
+      "documents",
+      "reporting"
+    ]
+  },
+  {
+    "slug": "aplomb",
+    "name": "Aplomb",
+    "zhName": "衡正会计",
+    "industry": {
+      "en": "Chartered accounting firm",
+      "fr": "Cabinet d'expertise comptable",
+      "zh": "会计师事务所"
+    },
+    "summary": {
+      "en": "AI reads receipts, invoices and fapiao, checks VAT, reminds clients on WhatsApp/WeChat; the partner signs off VAT returns and closings.",
+      "fr": "Pièces lues par l'IA (tickets, factures, fapiao), contrôles TVA, relances WhatsApp/WeChat, campagne de TVA et clôtures validées par l'associée.",
+      "zh": "AI 识别小票、发票和中国发票，核查增值税，通过 WhatsApp/微信催办；增值税申报与结账由合伙人审核签署。"
+    },
+    "solutions": [
+      "documents",
+      "crm",
+      "emails",
+      "chatbots",
+      "reporting"
+    ]
+  },
+  {
+    "slug": "rendoux",
+    "name": "Rendoux Care",
+    "zhName": "如约",
+    "industry": {
+      "en": "Customer support of a SaaS vendor (booking software)",
+      "fr": "Support client d'un éditeur SaaS (logiciel de réservation)",
+      "zh": "SaaS 软件商客户支持（预约软件）"
+    },
+    "summary": {
+      "en": "Help center with Lou, an AI agent that cites its sources; AI-triaged inbox; a knowledge base that writes itself from tickets.",
+      "fr": "Centre d'aide avec Lou, agent IA qui cite ses sources ; boîte de réception triée par l'IA ; base de connaissances qui s'écrit depuis les tickets.",
+      "zh": "帮助中心 AI 助手小露作答附来源；AI 分诊收件箱；根据工单自动撰写的知识库；客户流失预警。"
+    },
+    "solutions": [
+      "chatbots",
+      "emails",
+      "reporting",
+      "crm",
+      "documents"
+    ]
+  },
+  {
+    "slug": "lianor",
+    "name": "Lianor Talent Partners",
+    "zhName": "联诺人才",
+    "industry": {
+      "en": "Recruitment agency (tech, finance, bilingual profiles) — Paris and Singapore",
+      "fr": "Cabinet de recrutement (tech, finance, profils bilingues) — Paris et Singapour",
+      "zh": "招聘顾问公司（科技、金融、双语人才）——巴黎与新加坡"
+    },
+    "summary": {
+      "en": "A photographed CV becomes a sensitive-data-free profile scored criterion by criterion; trilingual ads, WeChat outreach and a client portal.",
+      "fr": "Un CV photographié devient une fiche sans données sensibles, notée critère par critère ; annonces trilingues, approche WeChat et portail client.",
+      "zh": "拍一张简历即生成去敏感化档案并逐项匹配评分；三语职位广告、微信触达与客户门户。"
+    },
+    "solutions": [
+      "recruitment",
+      "documents",
+      "emails",
+      "leads",
+      "crm",
+      "reporting",
+      "chatbots",
+      "social"
+    ]
+  },
+  {
+    "slug": "arvane",
+    "name": "Arvane Précision",
+    "zhName": "亚凡精密",
+    "industry": {
+      "en": "Industrial subcontracting (precision bar-turning)",
+      "fr": "Sous-traitance industrielle (décolletage de précision)",
+      "zh": "工业代工（精密车削）"
+    },
+    "summary": {
+      "en": "AI reads RFQs and drawings, drafts quotes priced by the costing engine, scores trade-show leads and writes follow-ups a person approves.",
+      "fr": "L'IA lit demandes de prix et plans, prépare le devis chiffré par le moteur de coûts, note les leads de salon et rédige les relances validées par un humain.",
+      "zh": "AI 读取询价与图纸，生成由核价引擎定价的报价草稿，为展会线索评分，并起草经人工审核的跟进消息。"
+    },
+    "solutions": [
+      "documents",
+      "crm",
+      "leads",
+      "emails",
+      "chatbots",
+      "reporting"
+    ]
+  },
+  {
+    "slug": "ramage",
+    "name": "Ramage",
+    "zhName": "鸣翠",
+    "industry": {
+      "en": "Social media & content agency (Paris · Shanghai)",
+      "fr": "Agence social media & contenu (Paris · Shanghai)",
+      "zh": "社媒与内容营销机构（巴黎·上海）"
+    },
+    "summary": {
+      "en": "Agency running 15 brands on 8 networks (Instagram to Xiaohongshu): native AI posts in 3 languages, mobile client approval, AI inbox and reports.",
+      "fr": "Agence de 15 marques sur 8 réseaux (Instagram à Xiaohongshu) : posts IA natifs en 3 langues, validation client mobile, messagerie et rapports IA.",
+      "zh": "服务15个品牌、覆盖8个平台（Instagram到小红书）的机构：AI三语原生文案、客户手机审批、AI社群收件箱与月报。"
+    },
+    "solutions": [
+      "social",
+      "reporting",
+      "chatbots",
+      "emails",
+      "crm",
+      "leads"
+    ]
+  },
+  {
+    "slug": "osmanthe",
+    "name": "Osmanthe",
+    "zhName": "桂苑",
+    "industry": {
+      "en": "Restaurants & restaurant groups",
+      "fr": "Restaurants & groupes de restauration",
+      "zh": "餐厅与餐饮集团"
+    },
+    "summary": {
+      "en": "Three Paris restaurants in one screen: no-show-proof bookings, WeChat handled by AI, multilingual reviews, allergens, purchasing.",
+      "fr": "Trois restaurants parisiens pilotés en un écran : réservations anti no-show, WeChat traité par l'IA, avis multilingues, allergènes, achats.",
+      "zh": "一个界面管理巴黎三家餐厅：防爽约订位、AI 处理微信订位、多语言点评、过敏原与采购。"
+    },
+    "solutions": [
+      "chatbots",
+      "emails",
+      "crm",
+      "documents",
+      "reporting",
+      "social"
+    ]
+  },
+  {
+    "slug": "liane",
+    "name": "Liane",
+    "zhName": "联安",
+    "industry": {
+      "en": "Multidisciplinary health centre",
+      "fr": "Maison de santé pluriprofessionnelle",
+      "zh": "多学科医疗中心"
+    },
+    "summary": {
+      "en": "AI front desk on WhatsApp/WeChat that books visits, no-show reminders, an AI scribe (note + bilingual letter, validated) and role-based medical secrecy.",
+      "fr": "Accueil IA sur WhatsApp/WeChat qui prend les RDV, rappels anti-absences, scribe IA (note + courrier bilingue validés) et secret médical par rôle.",
+      "zh": "WhatsApp/微信 AI 前台自动预约，智能提醒减少爽约，AI 病历助手生成病历与双语信函并由医生确认，按角色保护医疗隐私。"
+    },
+    "solutions": [
+      "chatbots",
+      "crm",
+      "documents",
+      "emails",
+      "reporting"
+    ]
+  },
+  {
+    "slug": "merlane",
+    "name": "Merlane Logistics",
+    "zhName": "迈澜",
+    "industry": {
+      "en": "Transport & logistics — France ↔ China freight forwarding",
+      "fr": "Transport & logistique — commission de transport France ↔ Chine",
+      "zh": "运输与物流——中法国际货运代理"
+    },
+    "summary": {
+      "en": "A Le Havre–Shenzhen forwarder where AI reads invoices and packing lists, prices quotes, spots exceptions and warns customers in their own language.",
+      "fr": "Un transitaire Le Havre–Shenzhen où l'IA lit factures et colisages, chiffre les cotations, détecte les incidents et prévient les clients dans leur langue.",
+      "zh": "勒阿弗尔—深圳货代：AI 读取发票与装箱单、自动报价、识别运输异常，并用客户的语言主动通知。"
+    },
+    "solutions": [
+      "emails",
+      "leads",
+      "documents",
+      "chatbots",
+      "crm",
+      "reporting"
+    ]
+  },
+  {
+    "slug": "vermillon",
+    "name": "Vermillon Avocats",
+    "zhName": "印信",
+    "industry": {
+      "en": "Business law firm (Paris, China Desk)",
+      "fr": "Cabinet d'avocats d'affaires (Paris, China Desk)",
+      "zh": "商事律师事务所（巴黎·中国业务部）"
+    },
+    "summary": {
+      "en": "AI contract review against the playbook (bilingual EN/中文 too), multilingual clause search, cross-script conflicts, computed deadlines, time capture.",
+      "fr": "Revue de contrats IA selon le playbook (même bilingue EN/中文), clausier multilingue, conflits multi-écritures, échéances calculées, temps proposés.",
+      "zh": "按审查指引的 AI 合同审查（含中英双语）、多语种条款检索、跨文字利冲预审、自动计算期限、工时建议。"
+    },
+    "solutions": [
+      "documents",
+      "emails",
+      "crm",
+      "reporting",
+      "chatbots",
+      "social",
+      "leads"
+    ]
+  },
+  {
+    "slug": "aronde",
+    "name": "Aronde Hôtels",
+    "zhName": "燕归",
+    "industry": {
+      "en": "Hospitality · boutique 4★ hotel group",
+      "fr": "Hôtellerie · groupe d'hôtels boutique 4★",
+      "zh": "酒店业 · 精品四星酒店集团"
+    },
+    "summary": {
+      "en": "3 hotels in Paris, Annecy and Biarritz: unified inbox with a multilingual AI concierge, upsells, auto tasks, reviews and revenue.",
+      "fr": "3 hôtels à Paris, Annecy et Biarritz : messagerie unifiée avec concierge IA multilingue, upsells, tâches auto, avis et revenue.",
+      "zh": "巴黎、安纳西、比亚里茨三家酒店：统一消息中心与多语种AI礼宾，增值服务、自动工单、点评与营收管理。"
+    },
+    "solutions": [
+      "chatbots",
+      "emails",
+      "crm",
+      "social",
+      "reporting"
+    ]
+  }
+]
