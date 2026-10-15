@@ -24,28 +24,6 @@
     ]
   },
   {
-    "slug": "aplomb",
-    "name": "Aplomb",
-    "zhName": "衡正会计",
-    "industry": {
-      "en": "Chartered accounting firm",
-      "fr": "Cabinet d'expertise comptable",
-      "zh": "会计师事务所"
-    },
-    "summary": {
-      "en": "AI reads receipts, invoices and fapiao, checks VAT, reminds clients on WhatsApp/WeChat; the partner signs off VAT returns and closings.",
-      "fr": "Pièces lues par l'IA (tickets, factures, fapiao), contrôles TVA, relances WhatsApp/WeChat, campagne de TVA et clôtures validées par l'associée.",
-      "zh": "AI 识别小票、发票和中国发票，核查增值税，通过 WhatsApp/微信催办；增值税申报与结账由合伙人审核签署。"
-    },
-    "solutions": [
-      "documents",
-      "crm",
-      "emails",
-      "chatbots",
-      "reporting"
-    ]
-  },
-  {
     "slug": "kaolin",
     "name": "Kaolin HQ",
     "zhName": "高岭",
@@ -65,6 +43,28 @@
       "crm",
       "social",
       "documents",
+      "reporting"
+    ]
+  },
+  {
+    "slug": "aplomb",
+    "name": "Aplomb",
+    "zhName": "衡正会计",
+    "industry": {
+      "en": "Chartered accounting firm",
+      "fr": "Cabinet d'expertise comptable",
+      "zh": "会计师事务所"
+    },
+    "summary": {
+      "en": "AI reads receipts, invoices and fapiao, checks VAT, reminds clients on WhatsApp/WeChat; the partner signs off VAT returns and closings.",
+      "fr": "Pièces lues par l'IA (tickets, factures, fapiao), contrôles TVA, relances WhatsApp/WeChat, campagne de TVA et clôtures validées par l'associée.",
+      "zh": "AI 识别小票、发票和中国发票，核查增值税，通过 WhatsApp/微信催办；增值税申报与结账由合伙人审核签署。"
+    },
+    "solutions": [
+      "documents",
+      "crm",
+      "emails",
+      "chatbots",
       "reporting"
     ]
   },
@@ -113,6 +113,120 @@
       "reporting",
       "chatbots",
       "social"
+    ]
+  },
+  {
+    "slug": "arvane",
+    "name": "Arvane Précision",
+    "zhName": "亚凡精密",
+    "industry": {
+      "en": "Industrial subcontracting (precision bar-turning)",
+      "fr": "Sous-traitance industrielle (décolletage de précision)",
+      "zh": "工业代工（精密车削）"
+    },
+    "summary": {
+      "en": "AI reads RFQs and drawings, drafts quotes priced by the costing engine, scores trade-show leads and writes follow-ups a person approves.",
+      "fr": "L'IA lit demandes de prix et plans, prépare le devis chiffré par le moteur de coûts, note les leads de salon et rédige les relances validées par un humain.",
+      "zh": "AI 读取询价与图纸，生成由核价引擎定价的报价草稿，为展会线索评分，并起草经人工审核的跟进消息。"
+    },
+    "solutions": [
+      "documents",
+      "crm",
+      "leads",
+      "emails",
+      "chatbots",
+      "reporting"
+    ]
+  },
+  {
+    "slug": "ramage",
+    "name": "Ramage",
+    "zhName": "鸣翠",
+    "industry": {
+      "en": "Social media & content agency (Paris · Shanghai)",
+      "fr": "Agence social media & contenu (Paris · Shanghai)",
+      "zh": "社媒与内容营销机构（巴黎·上海）"
+    },
+    "summary": {
+      "en": "Agency running 15 brands on 8 networks (Instagram to Xiaohongshu): native AI posts in 3 languages, mobile client approval, AI inbox and reports.",
+      "fr": "Agence de 15 marques sur 8 réseaux (Instagram à Xiaohongshu) : posts IA natifs en 3 langues, validation client mobile, messagerie et rapports IA.",
+      "zh": "服务15个品牌、覆盖8个平台（Instagram到小红书）的机构：AI三语原生文案、客户手机审批、AI社群收件箱与月报。"
+    },
+    "solutions": [
+      "social",
+      "reporting",
+      "chatbots",
+      "emails",
+      "crm",
+      "leads"
+    ]
+  },
+  {
+    "slug": "osmanthe",
+    "name": "Osmanthe",
+    "zhName": "桂苑",
+    "industry": {
+      "en": "Restaurants & restaurant groups",
+      "fr": "Restaurants & groupes de restauration",
+      "zh": "餐厅与餐饮集团"
+    },
+    "summary": {
+      "en": "Three Paris restaurants in one screen: no-show-proof bookings, WeChat handled by AI, multilingual reviews, allergens, purchasing.",
+      "fr": "Trois restaurants parisiens pilotés en un écran : réservations anti no-show, WeChat traité par l'IA, avis multilingues, allergènes, achats.",
+      "zh": "一个界面管理巴黎三家餐厅：防爽约订位、AI 处理微信订位、多语言点评、过敏原与采购。"
+    },
+    "solutions": [
+      "chatbots",
+      "emails",
+      "crm",
+      "documents",
+      "reporting",
+      "social"
+    ]
+  },
+  {
+    "slug": "liane",
+    "name": "Liane",
+    "zhName": "联安",
+    "industry": {
+      "en": "Multidisciplinary health centre",
+      "fr": "Maison de santé pluriprofessionnelle",
+      "zh": "多学科医疗中心"
+    },
+    "summary": {
+      "en": "AI front desk on WhatsApp/WeChat that books visits, no-show reminders, an AI scribe (note + bilingual letter, validated) and role-based medical secrecy.",
+      "fr": "Accueil IA sur WhatsApp/WeChat qui prend les RDV, rappels anti-absences, scribe IA (note + courrier bilingue validés) et secret médical par rôle.",
+      "zh": "WhatsApp/微信 AI 前台自动预约，智能提醒减少爽约，AI 病历助手生成病历与双语信函并由医生确认，按角色保护医疗隐私。"
+    },
+    "solutions": [
+      "chatbots",
+      "crm",
+      "documents",
+      "emails",
+      "reporting"
+    ]
+  },
+  {
+    "slug": "merlane",
+    "name": "Merlane Logistics",
+    "zhName": "迈澜",
+    "industry": {
+      "en": "Transport & logistics — France ↔ China freight forwarding",
+      "fr": "Transport & logistique — commission de transport France ↔ Chine",
+      "zh": "运输与物流——中法国际货运代理"
+    },
+    "summary": {
+      "en": "A Le Havre–Shenzhen forwarder where AI reads invoices and packing lists, prices quotes, spots exceptions and warns customers in their own language.",
+      "fr": "Un transitaire Le Havre–Shenzhen où l'IA lit factures et colisages, chiffre les cotations, détecte les incidents et prévient les clients dans leur langue.",
+      "zh": "勒阿弗尔—深圳货代：AI 读取发票与装箱单、自动报价、识别运输异常，并用客户的语言主动通知。"
+    },
+    "solutions": [
+      "emails",
+      "leads",
+      "documents",
+      "chatbots",
+      "crm",
+      "reporting"
     ]
   }
 ]
