@@ -1,5 +1,26 @@
 [
   {
+    "slug": "aurelo",
+    "name": "Aurelo Factory Hub",
+    "zhName": "奥蕾洛家居",
+    "industry": {
+      "en": "Manufacturing · home-goods maker (China)",
+      "fr": "Industrie · fabricant d'articles de maison (Chine)",
+      "zh": "制造业 · 家居用品工厂（中国）"
+    },
+    "summary": {
+      "en": "The factory hub of a home-goods manufacturer: a 100-product catalogue with margins, quotes, quality, projects, procedures and a voice AI assistant.",
+      "fr": "Le hub d'usine d'un fabricant d'articles de maison : catalogue de 100 produits avec marges, devis, qualité, projets, procédures et assistant IA vocal.",
+      "zh": "家居用品制造商的工厂中枢：含利润率的百款产品目录、报价、质量、项目、作业流程与语音 AI 助手。"
+    },
+    "solutions": [
+      "documents",
+      "reporting",
+      "crm",
+      "chatbots"
+    ]
+  },
+  {
     "slug": "platane",
     "name": "Maison Platane",
     "zhName": "梧桐置业",

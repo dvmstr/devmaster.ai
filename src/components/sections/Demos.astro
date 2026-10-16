@@ -50,26 +50,43 @@ const whatsapp = (name: string) => `${SITE.whatsappUrl}?text=${encodeURIComponen
       <p class="mx-auto max-w-2xl px-2 text-base text-gray-400 sm:text-lg">{t.subtitle}</p>
     </div>
 
-    <ul class="grid gap-5 sm:gap-6 md:grid-cols-2 xl:grid-cols-3">
+    <ul class="grid gap-6 md:grid-cols-2 lg:gap-8">
       {
-        demos.map((d) => {
+        demos.map((d, index) => {
           const image = imageOf(d.slug);
           const chips = d.solutions
             .map((key) => SOLUTION_KEYS.indexOf(key as (typeof SOLUTION_KEYS)[number]))
             .filter((i) => i >= 0)
             .slice(0, 3);
+          // Two large visuals per row (the browser + phone mockups stay readable); with an odd count the first
+          // demo spans the whole row, image beside the text from lg.
+          const featured = index === 0 && demos.length % 2 === 1;
           return (
-            <li class="group flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] transition-colors duration-300 hover:border-cyan-500/40 hover:bg-white/[0.06]">
-              <div class="relative overflow-hidden border-b border-white/10 bg-white/5">
+            <li
+              class:list={[
+                "group flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] transition-colors duration-300 hover:border-cyan-500/40 hover:bg-white/[0.06]",
+                featured && "md:col-span-2 lg:flex-row",
+              ]}
+            >
+              <div
+                class:list={[
+                  "relative overflow-hidden border-b border-white/10 bg-white/5",
+                  featured && "lg:w-[62%] lg:shrink-0 lg:border-r lg:border-b-0",
+                ]}
+              >
                 {image && (
                   <Picture
                     src={image}
                     alt={`${d.name} — ${d.industry[locale]}`}
-                    widths={[400, 600, 800]}
-                    sizes="(min-width: 1280px) 400px, (min-width: 768px) 50vw, 100vw"
+                    widths={featured ? [640, 960, 1280, 1600] : [480, 720, 960, 1200]}
+                    sizes={
+                      featured
+                        ? "(min-width: 1280px) 764px, (min-width: 1024px) 62vw, 100vw"
+                        : "(min-width: 1280px) 600px, (min-width: 768px) 50vw, 100vw"
+                    }
                     formats={["avif", "webp"]}
                     class="aspect-[16/10] w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
-                    loading="lazy"
+                    loading={index < 3 ? "eager" : "lazy"}
                     decoding="async"
                   />
                 )}
@@ -77,13 +94,18 @@ const whatsapp = (name: string) => `${SITE.whatsappUrl}?text=${encodeURIComponen
                   {t.fictional}
                 </span>
               </div>
-              <div class="flex flex-1 flex-col p-5 sm:p-6">
+              <div class:list={["flex flex-1 flex-col p-6 sm:p-7", featured && "lg:justify-center lg:p-10"]}>
                 <p class="mb-2 text-[11px] font-medium tracking-[0.12em] text-cyan-400 uppercase">{d.industry[locale]}</p>
-                <h3 class="mb-2 flex flex-wrap items-baseline gap-x-2 text-lg font-medium text-white">
+                <h3
+                  class:list={[
+                    "mb-3 flex flex-wrap items-baseline gap-x-2 font-medium text-white",
+                    featured ? "text-2xl sm:text-3xl" : "text-xl",
+                  ]}
+                >
                   {d.name}
                   {d.zhName && <span class="text-sm font-normal text-gray-500">{d.zhName}</span>}
                 </h3>
-                <p class="mb-5 text-sm leading-relaxed text-gray-400">{d.summary[locale]}</p>
+                <p class:list={["mb-5 leading-relaxed text-gray-400", featured ? "text-base" : "text-sm sm:text-[15px]"]}>{d.summary[locale]}</p>
                 <ul class="mb-6 flex flex-wrap gap-2">
                   {chips.map((i) => (
                     <li class="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-xs text-gray-300">
@@ -96,7 +118,10 @@ const whatsapp = (name: string) => `${SITE.whatsappUrl}?text=${encodeURIComponen
                   href={whatsapp(d.name)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="mt-auto inline-flex items-center gap-2 self-start text-sm font-medium text-cyan-300 transition-colors hover:text-cyan-200"
+                  class:list={[
+                    "inline-flex items-center gap-2 self-start text-sm font-medium text-cyan-300 transition-colors hover:text-cyan-200",
+                    featured ? "mt-auto lg:mt-2" : "mt-auto",
+                  ]}
                 >
                   {t.cta}
                   <Icon name="ArrowRight" size={14} class="transition-transform duration-300 group-hover:translate-x-0.5" />
