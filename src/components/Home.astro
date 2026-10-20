@@ -91,13 +91,16 @@ const jsonLd = [
     <Benefits benefits={t.benefits} />
     <Solutions solutions={t.solutions} />
     <Process process={t.process} />
-    <Demos
-      locale={locale}
-      demos={t.demos}
-      solutionTitles={t.solutions.items.map((s) => s.title)}
-      solutionIcons={t.solutions.items.map((s) => s.icon)}
-    />
-    <Testimonials testimonials={t.testimonials} />
+    <!-- Résultats : la preuve après les Solutions et le Process — les démos, puis l'avis des clients, en un seul chapitre. -->
+    <section id="results" class="relative">
+      <Demos
+        locale={locale}
+        demos={t.demos}
+        solutionTitles={t.solutions.items.map((s) => s.title)}
+        solutionIcons={t.solutions.items.map((s) => s.icon)}
+      />
+      <Testimonials testimonials={t.testimonials} />
+    </section>
     <FAQ faq={t.faq} />
     <CTA cta={t.cta} whatsappLabel={t.a11y.whatsapp} />
   </main>

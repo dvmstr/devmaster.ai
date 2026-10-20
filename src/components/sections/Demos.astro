@@ -10,7 +10,7 @@ import { inPortalOrder } from "../../lib/demo-order";
 import data from "../../data/demos.json";
 
 /**
- * « Démos interactives » : les applications construites pour des entreprises fictives, une par secteur.
+ * « Démos interactives » (début de la section « Résultats ») : les applications construites pour des entreprises fictives, une par secteur.
  * Données : src/data/demos.json + visuels src/assets/demos/<slug>.jpg (générés par le script site-demos.py depuis
  * le catalogue de chaque démo). Ordre : celui choisi sur le portail client (« Réorganiser », lu à la construction —
  * src/lib/demo-order.ts). Une démo par ligne : visuel et texte côte à côte à partir de 1280 px (visuel à gauche puis à droite), visuel au-dessus du texte en dessous. Les démos sont privées : le bouton
@@ -41,7 +41,7 @@ const demos = await inPortalOrder(data);
 const whatsapp = (name: string) => `${SITE.whatsappUrl}?text=${encodeURIComponent(t.message.replace("{name}", name))}`;
 ---
 
-<section id="demos" class="relative py-16 sm:py-24">
+<div id="demos" class="relative pt-16 pb-14 sm:pt-24 sm:pb-20">
   <!-- Ligne du faisceau à la jonction avec le Process : le cône éclaire le badge, la lueur arrière la fin de la frise. -->
   <LightSource direction={0} color="cyan" intensity="medium" class="-top-48 left-1/2 -translate-x-1/2" />
 
@@ -137,4 +137,4 @@ const whatsapp = (name: string) => `${SITE.whatsappUrl}?text=${encodeURIComponen
       </a>
     </div>
   </div>
-</section>
+</div>

@@ -36,12 +36,8 @@
         "target": "process"
       },
       {
-        "label": "Démos",
-        "target": "demos"
-      },
-      {
-        "label": "Avis",
-        "target": "testimonials"
+        "label": "Résultats",
+        "target": "results"
       },
       {
         "label": "FAQ",
@@ -215,8 +211,7 @@
     "clientArea": "Espace client"
   },
   "testimonials": {
-    "title": "Ce que disent nos clients",
-    "subtitle": "Leur projet avec Devmaster, raconté par eux-mêmes",
+    "label": "Avis clients",
     "cta": "Rejoignez-les maintenant",
     "items": [
       {

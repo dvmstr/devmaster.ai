@@ -36,12 +36,8 @@
         "target": "process"
       },
       {
-        "label": "演示",
-        "target": "demos"
-      },
-      {
-        "label": "评价",
-        "target": "testimonials"
+        "label": "成果",
+        "target": "results"
       },
       {
         "label": "常见问题",
@@ -215,8 +211,7 @@
     "clientArea": "客户专区"
   },
   "testimonials": {
-    "title": "客户怎么说",
-    "subtitle": "客户亲述与Devmaster合作的项目",
+    "label": "客户评价",
     "cta": "立即加入他们",
     "items": [
       {

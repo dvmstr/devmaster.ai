@@ -1,6 +1,5 @@
 ---
 import Icon from "../Icon.astro";
-import LightSource from "../LightSource.astro";
 
 interface Testimonial {
   text: string;
@@ -9,7 +8,7 @@ interface Testimonial {
   company: string;
 }
 interface Props {
-  testimonials: { title: string; subtitle: string; cta: string; items: Testimonial[] };
+  testimonials: { label: string; cta: string; items: Testimonial[] };
 }
 const { testimonials } = Astro.props;
 // Trois colonnes qui défilent en continu à des vitesses différentes (2 colonnes en tablette, 1 sur mobile).
@@ -20,14 +19,14 @@ const columns = [
 ];
 ---
 
-<section id="testimonials" class="relative py-12 sm:py-16">
-  <!-- Ligne du faisceau entre le bouton « Espace client » des démos et le titre : l'arrière éclaire l'un, le cône l'autre. -->
-  <LightSource direction={0} color="cyan" intensity="medium" class="-top-52 left-1/2 -translate-x-1/2" />
-
+<!-- Suite de la section « Résultats », après les démos : pas de titre, une pastille assortie au badge des démos. -->
+<div id="testimonials" class="relative pb-12 sm:pb-16">
   <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6">
-    <div class="mx-auto mb-6 max-w-3xl text-center sm:mb-8">
-      <h2 class="mb-3 px-2 text-3xl font-medium text-white sm:mb-4 sm:text-4xl md:text-5xl">{testimonials.title}</h2>
-      <p class="mx-auto max-w-2xl px-2 text-base text-gray-400 sm:text-lg">{testimonials.subtitle}</p>
+    <div class="mb-4 flex justify-center sm:mb-6">
+      <h3 class="inline-flex items-center gap-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3 py-1 text-xs font-medium tracking-wide text-cyan-300">
+        <Icon name="MessageCircle" size={12} />
+        {testimonials.label}
+      </h3>
     </div>
     <div class="flex max-h-[600px] justify-center gap-4 overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)] sm:max-h-[740px] sm:gap-6">
       {
@@ -68,7 +67,7 @@ const columns = [
       </a>
     </div>
   </div>
-</section>
+</div>
 
 <style>
   /* Pas de flou d'arrière-plan sur ces cartes : le fond est noir uni (rendu identique) et le flou, recalculé à chaque
