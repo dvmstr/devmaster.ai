@@ -1,9 +1,9 @@
 {
   "meta": {
     "title": "Devmaster - AI Automation for your Business",
-    "description": "Transform your business with AI. Automate your processes, save 20 hours per week and boost your productivity by 300%. Audit in 48h.",
+    "description": "Transform your business with AI: custom automation for emails, leads, chatbots, CRM and documents. Explore our interactive demos. Audit in 48h.",
     "ogTitle": "Devmaster - AI Automation for your Business",
-    "ogDescription": "Transform your business with AI. Automate your processes, save 20 hours per week and boost your productivity by 300%.",
+    "ogDescription": "Transform your business with AI: custom automation and interactive demos to explore.",
     "keywords": [
       "AI automation",
       "artificial intelligence",
@@ -32,16 +32,16 @@
         "target": "solutions"
       },
       {
+        "label": "Process",
+        "target": "process"
+      },
+      {
         "label": "Demos",
         "target": "demos"
       },
       {
-        "label": "Results",
-        "target": "results"
-      },
-      {
-        "label": "Process",
-        "target": "process"
+        "label": "Reviews",
+        "target": "testimonials"
       },
       {
         "label": "FAQ",
@@ -116,7 +116,7 @@
           2,
           4
         ],
-        "impactStat": "x3 conversions"
+        "impactStat": "Leads that don't go cold"
       },
       {
         "id": 2,
@@ -128,19 +128,19 @@
           1,
           4
         ],
-        "impactStat": "+250% leads"
+        "impactStat": "More leads, better qualified"
       },
       {
         "id": 3,
         "title": "AI Chatbots",
-        "tagline": "AVAILABLE 24/7",
-        "description": "24/7 customer support, automatic qualification and instant responses powered by AI.",
+        "tagline": "ALWAYS AVAILABLE",
+        "description": "Round-the-clock customer support, automatic qualification and instant responses powered by AI.",
         "icon": "MessageCircle",
         "relatedIds": [
           2,
           4
         ],
-        "impactStat": "Response in <2min"
+        "impactStat": "No customer left waiting"
       },
       {
         "id": 4,
@@ -152,7 +152,7 @@
           1,
           2
         ],
-        "impactStat": "0 missed follow-ups"
+        "impactStat": "No missed follow-ups"
       },
       {
         "id": 5,
@@ -164,7 +164,7 @@
           7,
           2
         ],
-        "impactStat": "+200% engagement"
+        "impactStat": "A steady presence, effortlessly"
       },
       {
         "id": 6,
@@ -176,7 +176,7 @@
           4,
           7
         ],
-        "impactStat": "12h saved/week"
+        "impactStat": "No more manual data entry"
       },
       {
         "id": 7,
@@ -200,7 +200,7 @@
           1,
           2
         ],
-        "impactStat": "-60% hiring time"
+        "impactStat": "Faster hiring"
       }
     ]
   },
@@ -214,33 +214,9 @@
     "privateNote": "Demos are private: we open access for your team on request, from your client area.",
     "clientArea": "Client area"
   },
-  "results": {
-    "title": "Measurable results",
-    "subtitle": "Our clients see immediate impact on their performance",
-    "stats": [
-      {
-        "value": 300,
-        "unit": "%",
-        "label": "Productivity increase"
-      },
-      {
-        "value": 20,
-        "unit": "h",
-        "label": "Saved per week"
-      },
-      {
-        "value": 100,
-        "unit": "%",
-        "label": "Satisfaction guaranteed"
-      },
-      {
-        "value": 48,
-        "unit": "h",
-        "label": "For your Audit & Quote"
-      }
-    ]
-  },
   "testimonials": {
+    "title": "What our clients say",
+    "subtitle": "Their project with Devmaster, in their own words",
     "cta": "Join them now",
     "items": [
       {
@@ -349,7 +325,7 @@
     "items": [
       {
         "question": "How long before seeing the first results?",
-        "answer": "Your personalized audit is delivered within 48 hours. The first automations are deployed immediately after plan validation. You'll see measurable impact within the first week with a minimum time savings of 20 hours on repetitive tasks."
+        "answer": "Your personalized audit is delivered within 48 hours. The first automations are deployed immediately after plan validation. The gains show within the first weeks, on the repetitive tasks the automations take over."
       },
       {
         "question": "What automations do you offer specifically?",
@@ -383,7 +359,7 @@
   },
   "cta": {
     "title": "Ready to transform your business?",
-    "subtitle": "Book your 48h audit and discover how to save 20 hours per week",
+    "subtitle": "Book your 48h audit and discover what AI can automate in your business",
     "whatsapp": "WhatsApp: +33 7 45 49 65 52",
     "disclaimer": "No commitment • Personalized audit • Results in 48h"
   },

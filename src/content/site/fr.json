@@ -1,9 +1,9 @@
 {
   "meta": {
     "title": "Devmaster - Automatisation IA pour votre Business",
-    "description": "Transformez votre business avec l'IA. Automatisez vos processus, gagnez 20h par semaine et boostez votre productivité de 300%. Audit en 48h.",
+    "description": "Transformez votre business avec l'IA : emails, leads, chatbots, CRM et documents automatisés sur mesure. Découvrez nos démos interactives. Audit en 48h.",
     "ogTitle": "Devmaster - Automatisation IA pour votre Business",
-    "ogDescription": "Transformez votre business avec l'IA. Automatisez vos processus, gagnez 20h par semaine et boostez votre productivité de 300%.",
+    "ogDescription": "Transformez votre business avec l'IA : des automatisations sur mesure et des démos interactives à découvrir.",
     "keywords": [
       "automatisation IA",
       "intelligence artificielle",
@@ -32,16 +32,16 @@
         "target": "solutions"
       },
       {
+        "label": "Process",
+        "target": "process"
+      },
+      {
         "label": "Démos",
         "target": "demos"
       },
       {
-        "label": "Résultats",
-        "target": "results"
-      },
-      {
-        "label": "Process",
-        "target": "process"
+        "label": "Avis",
+        "target": "testimonials"
       },
       {
         "label": "FAQ",
@@ -116,7 +116,7 @@
           2,
           4
         ],
-        "impactStat": "x3 conversions"
+        "impactStat": "Des prospects qui ne refroidissent plus"
       },
       {
         "id": 2,
@@ -128,19 +128,19 @@
           1,
           4
         ],
-        "impactStat": "+250% de leads"
+        "impactStat": "Plus de prospects, mieux qualifiés"
       },
       {
         "id": 3,
         "title": "Chatbots IA",
-        "tagline": "DISPONIBLE 24/7",
-        "description": "Support client 24/7, qualification automatique et réponses instantanées grâce à l'IA.",
+        "tagline": "TOUJOURS DISPONIBLE",
+        "description": "Support client jour et nuit, qualification automatique et réponses instantanées grâce à l'IA.",
         "icon": "MessageCircle",
         "relatedIds": [
           2,
           4
         ],
-        "impactStat": "Réponse en <2min"
+        "impactStat": "Plus aucun client laissé en attente"
       },
       {
         "id": 4,
@@ -152,7 +152,7 @@
           1,
           2
         ],
-        "impactStat": "0 relance oubliée"
+        "impactStat": "Aucune relance oubliée"
       },
       {
         "id": 5,
@@ -164,7 +164,7 @@
           7,
           2
         ],
-        "impactStat": "+200% engagement"
+        "impactStat": "Une présence régulière, sans effort"
       },
       {
         "id": 6,
@@ -176,7 +176,7 @@
           4,
           7
         ],
-        "impactStat": "12h gagnées/sem"
+        "impactStat": "Fini la saisie manuelle"
       },
       {
         "id": 7,
@@ -200,7 +200,7 @@
           1,
           2
         ],
-        "impactStat": "-60% temps de recrutement"
+        "impactStat": "Des recrutements plus rapides"
       }
     ]
   },
@@ -214,33 +214,9 @@
     "privateNote": "Les démos sont privées : nous ouvrons l'accès à votre équipe sur demande, depuis votre espace client.",
     "clientArea": "Espace client"
   },
-  "results": {
-    "title": "Des résultats mesurables",
-    "subtitle": "Nos clients constatent un impact immédiat sur leur performance",
-    "stats": [
-      {
-        "value": 300,
-        "unit": "%",
-        "label": "Augmentation de productivité"
-      },
-      {
-        "value": 20,
-        "unit": "h",
-        "label": "Économisées par semaine"
-      },
-      {
-        "value": 100,
-        "unit": "%",
-        "label": "Satisfait ou remboursé"
-      },
-      {
-        "value": 48,
-        "unit": "h",
-        "label": "Pour votre Audit & Devis"
-      }
-    ]
-  },
   "testimonials": {
+    "title": "Ce que disent nos clients",
+    "subtitle": "Leur projet avec Devmaster, raconté par eux-mêmes",
     "cta": "Rejoignez-les maintenant",
     "items": [
       {
@@ -349,7 +325,7 @@
     "items": [
       {
         "question": "Combien de temps avant de voir les premiers résultats ?",
-        "answer": "Votre audit personnalisé est livré sous 48h. Les premières automatisations sont déployées immédiatement après validation du plan. Vous constatez un impact mesurable dès la première semaine avec un gain de temps de 20h minimum sur vos tâches répétitives."
+        "answer": "Votre audit personnalisé est livré sous 48h. Les premières automatisations sont déployées immédiatement après validation du plan. Les gains se voient dès les premières semaines, sur les tâches répétitives que l'automatisation prend en charge."
       },
       {
         "question": "Quelles automatisations proposez-vous concrètement ?",
@@ -383,7 +359,7 @@
   },
   "cta": {
     "title": "Prêt à transformer votre business ?",
-    "subtitle": "Réservez votre audit de 48h et découvrez comment gagner 20h par semaine",
+    "subtitle": "Réservez votre audit de 48h et découvrez ce que l'IA peut automatiser chez vous",
     "whatsapp": "WhatsApp : 07 45 49 65 52",
     "disclaimer": "Sans engagement • Audit personnalisé • Résultats en 48h"
   },

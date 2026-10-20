@@ -8,7 +8,7 @@ Site de l'agence d'automatisation IA **Devmaster**, en anglais (`/`), français 
 |---|---|
 | Outil | [Astro 7](https://astro.build) : chaque page est générée en HTML complet au moment de la publication |
 | Styles | Tailwind CSS 4 (palette de Tailwind 3 conservée pour un rendu identique à l'ancien site) |
-| Interactions | quelques scripts légers (menu, cercle des solutions, compteurs…), moins de 3 Ko au total ; aucun framework côté navigateur |
+| Interactions | quelques scripts légers (menu, cercle des solutions, frise du process…), moins de 3 Ko au total ; aucun framework côté navigateur |
 | Contenu | fichiers JSON par langue dans `src/content/` — plus de base de données |
 | Hébergement | Netlify (statique) : chaque push sur `main` publie le site ; chaque pull request a son aperçu |
 | Sécurité | politique de contenu (CSP) par empreintes générée par Astro + en-têtes dans `public/_headers` |
@@ -16,7 +16,7 @@ Site de l'agence d'automatisation IA **Devmaster**, en anglais (`/`), français 
 ## Modifier un texte
 
 Tout le texte est dans **`src/content/site/en.json`, `fr.json`, `zh.json`** (page d'accueil, une section par clé :
-`hero`, `benefits`, `solutions`, `results`, `testimonials`, `process`, `faq`, `cta`, `footer`) et
+`hero`, `benefits`, `solutions`, `process`, `demos`, `testimonials`, `faq`, `cta`, `footer`, dans l'ordre de la page) et
 **`src/content/legal/<langue>.json`** (mentions légales). La structure est vérifiée à la publication : un champ
 manquant ou mal formé dans une langue bloque le build avec un message clair, le site en ligne n'est jamais cassé.
 

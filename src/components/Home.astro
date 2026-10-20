@@ -7,7 +7,6 @@ import Hero from "./sections/Hero.astro";
 import Benefits from "./sections/Benefits.astro";
 import Solutions from "./sections/Solutions.astro";
 import Demos from "./sections/Demos.astro";
-import Results from "./sections/Results.astro";
 import Testimonials from "./sections/Testimonials.astro";
 import Process from "./sections/Process.astro";
 import FAQ from "./sections/FAQ.astro";
@@ -91,15 +90,14 @@ const jsonLd = [
     <Hero label={t.a11y.heroLabel} hero={t.hero} />
     <Benefits benefits={t.benefits} />
     <Solutions solutions={t.solutions} />
+    <Process process={t.process} />
     <Demos
       locale={locale}
       demos={t.demos}
       solutionTitles={t.solutions.items.map((s) => s.title)}
       solutionIcons={t.solutions.items.map((s) => s.icon)}
     />
-    <Results results={t.results} />
     <Testimonials testimonials={t.testimonials} />
-    <Process process={t.process} />
     <FAQ faq={t.faq} />
     <CTA cta={t.cta} whatsappLabel={t.a11y.whatsapp} />
   </main>

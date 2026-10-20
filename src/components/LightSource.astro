@@ -31,7 +31,8 @@ const glowBlur = intensity === "low" ? "blur-2xl" : "blur-3xl";
     <div class:list={["glow absolute inset-auto z-50 h-36 -translate-y-1/2 rounded-full bg-cyan-500", glowBlur]}></div>
     <div class:list={["beam absolute inset-auto z-30 h-36 -translate-y-[6rem] rounded-full blur-2xl", beam]}></div>
     <div class:list={["line absolute inset-auto z-50 h-0.5 -translate-y-[7rem]", beam]}></div>
-    <div class="absolute inset-auto z-40 h-44 w-[800px] -translate-y-[12.5rem] bg-black"></div>
+    <!-- Cache noir derrière la ligne, estompé vers l'extérieur : un faisceau voisin (fin de la section précédente) n'est pas coupé net. -->
+    <div class="absolute inset-auto z-40 h-44 w-[800px] -translate-y-[12.5rem] bg-black [mask-image:linear-gradient(to_top,white_45%,transparent)]"></div>
   </div>
 </div>
 

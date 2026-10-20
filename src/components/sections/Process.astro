@@ -1,5 +1,6 @@
 ---
 import Icon from "../Icon.astro";
+import LightSource from "../LightSource.astro";
 import type { IconName } from "../../lib/icons";
 
 interface Step {
@@ -18,7 +19,10 @@ const icons: IconName[] = ["Search", "Lightbulb", "Rocket"];
 ---
 
 <section id="process" class="relative">
-  <div class="relative w-full bg-black font-sans md:px-10" data-timeline>
+  <!-- Ligne du faisceau entre le bouton de fin des Solutions et le titre : la lueur arrière éclaire le bouton, le cône le titre. -->
+  <LightSource direction={0} color="cyan" intensity="medium" class="-top-52 left-1/2 -translate-x-1/2" />
+
+  <div class="relative z-10 w-full font-sans md:px-10" data-timeline>
     <div class="mx-auto max-w-7xl px-4 py-12 text-center sm:py-16 md:px-8 md:py-20 lg:px-10">
       <h2 class="mx-auto mb-3 text-3xl font-medium text-white sm:mb-4 sm:text-4xl md:text-5xl">{process.title}</h2>
       <p class="mx-auto px-2 text-sm text-gray-400 sm:text-base md:text-lg">{process.subtitle}</p>

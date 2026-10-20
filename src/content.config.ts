@@ -34,12 +34,8 @@ const site = defineCollection({
       title: text, subtitle: text, badge: text, fictional: text, cta: text,
       message: text.refine((s) => s.includes("{name}"), "doit contenir {name}"), privateNote: text, clientArea: text,
     }),
-    results: z.object({
-      title: text, subtitle: text,
-      stats: z.array(z.object({ value: z.number().int().nonnegative(), unit: z.string(), label: text })).length(4),
-    }),
     testimonials: z.object({
-      cta: text,
+      title: text, subtitle: text, cta: text,
       items: z.array(z.object({ text, name: text, role: text, company: z.string() })).min(3),
     }),
     process: z.object({

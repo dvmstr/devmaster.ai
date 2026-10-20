@@ -1,9 +1,9 @@
 {
   "meta": {
     "title": "Devmaster - 企业AI自动化",
-    "description": "用AI转型您的业务。自动化您的流程，每周节省20小时，生产力提升300%。48小时审计。",
+    "description": "用AI转型您的业务：为邮件、潜在客户、聊天机器人、CRM和文档量身定制自动化。欢迎体验我们的互动演示。48小时审计。",
     "ogTitle": "Devmaster - 企业AI自动化",
-    "ogDescription": "用AI转型您的业务。自动化您的流程，每周节省20小时，生产力提升300%。",
+    "ogDescription": "用AI转型您的业务：量身定制的自动化，以及可亲自体验的互动演示。",
     "keywords": [
       "AI自动化",
       "人工智能",
@@ -32,16 +32,16 @@
         "target": "solutions"
       },
       {
+        "label": "流程",
+        "target": "process"
+      },
+      {
         "label": "演示",
         "target": "demos"
       },
       {
-        "label": "成果",
-        "target": "results"
-      },
-      {
-        "label": "流程",
-        "target": "process"
+        "label": "评价",
+        "target": "testimonials"
       },
       {
         "label": "常见问题",
@@ -116,7 +116,7 @@
           2,
           4
         ],
-        "impactStat": "转化率x3"
+        "impactStat": "潜在客户不再流失"
       },
       {
         "id": 2,
@@ -128,19 +128,19 @@
           1,
           4
         ],
-        "impactStat": "+250%潜在客户"
+        "impactStat": "更多潜在客户，质量更高"
       },
       {
         "id": 3,
         "title": "AI聊天机器人",
         "tagline": "全天候可用",
-        "description": "24/7客户支持、自动资格认定和AI驱动的即时响应。",
+        "description": "全天候客户支持、自动资格认定和AI驱动的即时响应。",
         "icon": "MessageCircle",
         "relatedIds": [
           2,
           4
         ],
-        "impactStat": "响应<2分钟"
+        "impactStat": "不再让客户等待"
       },
       {
         "id": 4,
@@ -152,7 +152,7 @@
           1,
           2
         ],
-        "impactStat": "0遗漏跟进"
+        "impactStat": "不再遗漏任何跟进"
       },
       {
         "id": 5,
@@ -164,7 +164,7 @@
           7,
           2
         ],
-        "impactStat": "+200%互动"
+        "impactStat": "轻松保持稳定曝光"
       },
       {
         "id": 6,
@@ -176,7 +176,7 @@
           4,
           7
         ],
-        "impactStat": "每周节省12小时"
+        "impactStat": "告别手动录入"
       },
       {
         "id": 7,
@@ -200,7 +200,7 @@
           1,
           2
         ],
-        "impactStat": "招聘时间-60%"
+        "impactStat": "更快完成招聘"
       }
     ]
   },
@@ -214,33 +214,9 @@
     "privateNote": "演示为私密访问：我们会应您的要求，在客户专区为您的团队开通访问权限。",
     "clientArea": "客户专区"
   },
-  "results": {
-    "title": "可衡量的成果",
-    "subtitle": "我们的客户立即看到对其业绩的影响",
-    "stats": [
-      {
-        "value": 300,
-        "unit": "%",
-        "label": "生产力提升"
-      },
-      {
-        "value": 20,
-        "unit": "h",
-        "label": "每周节省"
-      },
-      {
-        "value": 100,
-        "unit": "%",
-        "label": "满意保证"
-      },
-      {
-        "value": 48,
-        "unit": "h",
-        "label": "审计和报价"
-      }
-    ]
-  },
   "testimonials": {
+    "title": "客户怎么说",
+    "subtitle": "客户亲述与Devmaster合作的项目",
     "cta": "立即加入他们",
     "items": [
       {
@@ -349,7 +325,7 @@
     "items": [
       {
         "question": "多久能看到第一批成果？",
-        "answer": "您的个性化审计将在48小时内交付。首批自动化将在计划验证后立即部署。您将在第一周内看到可衡量的影响，在重复性任务上至少节省20小时。"
+        "answer": "您的个性化审计将在48小时内交付。首批自动化将在计划验证后立即部署。在最初几周内，您就能在由自动化接管的重复性任务上看到成效。"
       },
       {
         "question": "你们具体提供哪些自动化服务？",
@@ -383,7 +359,7 @@
   },
   "cta": {
     "title": "准备好转型您的业务了吗？",
-    "subtitle": "预约您的48小时审计，了解如何每周节省20小时",
+    "subtitle": "预约您的48小时审计，了解AI能为您的业务自动化哪些工作",
     "whatsapp": "WhatsApp: +33 7 45 49 65 52",
     "disclaimer": "无需承诺 • 个性化审计 • 48小时内出结果"
   },
