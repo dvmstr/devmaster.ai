@@ -1,8 +1,11 @@
 [
   {
     "slug": "aurelo",
-    "name": "Aurelo Factory Hub",
-    "zhName": "奥蕾洛家居",
+    "name": {
+      "en": "Factory operations hub",
+      "fr": "Pilotage d'usine",
+      "zh": "工厂运营中枢"
+    },
     "industry": {
       "en": "Manufacturing · home-goods maker (China)",
       "fr": "Industrie · fabricant d'articles de maison (Chine)",
@@ -22,8 +25,11 @@
   },
   {
     "slug": "mesure",
-    "name": "Mesure",
-    "zhName": "量裁",
+    "name": {
+      "en": "Online quotes & invoicing",
+      "fr": "Devis en ligne & facturation",
+      "zh": "在线报价与开票"
+    },
     "industry": {
       "en": "Any trade · quotes, deposits & invoices",
       "fr": "Tous secteurs · devis, acomptes & factures",
@@ -45,8 +51,11 @@
   },
   {
     "slug": "platane",
-    "name": "Maison Platane",
-    "zhName": "梧桐置业",
+    "name": {
+      "en": "Real-estate CRM",
+      "fr": "CRM immobilier",
+      "zh": "房产中介 CRM"
+    },
     "industry": {
       "en": "Real-estate agency (sales, lettings, management)",
       "fr": "Agence immobilière (transaction, location, gestion)",
@@ -69,8 +78,11 @@
   },
   {
     "slug": "kaolin",
-    "name": "Kaolin HQ",
-    "zhName": "高岭",
+    "name": {
+      "en": "E-commerce customer service",
+      "fr": "Service client e-commerce",
+      "zh": "电商客服中心"
+    },
     "industry": {
       "en": "DTC e-commerce · skincare (Europe + China)",
       "fr": "E-commerce DTC · cosmétiques (Europe + Chine)",
@@ -92,8 +104,11 @@
   },
   {
     "slug": "aplomb",
-    "name": "Aplomb",
-    "zhName": "衡正会计",
+    "name": {
+      "en": "Accounting firm management",
+      "fr": "Gestion de cabinet comptable",
+      "zh": "会计事务所管理"
+    },
     "industry": {
       "en": "Chartered accounting firm",
       "fr": "Cabinet d'expertise comptable",
@@ -114,8 +129,11 @@
   },
   {
     "slug": "rendoux",
-    "name": "Rendoux Care",
-    "zhName": "如约",
+    "name": {
+      "en": "Customer support & AI agent",
+      "fr": "Support client & agent IA",
+      "zh": "客户支持与 AI 客服"
+    },
     "industry": {
       "en": "Customer support of a SaaS vendor (booking software)",
       "fr": "Support client d'un éditeur SaaS (logiciel de réservation)",
@@ -136,8 +154,11 @@
   },
   {
     "slug": "lianor",
-    "name": "Lianor Talent Partners",
-    "zhName": "联诺人才",
+    "name": {
+      "en": "Recruiting & CV screening",
+      "fr": "Recrutement & analyse de CV",
+      "zh": "招聘与简历筛选"
+    },
     "industry": {
       "en": "Recruitment agency (tech, finance, bilingual profiles) — Paris and Singapore",
       "fr": "Cabinet de recrutement (tech, finance, profils bilingues) — Paris et Singapour",
@@ -161,8 +182,11 @@
   },
   {
     "slug": "arvane",
-    "name": "Arvane Précision",
-    "zhName": "亚凡精密",
+    "name": {
+      "en": "Industrial costing & quotes",
+      "fr": "Chiffrage & devis industriels",
+      "zh": "工业成本核算与报价"
+    },
     "industry": {
       "en": "Industrial subcontracting (precision bar-turning)",
       "fr": "Sous-traitance industrielle (décolletage de précision)",
@@ -184,8 +208,11 @@
   },
   {
     "slug": "ramage",
-    "name": "Ramage",
-    "zhName": "鸣翠",
+    "name": {
+      "en": "Social media management",
+      "fr": "Gestion des réseaux sociaux",
+      "zh": "社交媒体运营管理"
+    },
     "industry": {
       "en": "Social media & content agency (Paris · Shanghai)",
       "fr": "Agence social media & contenu (Paris · Shanghai)",
@@ -207,8 +234,11 @@
   },
   {
     "slug": "osmanthe",
-    "name": "Osmanthe",
-    "zhName": "桂苑",
+    "name": {
+      "en": "Restaurant management",
+      "fr": "Gestion de restaurants",
+      "zh": "餐厅经营管理"
+    },
     "industry": {
       "en": "Restaurants & restaurant groups",
       "fr": "Restaurants & groupes de restauration",
@@ -230,8 +260,11 @@
   },
   {
     "slug": "liane",
-    "name": "Liane",
-    "zhName": "联安",
+    "name": {
+      "en": "Medical front desk",
+      "fr": "Secrétariat médical",
+      "zh": "医疗前台与病历"
+    },
     "industry": {
       "en": "Multidisciplinary health centre",
       "fr": "Maison de santé pluriprofessionnelle",
@@ -252,8 +285,11 @@
   },
   {
     "slug": "merlane",
-    "name": "Merlane Logistics",
-    "zhName": "迈澜",
+    "name": {
+      "en": "Freight quotes & tracking",
+      "fr": "Cotations & suivi de fret",
+      "zh": "货运报价与追踪"
+    },
     "industry": {
       "en": "Transport & logistics — France ↔ China freight forwarding",
       "fr": "Transport & logistique — commission de transport France ↔ Chine",
@@ -275,8 +311,11 @@
   },
   {
     "slug": "vermillon",
-    "name": "Vermillon Avocats",
-    "zhName": "印信",
+    "name": {
+      "en": "Contract review",
+      "fr": "Revue de contrats",
+      "zh": "合同审阅"
+    },
     "industry": {
       "en": "Business law firm (Paris, China Desk)",
       "fr": "Cabinet d'avocats d'affaires (Paris, China Desk)",
@@ -299,8 +338,11 @@
   },
   {
     "slug": "aronde",
-    "name": "Aronde Hôtels",
-    "zhName": "燕归",
+    "name": {
+      "en": "Hotel operations & AI concierge",
+      "fr": "Hôtellerie & concierge IA",
+      "zh": "酒店运营与 AI 礼宾"
+    },
     "industry": {
       "en": "Hospitality · boutique 4★ hotel group",
       "fr": "Hôtellerie · groupe d'hôtels boutique 4★",

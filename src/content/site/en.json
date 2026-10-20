@@ -195,7 +195,7 @@
     "badge": "Demos in English, French and Chinese",
     "fictional": "Fictional company",
     "cta": "Request a guided tour",
-    "message": "Hello Devmaster, I would like a guided tour of the {name} demo.",
+    "message": "Hello Devmaster, I would like a guided tour of the “{name}” demo.",
     "privateNote": "Demos are private: we open access for your team on request, from your client area.",
     "clientArea": "Client area"
   },

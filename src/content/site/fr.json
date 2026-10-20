@@ -195,7 +195,7 @@
     "badge": "Démos en français, anglais et chinois",
     "fictional": "Entreprise fictive",
     "cta": "Demander une visite guidée",
-    "message": "Bonjour Devmaster, je souhaiterais une visite guidée de la démo {name}.",
+    "message": "Bonjour Devmaster, je souhaiterais une visite guidée de la démo « {name} ».",
     "privateNote": "Les démos sont privées : nous ouvrons l'accès à votre équipe sur demande, depuis votre espace client.",
     "clientArea": "Espace client"
   },

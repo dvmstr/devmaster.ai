@@ -195,7 +195,7 @@
     "badge": "演示支持中文、法语和英语",
     "fictional": "虚构企业",
     "cta": "预约导览演示",
-    "message": "您好 Devmaster，我想预约 {name} 演示的导览。",
+    "message": "您好 Devmaster，我想预约「{name}」演示的导览。",
     "privateNote": "演示为私密访问：我们会应您的要求，在客户专区为您的团队开通访问权限。",
     "clientArea": "客户专区"
   },
