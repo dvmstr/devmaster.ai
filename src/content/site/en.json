@@ -34,10 +34,6 @@
       {
         "label": "Results",
         "target": "results"
-      },
-      {
-        "label": "FAQ",
-        "target": "faq"
       }
     ],
     "cta": "Audit",
@@ -345,10 +341,15 @@
     ]
   },
   "cta": {
-    "title": "Ready to transform your business?",
-    "subtitle": "Book your 48h audit and discover what AI can automate in your business",
+    "title": "Book your audit",
+    "subtitle": "Tell us what eats up your time: we'll show you what AI can automate in your business.",
     "whatsapp": "WhatsApp: +33 7 45 49 65 52",
-    "disclaimer": "No commitment • Personalized audit • Results in 48h"
+    "email": "Send an email",
+    "points": [
+      "No commitment",
+      "Personalized audit",
+      "Results in 48h"
+    ]
   },
   "footer": {
     "tagline": "The AI automation agency that transforms your business with intelligent, personalized solutions.",

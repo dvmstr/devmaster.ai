@@ -34,10 +34,6 @@
       {
         "label": "Résultats",
         "target": "results"
-      },
-      {
-        "label": "FAQ",
-        "target": "faq"
       }
     ],
     "cta": "Audit",
@@ -345,10 +341,15 @@
     ]
   },
   "cta": {
-    "title": "Prêt à transformer votre business ?",
-    "subtitle": "Réservez votre audit de 48h et découvrez ce que l'IA peut automatiser chez vous",
+    "title": "Réservez votre audit",
+    "subtitle": "Dites-nous ce qui vous fait perdre du temps : nous vous montrons ce que l'IA peut automatiser chez vous.",
     "whatsapp": "WhatsApp : 07 45 49 65 52",
-    "disclaimer": "Sans engagement • Audit personnalisé • Résultats en 48h"
+    "email": "Écrire un e-mail",
+    "points": [
+      "Sans engagement",
+      "Audit personnalisé",
+      "Résultats en 48h"
+    ]
   },
   "footer": {
     "tagline": "L'agence d'automatisation IA qui transforme votre business avec des solutions intelligentes et personnalisées.",

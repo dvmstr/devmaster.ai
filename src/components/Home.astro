@@ -8,7 +8,6 @@ import Solutions from "./sections/Solutions.astro";
 import Demos from "./sections/Demos.astro";
 import Testimonials from "./sections/Testimonials.astro";
 import Process from "./sections/Process.astro";
-import FAQ from "./sections/FAQ.astro";
 import CTA from "./sections/CTA.astro";
 import { LOCALES, LOCALE_META, localePath, type Locale } from "../lib/i18n";
 import { SITE } from "../lib/site";
@@ -99,8 +98,7 @@ const jsonLd = [
       />
       <Testimonials testimonials={t.testimonials} />
     </section>
-    <FAQ faq={t.faq} />
-    <CTA cta={t.cta} whatsappLabel={t.a11y.whatsapp} />
+    <CTA cta={t.cta} faq={t.faq} whatsappLabel={t.a11y.whatsapp} />
   </main>
   <Footer
     locale={locale}

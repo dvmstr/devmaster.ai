@@ -44,7 +44,7 @@ const site = defineCollection({
       })).length(3),
     }),
     faq: z.object({ title: text, items: z.array(z.object({ question: text, answer: text })).min(1) }),
-    cta: z.object({ title: text, subtitle: text, whatsapp: text, disclaimer: text }),
+    cta: z.object({ title: text, subtitle: text, whatsapp: text, email: text, points: z.array(text).min(1) }),
     footer: z.object({
       tagline: text, navigation: text, solutions: text, contact: text, requestAudit: text, clientArea: text,
       copyright: text.refine((s) => s.includes("{year}"), "doit contenir {year}"), legal: text,
