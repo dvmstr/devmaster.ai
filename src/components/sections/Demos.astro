@@ -14,7 +14,7 @@ import data from "../../data/demos.json";
  * Le titre de chaque démo dit ce qu'est l'application (« CRM immobilier »), jamais le nom de l'entreprise fictive.
  * Données : src/data/demos.json + visuels src/assets/demos/<slug>.jpg (générés par le script site-demos.py depuis
  * le catalogue de chaque démo). Ordre : celui choisi sur le portail client (« Réorganiser », lu à la construction —
- * src/lib/demo-order.ts). Une démo par ligne : visuel et texte côte à côte à partir de 1280 px (visuel à gauche puis à droite), visuel au-dessus du texte en dessous. Les démos sont privées : le bouton
+ * src/lib/demo-order.ts). Une démo par ligne, toutes sur le même modèle : visuel à gauche et texte à droite à partir de 1280 px, visuel au-dessus du texte en dessous. Les démos sont privées : le bouton
  * demande une visite guidée sur WhatsApp.
  */
 interface Props {
@@ -64,20 +64,9 @@ const whatsapp = (name: string) => `${SITE.whatsappUrl}?text=${encodeURIComponen
             .map((key) => SOLUTION_KEYS.indexOf(key as (typeof SOLUTION_KEYS)[number]))
             .filter((i) => i >= 0)
             .slice(0, 3);
-          const flip = index % 2 === 1; // visual on the right every other row (side by side from xl)
           return (
-            <li
-              class:list={[
-                "group flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] transition-colors duration-300 hover:border-cyan-500/40 hover:bg-white/[0.06]",
-                flip ? "xl:flex-row-reverse" : "xl:flex-row",
-              ]}
-            >
-              <div
-                class:list={[
-                  "relative overflow-hidden border-b border-white/10 bg-white/5 xl:w-[58%] xl:shrink-0 xl:border-b-0",
-                  flip ? "xl:border-l" : "xl:border-r",
-                ]}
-              >
+            <li class="group flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] transition-colors duration-300 hover:border-cyan-500/40 hover:bg-white/[0.06] xl:flex-row">
+              <div class="relative overflow-hidden border-b border-white/10 bg-white/5 xl:w-[58%] xl:shrink-0 xl:border-r xl:border-b-0">
                 {image && (
                   <Picture
                     src={image}
@@ -90,14 +79,7 @@ const whatsapp = (name: string) => `${SITE.whatsappUrl}?text=${encodeURIComponen
                     decoding="async"
                   />
                 )}
-                <span
-                  class:list={[
-                    "absolute top-3 rounded-full border border-white/15 bg-black/70 px-2.5 py-1 text-[11px] font-medium text-gray-200",
-                    flip ? "left-3 xl:right-3 xl:left-auto" : "left-3",
-                  ]}
-                >
-                  {t.fictional}
-                </span>
+                <span class="absolute top-3 left-3 rounded-full border border-white/15 bg-black/70 px-2.5 py-1 text-[11px] font-medium text-gray-200">{t.fictional}</span>
               </div>
               <div class="flex flex-1 flex-col p-6 sm:p-8 lg:p-10 xl:justify-center xl:p-12">
                 <p class="mb-3 text-[11px] font-medium tracking-[0.12em] text-cyan-400 uppercase">{d.industry[locale]}</p>
