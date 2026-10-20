@@ -8,7 +8,7 @@ interface Testimonial {
   company: string;
 }
 interface Props {
-  testimonials: { label: string; cta: string; items: Testimonial[] };
+  testimonials: { cta: string; items: Testimonial[] };
 }
 const { testimonials } = Astro.props;
 // Trois colonnes qui défilent en continu à des vitesses différentes (2 colonnes en tablette, 1 sur mobile).
@@ -19,15 +19,9 @@ const columns = [
 ];
 ---
 
-<!-- Suite de la section « Résultats », après les démos : pas de titre, une pastille assortie au badge des démos. -->
+<!-- Suite de la section « Résultats », après les démos : pas de titre, les avis s'enchaînent directement. -->
 <div id="testimonials" class="relative pb-12 sm:pb-16">
   <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6">
-    <div class="mb-4 flex justify-center sm:mb-6">
-      <h3 class="inline-flex items-center gap-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3 py-1 text-xs font-medium tracking-wide text-cyan-300">
-        <Icon name="MessageCircle" size={12} />
-        {testimonials.label}
-      </h3>
-    </div>
     <div class="flex max-h-[600px] justify-center gap-4 overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)] sm:max-h-[740px] sm:gap-6">
       {
         columns.map((column) => (

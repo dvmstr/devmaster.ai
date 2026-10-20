@@ -35,7 +35,7 @@ const site = defineCollection({
       message: text.refine((s) => s.includes("{name}"), "doit contenir {name}"), privateNote: text, clientArea: text,
     }),
     testimonials: z.object({
-      label: text, cta: text,
+      cta: text,
       items: z.array(z.object({ text, name: text, role: text, company: z.string() })).min(3),
     }),
     process: z.object({
