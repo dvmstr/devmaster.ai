@@ -24,10 +24,6 @@
   "nav": {
     "items": [
       {
-        "label": "Bénéfices",
-        "target": "benefits"
-      },
-      {
         "label": "Solutions",
         "target": "solutions"
       },
@@ -65,40 +61,37 @@
     ]
   },
   "benefits": {
-    "title": "Pourquoi Devmaster ?",
-    "subtitle": "Des résultats concrets qui transforment votre façon de travailler",
-    "cta": "Commencer maintenant",
     "items": [
       {
         "icon": "Trash2",
         "title": "Éliminez les tâches inutiles",
-        "description": "Automatisez les processus à faible valeur ajoutée et concentrez vos équipes sur ce qui compte vraiment."
+        "description": "L'IA prend la routine, vos équipes gardent ce qui compte."
       },
       {
         "icon": "Rocket",
         "title": "Prenez une longueur d'avance",
-        "description": "Anticipez la révolution IA et équipez-vous dès aujourd'hui d'automatisations qui feront la différence demain."
+        "description": "Équipez-vous maintenant, pendant que vos concurrents hésitent."
       },
       {
         "icon": "TrendingUp",
         "title": "Boostez votre chiffre d'affaires",
-        "description": "Libérez vos talents des tâches répétitives : plus de temps pour créer de la valeur, moins de charges inutiles."
+        "description": "Plus de temps pour vendre, moins de charges inutiles."
       },
       {
         "icon": "Users",
         "title": "Valorisez vos collaborateurs",
-        "description": "Offrez-leur un travail plus gratifiant : l'IA gère la routine, ils se consacrent à leur vrai potentiel humain."
+        "description": "Un travail plus gratifiant : moins de répétitif, plus d'humain."
       },
       {
         "icon": "Shield",
         "title": "Sécurité sans compromis",
-        "description": "Vos données sont chiffrées, hébergées sur des serveurs sécurisés et jamais partagées. Chaque automatisation est conçue pour garantir confidentialité et conformité."
+        "description": "Données chiffrées, hébergées en sécurité et jamais partagées."
       }
     ]
   },
   "solutions": {
-    "title": "Nos Solutions",
-    "subtitle": "Découvrez notre écosystème d'automatisations intelligentes",
+    "title": "Nos solutions",
+    "subtitle": "Ce que nous automatisons, et ce que ça change pour vous",
     "cta": "Obtenir mon audit personnalisé",
     "combineWith": "Se combine avec",
     "items": [

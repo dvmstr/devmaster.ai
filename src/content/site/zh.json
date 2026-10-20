@@ -24,10 +24,6 @@
   "nav": {
     "items": [
       {
-        "label": "优势",
-        "target": "benefits"
-      },
-      {
         "label": "解决方案",
         "target": "solutions"
       },
@@ -65,40 +61,37 @@
     ]
   },
   "benefits": {
-    "title": "为什么选择Devmaster？",
-    "subtitle": "具体成果，改变您的工作方式",
-    "cta": "立即开始",
     "items": [
       {
         "icon": "Trash2",
         "title": "消除不必要的任务",
-        "description": "自动化低价值流程，让您的团队专注于真正重要的事情。"
+        "description": "AI处理日常琐事，团队专注于真正重要的事。"
       },
       {
         "icon": "Rocket",
         "title": "保持领先",
-        "description": "预见AI革命，今天就配备能在明天产生差异的自动化工具。"
+        "description": "趁竞争对手还在犹豫，现在就行动。"
       },
       {
         "icon": "TrendingUp",
         "title": "提升您的收入",
-        "description": "将您的人才从重复性任务中解放出来：更多时间创造价值，减少不必要的开销。"
+        "description": "更多时间用于销售，减少不必要的开支。"
       },
       {
         "icon": "Users",
         "title": "赋能您的员工",
-        "description": "为他们提供更有价值的工作：AI处理日常事务，他们专注于发挥真正的人类潜力。"
+        "description": "工作更有价值：少些重复，多些人性。"
       },
       {
         "icon": "Shield",
         "title": "安全无妥协",
-        "description": "您的数据经过加密，托管在安全服务器上，从不共享。每个自动化都旨在确保机密性和合规性。"
+        "description": "数据加密、安全托管，绝不共享。"
       }
     ]
   },
   "solutions": {
     "title": "我们的解决方案",
-    "subtitle": "探索我们的智能自动化生态系统",
+    "subtitle": "我们为您自动化什么，又能带来哪些改变",
     "cta": "获取我的个性化审计",
     "combineWith": "最佳搭配",
     "items": [

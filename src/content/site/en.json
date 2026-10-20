@@ -24,10 +24,6 @@
   "nav": {
     "items": [
       {
-        "label": "Benefits",
-        "target": "benefits"
-      },
-      {
         "label": "Solutions",
         "target": "solutions"
       },
@@ -65,40 +61,37 @@
     ]
   },
   "benefits": {
-    "title": "Why Devmaster?",
-    "subtitle": "Concrete results that transform the way you work",
-    "cta": "Get started now",
     "items": [
       {
         "icon": "Trash2",
         "title": "Eliminate unnecessary tasks",
-        "description": "Automate low-value processes and focus your teams on what really matters."
+        "description": "AI takes the routine; your teams keep what matters."
       },
       {
         "icon": "Rocket",
         "title": "Stay ahead of the curve",
-        "description": "Anticipate the AI revolution and equip yourself today with automations that will make a difference tomorrow."
+        "description": "Get equipped now, while your competitors hesitate."
       },
       {
         "icon": "TrendingUp",
         "title": "Boost your revenue",
-        "description": "Free your talent from repetitive tasks: more time to create value, less unnecessary overhead."
+        "description": "More time to sell, less needless overhead."
       },
       {
         "icon": "Users",
         "title": "Empower your employees",
-        "description": "Offer them more rewarding work: AI handles the routine, they focus on their true human potential."
+        "description": "More rewarding work: less repetition, more human."
       },
       {
         "icon": "Shield",
         "title": "Uncompromising security",
-        "description": "Your data is encrypted, hosted on secure servers and never shared. Each automation is designed to guarantee confidentiality and compliance."
+        "description": "Data encrypted, securely hosted and never shared."
       }
     ]
   },
   "solutions": {
-    "title": "Our Solutions",
-    "subtitle": "Discover our ecosystem of intelligent automations",
+    "title": "Our solutions",
+    "subtitle": "What we automate, and what it changes for you",
     "cta": "Get my personalized audit",
     "combineWith": "Works great with",
     "items": [

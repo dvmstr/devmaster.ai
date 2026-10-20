@@ -20,4 +20,4 @@ export const SITE = {
 } as const;
 
 /** Sections de la page d'accueil, dans l'ordre (ancres de navigation). */
-export const SECTION_IDS = ["benefits", "solutions", "process", "results", "faq", "cta-final"] as const;
+export const SECTION_IDS = ["solutions", "process", "results", "faq", "cta-final"] as const;

@@ -1,7 +1,13 @@
 ---
 import Icon from "../Icon.astro";
 import LightSource from "../LightSource.astro";
+import Benefits from "./Benefits.astro";
 import type { IconName } from "../../lib/icons";
+
+/**
+ * « Solutions » : un seul en-tête, puis ce que nous automatisons (le cercle) et ce que ça change (les bénéfices),
+ * et un seul bouton — qui reste en bas de section, éclairé par le faisceau du Process.
+ */
 
 interface Item {
   id: number;
@@ -14,25 +20,31 @@ interface Item {
 }
 interface Props {
   solutions: { title: string; subtitle: string; cta: string; combineWith: string; items: Item[] };
+  benefits: { icon: IconName; title: string; description: string }[];
 }
-const { solutions } = Astro.props;
+const { solutions, benefits } = Astro.props;
 const byId = new Map(solutions.items.map((i) => [i.id, i]));
 ---
 
-<section id="solutions" class="relative flex min-h-screen items-center justify-center py-12 sm:py-16">
-  <LightSource direction={0} color="cyan" intensity="medium" class="top-0 left-1/2 -translate-x-1/2 sm:hidden" />
-  <LightSource direction={270} color="cyan" intensity="medium" class="top-1/2 -left-64 hidden -translate-y-1/2 sm:block" />
+<section id="solutions" class="relative pt-16 pb-12 sm:pt-24 sm:pb-16">
+  <!-- Faisceau d'en-tête tourné vers le hero ; sur mobile, un second sous le bouton de fin de section. -->
+  <LightSource direction={180} color="cyan" intensity="high" class="-top-96! -bottom-40 left-1/2 -translate-x-1/2" />
   <LightSource direction={180} color="blue" intensity="medium" class="-bottom-40 left-1/2 -translate-x-1/2 sm:hidden" />
-  <LightSource direction={90} color="blue" intensity="medium" class="top-1/2 -right-64 hidden -translate-y-1/2 sm:block" />
 
-  <div class="relative z-10 w-full">
-    <div class="mb-6 text-center sm:mb-8">
-      <h2 class="mb-3 px-4 text-3xl font-medium text-white sm:mb-4 sm:text-4xl md:text-5xl">{solutions.title}</h2>
-      <p class="mx-auto max-w-2xl px-6 text-base text-gray-400 sm:text-lg">{solutions.subtitle}</p>
-    </div>
+  <div class="relative z-10 mb-6 text-center sm:mb-8">
+    <h2 class="mb-3 px-4 text-3xl font-medium text-white sm:mb-4 sm:text-4xl md:text-5xl">{solutions.title}</h2>
+    <p class="mx-auto max-w-2xl px-6 text-base text-gray-400 sm:text-lg">{solutions.subtitle}</p>
+  </div>
+
+  <!-- Cercle et ses faisceaux (au-dessus sur mobile, de chaque côté sur grand écran). Hauteur fixe : de quoi afficher
+       le cercle et une fiche ouverte (amenée en haut), sans grand vide autour. -->
+  <div class="relative">
+    <LightSource direction={0} color="cyan" intensity="medium" class="-top-47 left-1/2 -translate-x-1/2 sm:hidden" />
+    <LightSource direction={270} color="cyan" intensity="medium" class="top-1/2 -left-64 hidden -translate-y-1/2 sm:block" />
+    <LightSource direction={90} color="blue" intensity="medium" class="top-1/2 -right-64 hidden -translate-y-1/2 sm:block" />
 
     <!-- Orbite : les solutions tournent autour d'un noyau ; un clic ouvre la fiche et met en avant les solutions associées. -->
-    <div class="flex h-svh w-full flex-col items-center justify-center overflow-hidden bg-transparent" data-orbital>
+    <div class="relative z-10 flex h-[42rem] w-full flex-col items-center justify-center overflow-hidden bg-transparent md:h-[44rem]" data-orbital>
       <div class="relative flex h-full w-full max-w-4xl items-center justify-center lg:max-w-6xl">
         <div class="orbit absolute flex h-full w-full items-center justify-center" data-orbit>
           <div class="absolute z-10 flex h-16 w-16 animate-pulse items-center justify-center rounded-full bg-linear-to-br from-cyan-400 via-cyan-500 to-teal-400">
@@ -104,13 +116,15 @@ const byId = new Map(solutions.items.map((i) => [i.id, i]));
         </div>
       </div>
     </div>
+  </div>
 
-    <div class="mt-8 flex justify-center px-4 sm:mt-16 sm:px-6">
-      <a href="#cta-final" class="btn-glass-filled group flex w-full max-w-sm items-center justify-center gap-2 sm:w-auto">
-        {solutions.cta}
-        <Icon name="ArrowRight" size={16} class="transition-transform duration-300 group-hover:translate-x-0.5" />
-      </a>
-    </div>
+  <Benefits items={benefits} />
+
+  <div class="relative z-10 mt-8 flex justify-center px-4 sm:mt-12 sm:px-6">
+    <a href="#cta-final" class="btn-glass-filled group flex w-full max-w-sm items-center justify-center gap-2 sm:w-auto">
+      {solutions.cta}
+      <Icon name="ArrowRight" size={16} class="transition-transform duration-300 group-hover:translate-x-0.5" />
+    </a>
   </div>
 </section>
 

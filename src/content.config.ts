@@ -20,7 +20,6 @@ const site = defineCollection({
     nav: z.object({ items: z.array(z.object({ label: text, target: text })), cta: text, clientArea: text }),
     hero: z.object({ badge: text, title: text, description: text, ctaPrimary: text, ctaSecondary: text, logos: z.array(text).min(4) }),
     benefits: z.object({
-      title: text, subtitle: text, cta: text,
       items: z.array(z.object({ icon, title: text, description: text })).length(5),
     }),
     solutions: z.object({

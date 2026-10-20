@@ -16,8 +16,8 @@ Site de l'agence d'automatisation IA **Devmaster**, en anglais (`/`), français 
 ## Modifier un texte
 
 Tout le texte est dans **`src/content/site/en.json`, `fr.json`, `zh.json`** (page d'accueil, une section par clé :
-`hero`, `benefits`, `solutions`, `process`, `demos` puis `testimonials` (ensemble : section « Résultats »), `faq`, `cta`,
-`footer`, dans l'ordre de la page) et
+`hero`, `solutions` puis `benefits` (ensemble : section « Solutions »), `process`, `demos` puis `testimonials` (ensemble :
+section « Résultats »), `faq`, `cta`, `footer`, dans l'ordre de la page) et
 **`src/content/legal/<langue>.json`** (mentions légales). La structure est vérifiée à la publication : un champ
 manquant ou mal formé dans une langue bloque le build avec un message clair, le site en ligne n'est jamais cassé.
 
