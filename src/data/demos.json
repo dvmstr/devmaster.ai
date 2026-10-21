@@ -1,6 +1,6 @@
 [
   {
-    "slug": "aurelo",
+    "slug": "factory",
     "name": {
       "en": "Factory operations hub",
       "fr": "Pilotage d'usine",
@@ -24,7 +24,7 @@
     ]
   },
   {
-    "slug": "mesure",
+    "slug": "quotes",
     "name": {
       "en": "Online quotes & invoicing",
       "fr": "Devis en ligne & facturation",
@@ -50,7 +50,7 @@
     ]
   },
   {
-    "slug": "platane",
+    "slug": "real-estate-crm",
     "name": {
       "en": "Real-estate CRM",
       "fr": "CRM immobilier",
@@ -77,7 +77,7 @@
     ]
   },
   {
-    "slug": "kaolin",
+    "slug": "helpdesk",
     "name": {
       "en": "E-commerce customer service",
       "fr": "Service client e-commerce",
@@ -103,7 +103,7 @@
     ]
   },
   {
-    "slug": "aplomb",
+    "slug": "accounting",
     "name": {
       "en": "Accounting firm management",
       "fr": "Gestion de cabinet comptable",
@@ -128,7 +128,7 @@
     ]
   },
   {
-    "slug": "rendoux",
+    "slug": "ai-support",
     "name": {
       "en": "Customer support & AI agent",
       "fr": "Support client & agent IA",
@@ -153,7 +153,7 @@
     ]
   },
   {
-    "slug": "lianor",
+    "slug": "recruiting",
     "name": {
       "en": "Recruiting & CV screening",
       "fr": "Recrutement & analyse de CV",
@@ -181,7 +181,7 @@
     ]
   },
   {
-    "slug": "arvane",
+    "slug": "industrial-quotes",
     "name": {
       "en": "Industrial costing & quotes",
       "fr": "Chiffrage & devis industriels",
@@ -207,7 +207,7 @@
     ]
   },
   {
-    "slug": "ramage",
+    "slug": "social-media",
     "name": {
       "en": "Social media management",
       "fr": "Gestion des réseaux sociaux",
@@ -233,7 +233,7 @@
     ]
   },
   {
-    "slug": "osmanthe",
+    "slug": "restaurants",
     "name": {
       "en": "Restaurant management",
       "fr": "Gestion de restaurants",
@@ -259,7 +259,7 @@
     ]
   },
   {
-    "slug": "liane",
+    "slug": "medical-office",
     "name": {
       "en": "Medical front desk",
       "fr": "Secrétariat médical",
@@ -284,7 +284,7 @@
     ]
   },
   {
-    "slug": "merlane",
+    "slug": "freight",
     "name": {
       "en": "Freight quotes & tracking",
       "fr": "Cotations & suivi de fret",
@@ -310,7 +310,7 @@
     ]
   },
   {
-    "slug": "vermillon",
+    "slug": "contracts",
     "name": {
       "en": "Contract review",
       "fr": "Revue de contrats",
@@ -337,7 +337,7 @@
     ]
   },
   {
-    "slug": "aronde",
+    "slug": "hotel",
     "name": {
       "en": "Hotel operations & AI concierge",
       "fr": "Hôtellerie & concierge IA",
