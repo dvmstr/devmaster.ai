@@ -43,6 +43,16 @@ const site = defineCollection({
         number: text, badge: text, heading: text, description: text, boxTitle: text, items: z.array(text).min(1),
       })).length(3),
     }),
+    offer: z.object({
+      title: text, subtitle: text, recommended: text, cta: text, auditNote: text,
+      plans: z.array(z.object({
+        name: text, price: text, period: text, tagline: text, description: text,
+        features: z.array(text).min(1), recommended: z.boolean(),
+      })).length(2),
+      starsTitle: text, starsText: text, starsItems: z.array(text).min(1),
+      osTitle: text, osSubtitle: text,
+      osItems: z.array(z.object({ icon, title: text, description: text })).min(2),
+    }),
     faq: z.object({ title: text, items: z.array(z.object({ question: text, answer: text })).min(1) }),
     cta: z.object({ title: text, subtitle: text, whatsapp: text, email: text, points: z.array(text).min(1) }),
     footer: z.object({
