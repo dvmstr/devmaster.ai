@@ -1,9 +1,9 @@
 {
   "meta": {
     "title": "Devmaster - AI Automation for your Business",
-    "description": "Transform your business with AI: custom automation for emails, leads, chatbots, CRM and documents. Explore our interactive demos. Audit in 48h.",
+    "description": "Custom software and AI automation for SMEs: a flash audit, your V1 revealed live, then a subscription to keep improving it every month.",
     "ogTitle": "Devmaster - AI Automation for your Business",
-    "ogDescription": "Transform your business with AI: custom automation and interactive demos to explore.",
+    "ogDescription": "Your custom software, revealed live, then a team that keeps improving it every month.",
     "keywords": [
       "AI automation",
       "artificial intelligence",
@@ -32,6 +32,10 @@
         "target": "process"
       },
       {
+        "label": "Pricing",
+        "target": "offer"
+      },
+      {
         "label": "Results",
         "target": "results"
       }
@@ -40,9 +44,9 @@
     "clientArea": "Client area"
   },
   "hero": {
-    "badge": "Next-generation AI Automation",
+    "badge": "Custom software and AI automation",
     "title": "Transform your business with AI",
-    "description": "Not using Artificial Intelligence? Your company's processes are probably obsolete.",
+    "description": "Software built for you alone, automating what wastes your time. Then a team that keeps improving it every month, for the price of one minimum-wage salary.",
     "ctaPrimary": "Book my audit",
     "ctaSecondary": "How it works",
     "logos": [
@@ -259,47 +263,116 @@
     ]
   },
   "process": {
-    "title": "Our method in 3 steps",
-    "subtitle": "A simple and effective process to transform your business",
+    "title": "Our 3-step method",
+    "subtitle": "From the audit to your software in production, with no surprises",
     "steps": [
       {
         "number": "01",
-        "badge": "48h",
-        "heading": "Analysis",
-        "description": "Complete audit of your processes and identification of automation opportunities.",
+        "badge": "€1,490 excl. VAT, deducted",
+        "heading": "Flash audit",
+        "description": "We map your processes and measure what they really cost you.",
         "boxTitle": "What's included:",
         "items": [
-          "Detailed analysis of your current processes",
-          "Identification of repetitive tasks",
-          "Estimation of time saved through automation",
-          "Personalized opportunities report"
+          "Workshops with your teams",
+          "A map of your processes",
+          "Baseline measurement of your time",
+          "Quantified gains, assumptions validated with you"
         ]
       },
       {
         "number": "02",
-        "badge": "7 days",
-        "heading": "Custom Plan",
-        "description": "Design of an automation strategy tailored to your needs and objectives.",
-        "boxTitle": "Our approach:",
+        "badge": "Live",
+        "heading": "Reveal of your V1",
+        "description": "We build a first version of your software and reveal it to you during a call.",
+        "boxTitle": "What you get:",
         "items": [
-          "Custom technical architecture",
-          "Priority-based deployment roadmap",
-          "Detailed budget and projected ROI",
-          "Validation with your team"
+          "Your playable V1, open for 14 days",
+          "An interactive quote: your options, our two offers side by side",
+          "A projection of your gains",
+          "Online signature and deposit"
         ]
       },
       {
         "number": "03",
-        "badge": "Continuous",
-        "heading": "Deployment & Optimization",
-        "description": "Rapid implementation and continuous improvement of your automations.",
-        "boxTitle": "Production launch:",
+        "badge": "Every month",
+        "heading": "Production and evolution",
+        "description": "Your software goes live, and you keep improving it with your stars.",
+        "boxTitle": "With the subscription:",
         "items": [
-          "Development and integration of automations",
-          "Training for your teams",
-          "Dedicated technical support",
-          "Permanent monitoring and optimization"
+          "Hosting, maintenance and fixes included",
+          "10 stars a month for your improvements",
+          "ROI cockpit updated continuously",
+          "Or a turnkey delivery, if you'd rather leave with the code"
         ]
+      }
+    ]
+  },
+  "offer": {
+    "title": "A clear offer, two ways to work",
+    "subtitle": "Software built for you alone. Then it's your call: we run it and improve it every month, or you leave with the code.",
+    "recommended": "Recommended",
+    "cta": "Book my audit",
+    "auditNote": "It all starts with the flash audit: €1,490 excl. VAT, deducted from your V1 if you sign within 14 days.",
+    "plans": [
+      {
+        "name": "Subscription",
+        "price": "€1,790",
+        "period": "excl. VAT per month",
+        "tagline": "Less than one employee, for a team of developers.",
+        "description": "We host, maintain and improve your software. Every month, you see what it earns you.",
+        "features": [
+          "10 stars a month to improve your software",
+          "Maintenance and fixes included, with guaranteed response times",
+          "Hosting in Europe and monitoring",
+          "ROI cockpit: what your software earns you, measured",
+          "3 months minimum, then no commitment"
+        ],
+        "recommended": true
+      },
+      {
+        "name": "One-shot",
+        "price": "On quote",
+        "period": "turnkey software",
+        "tagline": "You leave with the code.",
+        "description": "We deliver everything to you: the code, the documentation and the deployment on your own hosting.",
+        "features": [
+          "Code and rights assigned on payment",
+          "60-day warranty",
+          "Documentation and handover",
+          "Later improvements à la carte, in stars"
+        ],
+        "recommended": false
+      }
+    ],
+    "starsTitle": "How do stars work?",
+    "starsText": "A star is a prepaid unit of work, calibrated on half a day of development. Every improvement to your software has a fixed price in stars, shown before you decide: no time-and-materials, no overruns.",
+    "starsItems": [
+      "This month's stars remain valid next month",
+      "Need to go faster? Extra stars, valid for 12 months",
+      "An idea? Describe it in writing or by voice note: we price it within 5 working days"
+    ],
+    "osTitle": "Your Devmaster OS space",
+    "osSubtitle": "Everything happens in your client space: what you pay, what's in progress and what you gain.",
+    "osItems": [
+      {
+        "icon": "BarChart3",
+        "title": "ROI cockpit",
+        "description": "Hours freed and their value, measured on the real use of your software, from assumptions you validate."
+      },
+      {
+        "icon": "Zap",
+        "title": "Bespoke store",
+        "description": "Improvements to your software, each at a fixed price in stars. You activate, we deliver, you approve."
+      },
+      {
+        "icon": "Lightbulb",
+        "title": "Ideas and support",
+        "description": "An idea or a bug? Report it from your software or your space, in writing, by voice note or with a screenshot."
+      },
+      {
+        "icon": "Shield",
+        "title": "Everything visible",
+        "description": "Quote signed online, invoices, documents, star balance and history: nothing is hidden."
       }
     ]
   },
@@ -308,7 +381,15 @@
     "items": [
       {
         "question": "How long before seeing the first results?",
-        "answer": "Your personalized audit is delivered within 48 hours. The first automations are deployed immediately after plan validation. The gains show within the first weeks, on the repetitive tasks the automations take over."
+        "answer": "The flash audit takes a few days. Your V1 is then revealed to you live, with your quote. Once your software is in production, the ROI cockpit in your client space measures the hours freed from the very first weeks."
+      },
+      {
+        "question": "Subscription or one-shot: which to choose?",
+        "answer": "The subscription if you want your software hosted, maintained and improved every month, with measured ROI. One-shot if you have a team to take it over: we deliver everything, with a 60-day warranty. You can switch to the subscription later."
+      },
+      {
+        "question": "What is a star?",
+        "answer": "A prepaid unit of work, calibrated on half a day of development. Every improvement has a fixed price in stars, known before you activate it. The subscription credits 10 a month, valid the following month too; extra stars you buy are valid for 12 months."
       },
       {
         "question": "What automations do you offer specifically?",
@@ -316,7 +397,7 @@
       },
       {
         "question": "How do you guarantee the security of our data?",
-        "answer": "We only use secure OAuth connections, never storing your passwords. All API keys are encrypted in certified vaults. Your data stays on your systems, we don't keep any copies. GDPR compliance guaranteed."
+        "answer": "We use minimal access through OAuth, never store your passwords, and every key is encrypted. With the subscription, your software is hosted in Europe and we act as a processor under the GDPR, with a data processing agreement. The ROI cockpit receives no personal data."
       },
       {
         "question": "Do you work with our industry?",
@@ -324,19 +405,19 @@
       },
       {
         "question": "What is your pricing model?",
-        "answer": "The 48-hour audit comes with no commitment. Then, we offer a monthly package adapted to your automation volume, with no hidden fees. You can cancel at any time. 100% satisfaction guaranteed or money back for the first month."
+        "answer": "It all starts with the flash audit: €1,490 excl. VAT, deducted from your V1 if you sign within 14 days. Your V1 is a fixed price, set out in an interactive quote. Then two choices: the subscription at €1,790 excl. VAT per month (hosting, maintenance, ROI cockpit and 10 stars a month to improve your software; 3 months minimum, then no commitment), or one-shot: we deliver everything to you, with a 60-day warranty."
       },
       {
         "question": "What support do you provide after implementation?",
-        "answer": "Dedicated support via email, chat and video. Guaranteed response time within 4 hours on business days. Complete training for your teams included. Continuous optimization and regular adjustments to evolve your automations with your growth."
+        "answer": "With the subscription, fixes are included and tracked in your client space: handled within 4 working hours for a critical incident, 1 working day for a major defect, 3 working days for a minor one. You report a problem from your software itself, in writing, by voice note or with a screenshot."
       },
       {
         "question": "What happens if we want to end the collaboration?",
-        "answer": "Total reversibility guaranteed. You recover all your workflows, configurations, documentation and access. No minimum commitment period. Your automations continue to work, you keep absolute control of your infrastructure."
+        "answer": "After the first 3 months, the subscription can be cancelled with one month's notice. Reversibility is free: source code, data, documentation and access are handed over, and your purchased stars that are still unspent are refunded. You can also switch to maintenance only (€390 excl. VAT per month) instead of leaving."
       },
       {
         "question": "Do you need to access our internal systems?",
-        "answer": "We only request the minimum permissions necessary via OAuth (like Google or Microsoft). You keep total control and can revoke all access instantly from your tools. We don't install any software on your servers."
+        "answer": "We only request the minimum permissions needed via OAuth (like Google or Microsoft). You keep full control and can revoke all access instantly from your tools. We install nothing without your agreement."
       }
     ]
   },
@@ -346,9 +427,9 @@
     "whatsapp": "WhatsApp: +33 7 45 49 65 52",
     "email": "Send an email",
     "points": [
-      "No commitment",
-      "Personalized audit",
-      "Results in 48h"
+      "Audit deducted from your V1",
+      "Your V1 revealed live",
+      "No commitment after 3 months"
     ]
   },
   "footer": {

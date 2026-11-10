@@ -1,9 +1,9 @@
 {
   "meta": {
     "title": "Devmaster - Automatisation IA pour votre Business",
-    "description": "Transformez votre business avec l'IA : emails, leads, chatbots, CRM et documents automatisés sur mesure. Découvrez nos démos interactives. Audit en 48h.",
+    "description": "Logiciels sur mesure et automatisation IA pour les PME : audit flash, votre V1 dévoilée en direct, puis un abonnement au prix d'un SMIC pour la faire évoluer chaque mois.",
     "ogTitle": "Devmaster - Automatisation IA pour votre Business",
-    "ogDescription": "Transformez votre business avec l'IA : des automatisations sur mesure et des démos interactives à découvrir.",
+    "ogDescription": "Votre logiciel sur mesure, dévoilé en direct, puis une équipe qui le fait évoluer chaque mois pour le prix d'un SMIC.",
     "keywords": [
       "automatisation IA",
       "intelligence artificielle",
@@ -32,6 +32,10 @@
         "target": "process"
       },
       {
+        "label": "Offre",
+        "target": "offer"
+      },
+      {
         "label": "Résultats",
         "target": "results"
       }
@@ -40,9 +44,9 @@
     "clientArea": "Espace client"
   },
   "hero": {
-    "badge": "Automatisation IA de nouvelle génération",
+    "badge": "Logiciel sur mesure et automatisation IA",
     "title": "Transformez votre business avec l'IA",
-    "description": "Vous n'utilisez pas l'Intelligence Artificielle ? Les process de votre entreprise sont certainement obsolètes.",
+    "description": "Un logiciel fait pour vous seul, qui automatise ce qui vous fait perdre du temps. Puis une équipe qui le fait évoluer chaque mois, pour le prix d'un SMIC.",
     "ctaPrimary": "Réserver mon audit",
     "ctaSecondary": "Comment ça marche",
     "logos": [
@@ -260,46 +264,115 @@
   },
   "process": {
     "title": "Notre méthode en 3 étapes",
-    "subtitle": "Un processus simple et efficace pour transformer votre business",
+    "subtitle": "De l'audit à votre logiciel en production, sans surprise",
     "steps": [
       {
         "number": "01",
-        "badge": "48h",
-        "heading": "Analyse",
-        "description": "Audit complet de vos processus et identification des opportunités d'automatisation.",
+        "badge": "1 490 € HT, déduits",
+        "heading": "Audit flash",
+        "description": "Nous cartographions vos processus et mesurons ce qu'ils vous coûtent vraiment.",
         "boxTitle": "Ce qui est inclus :",
         "items": [
-          "Analyse détaillée de vos processus actuels",
-          "Identification des tâches répétitives",
-          "Estimation du temps gagné par automatisation",
-          "Rapport d'opportunités personnalisé"
+          "Ateliers avec vos équipes",
+          "Carte de vos processus",
+          "Mesure de référence de vos temps",
+          "Gains chiffrés, hypothèses validées avec vous"
         ]
       },
       {
         "number": "02",
-        "badge": "7 jours",
-        "heading": "Plan sur mesure",
-        "description": "Conception d'une stratégie d'automatisation adaptée à vos besoins et objectifs.",
-        "boxTitle": "Notre approche :",
+        "badge": "En direct",
+        "heading": "Reveal de votre V1",
+        "description": "Nous construisons une première version de votre logiciel et vous la dévoilons pendant un appel.",
+        "boxTitle": "Ce que vous recevez :",
         "items": [
-          "Architecture technique personnalisée",
-          "Roadmap de déploiement par priorités",
-          "Budget et ROI prévisionnel détaillé",
-          "Validation avec votre équipe"
+          "Votre V1 jouable, ouverte 14 jours",
+          "Un devis interactif : vos options, nos deux offres côte à côte",
+          "La projection de vos gains",
+          "Signature et acompte en ligne"
         ]
       },
       {
         "number": "03",
-        "badge": "Continue",
-        "heading": "Déploiement & optimisation",
-        "description": "Mise en place rapide et amélioration continue de vos automatisations.",
-        "boxTitle": "Mise en production :",
+        "badge": "Chaque mois",
+        "heading": "Production et évolution",
+        "description": "Votre logiciel passe en production, et vous le faites évoluer avec vos étoiles.",
+        "boxTitle": "Avec l'abonnement :",
         "items": [
-          "Développement et intégration des automatisations",
-          "Formation de vos équipes",
-          "Support technique dédié",
-          "Monitoring et optimisation permanente"
+          "Hébergement, maintenance et corrections inclus",
+          "10 étoiles par mois pour vos évolutions",
+          "Cockpit ROI mis à jour en continu",
+          "Ou une livraison clé en main, si vous préférez partir avec le code"
         ]
+      }
+    ]
+  },
+  "offer": {
+    "title": "Une offre claire, deux façons de travailler",
+    "subtitle": "Un logiciel fait pour vous seul. Ensuite, à vous de choisir : nous nous en occupons et le faisons évoluer chaque mois, ou vous partez avec le code.",
+    "recommended": "Recommandé",
+    "cta": "Réserver mon audit",
+    "auditNote": "Tout commence par l'audit flash : 1 490 € HT, déduits de votre V1 si vous signez dans les 14 jours.",
+    "plans": [
+      {
+        "name": "Abonnement",
+        "price": "1 790 €",
+        "period": "HT par mois",
+        "tagline": "Le prix d'un SMIC, pour une équipe de développeurs.",
+        "description": "Nous hébergeons, maintenons et faisons évoluer votre logiciel. Vous voyez chaque mois ce qu'il vous fait gagner.",
+        "features": [
+          "10 étoiles par mois pour faire évoluer votre logiciel",
+          "Maintenance et corrections incluses, avec délais garantis",
+          "Hébergement en Europe et supervision",
+          "Cockpit ROI : ce que votre logiciel vous fait gagner, mesuré",
+          "3 mois minimum, puis sans engagement"
+        ],
+        "recommended": true
+      },
+      {
+        "name": "One-shot",
+        "price": "Sur devis",
+        "period": "logiciel livré clé en main",
+        "tagline": "Vous partez avec le code.",
+        "description": "Nous livrons tout chez vous : le code, la documentation et la mise en ligne sur votre hébergement.",
+        "features": [
+          "Code et droits cédés au paiement",
+          "Garantie de 60 jours",
+          "Documentation et passation",
+          "Évolutions ensuite à la carte, en étoiles"
+        ],
+        "recommended": false
+      }
+    ],
+    "starsTitle": "Les étoiles, comment ça marche ?",
+    "starsText": "Une étoile est une unité de travail prépayée, calibrée sur une demi-journée de développement. Chaque évolution de votre logiciel a un prix fixe en étoiles, affiché avant que vous décidiez : pas de régie, pas de dépassement.",
+    "starsItems": [
+      "Vos étoiles du mois restent valables le mois suivant",
+      "Besoin d'aller plus vite ? Des étoiles en plus, valables 12 mois",
+      "Une idée ? Décrivez-la par écrit ou en vocal : nous la chiffrons sous 5 jours ouvrés"
+    ],
+    "osTitle": "Votre espace Devmaster OS",
+    "osSubtitle": "Tout se passe dans votre espace client : ce que vous payez, ce qui avance et ce que vous gagnez.",
+    "osItems": [
+      {
+        "icon": "BarChart3",
+        "title": "Cockpit ROI",
+        "description": "Les heures libérées et leur valeur, mesurées sur l'usage réel de votre logiciel, à partir d'hypothèses que vous validez."
+      },
+      {
+        "icon": "Zap",
+        "title": "Boutique sur mesure",
+        "description": "Les évolutions de votre logiciel, chacune à prix fixe en étoiles. Vous activez, nous livrons, vous validez."
+      },
+      {
+        "icon": "Lightbulb",
+        "title": "Idées et support",
+        "description": "Une idée ou un bug ? Signalez-le depuis votre logiciel ou votre espace, par écrit, en vocal ou avec une capture d'écran."
+      },
+      {
+        "icon": "Shield",
+        "title": "Tout est visible",
+        "description": "Devis signé en ligne, factures, documents, solde d'étoiles et historique : rien n'est caché."
       }
     ]
   },
@@ -308,7 +381,15 @@
     "items": [
       {
         "question": "Combien de temps avant de voir les premiers résultats ?",
-        "answer": "Votre audit personnalisé est livré sous 48h. Les premières automatisations sont déployées immédiatement après validation du plan. Les gains se voient dès les premières semaines, sur les tâches répétitives que l'automatisation prend en charge."
+        "answer": "L'audit flash prend quelques jours. Votre V1 vous est ensuite dévoilée en direct, avec votre devis. Une fois votre logiciel en production, le cockpit ROI de votre espace client mesure les heures libérées dès les premières semaines."
+      },
+      {
+        "question": "Abonnement ou one-shot : que choisir ?",
+        "answer": "L'abonnement si vous voulez que votre logiciel soit hébergé, maintenu et qu'il évolue chaque mois, avec un ROI mesuré. Le one-shot si vous avez une équipe pour le reprendre : nous vous livrons tout, avec 60 jours de garantie. Vous pouvez passer à l'abonnement plus tard."
+      },
+      {
+        "question": "Qu'est-ce qu'une étoile ?",
+        "answer": "Une unité de travail prépayée, calibrée sur une demi-journée de développement. Chaque évolution a un prix fixe en étoiles, connu avant que vous l'activiez. L'abonnement en crédite 10 par mois, valables le mois suivant ; les étoiles achetées en plus sont valables 12 mois."
       },
       {
         "question": "Quelles automatisations proposez-vous concrètement ?",
@@ -316,7 +397,7 @@
       },
       {
         "question": "Comment garantissez-vous la sécurité de nos données ?",
-        "answer": "Nous utilisons uniquement des connexions OAuth sécurisées, sans jamais stocker vos mots de passe. Toutes les clés API sont chiffrées dans des coffres-forts certifiés. Vos données restent sur vos systèmes, nous n'en conservons aucune copie. Conformité RGPD garantie."
+        "answer": "Nous utilisons des accès minimaux via OAuth, sans jamais stocker vos mots de passe, et toutes les clés sont chiffrées. Avec l'abonnement, votre logiciel est hébergé en Europe et nous agissons comme sous-traitant au sens du RGPD, avec un accord de traitement des données. Le cockpit ROI ne reçoit aucune donnée personnelle."
       },
       {
         "question": "Travaillez-vous avec notre secteur d'activité ?",
@@ -324,19 +405,19 @@
       },
       {
         "question": "Quel est votre modèle de tarification ?",
-        "answer": "L'audit de 48h est sans engagement. Ensuite, nous proposons un forfait mensuel adapté à votre volume d'automatisations, sans frais cachés. Vous pouvez annuler à tout moment. Garantie satisfait ou remboursé à 100% le premier mois."
+        "answer": "Tout commence par l'audit flash : 1 490 € HT, déduits de votre V1 si vous signez dans les 14 jours. Votre V1 est un forfait, chiffré dans un devis interactif. Ensuite, deux choix : l'abonnement à 1 790 € HT par mois (hébergement, maintenance, cockpit ROI et 10 étoiles par mois pour faire évoluer votre logiciel ; 3 mois minimum, puis sans engagement), ou le one-shot : nous vous livrons tout, avec 60 jours de garantie."
       },
       {
         "question": "Quel support nous apportez-vous après la mise en place ?",
-        "answer": "Support dédié en français par email, chat et visio. Temps de réponse garanti sous 4h en jours ouvrés. Formation complète de vos équipes incluse. Optimisation continue et ajustements réguliers pour faire évoluer vos automatisations avec votre croissance."
+        "answer": "Avec l'abonnement, les corrections sont incluses et suivies dans votre espace client : prise en charge sous 4 h ouvrées pour un incident critique, 1 jour ouvré pour un défaut majeur, 3 jours ouvrés pour un défaut mineur. Vous signalez un problème depuis votre logiciel lui-même, par écrit, en vocal ou avec une capture d'écran."
       },
       {
         "question": "Que se passe-t-il si nous souhaitons arrêter la collaboration ?",
-        "answer": "Réversibilité totale garantie. Vous récupérez l'intégralité de vos workflows, configurations, documentations et accès. Aucune période d'engagement minimum. Vos automatisations continuent de fonctionner, vous gardez le contrôle absolu de votre infrastructure."
+        "answer": "Après les 3 premiers mois, l'abonnement se résilie avec un mois de préavis. La réversibilité est gratuite : code source, données, documentation et accès vous sont remis, et vos étoiles achetées non dépensées vous sont remboursées. Vous pouvez aussi passer en maintenance seule (390 € HT par mois) plutôt que de partir."
       },
       {
         "question": "Devez-vous accéder à nos systèmes internes ?",
-        "answer": "Nous demandons uniquement les permissions minimales nécessaires via OAuth (comme Google ou Microsoft). Vous gardez le contrôle total et pouvez révoquer tous les accès instantanément depuis vos outils. Nous n'installons aucun logiciel sur vos serveurs."
+        "answer": "Nous demandons uniquement les permissions minimales nécessaires via OAuth (comme Google ou Microsoft). Vous gardez le contrôle total et pouvez révoquer tous les accès instantanément depuis vos outils. Nous n'installons rien sans votre accord."
       }
     ]
   },
@@ -346,9 +427,9 @@
     "whatsapp": "WhatsApp : 07 45 49 65 52",
     "email": "Écrire un e-mail",
     "points": [
-      "Sans engagement",
-      "Audit personnalisé",
-      "Résultats en 48h"
+      "Audit déduit de votre V1",
+      "Votre V1 dévoilée en direct",
+      "Sans engagement après 3 mois"
     ]
   },
   "footer": {
