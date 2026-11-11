@@ -8,7 +8,6 @@ import Solutions from "./sections/Solutions.astro";
 import Demos from "./sections/Demos.astro";
 import Testimonials from "./sections/Testimonials.astro";
 import Process from "./sections/Process.astro";
-import Offer from "./sections/Offer.astro";
 import CTA from "./sections/CTA.astro";
 import { LOCALES, LOCALE_META, localePath, type Locale } from "../lib/i18n";
 import { SITE } from "../lib/site";
@@ -89,7 +88,6 @@ const jsonLd = [
     <Hero label={t.a11y.heroLabel} hero={t.hero} />
     <Solutions solutions={t.solutions} benefits={t.benefits.items} />
     <Process process={t.process} />
-    <Offer offer={t.offer} />
     <!-- Résultats : la preuve après les Solutions et le Process — les démos, puis l'avis des clients, en un seul chapitre. -->
     <section id="results" class="relative">
       <Demos
