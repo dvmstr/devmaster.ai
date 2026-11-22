@@ -7,6 +7,12 @@ import tailwindcss from "@tailwindcss/vite";
 // complet au build. Aucun appel à un service externe au chargement.
 export default defineConfig({
   site: "https://devmaster.ai",
+  // Les visuels des démos viennent du portail (src/lib/demos.ts), à une adresse https quelconque : téléchargés et
+  // optimisés au build, puis servis par le site lui-même (la CSP garde img-src 'self'). PORTAL_URL : portail local.
+  image: {
+    remotePatterns: [{ protocol: "https" }],
+    domains: process.env.PORTAL_URL ? [new URL(process.env.PORTAL_URL).hostname] : [],
+  },
   // Pas de coloration de code (le site n'en affiche pas) : évite des styles « inline » incompatibles avec la CSP.
   markdown: { syntaxHighlight: false },
   // Styles intégrés à chaque page : pas d'aller-retour bloquant avant le premier affichage (pages d'atterrissage).
