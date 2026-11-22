@@ -9,7 +9,7 @@ Site de l'agence d'automatisation IA **Devmaster**, en anglais (`/`), français 
 | Outil | [Astro 7](https://astro.build) : chaque page est générée en HTML complet au moment de la publication |
 | Styles | Tailwind CSS 4 (palette de Tailwind 3 conservée pour un rendu identique à l'ancien site) |
 | Interactions | quelques scripts légers (menu, cercle des solutions, frise du process…), moins de 3 Ko au total ; aucun framework côté navigateur |
-| Contenu | fichiers JSON par langue dans `src/content/` — plus de base de données |
+| Contenu | fichiers JSON par langue dans `src/content/` ; les **démos** viennent du portail client (voir plus bas) |
 | Hébergement | Netlify (statique) : chaque push sur `main` publie le site ; chaque pull request a son aperçu |
 | Sécurité | politique de contenu (CSP) par empreintes générée par Astro + en-têtes dans `public/_headers` |
 
@@ -24,6 +24,24 @@ manquant ou mal formé dans une langue bloque le build avec un message clair, le
 - Ajouter un témoignage ou une question de FAQ : ajouter un élément à la liste correspondante, dans les trois langues.
 - Icônes disponibles pour `benefits` et `solutions` : voir `src/lib/icons.ts`.
 - Coordonnées (e-mail, WhatsApp, hébergeur cité dans les mentions légales) : `src/lib/site.ts`.
+
+## Les démos (section « Démos »)
+
+Elles ne sont **pas** dans ce dépôt : le portail client (portal.devmaster.ai, dépôt `dvmstr/devmaster-portal`) est leur
+seule source. Dans son administration, **Catalogue → une démo → encadré « Site devmaster.ai »** : afficher ou non la
+démo sur le site, son secteur et ses solutions mises en avant (le site en montre trois) et son grand visuel ; le nom et
+la présentation sont ceux de la fiche, en/fr/zh. L'ordre est celui du catalogue (**Réorganiser**). Chaque
+enregistrement republie le site tout seul (build hook Netlify) : il est à jour en deux à trois minutes.
+
+À la construction, `src/lib/demos.ts` lit `GET https://portal.devmaster.ai/api/showcase` (public, sans jeton) ; les
+visuels sont téléchargés puis optimisés (AVIF, WebP, JPEG) et servis par le site lui-même. Si le portail ne répond
+pas, la publication **en production échoue** et Netlify garde le site en ligne tel quel (jamais un site sans ses
+démos) ; en local ou en aperçu, la section est construite vide, avec un avertissement. `PORTAL_URL` (facultatif)
+désigne un autre portail, par exemple un portail de développement.
+
+Les titres et icônes des puces viennent de la section « Solutions » de ce site : les clés (`emails`, `leads`,
+`chatbots`, `crm`, `social`, `documents`, `reporting`, `recruitment`) sont les mêmes des deux côtés
+(`src/lib/demos.ts` ici, `src/config/showcase.ts` dans le portail).
 
 ## Commandes
 
@@ -56,7 +74,8 @@ scripts/              génération des icônes (make-icons.mjs) et des images de
 - **Police** : sur Mac et iPhone, la police système (San Francisco), comme sur l'ancien site ; ailleurs, Inter
   (incluse dans le site, chargée seulement si nécessaire). La police « 1955 » de l'ancien dépôt était corrompue et ne
   s'est jamais affichée.
-- **Aucun appel externe** au chargement : pas de Supabase, pas de Google Fonts, pas de traceur. Le site fonctionne
+- **Aucun appel externe** au chargement : pas de Supabase, pas de Google Fonts, pas de traceur (le portail n'est
+  appelé qu'à la construction). Le site fonctionne
   aussi sans JavaScript (contenu complet, animations en moins).
 - **SEO** : vraies pages par langue (`lang`, titre, description, `hreflang`, plan du site `sitemap-index.xml`,
   données structurées schema.org, image de partage par langue). Mentions légales en `noindex`.
