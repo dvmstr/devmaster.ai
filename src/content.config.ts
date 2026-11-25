@@ -30,7 +30,7 @@ const site = defineCollection({
       })).min(3),
     }),
     demos: z.object({
-      title: text, subtitle: text, badge: text, fictional: text, cta: text,
+      title: text, subtitle: text, fictional: text, cta: text,
       message: text.refine((s) => s.includes("{name}"), "doit contenir {name}"), privateNote: text, clientArea: text,
     }),
     testimonials: z.object({

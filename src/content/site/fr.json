@@ -192,7 +192,6 @@
   "demos": {
     "title": "Nos démos interactives",
     "subtitle": "Des applications complètes, construites pour des entreprises fictives de votre secteur : vraies interfaces, vraie IA, automatisations qui tournent sous vos yeux.",
-    "badge": "Démos en français, anglais et chinois",
     "fictional": "Entreprise fictive",
     "cta": "Demander une visite guidée",
     "message": "Bonjour Devmaster, je souhaiterais une visite guidée de la démo « {name} ».",
