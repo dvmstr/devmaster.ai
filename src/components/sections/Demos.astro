@@ -19,7 +19,6 @@ interface Props {
   demos: {
     title: string;
     subtitle: string;
-    badge: string;
     fictional: string;
     cta: string;
     message: string;
@@ -37,15 +36,11 @@ const whatsapp = (name: string) => `${SITE.whatsappUrl}?text=${encodeURIComponen
 ---
 
 <div id="demos" class="relative pt-16 pb-14 sm:pt-24 sm:pb-20">
-  <!-- Ligne du faisceau à la jonction avec le Process : le cône éclaire le badge, la lueur arrière la fin de la frise. -->
+  <!-- Ligne du faisceau à la jonction avec le Process : le cône éclaire le titre, la lueur arrière la fin de la frise. -->
   <LightSource direction={0} color="cyan" intensity="medium" class="-top-48 left-1/2 -translate-x-1/2" />
 
   <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6">
     <div class="mx-auto mb-10 max-w-3xl text-center sm:mb-14">
-      <span class="mb-4 inline-flex items-center gap-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3 py-1 text-xs font-medium tracking-wide text-cyan-300">
-        <Icon name="Zap" size={12} />
-        {t.badge}
-      </span>
       <h2 class="mb-3 px-2 text-3xl font-medium text-white sm:mb-4 sm:text-4xl md:text-5xl">{t.title}</h2>
       <p class="mx-auto max-w-2xl px-2 text-base text-gray-400 sm:text-lg">{t.subtitle}</p>
     </div>

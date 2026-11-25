@@ -192,7 +192,6 @@
   "demos": {
     "title": "Our interactive demos",
     "subtitle": "Complete applications built for fictional companies in your industry: real interfaces, real AI, automations running before your eyes.",
-    "badge": "Demos in English, French and Chinese",
     "fictional": "Fictional company",
     "cta": "Request a guided tour",
     "message": "Hello Devmaster, I would like a guided tour of the “{name}” demo.",
