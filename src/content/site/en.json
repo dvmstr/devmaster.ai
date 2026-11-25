@@ -191,8 +191,8 @@
   },
   "demos": {
     "title": "Our interactive demos",
-    "subtitle": "Complete applications built for fictional companies in your industry: real interfaces, real AI, automations running before your eyes.",
-    "fictional": "Fictional company",
+    "subtitle": "Real projects, in production at companies that agreed to let us show them. To protect our clients, names and data are fictitious: the interfaces, the AI and the automations are the real ones.",
+    "badge": "Real project · sample data",
     "cta": "Request a guided tour",
     "message": "Hello Devmaster, I would like a guided tour of the “{name}” demo.",
     "privateNote": "Demos are private: we open access for your team on request, from your client area.",

@@ -8,8 +8,8 @@ import { SITE } from "../../lib/site";
 import { showcaseDemos, SOLUTION_KEYS } from "../../lib/demos";
 
 /**
- * « Démos interactives » (début de la section « Résultats ») : les applications construites pour des entreprises fictives, une par secteur.
- * Le titre de chaque démo dit ce qu'est l'application (« CRM immobilier »), jamais le nom de l'entreprise fictive.
+ * « Démos interactives » (début de la section « Résultats ») : de vrais projets, en service chez des clients qui ont accepté qu'on les montre, une par secteur ; noms et données sont fictifs pour protéger ces clients.
+ * Le titre de chaque démo dit ce qu'est l'application (« CRM immobilier »), jamais le nom (fictif) de l'entreprise.
  * Données : le portail client, seule source (quelles démos, ordre, nom, secteur, présentation, solutions, visuel —
  * lus à la construction : src/lib/demos.ts). Les visuels sont téléchargés et optimisés au build. Une démo par ligne, toutes sur le même modèle : visuel à gauche et texte à droite à partir de 1280 px, visuel au-dessus du texte en dessous. Les démos sont privées : le bouton
  * demande une visite guidée sur WhatsApp.
@@ -19,7 +19,7 @@ interface Props {
   demos: {
     title: string;
     subtitle: string;
-    fictional: string;
+    badge: string;
     cta: string;
     message: string;
     privateNote: string;
@@ -66,7 +66,7 @@ const whatsapp = (name: string) => `${SITE.whatsappUrl}?text=${encodeURIComponen
                     decoding="async"
                   />
                 )}
-                <span class="absolute top-3 left-3 rounded-full border border-white/15 bg-black/70 px-2.5 py-1 text-[11px] font-medium text-gray-200">{t.fictional}</span>
+                <span class="absolute top-3 left-3 rounded-full border border-white/15 bg-black/70 px-2.5 py-1 text-[11px] font-medium text-gray-200">{t.badge}</span>
               </div>
               <div class="flex flex-1 flex-col p-6 sm:p-8 lg:p-10 xl:justify-center xl:p-12">
                 {d.industry[locale] && <p class="mb-3 text-[11px] font-medium tracking-[0.12em] text-cyan-400 uppercase">{d.industry[locale]}</p>}
