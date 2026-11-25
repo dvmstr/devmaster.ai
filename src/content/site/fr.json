@@ -191,8 +191,8 @@
   },
   "demos": {
     "title": "Nos démos interactives",
-    "subtitle": "Des applications complètes, construites pour des entreprises fictives de votre secteur : vraies interfaces, vraie IA, automatisations qui tournent sous vos yeux.",
-    "fictional": "Entreprise fictive",
+    "subtitle": "Des projets réels, en service dans des entreprises qui ont accepté que nous les montrions. Pour protéger nos clients, les noms et les données sont fictifs : les interfaces, l'IA et les automatisations sont bien les vraies.",
+    "badge": "Projet réel · données fictives",
     "cta": "Demander une visite guidée",
     "message": "Bonjour Devmaster, je souhaiterais une visite guidée de la démo « {name} ».",
     "privateNote": "Les démos sont privées : nous ouvrons l'accès à votre équipe sur demande, depuis votre espace client.",
