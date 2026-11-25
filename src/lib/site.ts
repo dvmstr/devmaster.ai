@@ -4,8 +4,8 @@ import type { Locale } from "./i18n";
 export const SITE = {
   url: "https://devmaster.ai",
   name: "Devmaster",
-  email: "dvmstr.ai@gmail.com",
-  whatsappUrl: "https://wa.me/33745496552",
+  email: "tim@devmaster.ai",
+  whatsappUrl: "https://wa.me/33767496267",
   /** Espace client (portail des démos et des accès). */
   portalUrl: "https://portal.devmaster.ai/",
   /** Hébergeur à citer dans les mentions légales (à changer avec l'hébergement). */
